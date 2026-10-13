@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Last War Command</title>
+<meta name="description" content="Recaps, goal progress and the game plan for my Last War account.">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f4f3ef;
+  --surface: #fcfcfb;
+  --surface-2: #efeee9;
+  --border: #dddcd5;
+  --text: #0b0b0b;
+  --text-2: #52514e;
+  --text-3: #75746f;
+  --accent: #2a78d6;
+  --accent-soft: #cde2fb;
+  --track: #e6e5df;
+  --good: #0ca30c;
+  --good-text: #006300;
+  --later: #75746f;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #121211;
+    --surface: #1a1a19;
+    --surface-2: #232321;
+    --border: #33332f;
+    --text: #ffffff;
+    --text-2: #c3c2b7;
+    --text-3: #9a998f;
+    --accent: #3987e5;
+    --accent-soft: #184f95;
+    --track: #2c2c29;
+    --good-text: #5fd35f;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121211;
+  --surface: #1a1a19;
+  --surface-2: #232321;
+  --border: #33332f;
+  --text: #ffffff;
+  --text-2: #c3c2b7;
+  --text-3: #9a998f;
+  --accent: #3987e5;
+  --accent-soft: #184f95;
+  --track: #2c2c29;
+  --good-text: #5fd35f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+header { padding: 28px 0 8px; }
+header h1 { margin: 0; font-size: 26px; letter-spacing: -0.01em; }
+.sub { color: var(--text-2); margin: 2px 0 0; }
+nav { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--border); }
+nav .wrap { display: flex; gap: 4px; overflow-x: auto; padding-top: 8px; padding-bottom: 8px; }
+nav a {
+  color: var(--text-2); text-decoration: none; padding: 6px 12px; border-radius: 999px;
+  white-space: nowrap; font-weight: 500;
+}
+nav a:hover, nav a:focus-visible { background: var(--surface-2); color: var(--text); }
+nav .spacer { flex: 1; }
+nav button {
+  border: 1px solid var(--border); background: var(--surface); color: var(--text-2);
+  border-radius: 999px; padding: 4px 10px; cursor: pointer; font: inherit;
+}
+section { padding: 28px 0 8px; scroll-margin-top: 56px; }
+h2 { font-size: 20px; margin: 0 0 4px; }
+.lede { color: var(--text-2); margin: 0 0 16px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 18px; margin-bottom: 14px;
+}
+.grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.stat .label { color: var(--text-2); font-size: 13px; }
+.stat .value { font-size: 28px; font-weight: 650; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.stat .note { color: var(--text-3); font-size: 13px; }
+
+/* goal meter */
+.meter { margin: 18px 0 6px; }
+.meter-track { position: relative; height: 14px; background: var(--track); border-radius: 7px; }
+.meter-fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); border-radius: 7px; }
+.tick { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--surface); }
+.ticks-labels { position: relative; height: 34px; margin-top: 6px; font-size: 12px; color: var(--text-2); }
+.ticks-labels span { position: absolute; transform: translateX(-50%); text-align: center; white-space: nowrap; }
+.ticks-labels span b { display: block; color: var(--text); font-weight: 600; }
+
+/* bar rows */
+.bars { display: grid; gap: 10px; }
+.bar-row { display: grid; grid-template-columns: 96px 1fr 64px; align-items: center; gap: 10px; cursor: default; }
+.bar-row .name { font-weight: 550; }
+.bar-row .name small { display: block; color: var(--text-3); font-weight: 400; font-size: 12px; }
+.bar-track { height: 18px; position: relative; }
+.bar { height: 100%; background: var(--accent); border-radius: 0 4px 4px 0; }
+.bar-row .val { text-align: right; font-variant-numeric: tabular-nums; color: var(--text-2); }
+.bar-row:hover .bar, .bar-row:focus-visible .bar { filter: brightness(1.12); }
+.bench { position: absolute; top: -3px; bottom: -3px; border-left: 2px dashed var(--text-3); }
+.legend { display: flex; gap: 14px; font-size: 12px; color: var(--text-2); margin-top: 12px; flex-wrap: wrap; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 5px; }
+
+/* plan */
+.phase-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.phase-head h3 { margin: 0; font-size: 17px; }
+.phase-meta { color: var(--text-2); font-size: 13px; }
+.mini-track { height: 6px; background: var(--track); border-radius: 3px; margin: 10px 0 12px; }
+.mini-fill { height: 100%; background: var(--good); border-radius: 3px; }
+ul.steps { list-style: none; margin: 0; padding: 0; }
+ul.steps li { display: grid; grid-template-columns: 22px 1fr auto; gap: 10px; padding: 8px 0; border-top: 1px solid var(--border); align-items: start; }
+ul.steps li:first-child { border-top: 0; }
+.ico { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--text-3); margin-top: 2px; display: grid; place-items: center; font-size: 11px; color: #fff; }
+.done .ico { background: var(--good); border-color: var(--good); }
+.later .ico { border-style: dashed; }
+.done .txt { color: var(--text-2); text-decoration: line-through; text-decoration-color: var(--text-3); }
+.cost { color: var(--text-3); font-size: 13px; white-space: nowrap; text-align: right; }
+.tag { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; padding: 2px 7px; border-radius: 999px; border: 1px solid var(--border); color: var(--text-2); }
+.tag.done { color: var(--good-text); border-color: var(--good); text-decoration: none; }
+.rules { margin: 0; padding-left: 20px; }
+.rules li { margin: 6px 0; color: var(--text-2); }
+
+/* recaps */
+.recap { border-left: 3px solid var(--accent); }
+.recap .date { color: var(--text-2); font-size: 13px; font-weight: 600; }
+.recap h3 { margin: 2px 0 8px; font-size: 17px; }
+.recap ul { margin: 0 0 10px; padding-left: 20px; }
+.recap li { margin: 4px 0; }
+.recap .next { background: var(--surface-2); border-radius: 8px; padding: 10px 12px; font-size: 14px; }
+.recap .src { color: var(--text-3); font-size: 12px; margin-top: 8px; }
+
+/* history chart */
+svg text { fill: var(--text-2); font-size: 12px; }
+.empty { color: var(--text-3); font-size: 14px; }
+table.data { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+table.data th, table.data td { text-align: left; padding: 6px 8px; border-top: 1px solid var(--border); }
+table.data th { color: var(--text-2); font-weight: 600; border-top: 0; }
+details summary { cursor: pointer; color: var(--text-2); font-size: 13px; margin-top: 10px; }
+
+#tip {
+  position: fixed; pointer-events: none; z-index: 20; background: var(--text); color: var(--bg);
+  padding: 6px 9px; border-radius: 6px; font-size: 13px; opacity: 0; transition: opacity .1s; max-width: 240px;
+}
+footer { color: var(--text-3); font-size: 13px; padding: 24px 0 40px; }
+footer a { color: var(--accent); }
+@media (max-width: 520px) {
+  nav a { padding: 6px 8px; }
+  nav .wrap { gap: 0; }
+  .bar-row { grid-template-columns: 78px 1fr 56px; }
+  ul.steps li { grid-template-columns: 22px 1fr; }
+  .cost { grid-column: 2; text-align: left; }
+  .stat .value { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <h1 id="title">Last War Command</h1>
+  <p class="sub" id="subtitle"></p>
+</header>
+<nav aria-label="Sections">
+  <div class="wrap">
+    <a href="#goal">Goal</a>
+    <a href="#plan">Game plan</a>
+    <a href="#recaps">Recaps</a>
+    <a href="#squads">Squads</a>
+    <span class="spacer"></span>
+    <button id="theme" type="button" aria-label="Toggle dark mode">Theme</button>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section id="goal">
+    <h2 id="goal-name"></h2>
+    <p class="lede" id="goal-rule"></p>
+    <div class="card">
+      <div class="grid" id="goal-stats"></div>
+      <div class="meter" aria-hidden="true">
+        <div class="meter-track" id="meter"></div>
+        <div class="ticks-labels" id="tick-labels"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="phase-head"><h3>Squad 1 power over time</h3><span class="phase-meta">One point per recording</span></div>
+      <div id="history"></div>
+    </div>
+  </section>
+
+  <section id="plan">
+    <h2>Game plan</h2>
+    <p class="lede">Ordered steps toward the goal. Free path first; paid only where it speeds things up the most.</p>
+    <div id="phases"></div>
+    <div class="card">
+      <div class="phase-head"><h3>Standing rules</h3></div>
+      <ul class="rules" id="rules"></ul>
+    </div>
+  </section>
+
+  <section id="recaps">
+    <h2>Recaps</h2>
+    <p class="lede">What changed after each recording, newest first.</p>
+    <div id="recap-list"></div>
+  </section>
+
+  <section id="squads">
+    <h2>Squads</h2>
+    <p class="lede" id="squads-lede"></p>
+    <div class="card">
+      <div class="phase-head"><h3>Squad power</h3></div>
+      <div class="bars" id="squad-bars" style="margin-top:12px"></div>
+    </div>
+    <div class="card">
+      <div class="phase-head"><h3>Squad 1 heroes</h3><span class="phase-meta">Dashed line = Kimberly, the benchmark</span></div>
+      <div class="bars" id="hero-bars" style="margin-top:12px"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap" id="footer"></footer>
+<div id="tip" role="tooltip"></div>
+
+<script>
+const DATA = {"site":{"title":"Last War Command","commander":"HQ 30 \u00b7 VIP 12 \u00b7 Tank main","goal":{"name":"Squad 1 to 40M","rule":"Without upgrading HQ (stay at HQ 30)","set":"2026-10-13","baseline":29560000,"target":40000000,"milestones":[{"label":"Phase 1","value":31500000},{"label":"Phase 2","value":36000000},{"label":"Phase 3","value":40000000}]},"plan":[{"phase":1,"name":"Free power now","window":"1-2 weeks","estimate":"+1.5M to +2.5M","steps":[{"text":"Stetmann skill 1 (Orb Lightning) 19 to 20","cost":"9,200 medals","status":"todo"},{"text":"Stetmann skill 1 (Orb Lightning) 20 to 21","cost":"10,400 medals","status":"todo"},{"text":"Marshall skill 1 (Triad Harmony) 20 to 21","cost":"10,400 medals","status":"todo"},{"text":"Williams skill 1 (Blast Shell) 20 to 21","cost":"10,400 medals","status":"todo"},{"text":"Save the rest (~9,400) for Marshall skill 1 21 to 22","cost":"~11,600 medals","status":"todo"},{"text":"Murphy data chip 30 to 40","cost":"Gear ore","status":"todo"},{"text":"Williams cannon 30 to 40, then data chip 30 to 40","cost":"Gear ore","status":"todo"},{"text":"Season screen checked: boost is Scarlett only, nothing for Squad 1","cost":"","status":"done"},{"text":"Wall of Honor: Stetmann (0), Marshall (10), Williams (11) first","cost":"Honor medals","status":"todo"}]},{"phase":2,"name":"Gear stars and Murphy's weapon","window":"Weeks 2-8","estimate":"+4M to +5M","steps":[{"text":"Gear stars: Marshall, then Williams, then Stetmann","cost":"Blueprints","status":"later"},{"text":"Murphy Exclusive Weapon 12 to 20","cost":"EW shards","status":"later"},{"text":"Tank Mastery research, keep both queues busy","cost":"Research","status":"later"}]},{"phase":3,"name":"Past the benchmark","window":"Months 2-4","estimate":"+3M to +4M","steps":[{"text":"Kimberly Exclusive Weapon 20 to 30; Marshall's if he has one","cost":"EW shards","status":"later"},{"text":"Kimberly Barrage Strike (skill 2) 35 to 36","cost":"36,000 medals","status":"later"},{"text":"Skills toward max; drone levels","cost":"Medals, drone parts","status":"later"}]}],"rules":["Squad 1 power is about 20.3M from the five heroes plus about 9.3M from troops. The troop part is capped while HQ stays at 30, so growth has to come from the heroes.","Skill medals go to skill 1 first: it is each tank's main attack and gives the most damage per medal.","Exclusive Weapon shards go to one weapon until level 20 before starting another. Never Tesla.","Filling troop slots raises total power, not Squad 1 power. Still worth doing, just not for this goal.","Light spend priority: season pass for weapon shards, then gear blueprint packs on sale."],"recaps":[{"date":"2026-10-13","title":"Baseline and the 40M plan","sources":"4 videos + skills video + Season Boost screenshot","highlights":["First full snapshot: 137.6M total power, 31 heroes, 3 squads (29.56M / 19.60M / 21.51M).","Kimberly (4.94M) is the benchmark. Williams, Stetmann and Marshall trail her by 1.3M to 1.6M each.","Williams is the softest front-liner: 27% damage resistance against 50% for Murphy.","All four skills read for each tank. Skill 4 is maxed on everyone; skill 1 is the best medal value.","Season 3 boost is Scarlett only (5% less monster damage). Use her for zombie and monster fights."],"next":"Finish Phase 1, then record the Squad 1 screen and each tank's main page so we can measure the gain."}]},"updated":"2026-10-13","account":{"hq_level":30,"vip":12,"total_power":137578784,"hero_power":75935212,"unit_power":38996774,"building_power":9613751,"drone_power":6622553,"tech_power":4996000,"overlord_power":561968,"decor_power":7590567,"drone_level":135,"hero_exp_available":434900000,"skill_medals_available":49813},"squads":[{"n":1,"power":29560000,"heroes":["Murphy","Williams","Kimberly","Stetmann","Marshall"],"mix":"5 Tank"},{"n":2,"power":19600000,"heroes":["DVA","Monica","Maxwell","Schuyler","Carlie"],"mix":"4 Aircraft + 1 Tank"},{"n":3,"power":21510000,"heroes":["Tesla","Adam","McGregor","Fiona","Swift"],"mix":"5 Missile"}],"squad1":[{"name":"Murphy","power":4846353},{"name":"Williams","power":3600010},{"name":"Kimberly","power":4944473},{"name":"Stetmann","power":3505353},{"name":"Marshall","power":3384063}],"history":[{"date":"2026-10-13","total":137578784,"squad1":29560000}]};
+const S = DATA.site;
+const fmtM = v => (v / 1e6).toFixed(2) + 'M';
+const fmtDate = d => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+const el = (tag, attrs = {}, html = '') => { const e = document.createElement(tag); Object.assign(e, attrs); if (html) e.innerHTML = html; return e; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+/* theme toggle (per-viewer convenience) */
+(function () {
+  const root = document.documentElement;
+  try { const t = localStorage.getItem('lw-theme'); if (t) root.dataset.theme = t; } catch (e) {}
+  document.getElementById('theme').onclick = () => {
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('lw-theme', root.dataset.theme); } catch (e) {}
+  };
+})();
+
+/* tooltip */
+const tip = document.getElementById('tip');
+function bindTip(node, html) {
+  node.tabIndex = 0;
+  const show = e => {
+    tip.innerHTML = html; tip.style.opacity = 1;
+    const r = node.getBoundingClientRect();
+    const x = e && e.clientX ? e.clientX : r.left + r.width / 2;
+    const y = e && e.clientY ? e.clientY : r.top;
+    tip.style.left = Math.min(x + 12, innerWidth - tip.offsetWidth - 8) + 'px';
+    tip.style.top = Math.max(8, y - tip.offsetHeight - 10) + 'px';
+  };
+  node.addEventListener('mousemove', show);
+  node.addEventListener('focus', () => show());
+  node.addEventListener('mouseleave', () => tip.style.opacity = 0);
+  node.addEventListener('blur', () => tip.style.opacity = 0);
+}
+
+/* header */
+document.getElementById('title').textContent = S.title;
+document.getElementById('subtitle').textContent = S.commander + ' · Updated ' + fmtDate(DATA.updated);
+
+/* goal */
+const G = S.goal;
+const current = DATA.history[DATA.history.length - 1].squad1;
+document.getElementById('goal-name').textContent = G.name;
+document.getElementById('goal-rule').textContent = G.rule + '. Set ' + fmtDate(G.set) + '.';
+const pct = Math.max(0, Math.min(1, (current - G.baseline) / (G.target - G.baseline)));
+const gained = current - G.baseline;
+document.getElementById('goal-stats').innerHTML = `
+  <div class="stat"><div class="label">Squad 1 now</div><div class="value">${fmtM(current)}</div><div class="note">${(pct * 100).toFixed(0)}% of the climb done</div></div>
+  <div class="stat"><div class="label">Target</div><div class="value">${fmtM(G.target)}</div><div class="note">HQ stays at 30</div></div>
+  <div class="stat"><div class="label">Still needed</div><div class="value">+${fmtM(Math.max(0, G.target - current))}</div><div class="note">${gained > 0 ? '+' + fmtM(gained) + ' since start' : 'Starting point'}</div></div>`;
+const meter = document.getElementById('meter');
+const lo = G.baseline, span = G.target - lo;
+const pos = v => ((v - lo) / span * 100).toFixed(2) + '%';
+meter.append(el('div', { className: 'meter-fill' }));
+meter.lastChild.style.width = 'max(14px, ' + pos(current) + ')';
+const labels = document.getElementById('tick-labels');
+const start = el('span', {}, `<b>${fmtM(G.baseline)}</b>Start`);
+start.style.left = '0'; start.style.transform = 'none'; start.style.textAlign = 'left';
+labels.append(start);
+G.milestones.forEach((m, i) => {
+  if (i < G.milestones.length - 1) { const t = el('div', { className: 'tick' }); t.style.left = pos(m.value); meter.append(t); }
+  const l = el('span', {}, `<b>${fmtM(m.value)}</b>${esc(m.label)}`);
+  l.style.left = pos(m.value);
+  if (i === G.milestones.length - 1) { l.style.transform = 'translateX(-100%)'; l.style.textAlign = 'right'; }
+  labels.append(l);
+});
+bindTip(meter, `Squad 1: <b>${fmtM(current)}</b> of ${fmtM(G.target)}<br>Started at ${fmtM(G.baseline)}`);
+
+/* history chart */
+(function () {
+  const box = document.getElementById('history');
+  const pts = DATA.history.filter(h => h.squad1);
+  if (pts.length < 2) {
+    box.innerHTML = `<p class="empty">The line starts with your next recording. Starting point: ${fmtM(pts[0].squad1)} on ${fmtDate(pts[0].date)}.</p>`;
+    return;
+  }
+  const W = 880, H = 220, L = 52, R = 16, T = 14, B = 28;
+  const ys = pts.map(p => p.squad1).concat([G.target]);
+  const ymin = Math.floor(Math.min(...ys) / 1e6) * 1e6, ymax = Math.ceil(Math.max(...ys) / 1e6) * 1e6;
+  const t0 = +new Date(pts[0].date), t1 = +new Date(pts[pts.length - 1].date);
+  const x = d => L + (W - L - R) * ((+new Date(d) - t0) / Math.max(1, t1 - t0));
+  const y = v => T + (H - T - B) * (1 - (v - ymin) / (ymax - ymin));
+  let svg = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Squad 1 power by recording date">`;
+  for (let k = 0; k <= 4; k++) {
+    const v = ymin + (ymax - ymin) * k / 4, yy = y(v);
+    svg += `<line x1="${L}" x2="${W - R}" y1="${yy}" y2="${yy}" stroke="var(--border)" stroke-width="1"/><text x="${L - 8}" y="${yy + 4}" text-anchor="end">${(v / 1e6).toFixed(0)}M</text>`;
+  }
+  svg += `<line x1="${L}" x2="${W - R}" y1="${y(G.target)}" y2="${y(G.target)}" stroke="var(--text-3)" stroke-dasharray="4 4"/><text x="${W - R}" y="${y(G.target) - 6}" text-anchor="end">Target</text>`;
+  svg += `<polyline fill="none" stroke="var(--accent)" stroke-width="2" points="${pts.map(p => x(p.date) + ',' + y(p.squad1)).join(' ')}"/>`;
+  pts.forEach(p => {
+    svg += `<circle class="pt" data-d="${p.date}" cx="${x(p.date)}" cy="${y(p.squad1)}" r="5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>`;
+    svg += `<text x="${x(p.date)}" y="${H - 8}" text-anchor="middle">${fmtDate(p.date).replace(/, \d{4}/, '')}</text>`;
+  });
+  box.innerHTML = svg + '</svg>';
+  box.querySelectorAll('.pt').forEach(c => {
+    const p = pts.find(q => q.date === c.dataset.d);
+    bindTip(c, `${fmtDate(p.date)}<br>Squad 1: <b>${fmtM(p.squad1)}</b>`);
+  });
+  const tbl = `<details><summary>Show as table</summary><table class="data"><tr><th>Date</th><th>Squad 1</th><th>Total power</th></tr>${pts.map(p => `<tr><td>${fmtDate(p.date)}</td><td>${fmtM(p.squad1)}</td><td>${p.total.toLocaleString()}</td></tr>`).join('')}</table></details>`;
+  box.insertAdjacentHTML('beforeend', tbl);
+})();
+
+/* plan */
+const statusLabel = { done: 'Done', todo: 'To do', later: 'Later' };
+const phases = document.getElementById('phases');
+S.plan.forEach(ph => {
+  const done = ph.steps.filter(s => s.status === 'done').length;
+  const card = el('div', { className: 'card' });
+  card.innerHTML = `
+    <div class="phase-head"><h3>Phase ${ph.phase}: ${esc(ph.name)}</h3>
+      <span class="phase-meta">${esc(ph.window)} · ${esc(ph.estimate)} · ${done} of ${ph.steps.length} done</span></div>
+    <div class="mini-track" aria-hidden="true"><div class="mini-fill" style="width:${(done / ph.steps.length * 100).toFixed(1)}%"></div></div>
+    <ul class="steps">${ph.steps.map(s => `
+      <li class="${s.status}"><span class="ico" aria-hidden="true">${s.status === 'done' ? '✓' : ''}</span>
+        <span class="txt">${esc(s.text)} <span class="tag ${s.status}">${statusLabel[s.status]}</span></span>
+        <span class="cost">${esc(s.cost || '')}</span></li>`).join('')}
+    </ul>`;
+  phases.append(card);
+});
+document.getElementById('rules').innerHTML = S.rules.map(r => `<li>${esc(r)}</li>`).join('');
+
+/* recaps */
+document.getElementById('recap-list').innerHTML = S.recaps.slice().sort((a, b) => b.date.localeCompare(a.date)).map(r => `
+  <article class="card recap">
+    <div class="date">${fmtDate(r.date)}</div>
+    <h3>${esc(r.title)}</h3>
+    <ul>${r.highlights.map(h => `<li>${esc(h)}</li>`).join('')}</ul>
+    ${r.next ? `<div class="next"><b>Next:</b> ${esc(r.next)}</div>` : ''}
+    ${r.sources ? `<div class="src">From: ${esc(r.sources)}</div>` : ''}
+  </article>`).join('');
+
+/* squads */
+document.getElementById('squads-lede').textContent = 'From the ' + fmtDate(DATA.updated) + ' recording.';
+function bars(id, rows, max, bench) {
+  const box = document.getElementById(id);
+  rows.forEach(r => {
+    const row = el('div', { className: 'bar-row' });
+    row.innerHTML = `<div class="name">${esc(r.label)}${r.sub ? `<small>${esc(r.sub)}</small>` : ''}</div>
+      <div class="bar-track"><div class="bar" style="width:${(r.value / max * 100).toFixed(2)}%"></div>${bench ? `<div class="bench" style="left:${(bench / max * 100).toFixed(2)}%"></div>` : ''}</div>
+      <div class="val">${fmtM(r.value)}</div>`;
+    bindTip(row, r.tip);
+    box.append(row);
+  });
+}
+const sqMax = Math.max(...DATA.squads.map(s => s.power));
+bars('squad-bars', DATA.squads.map(s => ({
+  label: 'Squad ' + s.n, sub: s.mix, value: s.power,
+  tip: `<b>Squad ${s.n}</b>: ${fmtM(s.power)}<br>${s.heroes.map(esc).join(', ')}`
+})), sqMax);
+const heroes = DATA.squad1.filter(h => h.power).sort((a, b) => b.power - a.power);
+const kim = (heroes.find(h => h.name === 'Kimberly') || heroes[0]).power;
+bars('hero-bars', heroes.map(h => ({
+  label: h.name, value: h.power,
+  tip: `<b>${esc(h.name)}</b>: ${fmtM(h.power)}<br>${h.power >= kim ? 'Benchmark' : fmtM(kim - h.power) + ' behind Kimberly'}`
+})), kim * 1.05, kim);
+
+document.getElementById('footer').textContent = 'Built from screen recordings. Detailed numbers live in the analysis sheet.';
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Recordings stay in iCloud only
+Video Upload/
+*.mov
+*.MOV
+*.mp4
+*.MP4
+*.png
+*.PNG
+*.jpg
+*.JPG
+
+# Generated / local
+*.xlsx
+.DS_Store
+__pycache__/
