@@ -1,6 +1,6 @@
 {
   "title": "Last War Command",
-  "commander": "HQ 30 \u00b7 VIP 12 \u00b7 Tank main",
+  "commander": "HQ 30 · VIP 12 · Tank main",
   "goal": {
     "name": "Squad 1 to 40M",
     "rule": "Without upgrading HQ (stay at HQ 30)",
@@ -30,97 +30,130 @@
       "estimate": "+1.5M to +2.5M",
       "steps": [
         {
-          "text": "Stetmann skill 1 (Orb Lightning) 19 to 20",
+          "type": "skill",
+          "title": "Orb Lightning 19 → 20",
           "cost": "9,200 medals",
-          "status": "todo"
+          "status": "todo",
+          "hero": "Stetmann"
         },
         {
-          "text": "Stetmann skill 1 (Orb Lightning) 20 to 21",
+          "type": "skill",
+          "title": "Orb Lightning 20 → 21",
           "cost": "10,400 medals",
-          "status": "todo"
+          "status": "todo",
+          "hero": "Stetmann"
         },
         {
-          "text": "Marshall skill 1 (Triad Harmony) 20 to 21",
+          "type": "skill",
+          "title": "Triad Harmony 20 → 21",
           "cost": "10,400 medals",
-          "status": "todo"
+          "status": "todo",
+          "hero": "Marshall"
         },
         {
-          "text": "Williams skill 1 (Blast Shell) 20 to 21",
+          "type": "skill",
+          "title": "Blast Shell 20 → 21",
           "cost": "10,400 medals",
-          "status": "todo"
+          "status": "todo",
+          "hero": "Williams"
         },
         {
-          "text": "Save the rest (~9,400) for Marshall skill 1 21 to 22",
+          "type": "skill",
+          "title": "Save the rest for Triad Harmony 21 → 22",
           "cost": "~11,600 medals",
-          "status": "todo"
+          "status": "todo",
+          "hero": "Marshall"
         },
         {
-          "text": "Murphy data chip 30 to 40",
+          "type": "gear",
+          "title": "Data chip 30 → 40",
           "cost": "Gear ore",
-          "status": "todo"
+          "status": "todo",
+          "hero": "Murphy"
         },
         {
-          "text": "Williams cannon 30 to 40, then data chip 30 to 40",
+          "type": "gear",
+          "title": "Cannon, then data chip 30 → 40",
           "cost": "Gear ore",
-          "status": "todo"
+          "status": "todo",
+          "hero": "Williams"
         },
         {
-          "text": "Season screen checked: boost is Scarlett only, nothing for Squad 1",
-          "cost": "",
-          "status": "done"
+          "type": "research",
+          "title": "Let Weapon Training VIII finish",
+          "cost": "Free",
+          "status": "todo",
+          "detail": "Troop attack 7.5% → 9%, done ~9:30 AM 10/14"
         },
         {
-          "text": "Wall of Honor: Stetmann (0), Marshall (10), Williams (11) first",
+          "type": "research",
+          "title": "Armor Hardening II",
+          "cost": "~29h speedups",
+          "status": "todo",
+          "detail": "Tank defense +2% → +4% · speed it up on research day"
+        },
+        {
+          "type": "research",
+          "title": "Oil Output I, then Track Fortification II",
+          "cost": "Leftover speedups",
+          "status": "todo",
+          "detail": "Tank HP +2% → +4%"
+        },
+        {
+          "type": "research",
+          "title": "Finish the Alliance Duel tree",
+          "cost": "Research",
+          "status": "todo",
+          "detail": "96% done · more duel points every week"
+        },
+        {
+          "type": "honor",
+          "title": "Wall of Honor: Stetmann, Marshall, Williams first",
           "cost": "Honor medals",
           "status": "todo"
         },
         {
-          "text": "Queue 2: Weapon Training VIII (troop attack 7.5% to 9%) finishes by itself around 9:30 AM 10/14; let it run",
-          "cost": "None",
-          "status": "todo"
-        },
-        {
-          "text": "When queue 2 frees: start Hero tree > Armor Hardening II (tank defense +2% to +4%) and speed it up",
-          "cost": "10.1M gold, ~29h speedups",
-          "status": "todo"
-        },
-        {
-          "text": "Leftover speedups go to queue 1 (Oil Output I, 3d 17h left); when it frees, start Track Fortification II (tank HP +2% to +4%)",
-          "cost": "17.7M gold, 1d 23h",
-          "status": "todo"
-        },
-        {
-          "text": "Then finish the Alliance Duel tree (96%) for more duel points every week",
-          "cost": "Research",
-          "status": "todo"
+          "type": "season",
+          "title": "Season boost checked",
+          "cost": "",
+          "status": "done",
+          "hero": "Scarlett",
+          "detail": "Scarlett only: 5% less monster damage"
         }
       ]
     },
     {
       "phase": 2,
-      "name": "Gear stars and Murphy's weapon",
+      "name": "Gear stars & weapons",
       "window": "Weeks 2-8",
       "estimate": "+4M to +5M",
       "steps": [
         {
-          "text": "Gear stars: Marshall, then Williams, then Stetmann",
+          "type": "gear",
+          "title": "Gear stars: Marshall → Williams → Stetmann",
           "cost": "Blueprints",
           "status": "later"
         },
         {
-          "text": "Murphy Exclusive Weapon 12 to 20",
+          "type": "weapon",
+          "title": "Exclusive Weapon 12 → 20",
           "cost": "EW shards",
-          "status": "later"
+          "status": "later",
+          "hero": "Murphy"
         },
         {
-          "text": "Hero tree > Cannon Enhancement II: tank hero attack +4% to +6%",
-          "cost": "38.3M gold, 4d 3h",
-          "status": "later"
+          "type": "research",
+          "title": "Cannon Enhancement II",
+          "cost": "4.1 days",
+          "status": "later",
+          "detail": "Tank attack +4% → +6%"
         },
         {
-          "text": "Hero tree > Tank Mastery II: tank damage 6% to 8%; the Tank Mastery tree comes after",
-          "cost": "69.8M gold, 7d 11h",
-          "status": "later"
+          "type": "research",
+          "title": "Tank Mastery II",
+          "cost": "7.5 days",
+          "status": "later",
+          "detail": "Tank damage 6% → 8%"
         }
       ]
     },
@@ -131,17 +164,23 @@
       "estimate": "+3M to +4M",
       "steps": [
         {
-          "text": "Kimberly Exclusive Weapon 20 to 30; Marshall's if he has one",
+          "type": "weapon",
+          "title": "Exclusive Weapon 20 → 30",
           "cost": "EW shards",
-          "status": "later"
+          "status": "later",
+          "hero": "Kimberly",
+          "detail": "Then Marshall's, if he has one"
         },
         {
-          "text": "Kimberly Barrage Strike (skill 2) 35 to 36",
+          "type": "skill",
+          "title": "Barrage Strike 35 → 36",
           "cost": "36,000 medals",
-          "status": "later"
+          "status": "later",
+          "hero": "Kimberly"
         },
         {
-          "text": "Skills toward max; drone levels",
+          "type": "drone",
+          "title": "Skills toward max, drone levels",
           "cost": "Medals, drone parts",
           "status": "later"
         }
@@ -149,13 +188,34 @@
     }
   ],
   "rules": [
-    "Squad 1 power is about 20.3M from the five heroes plus about 9.3M from troops. The troop part is capped while HQ stays at 30, so growth has to come from the heroes.",
-    "Skill medals go to skill 1 first: it is each tank's main attack and gives the most damage per medal.",
-    "Research: Hero-tree tank research gives +2% per level in 1 to 7 days; the Tank Mastery tree gives +0.75% to +1% in 5 to 8 days. Hero tree first.",
-    "Exclusive Weapon shards go to one weapon until level 20 before starting another. Never Tesla.",
-    "Filling troop slots raises total power, not Squad 1 power. Still worth doing, just not for this goal.",
-    "Light spend priority: season pass for weapon shards, then gear blueprint packs on sale.",
-    "Resources (gold, food, iron) never decide the order. The plan ranks by value; resources get sourced as needed."
+    {
+      "icon": "squad",
+      "text": "Squad 1 grows through its heroes. Troop power is capped while HQ stays at 30."
+    },
+    {
+      "icon": "skill",
+      "text": "Skill medals go to skill 1 first."
+    },
+    {
+      "icon": "weapon",
+      "text": "One Exclusive Weapon to level 20 before the next. Never Tesla."
+    },
+    {
+      "icon": "research",
+      "text": "Hero-tree tank research before the Tank Mastery tree."
+    },
+    {
+      "icon": "troops",
+      "text": "Filling troop slots raises total power, not Squad 1."
+    },
+    {
+      "icon": "spend",
+      "text": "Light spend: season pass first, then blueprint packs on sale."
+    },
+    {
+      "icon": "resources",
+      "text": "Resources never set the order."
+    }
   ],
   "recaps": [
     {
@@ -163,14 +223,46 @@
       "title": "Baseline and the 40M plan",
       "sources": "4 videos + skills video + Season Boost screenshot + research video",
       "highlights": [
-        "First full snapshot: 137.6M total power, 31 heroes, 3 squads (29.56M / 19.60M / 21.51M).",
-        "Kimberly (4.94M) is the benchmark. Williams, Stetmann and Marshall trail her by 1.3M to 1.6M each.",
-        "Williams is the softest front-liner: 27% damage resistance against 50% for Murphy.",
-        "All four skills read for each tank. Skill 4 is maxed on everyone; skill 1 is the best medal value.",
-        "Season 3 boost is Scarlett only (5% less monster damage). Use her for zombie and monster fights.",
-        "Research video: both queues are busy (Oil Output I and Weapon Training VIII). The fastest tank boosts are in the Hero tree, not Tank Mastery: Armor Hardening II gives +2% tank defense in about a day."
+        {
+          "icon": "hero",
+          "text": "Kimberly (4.94M) is the benchmark; Williams, Stetmann and Marshall trail by 1.3M to 1.6M."
+        },
+        {
+          "icon": "shield",
+          "text": "Williams is the softest front-liner: 27% resistance vs 50% for Murphy."
+        },
+        {
+          "icon": "skill",
+          "text": "Skill 4 is maxed on every tank; skill 1 is the best medal value."
+        },
+        {
+          "icon": "research",
+          "text": "Fastest tank boosts are in the Hero tree: Armor Hardening II is +2% tank defense in about a day."
+        },
+        {
+          "icon": "season",
+          "text": "Season 3 boost is Scarlett only. Use her for zombie and monster fights."
+        }
       ],
-      "next": "Finish Phase 1, then record the Squad 1 screen and each tank's main page so we can measure the gain."
+      "next": "Finish Phase 1, then record the Squad 1 screen and each tank's main page.",
+      "stats": [
+        {
+          "label": "Total power",
+          "value": "137.6M"
+        },
+        {
+          "label": "Squad 1",
+          "value": "29.56M"
+        },
+        {
+          "label": "Heroes",
+          "value": "31"
+        },
+        {
+          "label": "Skill medals",
+          "value": "49.8K"
+        }
+      ]
     }
   ]
 }

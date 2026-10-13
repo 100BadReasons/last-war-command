@@ -4,246 +4,278 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Last War Command</title>
-<meta name="description" content="Recaps, goal progress and the game plan for my Last War account.">
+<meta name="description" content="Game plan, goal progress and recaps for my Last War account.">
 <style>
 :root {
   color-scheme: light;
-  --bg: #f4f3ef;
-  --surface: #fcfcfb;
-  --surface-2: #efeee9;
-  --border: #dddcd5;
-  --text: #0b0b0b;
-  --text-2: #52514e;
-  --text-3: #75746f;
-  --accent: #2a78d6;
-  --accent-soft: #cde2fb;
-  --track: #e6e5df;
-  --good: #0ca30c;
-  --good-text: #006300;
-  --later: #75746f;
+  --bg: #f4f3ef; --surface: #fcfcfb; --surface-2: #efeee9; --border: #dddcd5;
+  --text: #0b0b0b; --text-2: #52514e; --text-3: #75746f;
+  --accent: #2a78d6; --track: #e6e5df; --good: #0ca30c; --good-text: #006300;
+  --c-skill: #2a78d6; --c-gear: #eb6834; --c-research: #1baf7a; --c-honor: #eda100;
+  --c-season: #e87ba4; --c-drone: #008300; --c-weapon: #4a3aa7;
+  --h1: #2a78d6; --h2: #eb6834; --h3: #1baf7a; --h4: #4a3aa7; --h5: #e34948; --h6: #e87ba4;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --bg: #121211;
-    --surface: #1a1a19;
-    --surface-2: #232321;
-    --border: #33332f;
-    --text: #ffffff;
-    --text-2: #c3c2b7;
-    --text-3: #9a998f;
-    --accent: #3987e5;
-    --accent-soft: #184f95;
-    --track: #2c2c29;
-    --good-text: #5fd35f;
+    --bg: #121211; --surface: #1a1a19; --surface-2: #232321; --border: #33332f;
+    --text: #ffffff; --text-2: #c3c2b7; --text-3: #9a998f;
+    --accent: #3987e5; --track: #2c2c29; --good-text: #5fd35f;
+    --c-skill: #3987e5; --c-gear: #d95926; --c-research: #199e70; --c-honor: #c98500;
+    --c-season: #d55181; --c-drone: #008300; --c-weapon: #9085e9;
+    --h1: #3987e5; --h2: #d95926; --h3: #199e70; --h4: #9085e9; --h5: #e66767; --h6: #d55181;
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #121211;
-  --surface: #1a1a19;
-  --surface-2: #232321;
-  --border: #33332f;
-  --text: #ffffff;
-  --text-2: #c3c2b7;
-  --text-3: #9a998f;
-  --accent: #3987e5;
-  --accent-soft: #184f95;
-  --track: #2c2c29;
-  --good-text: #5fd35f;
+  --bg: #121211; --surface: #1a1a19; --surface-2: #232321; --border: #33332f;
+  --text: #ffffff; --text-2: #c3c2b7; --text-3: #9a998f;
+  --accent: #3987e5; --track: #2c2c29; --good-text: #5fd35f;
+  --c-skill: #3987e5; --c-gear: #d95926; --c-research: #199e70; --c-honor: #c98500;
+  --c-season: #d55181; --c-drone: #008300; --c-weapon: #9085e9;
+  --h1: #3987e5; --h2: #d95926; --h3: #199e70; --h4: #9085e9; --h5: #e66767; --h6: #d55181;
 }
 * { box-sizing: border-box; }
+html, body { margin: 0; }
 body {
-  margin: 0; background: var(--bg); color: var(--text);
-  font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg); color: var(--text);
+  font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
-.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
-header { padding: 28px 0 8px; }
-header h1 { margin: 0; font-size: 26px; letter-spacing: -0.01em; }
-.sub { color: var(--text-2); margin: 2px 0 0; }
-nav { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--border); }
-nav .wrap { display: flex; gap: 4px; overflow-x: auto; padding-top: 8px; padding-bottom: 8px; }
-nav a {
-  color: var(--text-2); text-decoration: none; padding: 6px 12px; border-radius: 999px;
-  white-space: nowrap; font-weight: 500;
-}
-nav a:hover, nav a:focus-visible { background: var(--surface-2); color: var(--text); }
-nav .spacer { flex: 1; }
-nav button {
-  border: 1px solid var(--border); background: var(--surface); color: var(--text-2);
-  border-radius: 999px; padding: 4px 10px; cursor: pointer; font: inherit;
-}
-section { padding: 28px 0 8px; scroll-margin-top: 56px; }
-h2 { font-size: 20px; margin: 0 0 4px; }
-.lede { color: var(--text-2); margin: 0 0 16px; }
-.card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 18px; margin-bottom: 14px;
-}
-.grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-.stat .label { color: var(--text-2); font-size: 13px; }
-.stat .value { font-size: 28px; font-weight: 650; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
-.stat .note { color: var(--text-3); font-size: 13px; }
+svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+button { font: inherit; color: inherit; }
 
-/* goal meter */
-.meter { margin: 18px 0 6px; }
+/* top bar + drawer */
+.topbar { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--border); }
+.topbar .wrap { display: flex; align-items: center; gap: 12px; height: 56px; }
+.icon-btn { border: 1px solid var(--border); background: var(--surface); border-radius: 10px; width: 40px; height: 40px; display: grid; place-items: center; cursor: pointer; color: var(--text); flex: none; }
+.icon-btn:hover { background: var(--surface-2); }
+.brand { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; flex: 1; }
+.brand b { font-size: 16px; }
+.brand span { color: var(--text-2); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.scrim { position: fixed; inset: 0; background: rgba(0,0,0,.35); opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 19; }
+.drawer {
+  position: fixed; top: 0; bottom: 0; left: 0; width: 272px; max-width: 84vw; background: var(--surface);
+  border-right: 1px solid var(--border); transform: translateX(-100%); transition: transform .22s ease; z-index: 20;
+  padding: 16px 12px; display: flex; flex-direction: column; gap: 4px; visibility: hidden;
+}
+body.menu-open .drawer { transform: none; visibility: visible; }
+body.menu-open .scrim { opacity: 1; pointer-events: auto; }
+.drawer .head { display: flex; align-items: center; justify-content: space-between; padding: 0 4px 12px; }
+.drawer .head b { font-size: 16px; }
+.drawer a {
+  display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 10px;
+  color: var(--text); text-decoration: none; font-weight: 550;
+}
+.drawer a:hover { background: var(--surface-2); }
+.drawer a[aria-current="page"] { background: var(--surface-2); color: var(--accent); }
+.drawer .foot { margin-top: auto; color: var(--text-3); font-size: 12px; padding: 8px 12px; }
+
+main { padding: 20px 0 32px; }
+.view { display: none; }
+.view.on { display: block; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 14px; scroll-margin-top: 72px; }
+h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-2); margin: 24px 0 10px; display: flex; align-items: center; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-2); background: var(--surface-2); border-radius: 999px; padding: 3px 9px; white-space: nowrap; }
+.chip svg.i { width: 14px; height: 14px; }
+
+/* goal strip */
+.goal { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; }
+.ring { position: relative; width: 108px; height: 108px; }
+.ring svg { width: 108px; height: 108px; transform: rotate(-90deg); }
+.ring .lbl { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; line-height: 1.1; }
+.ring .lbl b { font-size: 22px; display: block; }
+.ring .lbl small { color: var(--text-2); font-size: 11px; }
+.goal-nums { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.goal-nums .big { font-size: 26px; font-weight: 700; letter-spacing: -.01em; }
+.goal-nums .arrow { color: var(--text-3); display: flex; }
+.goal-title { display: flex; align-items: center; gap: 8px; color: var(--text-2); font-size: 13px; margin-bottom: 4px; }
+.goal .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+
+/* phase stepper */
+.stepper { display: grid; grid-template-columns: repeat(3, 1fr); }
+.stepper .ph { text-align: center; padding: 0 6px; position: relative; cursor: pointer; border: 0; background: none; }
+.stepper .ph::before { content: ""; position: absolute; top: 22px; left: -50%; width: 100%; height: 3px; background: var(--track); }
+.stepper .ph:first-child::before { display: none; }
+.stepper .ph.done + .ph::before, .stepper .ph.active::before { background: var(--accent); }
+.stepper .ph.active ~ .ph::before { background: var(--track); }
+.dot { position: relative; z-index: 1; width: 46px; height: 46px; border-radius: 50%; margin: 0 auto 8px; display: grid; place-items: center; font-weight: 700; font-size: 17px; background: var(--surface); border: 3px solid var(--track); color: var(--text-2); }
+.ph.active .dot { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 15%, transparent); }
+.ph.done .dot { background: var(--good); border-color: var(--good); color: #fff; }
+.ph .nm { font-weight: 600; font-size: 14px; }
+.ph .mt { color: var(--text-3); font-size: 12px; }
+
+/* up next */
+.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.next { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 14px 14px 18px; display: flex; flex-direction: column; gap: 10px; position: relative; overflow: hidden; }
+.next::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--tc); }
+.next .n { position: absolute; right: 14px; top: 8px; font-weight: 800; font-size: 30px; color: var(--surface-2); }
+.next .ttl { font-weight: 650; }
+.dt { color: var(--text-2); font-size: 13px; margin-top: 2px; }
+.meta { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* step cards */
+.phase-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+.phase-head h3 { margin: 0; font-size: 17px; display: flex; align-items: center; gap: 10px; }
+.badge { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; background: var(--accent); color: #fff; font-size: 14px; font-weight: 700; }
+.phase-head .chips { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.prog { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-2); }
+.prog .t { width: 70px; height: 6px; border-radius: 3px; background: var(--track); overflow: hidden; }
+.prog .t i { display: block; height: 100%; background: var(--good); }
+.steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+.step { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: start; padding: 12px; border-radius: 12px; background: var(--surface-2); position: relative; }
+.tile { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; color: var(--tc); background: color-mix(in srgb, var(--tc) 16%, transparent); flex: none; }
+.tile svg.i { width: 22px; height: 22px; }
+.step .ttl { font-weight: 600; line-height: 1.3; padding-right: 22px; }
+.step .meta { margin-top: 8px; }
+.step .meta .chip, .step .meta .hero { background: var(--surface); }
+.hero { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--text); background: var(--surface-2); border-radius: 999px; padding: 2px 9px 2px 2px; }
+.av { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 11px; font-weight: 700; background: var(--hc); flex: none; }
+.step.done { opacity: .6; }
+.step.done .ttl { text-decoration: line-through; text-decoration-color: var(--text-3); }
+.step.done::after { content: ""; position: absolute; top: 10px; right: 10px; width: 20px; height: 20px; border-radius: 50%; background: var(--good) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 5 5 9-10'/%3E%3C/svg%3E") center/13px no-repeat; }
+.legend-types { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--text-2); margin: 0 0 12px; }
+.legend-types span { display: inline-flex; align-items: center; gap: 5px; }
+.legend-types span svg.i { width: 15px; height: 15px; color: var(--tc); }
+
+/* playbook */
+.rules { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.rule { display: flex; gap: 10px; align-items: center; padding: 10px 12px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); font-size: 14px; }
+.rule .tile { width: 34px; height: 34px; border-radius: 10px; --tc: var(--accent); }
+.rule .tile svg.i { width: 18px; height: 18px; }
+
+/* stats + bars */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+.stat { background: var(--surface-2); border-radius: 12px; padding: 12px; }
+.stat .l { color: var(--text-2); font-size: 12px; display: flex; align-items: center; gap: 6px; }
+.stat .l svg.i { width: 15px; height: 15px; }
+.stat .v { font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+.meter { margin-top: 16px; }
 .meter-track { position: relative; height: 14px; background: var(--track); border-radius: 7px; }
 .meter-fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); border-radius: 7px; }
 .tick { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--surface); }
-.ticks-labels { position: relative; height: 34px; margin-top: 6px; font-size: 12px; color: var(--text-2); }
-.ticks-labels span { position: absolute; transform: translateX(-50%); text-align: center; white-space: nowrap; }
-.ticks-labels span b { display: block; color: var(--text); font-weight: 600; }
-
-/* bar rows */
-.bars { display: grid; gap: 10px; }
-.bar-row { display: grid; grid-template-columns: 96px 1fr 64px; align-items: center; gap: 10px; cursor: default; }
-.bar-row .name { font-weight: 550; }
-.bar-row .name small { display: block; color: var(--text-3); font-weight: 400; font-size: 12px; }
+.ticks { position: relative; height: 34px; margin-top: 6px; font-size: 12px; color: var(--text-2); }
+.ticks span { position: absolute; transform: translateX(-50%); text-align: center; white-space: nowrap; }
+.ticks span b { display: block; color: var(--text); }
+.bars { display: grid; gap: 12px; margin-top: 12px; }
+.bar-row { display: grid; grid-template-columns: 130px 1fr 64px; align-items: center; gap: 10px; }
+.bar-row .nm { display: flex; align-items: center; gap: 8px; font-weight: 600; min-width: 0; }
+.bar-row .nm small { display: block; color: var(--text-3); font-weight: 400; font-size: 12px; }
 .bar-track { height: 18px; position: relative; }
 .bar { height: 100%; background: var(--accent); border-radius: 0 4px 4px 0; }
-.bar-row .val { text-align: right; font-variant-numeric: tabular-nums; color: var(--text-2); }
 .bar-row:hover .bar, .bar-row:focus-visible .bar { filter: brightness(1.12); }
+.bar-row .val { text-align: right; font-variant-numeric: tabular-nums; color: var(--text-2); }
 .bench { position: absolute; top: -3px; bottom: -3px; border-left: 2px dashed var(--text-3); }
-.legend { display: flex; gap: 14px; font-size: 12px; color: var(--text-2); margin-top: 12px; flex-wrap: wrap; }
-.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 5px; }
-
-/* plan */
-.phase-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-.phase-head h3 { margin: 0; font-size: 17px; }
-.phase-meta { color: var(--text-2); font-size: 13px; }
-.mini-track { height: 6px; background: var(--track); border-radius: 3px; margin: 10px 0 12px; }
-.mini-fill { height: 100%; background: var(--good); border-radius: 3px; }
-ul.steps { list-style: none; margin: 0; padding: 0; }
-ul.steps li { display: grid; grid-template-columns: 22px 1fr auto; gap: 10px; padding: 8px 0; border-top: 1px solid var(--border); align-items: start; }
-ul.steps li:first-child { border-top: 0; }
-.ico { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--text-3); margin-top: 2px; display: grid; place-items: center; font-size: 11px; color: #fff; }
-.done .ico { background: var(--good); border-color: var(--good); }
-.later .ico { border-style: dashed; }
-.done .txt { color: var(--text-2); text-decoration: line-through; text-decoration-color: var(--text-3); }
-.cost { color: var(--text-3); font-size: 13px; white-space: nowrap; text-align: right; }
-.tag { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; padding: 2px 7px; border-radius: 999px; border: 1px solid var(--border); color: var(--text-2); }
-.tag.done { color: var(--good-text); border-color: var(--good); text-decoration: none; }
-.rules { margin: 0; padding-left: 20px; }
-.rules li { margin: 6px 0; color: var(--text-2); }
 
 /* recaps */
-.recap { border-left: 3px solid var(--accent); }
-.recap .date { color: var(--text-2); font-size: 13px; font-weight: 600; }
-.recap h3 { margin: 2px 0 8px; font-size: 17px; }
-.recap ul { margin: 0 0 10px; padding-left: 20px; }
-.recap li { margin: 4px 0; }
-.recap .next { background: var(--surface-2); border-radius: 8px; padding: 10px 12px; font-size: 14px; }
-.recap .src { color: var(--text-3); font-size: 12px; margin-top: 8px; }
+.tl { position: relative; padding-left: 28px; }
+.tl::before { content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+.tl .card { position: relative; }
+.tl .card::before { content: ""; position: absolute; left: -25px; top: 20px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+.recap .date { color: var(--accent); font-size: 13px; font-weight: 700; }
+.recap h3 { margin: 2px 0 12px; font-size: 18px; }
+.hl { display: grid; gap: 8px; margin: 14px 0; }
+.hl > div { display: flex; gap: 10px; align-items: center; font-size: 14px; }
+.hl .tile { width: 30px; height: 30px; border-radius: 8px; }
+.hl .tile svg.i { width: 16px; height: 16px; }
+.nextbox { display: flex; gap: 10px; align-items: center; background: color-mix(in srgb, var(--accent) 10%, transparent); border-radius: 10px; padding: 10px 12px; font-size: 14px; }
+.nextbox svg.i { color: var(--accent); }
+.src { color: var(--text-3); font-size: 12px; margin-top: 10px; }
 
-/* history chart */
 svg text { fill: var(--text-2); font-size: 12px; }
-.empty { color: var(--text-3); font-size: 14px; }
+.empty { color: var(--text-3); font-size: 14px; display: flex; gap: 10px; align-items: center; margin: 8px 0 0; }
+details summary { cursor: pointer; color: var(--text-2); font-size: 13px; margin-top: 10px; }
 table.data { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
 table.data th, table.data td { text-align: left; padding: 6px 8px; border-top: 1px solid var(--border); }
-table.data th { color: var(--text-2); font-weight: 600; border-top: 0; }
-details summary { cursor: pointer; color: var(--text-2); font-size: 13px; margin-top: 10px; }
+table.data th { color: var(--text-2); border-top: 0; }
+#tip { position: fixed; pointer-events: none; z-index: 30; background: var(--text); color: var(--bg); padding: 6px 9px; border-radius: 6px; font-size: 13px; opacity: 0; transition: opacity .1s; max-width: 240px; }
+footer { color: var(--text-3); font-size: 12px; padding: 0 0 32px; }
 
-#tip {
-  position: fixed; pointer-events: none; z-index: 20; background: var(--text); color: var(--bg);
-  padding: 6px 9px; border-radius: 6px; font-size: 13px; opacity: 0; transition: opacity .1s; max-width: 240px;
-}
-footer { color: var(--text-3); font-size: 13px; padding: 24px 0 40px; }
-footer a { color: var(--accent); }
+@media (max-width: 720px) { .next-grid { grid-template-columns: 1fr; } }
 @media (max-width: 520px) {
-  nav a { padding: 6px 8px; }
-  nav .wrap { gap: 0; }
-  .bar-row { grid-template-columns: 78px 1fr 56px; }
-  ul.steps li { grid-template-columns: 22px 1fr; }
-  .cost { grid-column: 2; text-align: left; }
-  .stat .value { font-size: 24px; }
+  .goal { grid-template-columns: 1fr; justify-items: start; }
+  .goal-nums .big { font-size: 22px; }
+  .bar-row { grid-template-columns: 104px 1fr 56px; }
+  .steps { grid-template-columns: 1fr; }
+  .ph .mt { display: none; }
+  .ph .nm { font-size: 12px; }
 }
 </style>
 </head>
 <body>
-<header class="wrap">
-  <h1 id="title">Last War Command</h1>
-  <p class="sub" id="subtitle"></p>
-</header>
-<nav aria-label="Sections">
+<div class="topbar">
   <div class="wrap">
-    <a href="#goal">Goal</a>
-    <a href="#plan">Game plan</a>
-    <a href="#recaps">Recaps</a>
-    <a href="#squads">Squads</a>
-    <span class="spacer"></span>
-    <button id="theme" type="button" aria-label="Toggle dark mode">Theme</button>
+    <button class="icon-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"></button>
+    <div class="brand"><b id="title"></b><span id="crumb"></span></div>
+    <button class="icon-btn" id="theme" type="button" aria-label="Toggle dark mode"></button>
   </div>
+</div>
+<div class="scrim" id="scrim"></div>
+<nav class="drawer" id="drawer" aria-label="Pages">
+  <div class="head"><b>Menu</b><button class="icon-btn" id="close-btn" type="button" aria-label="Close menu"></button></div>
+  <div id="nav-links"></div>
+  <div class="foot" id="updated"></div>
 </nav>
 
 <main class="wrap">
-  <section id="goal">
-    <h2 id="goal-name"></h2>
-    <p class="lede" id="goal-rule"></p>
-    <div class="card">
-      <div class="grid" id="goal-stats"></div>
-      <div class="meter" aria-hidden="true">
-        <div class="meter-track" id="meter"></div>
-        <div class="ticks-labels" id="tick-labels"></div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="phase-head"><h3>Squad 1 power over time</h3><span class="phase-meta">One point per recording</span></div>
-      <div id="history"></div>
-    </div>
-  </section>
-
-  <section id="plan">
-    <h2>Game plan</h2>
-    <p class="lede">Ordered steps toward the goal. Free path first; paid only where it speeds things up the most.</p>
-    <div id="phases"></div>
-    <div class="card">
-      <div class="phase-head"><h3>Standing rules</h3></div>
-      <ul class="rules" id="rules"></ul>
-    </div>
-  </section>
-
-  <section id="recaps">
-    <h2>Recaps</h2>
-    <p class="lede">What changed after each recording, newest first.</p>
-    <div id="recap-list"></div>
-  </section>
-
-  <section id="squads">
-    <h2>Squads</h2>
-    <p class="lede" id="squads-lede"></p>
-    <div class="card">
-      <div class="phase-head"><h3>Squad power</h3></div>
-      <div class="bars" id="squad-bars" style="margin-top:12px"></div>
-    </div>
-    <div class="card">
-      <div class="phase-head"><h3>Squad 1 heroes</h3><span class="phase-meta">Dashed line = Kimberly, the benchmark</span></div>
-      <div class="bars" id="hero-bars" style="margin-top:12px"></div>
-    </div>
-  </section>
+  <div class="view" id="v-plan"></div>
+  <div class="view" id="v-progress"></div>
+  <div class="view" id="v-recaps"></div>
+  <div class="view" id="v-squads"></div>
 </main>
-
-<footer class="wrap" id="footer"></footer>
+<footer class="wrap">Built from screen recordings. Detailed numbers live in the analysis sheet.</footer>
 <div id="tip" role="tooltip"></div>
 
 <script>
 const DATA = /*__DATA__*/null;
 const S = DATA.site;
+
+/* icons (24px line icons) */
+const P = {
+  menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
+  close: '<path d="M6 6l12 12M18 6 6 18"/>',
+  plan: '<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/>',
+  progress: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+  recaps: '<path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 7h6M8 11h6"/>',
+  squads: '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.6"/>',
+  skill: '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+  gear: '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>',
+  research: '<path d="M9 3h6M10 3v6L4.5 18.5A2 2 0 0 0 6.2 21.5h11.6a2 2 0 0 0 1.7-3L14 9V3"/><path d="M7 15h10"/>',
+  weapon: '<circle cx="12" cy="12" r="8"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="1.5"/>',
+  honor: '<circle cx="12" cy="15" r="5"/><path d="M8.5 11 6 3h4l2 5 2-5h4l-2.5 8"/>',
+  season: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  drone: '<circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><rect x="9" y="9" width="6" height="6" rx="1"/>',
+  squad: '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.6"/>',
+  troops: '<path d="M5 21V4h11l-2 4 2 4H5"/>',
+  spend: '<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/>',
+  resources: '<path d="M3 7l9-4 9 4-9 4zM3 7v10l9 4 9-4V7M12 11v10"/>',
+  hero: '<path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/>',
+  shield: '<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  trend: '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+  cost: '<path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/>',
+  arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  flag: '<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
+  check: '<path d="m5 12 5 5 9-10"/>',
+  moon: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
+  power: '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+  medal: '<circle cx="12" cy="15" r="5"/><path d="M8.5 11 6 3h4l2 5 2-5h4l-2.5 8"/>'
+};
+const ico = n => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${P[n] || P.flag}</svg>`;
+const TYPE = {
+  skill: ['Skills', 'var(--c-skill)'], gear: ['Gear', 'var(--c-gear)'], research: ['Research', 'var(--c-research)'],
+  weapon: ['Exclusive weapon', 'var(--c-weapon)'], honor: ['Wall of Honor', 'var(--c-honor)'],
+  season: ['Season', 'var(--c-season)'], drone: ['Drone', 'var(--c-drone)']
+};
+const typeColor = t => (TYPE[t] || [, 'var(--accent)'])[1];
+const HEROES = ['Kimberly', 'Murphy', 'Williams', 'Stetmann', 'Marshall', 'Scarlett'];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const av = n => `<span class="av" style="--hc:var(--h${(HEROES.indexOf(n) + 1) || 6})" aria-hidden="true">${esc(n[0])}</span>`;
+const heroChip = n => `<span class="hero">${av(n)}${esc(n)}</span>`;
+const costChip = c => c ? `<span class="chip">${ico('cost')}${esc(c)}</span>` : '';
 const fmtM = v => (v / 1e6).toFixed(2) + 'M';
 const fmtDate = d => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-const el = (tag, attrs = {}, html = '') => { const e = document.createElement(tag); Object.assign(e, attrs); if (html) e.innerHTML = html; return e; };
-const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-
-/* theme toggle (per-viewer convenience) */
-(function () {
-  const root = document.documentElement;
-  try { const t = localStorage.getItem('lw-theme'); if (t) root.dataset.theme = t; } catch (e) {}
-  document.getElementById('theme').onclick = () => {
-    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-    root.dataset.theme = dark ? 'light' : 'dark';
-    try { localStorage.setItem('lw-theme', root.dataset.theme); } catch (e) {}
-  };
-})();
 
 /* tooltip */
 const tip = document.getElementById('tip');
@@ -263,45 +295,122 @@ function bindTip(node, html) {
   node.addEventListener('blur', () => tip.style.opacity = 0);
 }
 
-/* header */
-document.getElementById('title').textContent = S.title;
-document.getElementById('subtitle').textContent = S.commander + ' · Updated ' + fmtDate(DATA.updated);
-
-/* goal */
+/* shared numbers */
 const G = S.goal;
 const current = DATA.history[DATA.history.length - 1].squad1;
-document.getElementById('goal-name').textContent = G.name;
-document.getElementById('goal-rule').textContent = G.rule + '. Set ' + fmtDate(G.set) + '.';
-const pct = Math.max(0, Math.min(1, (current - G.baseline) / (G.target - G.baseline)));
-const gained = current - G.baseline;
-document.getElementById('goal-stats').innerHTML = `
-  <div class="stat"><div class="label">Squad 1 now</div><div class="value">${fmtM(current)}</div><div class="note">${(pct * 100).toFixed(0)}% of the climb done</div></div>
-  <div class="stat"><div class="label">Target</div><div class="value">${fmtM(G.target)}</div><div class="note">HQ stays at 30</div></div>
-  <div class="stat"><div class="label">Still needed</div><div class="value">+${fmtM(Math.max(0, G.target - current))}</div><div class="note">${gained > 0 ? '+' + fmtM(gained) + ' since start' : 'Starting point'}</div></div>`;
-const meter = document.getElementById('meter');
-const lo = G.baseline, span = G.target - lo;
-const pos = v => ((v - lo) / span * 100).toFixed(2) + '%';
-meter.append(el('div', { className: 'meter-fill' }));
-meter.lastChild.style.width = 'max(14px, ' + pos(current) + ')';
-const labels = document.getElementById('tick-labels');
-const start = el('span', {}, `<b>${fmtM(G.baseline)}</b>Start`);
-start.style.left = '0'; start.style.transform = 'none'; start.style.textAlign = 'left';
-labels.append(start);
-G.milestones.forEach((m, i) => {
-  if (i < G.milestones.length - 1) { const t = el('div', { className: 'tick' }); t.style.left = pos(m.value); meter.append(t); }
-  const l = el('span', {}, `<b>${fmtM(m.value)}</b>${esc(m.label)}`);
-  l.style.left = pos(m.value);
-  if (i === G.milestones.length - 1) { l.style.transform = 'translateX(-100%)'; l.style.textAlign = 'right'; }
-  labels.append(l);
-});
-bindTip(meter, `Squad 1: <b>${fmtM(current)}</b> of ${fmtM(G.target)}<br>Started at ${fmtM(G.baseline)}`);
+const climb = Math.max(0, Math.min(1, (current - G.baseline) / (G.target - G.baseline)));
+const ofTarget = current / G.target;
+const allSteps = S.plan.flatMap(p => p.steps.map(s => ({ ...s, phase: p.phase })));
+const activePhase = (S.plan.find(p => p.steps.some(s => s.status !== 'done')) || S.plan[S.plan.length - 1]).phase;
 
-/* history chart */
-(function () {
-  const box = document.getElementById('history');
+function ring(frac, label, sub) {
+  const r = 46, c = 2 * Math.PI * r;
+  return `<div class="ring" role="img" aria-label="${esc(label)} ${esc(sub)}">
+    <svg viewBox="0 0 108 108"><circle cx="54" cy="54" r="${r}" fill="none" stroke="var(--track)" stroke-width="10"/>
+    <circle cx="54" cy="54" r="${r}" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${(c * frac).toFixed(1)} ${c.toFixed(1)}"/></svg>
+    <div class="lbl"><div><b>${esc(label)}</b><small>${esc(sub)}</small></div></div></div>`;
+}
+
+/* ---------- Game plan ---------- */
+function stepCard(s) {
+  return `<div class="step ${s.status}" style="--tc:${typeColor(s.type)}">
+    <div class="tile" title="${esc((TYPE[s.type] || ['Other'])[0])}">${ico(s.type)}</div>
+    <div><div class="ttl">${esc(s.title)}</div>${s.detail ? `<div class="dt">${esc(s.detail)}</div>` : ''}
+      <div class="meta">${s.hero ? heroChip(s.hero) : ''}${costChip(s.cost)}</div></div>
+  </div>`;
+}
+function renderPlan() {
+  const v = document.getElementById('v-plan');
+  const upNext = allSteps.filter(s => s.status === 'todo').slice(0, 3);
+  const types = [...new Set(allSteps.map(s => s.type))];
+  v.innerHTML = `
+    <div class="card goal">
+      ${ring(ofTarget, Math.round(ofTarget * 100) + '%', 'of 40M')}
+      <div>
+        <div class="goal-title">${ico('progress')}${esc(G.name)} · ${esc(G.rule)}</div>
+        <div class="goal-nums"><span class="big">${fmtM(current)}</span><span class="arrow">${ico('arrow')}</span><span class="big">${fmtM(G.target)}</span></div>
+        <div class="chips">
+          <span class="chip">${ico('trend')}+${fmtM(Math.max(0, G.target - current))} to go</span>
+          <span class="chip">${ico('flag')}${Math.round(climb * 100)}% of the climb</span>
+          <span class="chip">${ico('clock')}Set ${fmtDate(G.set)}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card"><div class="stepper">${S.plan.map(p => {
+      const done = p.steps.every(s => s.status === 'done');
+      const cls = done ? 'done' : p.phase === activePhase ? 'active' : '';
+      return `<button class="ph ${cls}" type="button" data-jump="phase-${p.phase}">
+        <div class="dot">${done ? ico('check') : p.phase}</div>
+        <div class="nm">${esc(p.name)}</div><div class="mt">${esc(p.window)} · ${esc(p.estimate)}</div></button>`;
+    }).join('')}</div></div>
+
+    <h2 class="sec">${ico('arrow')}Up next</h2>
+    <div class="next-grid">${upNext.map((s, i) => `
+      <div class="next" style="--tc:${typeColor(s.type)}"><span class="n">${i + 1}</span>
+        <div class="tile">${ico(s.type)}</div>
+        <div><div class="ttl">${esc(s.title)}</div>${s.detail ? `<div class="dt">${esc(s.detail)}</div>` : ''}</div>
+        <div class="meta">${s.hero ? heroChip(s.hero) : ''}${costChip(s.cost)}</div></div>`).join('')}</div>
+
+    <h2 class="sec">${ico('plan')}Phases</h2>
+    <div class="legend-types">${types.map(t => `<span style="--tc:${typeColor(t)}">${ico(t)}${TYPE[t][0]}</span>`).join('')}</div>
+    ${S.plan.map(p => {
+      const done = p.steps.filter(s => s.status === 'done').length;
+      return `<div class="card" id="phase-${p.phase}">
+        <div class="phase-head">
+          <h3><span class="badge">${p.phase}</span>${esc(p.name)}</h3>
+          <div class="chips"><span class="chip">${ico('clock')}${esc(p.window)}</span><span class="chip">${ico('trend')}${esc(p.estimate)}</span>
+            <span class="prog" title="${done} of ${p.steps.length} done"><span class="t"><i style="width:${(done / p.steps.length * 100).toFixed(0)}%"></i></span>${done}/${p.steps.length}</span></div>
+        </div>
+        <div class="steps">${p.steps.map(stepCard).join('')}</div>
+      </div>`;
+    }).join('')}
+
+    <h2 class="sec">${ico('recaps')}Playbook</h2>
+    <div class="rules">${S.rules.map(r => `<div class="rule"><div class="tile">${ico(r.icon)}</div><div>${esc(r.text)}</div></div>`).join('')}</div>`;
+  v.querySelectorAll('[data-jump]').forEach(b => b.onclick = () => document.getElementById(b.dataset.jump).scrollIntoView({ behavior: 'smooth', block: 'start' }));
+}
+
+/* ---------- Goal progress ---------- */
+function renderProgress() {
+  const v = document.getElementById('v-progress');
+  const doneSteps = allSteps.filter(s => s.status === 'done').length;
+  v.innerHTML = `
+    <div class="card goal">
+      ${ring(climb, Math.round(climb * 100) + '%', 'of the climb')}
+      <div style="width:100%">
+        <div class="goal-title">${ico('progress')}${esc(G.name)}</div>
+        <div class="stats">
+          <div class="stat"><div class="l">${ico('power')}Squad 1 now</div><div class="v">${fmtM(current)}</div></div>
+          <div class="stat"><div class="l">${ico('flag')}Target</div><div class="v">${fmtM(G.target)}</div></div>
+          <div class="stat"><div class="l">${ico('trend')}Still needed</div><div class="v">+${fmtM(Math.max(0, G.target - current))}</div></div>
+          <div class="stat"><div class="l">${ico('plan')}Steps done</div><div class="v">${doneSteps}/${allSteps.length}</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="goal-title">${ico('flag')}Milestones</div>
+      <div class="meter"><div class="meter-track" id="meter"></div><div class="ticks" id="ticks"></div></div>
+    </div>
+    <div class="card">
+      <div class="goal-title">${ico('trend')}Squad 1 power by recording</div>
+      <div id="history"></div>
+    </div>`;
+  const meter = v.querySelector('#meter'), ticks = v.querySelector('#ticks');
+  const lo = G.baseline, span = G.target - lo, pos = x => ((x - lo) / span * 100).toFixed(2) + '%';
+  meter.innerHTML = `<div class="meter-fill" style="width:max(14px, ${pos(current)})"></div>`;
+  ticks.innerHTML = `<span style="left:0;transform:none;text-align:left"><b>${fmtM(G.baseline)}</b>Start</span>` +
+    G.milestones.map((m, i) => {
+      const last = i === G.milestones.length - 1;
+      if (!last) meter.insertAdjacentHTML('beforeend', `<div class="tick" style="left:${pos(m.value)}"></div>`);
+      return `<span style="left:${pos(m.value)};${last ? 'transform:translateX(-100%);text-align:right' : ''}"><b>${fmtM(m.value)}</b>${esc(m.label)}</span>`;
+    }).join('');
+  bindTip(meter, `Squad 1: <b>${fmtM(current)}</b> of ${fmtM(G.target)}<br>Started at ${fmtM(G.baseline)}`);
+
+  const box = v.querySelector('#history');
   const pts = DATA.history.filter(h => h.squad1);
   if (pts.length < 2) {
-    box.innerHTML = `<p class="empty">The line starts with your next recording. Starting point: ${fmtM(pts[0].squad1)} on ${fmtDate(pts[0].date)}.</p>`;
+    box.innerHTML = `<p class="empty">${ico('clock')}The line starts with the next recording. Starting point: ${fmtM(pts[0].squad1)} on ${fmtDate(pts[0].date)}.</p>`;
     return;
   }
   const W = 880, H = 220, L = 52, R = 16, T = 14, B = 28;
@@ -309,11 +418,11 @@ bindTip(meter, `Squad 1: <b>${fmtM(current)}</b> of ${fmtM(G.target)}<br>Started
   const ymin = Math.floor(Math.min(...ys) / 1e6) * 1e6, ymax = Math.ceil(Math.max(...ys) / 1e6) * 1e6;
   const t0 = +new Date(pts[0].date), t1 = +new Date(pts[pts.length - 1].date);
   const x = d => L + (W - L - R) * ((+new Date(d) - t0) / Math.max(1, t1 - t0));
-  const y = v => T + (H - T - B) * (1 - (v - ymin) / (ymax - ymin));
+  const y = val => T + (H - T - B) * (1 - (val - ymin) / (ymax - ymin));
   let svg = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Squad 1 power by recording date">`;
   for (let k = 0; k <= 4; k++) {
-    const v = ymin + (ymax - ymin) * k / 4, yy = y(v);
-    svg += `<line x1="${L}" x2="${W - R}" y1="${yy}" y2="${yy}" stroke="var(--border)" stroke-width="1"/><text x="${L - 8}" y="${yy + 4}" text-anchor="end">${(v / 1e6).toFixed(0)}M</text>`;
+    const val = ymin + (ymax - ymin) * k / 4, yy = y(val);
+    svg += `<line x1="${L}" x2="${W - R}" y1="${yy}" y2="${yy}" stroke="var(--border)"/><text x="${L - 8}" y="${yy + 4}" text-anchor="end">${(val / 1e6).toFixed(0)}M</text>`;
   }
   svg += `<line x1="${L}" x2="${W - R}" y1="${y(G.target)}" y2="${y(G.target)}" stroke="var(--text-3)" stroke-dasharray="4 4"/><text x="${W - R}" y="${y(G.target) - 6}" text-anchor="end">Target</text>`;
   svg += `<polyline fill="none" stroke="var(--accent)" stroke-width="2" points="${pts.map(p => x(p.date) + ',' + y(p.squad1)).join(' ')}"/>`;
@@ -321,70 +430,105 @@ bindTip(meter, `Squad 1: <b>${fmtM(current)}</b> of ${fmtM(G.target)}<br>Started
     svg += `<circle class="pt" data-d="${p.date}" cx="${x(p.date)}" cy="${y(p.squad1)}" r="5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>`;
     svg += `<text x="${x(p.date)}" y="${H - 8}" text-anchor="middle">${fmtDate(p.date).replace(/, \d{4}/, '')}</text>`;
   });
-  box.innerHTML = svg + '</svg>';
-  box.querySelectorAll('.pt').forEach(c => {
-    const p = pts.find(q => q.date === c.dataset.d);
-    bindTip(c, `${fmtDate(p.date)}<br>Squad 1: <b>${fmtM(p.squad1)}</b>`);
-  });
-  const tbl = `<details><summary>Show as table</summary><table class="data"><tr><th>Date</th><th>Squad 1</th><th>Total power</th></tr>${pts.map(p => `<tr><td>${fmtDate(p.date)}</td><td>${fmtM(p.squad1)}</td><td>${p.total.toLocaleString()}</td></tr>`).join('')}</table></details>`;
-  box.insertAdjacentHTML('beforeend', tbl);
-})();
-
-/* plan */
-const statusLabel = { done: 'Done', todo: 'To do', later: 'Later' };
-const phases = document.getElementById('phases');
-S.plan.forEach(ph => {
-  const done = ph.steps.filter(s => s.status === 'done').length;
-  const card = el('div', { className: 'card' });
-  card.innerHTML = `
-    <div class="phase-head"><h3>Phase ${ph.phase}: ${esc(ph.name)}</h3>
-      <span class="phase-meta">${esc(ph.window)} · ${esc(ph.estimate)} · ${done} of ${ph.steps.length} done</span></div>
-    <div class="mini-track" aria-hidden="true"><div class="mini-fill" style="width:${(done / ph.steps.length * 100).toFixed(1)}%"></div></div>
-    <ul class="steps">${ph.steps.map(s => `
-      <li class="${s.status}"><span class="ico" aria-hidden="true">${s.status === 'done' ? '✓' : ''}</span>
-        <span class="txt">${esc(s.text)} <span class="tag ${s.status}">${statusLabel[s.status]}</span></span>
-        <span class="cost">${esc(s.cost || '')}</span></li>`).join('')}
-    </ul>`;
-  phases.append(card);
-});
-document.getElementById('rules').innerHTML = S.rules.map(r => `<li>${esc(r)}</li>`).join('');
-
-/* recaps */
-document.getElementById('recap-list').innerHTML = S.recaps.slice().sort((a, b) => b.date.localeCompare(a.date)).map(r => `
-  <article class="card recap">
-    <div class="date">${fmtDate(r.date)}</div>
-    <h3>${esc(r.title)}</h3>
-    <ul>${r.highlights.map(h => `<li>${esc(h)}</li>`).join('')}</ul>
-    ${r.next ? `<div class="next"><b>Next:</b> ${esc(r.next)}</div>` : ''}
-    ${r.sources ? `<div class="src">From: ${esc(r.sources)}</div>` : ''}
-  </article>`).join('');
-
-/* squads */
-document.getElementById('squads-lede').textContent = 'From the ' + fmtDate(DATA.updated) + ' recording.';
-function bars(id, rows, max, bench) {
-  const box = document.getElementById(id);
-  rows.forEach(r => {
-    const row = el('div', { className: 'bar-row' });
-    row.innerHTML = `<div class="name">${esc(r.label)}${r.sub ? `<small>${esc(r.sub)}</small>` : ''}</div>
-      <div class="bar-track"><div class="bar" style="width:${(r.value / max * 100).toFixed(2)}%"></div>${bench ? `<div class="bench" style="left:${(bench / max * 100).toFixed(2)}%"></div>` : ''}</div>
-      <div class="val">${fmtM(r.value)}</div>`;
-    bindTip(row, r.tip);
-    box.append(row);
-  });
+  box.innerHTML = svg + '</svg>' + `<details><summary>Show as table</summary><table class="data"><tr><th>Date</th><th>Squad 1</th><th>Total power</th></tr>${pts.map(p => `<tr><td>${fmtDate(p.date)}</td><td>${fmtM(p.squad1)}</td><td>${p.total.toLocaleString()}</td></tr>`).join('')}</table></details>`;
+  box.querySelectorAll('.pt').forEach(c => { const p = pts.find(q => q.date === c.dataset.d); bindTip(c, `${fmtDate(p.date)}<br>Squad 1: <b>${fmtM(p.squad1)}</b>`); });
 }
-const sqMax = Math.max(...DATA.squads.map(s => s.power));
-bars('squad-bars', DATA.squads.map(s => ({
-  label: 'Squad ' + s.n, sub: s.mix, value: s.power,
-  tip: `<b>Squad ${s.n}</b>: ${fmtM(s.power)}<br>${s.heroes.map(esc).join(', ')}`
-})), sqMax);
-const heroes = DATA.squad1.filter(h => h.power).sort((a, b) => b.power - a.power);
-const kim = (heroes.find(h => h.name === 'Kimberly') || heroes[0]).power;
-bars('hero-bars', heroes.map(h => ({
-  label: h.name, value: h.power,
-  tip: `<b>${esc(h.name)}</b>: ${fmtM(h.power)}<br>${h.power >= kim ? 'Benchmark' : fmtM(kim - h.power) + ' behind Kimberly'}`
-})), kim * 1.05, kim);
 
-document.getElementById('footer').textContent = 'Built from screen recordings. Detailed numbers live in the analysis sheet.';
+/* ---------- Recaps ---------- */
+function renderRecaps() {
+  const statIcon = ['power', 'squads', 'hero', 'medal'];
+  document.getElementById('v-recaps').innerHTML = `<div class="tl">${S.recaps.slice().sort((a, b) => b.date.localeCompare(a.date)).map(r => `
+    <article class="card recap">
+      <div class="date">${fmtDate(r.date)}</div>
+      <h3>${esc(r.title)}</h3>
+      ${r.stats ? `<div class="stats">${r.stats.map((s, i) => `<div class="stat"><div class="l">${ico(statIcon[i] || 'flag')}${esc(s.label)}</div><div class="v">${esc(s.value)}</div></div>`).join('')}</div>` : ''}
+      <div class="hl">${r.highlights.map(h => {
+        const o = typeof h === 'string' ? { icon: 'flag', text: h } : h;
+        return `<div><div class="tile" style="--tc:${typeColor(o.icon)}">${ico(o.icon)}</div><div>${esc(o.text)}</div></div>`;
+      }).join('')}</div>
+      ${r.next ? `<div class="nextbox">${ico('arrow')}<div><b>Next:</b> ${esc(r.next)}</div></div>` : ''}
+      ${r.sources ? `<div class="src">From: ${esc(r.sources)}</div>` : ''}
+    </article>`).join('')}</div>`;
+}
+
+/* ---------- Squads ---------- */
+function renderSquads() {
+  const v = document.getElementById('v-squads');
+  v.innerHTML = `
+    <div class="card"><div class="goal-title">${ico('squads')}Squad power · ${fmtDate(DATA.updated)}</div><div class="bars" id="squad-bars"></div></div>
+    <div class="card"><div class="goal-title">${ico('hero')}Squad 1 heroes · dashed line is Kimberly, the benchmark</div><div class="bars" id="hero-bars"></div></div>`;
+  const add = (id, rows, max, bench) => {
+    const box = v.querySelector('#' + id);
+    rows.forEach(r => {
+      const row = document.createElement('div');
+      row.className = 'bar-row';
+      row.innerHTML = `<div class="nm">${r.avatar || ''}<div>${esc(r.label)}${r.sub || ''}</div></div>
+        <div class="bar-track"><div class="bar" style="width:${(r.value / max * 100).toFixed(2)}%"></div>${bench ? `<div class="bench" style="left:${(bench / max * 100).toFixed(2)}%"></div>` : ''}</div>
+        <div class="val">${fmtM(r.value)}</div>`;
+      bindTip(row, r.tip);
+      box.append(row);
+    });
+  };
+  add('squad-bars', DATA.squads.map(s => ({
+    label: 'Squad ' + s.n, value: s.power, sub: `<small>${esc(s.mix)}</small>`,
+    tip: `<b>Squad ${s.n}</b>: ${fmtM(s.power)}<br>${s.heroes.map(esc).join(', ')}`
+  })), Math.max(...DATA.squads.map(s => s.power)));
+  const heroes = DATA.squad1.filter(h => h.power).sort((a, b) => b.power - a.power);
+  const kim = (heroes.find(h => h.name === 'Kimberly') || heroes[0]).power;
+  add('hero-bars', heroes.map(h => ({
+    label: h.name, value: h.power, avatar: av(h.name),
+    tip: `<b>${esc(h.name)}</b>: ${fmtM(h.power)}<br>${h.power >= kim ? 'Benchmark' : fmtM(kim - h.power) + ' behind Kimberly'}`
+  })), kim * 1.05, kim);
+}
+
+/* ---------- shell: menu, routing, theme ---------- */
+const VIEWS = [
+  { id: 'plan', name: 'Game plan', icon: 'plan' },
+  { id: 'progress', name: 'Goal progress', icon: 'progress' },
+  { id: 'recaps', name: 'Recaps', icon: 'recaps' },
+  { id: 'squads', name: 'Squads', icon: 'squads' }
+];
+document.getElementById('title').textContent = S.title;
+document.getElementById('updated').textContent = S.commander + ' · Updated ' + fmtDate(DATA.updated);
+document.getElementById('menu-btn').innerHTML = ico('menu');
+document.getElementById('close-btn').innerHTML = ico('close');
+document.getElementById('nav-links').innerHTML = VIEWS.map(v => `<a href="#${v.id}" data-v="${v.id}">${ico(v.icon)}${v.name}</a>`).join('');
+renderPlan(); renderProgress(); renderRecaps(); renderSquads();
+
+const menuBtn = document.getElementById('menu-btn');
+function setMenu(open) {
+  document.body.classList.toggle('menu-open', open);
+  menuBtn.setAttribute('aria-expanded', open);
+  if (open) (document.querySelector('#nav-links a[aria-current]') || document.querySelector('#nav-links a')).focus({ preventScroll: true });
+}
+menuBtn.onclick = () => setMenu(true);
+document.getElementById('close-btn').onclick = () => { setMenu(false); menuBtn.focus({ preventScroll: true }); };
+document.getElementById('scrim').onclick = () => setMenu(false);
+addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) { setMenu(false); menuBtn.focus({ preventScroll: true }); } });
+
+function route() {
+  const id = (location.hash || '#plan').slice(1);
+  const view = VIEWS.find(v => v.id === id) || VIEWS[0];
+  VIEWS.forEach(v => document.getElementById('v-' + v.id).classList.toggle('on', v === view));
+  document.querySelectorAll('#nav-links a').forEach(a => {
+    if (a.dataset.v === view.id) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
+  document.getElementById('crumb').textContent = view.name;
+  document.title = view.name + ' · ' + S.title;
+  setMenu(false);
+  scrollTo(0, 0);
+}
+addEventListener('hashchange', route);
+route();
+
+(function () {
+  const root = document.documentElement, btn = document.getElementById('theme');
+  try { const t = localStorage.getItem('lw-theme'); if (t) root.dataset.theme = t; } catch (e) {}
+  const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  const paint = () => { btn.innerHTML = ico(isDark() ? 'season' : 'moon'); };
+  btn.onclick = () => { root.dataset.theme = isDark() ? 'light' : 'dark'; try { localStorage.setItem('lw-theme', root.dataset.theme); } catch (e) {} paint(); };
+  paint();
+})();
 </script>
 </body>
 </html>
