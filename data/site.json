@@ -73,6 +73,21 @@
           "text": "Wall of Honor: Stetmann (0), Marshall (10), Williams (11) first",
           "cost": "Honor medals",
           "status": "todo"
+        },
+        {
+          "text": "Tonight: start the longest Tank Mastery nodes in both research queues; don't speed them up yet",
+          "cost": "Research",
+          "status": "todo"
+        },
+        {
+          "text": "Research day: finish them with research speedups, during Arms Race's Technology window if you can",
+          "cost": "Research speedups",
+          "status": "todo"
+        },
+        {
+          "text": "Then finish the Alliance Duel tree (96%): it raises your duel points every week",
+          "cost": "Research",
+          "status": "todo"
         }
       ]
     },
@@ -93,7 +108,7 @@
           "status": "later"
         },
         {
-          "text": "Tank Mastery research, keep both queues busy",
+          "text": "Tank Mastery research: keep both queues busy between research days",
           "cost": "Research",
           "status": "later"
         }
