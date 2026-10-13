@@ -80,11 +80,6 @@
           "status": "todo"
         },
         {
-          "text": "Before then: get gold to 10.1M (you have 4.0M) by tapping Obtain to use gold items from your bag",
-          "cost": "Gold items",
-          "status": "todo"
-        },
-        {
           "text": "When queue 2 frees: start Hero tree > Armor Hardening II (tank defense +2% to +4%) and speed it up",
           "cost": "10.1M gold, ~29h speedups",
           "status": "todo"
@@ -156,10 +151,11 @@
   "rules": [
     "Squad 1 power is about 20.3M from the five heroes plus about 9.3M from troops. The troop part is capped while HQ stays at 30, so growth has to come from the heroes.",
     "Skill medals go to skill 1 first: it is each tank's main attack and gives the most damage per medal.",
-    "Research: gold is the bottleneck. Hero-tree tank research gives +2% per level for 10M to 70M gold; the Tank Mastery tree gives +0.75% to +1% for 62M to 113M. Hero tree first.",
+    "Research: Hero-tree tank research gives +2% per level in 1 to 7 days; the Tank Mastery tree gives +0.75% to +1% in 5 to 8 days. Hero tree first.",
     "Exclusive Weapon shards go to one weapon until level 20 before starting another. Never Tesla.",
     "Filling troop slots raises total power, not Squad 1 power. Still worth doing, just not for this goal.",
-    "Light spend priority: season pass for weapon shards, then gear blueprint packs on sale."
+    "Light spend priority: season pass for weapon shards, then gear blueprint packs on sale.",
+    "Resources (gold, food, iron) never decide the order. The plan ranks by value; resources get sourced as needed."
   ],
   "recaps": [
     {
@@ -172,7 +168,7 @@
         "Williams is the softest front-liner: 27% damage resistance against 50% for Murphy.",
         "All four skills read for each tank. Skill 4 is maxed on everyone; skill 1 is the best medal value.",
         "Season 3 boost is Scarlett only (5% less monster damage). Use her for zombie and monster fights.",
-        "Research video: both queues are already busy and gold (4.0M) is short. The cheapest tank boosts are in the Hero tree, not Tank Mastery: Armor Hardening II costs 10.1M gold for +2% tank defense."
+        "Research video: both queues are busy (Oil Output I and Weapon Training VIII). The fastest tank boosts are in the Hero tree, not Tank Mastery: Armor Hardening II gives +2% tank defense in about a day."
       ],
       "next": "Finish Phase 1, then record the Squad 1 screen and each tank's main page so we can measure the gain."
     }
