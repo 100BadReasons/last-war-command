@@ -233,7 +233,7 @@ footer { color: var(--text-3); font-size: 12px; padding: 0 0 32px; }
   <div class="view" id="v-recaps"></div>
   <div class="view" id="v-squads"></div>
 </main>
-<footer class="wrap">Built from screen recordings. Detailed numbers live in the analysis sheet.</footer>
+<footer class="wrap" id="foot">Built from screen recordings. Detailed numbers live in the analysis sheet.</footer>
 <div id="tip" role="tooltip"></div>
 
 <script>
@@ -530,6 +530,7 @@ document.getElementById('menu-btn').innerHTML = ico('menu');
 document.getElementById('close-btn').innerHTML = ico('close');
 document.getElementById('nav-links').innerHTML = VIEWS.map(v => `<a href="#${v.id}" data-v="${v.id}">${ico(v.icon)}${v.name}</a>`).join('');
 renderPlan(); renderProgress(); renderRecaps(); renderSquads();
+document.getElementById('foot').textContent += ' Site version: ' + DATA.built + '.';
 
 const menuBtn = document.getElementById('menu-btn');
 function setMenu(open) {

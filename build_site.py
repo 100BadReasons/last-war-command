@@ -3,6 +3,7 @@
 Usage: python3 build_site.py
 Reads data/site.json (goal, plan, recaps) and every data/YYYY-MM-DD.json snapshot.
 """
+import datetime
 import glob
 import json
 import os
@@ -49,6 +50,7 @@ def payload(site, snaps):
         "squads": squads,
         "squad1": squad1,
         "history": history,
+        "built": datetime.datetime.now().strftime("%b %-d, %-I:%M %p"),
     }
 
 
