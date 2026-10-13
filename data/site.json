@@ -34,83 +34,95 @@
           "title": "Orb Lightning 19 → 20",
           "cost": "9,200 medals",
           "status": "todo",
-          "hero": "Stetmann"
+          "hero": "Stetmann",
+          "id": "p1-stetmann-orb-lightning-19-20"
         },
         {
           "type": "skill",
           "title": "Orb Lightning 20 → 21",
           "cost": "10,400 medals",
           "status": "todo",
-          "hero": "Stetmann"
+          "hero": "Stetmann",
+          "id": "p1-stetmann-orb-lightning-20-21"
         },
         {
           "type": "skill",
           "title": "Triad Harmony 20 → 21",
           "cost": "10,400 medals",
           "status": "todo",
-          "hero": "Marshall"
+          "hero": "Marshall",
+          "id": "p1-marshall-triad-harmony-20-21"
         },
         {
           "type": "skill",
           "title": "Blast Shell 20 → 21",
           "cost": "10,400 medals",
           "status": "todo",
-          "hero": "Williams"
+          "hero": "Williams",
+          "id": "p1-williams-blast-shell-20-21"
         },
         {
           "type": "skill",
           "title": "Save the rest for Triad Harmony 21 → 22",
           "cost": "~11,600 medals",
           "status": "todo",
-          "hero": "Marshall"
+          "hero": "Marshall",
+          "id": "p1-marshall-save-the-rest-for-triad-harmony-21-22"
         },
         {
           "type": "gear",
           "title": "Data chip 30 → 40",
           "cost": "Gear ore",
           "status": "todo",
-          "hero": "Murphy"
+          "hero": "Murphy",
+          "id": "p1-murphy-data-chip-30-40"
         },
         {
           "type": "gear",
           "title": "Cannon, then data chip 30 → 40",
           "cost": "Gear ore",
           "status": "todo",
-          "hero": "Williams"
+          "hero": "Williams",
+          "id": "p1-williams-cannon-then-data-chip-30-40"
         },
         {
           "type": "research",
           "title": "Let Weapon Training VIII finish",
           "cost": "Free",
           "status": "todo",
-          "detail": "Troop attack 7.5% → 9%, done ~9:30 AM 10/14"
+          "detail": "Troop attack 7.5% → 9%, done ~9:30 AM 10/14",
+          "id": "p1-let-weapon-training-viii-finish"
         },
         {
           "type": "research",
           "title": "Armor Hardening II",
           "cost": "~29h speedups",
           "status": "todo",
-          "detail": "Tank defense +2% → +4% · speed it up on research day"
+          "detail": "Tank defense +2% → +4% · speed it up on research day",
+          "id": "p1-armor-hardening-ii"
         },
         {
           "type": "research",
           "title": "Oil Output I, then Track Fortification II",
           "cost": "Leftover speedups",
           "status": "todo",
-          "detail": "Tank HP +2% → +4%"
+          "detail": "Tank HP +2% → +4%",
+          "id": "p1-oil-output-i-then-track-fortification-ii"
         },
         {
           "type": "research",
           "title": "Finish the Alliance Duel tree",
           "cost": "Research",
           "status": "todo",
-          "detail": "96% done · more duel points every week"
+          "detail": "96% done · more duel points every week",
+          "id": "p1-finish-the-alliance-duel-tree"
         },
         {
           "type": "honor",
           "title": "Wall of Honor: Stetmann, Marshall, Williams first",
           "cost": "Honor medals",
-          "status": "todo"
+          "status": "todo",
+          "id": "p1-wall-of-honor-stetmann-marshall-williams-first"
         },
         {
           "type": "season",
@@ -118,7 +130,8 @@
           "cost": "",
           "status": "done",
           "hero": "Scarlett",
-          "detail": "Scarlett only: 5% less monster damage"
+          "detail": "Scarlett only: 5% less monster damage",
+          "id": "p1-scarlett-season-boost-checked"
         }
       ]
     },
@@ -132,28 +145,32 @@
           "type": "gear",
           "title": "Gear stars: Marshall → Williams → Stetmann",
           "cost": "Blueprints",
-          "status": "later"
+          "status": "later",
+          "id": "p2-gear-stars-marshall-williams-stetmann"
         },
         {
           "type": "weapon",
           "title": "Exclusive Weapon 12 → 20",
           "cost": "EW shards",
           "status": "later",
-          "hero": "Murphy"
+          "hero": "Murphy",
+          "id": "p2-murphy-exclusive-weapon-12-20"
         },
         {
           "type": "research",
           "title": "Cannon Enhancement II",
           "cost": "4.1 days",
           "status": "later",
-          "detail": "Tank attack +4% → +6%"
+          "detail": "Tank attack +4% → +6%",
+          "id": "p2-cannon-enhancement-ii"
         },
         {
           "type": "research",
           "title": "Tank Mastery II",
           "cost": "7.5 days",
           "status": "later",
-          "detail": "Tank damage 6% → 8%"
+          "detail": "Tank damage 6% → 8%",
+          "id": "p2-tank-mastery-ii"
         }
       ]
     },
@@ -169,20 +186,23 @@
           "cost": "EW shards",
           "status": "later",
           "hero": "Kimberly",
-          "detail": "Then Marshall's, if he has one"
+          "detail": "Then Marshall's, if he has one",
+          "id": "p3-kimberly-exclusive-weapon-20-30"
         },
         {
           "type": "skill",
           "title": "Barrage Strike 35 → 36",
           "cost": "36,000 medals",
           "status": "later",
-          "hero": "Kimberly"
+          "hero": "Kimberly",
+          "id": "p3-kimberly-barrage-strike-35-36"
         },
         {
           "type": "drone",
           "title": "Skills toward max, drone levels",
           "cost": "Medals, drone parts",
-          "status": "later"
+          "status": "later",
+          "id": "p3-skills-toward-max-drone-levels"
         }
       ]
     }

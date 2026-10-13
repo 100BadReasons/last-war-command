@@ -81,12 +81,15 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .chip svg.i { width: 14px; height: 14px; }
 
 /* goal strip */
-.goal { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; }
-.ring { position: relative; width: 108px; height: 108px; }
-.ring svg { width: 108px; height: 108px; transform: rotate(-90deg); }
-.ring .lbl { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; line-height: 1.1; }
-.ring .lbl b { font-size: 22px; display: block; }
-.ring .lbl small { color: var(--text-2); font-size: 11px; }
+.pbar-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 14px; }
+.pbar-head .pct { font-weight: 700; font-variant-numeric: tabular-nums; }
+.pbar { display: flex; gap: 3px; height: 18px; margin: 8px 0 10px; }
+.seg { flex: 1; border-radius: 4px; background: color-mix(in srgb, var(--tc) 22%, transparent); transition: background .2s; }
+.seg.on { background: var(--tc); }
+.pbar-legend { display: flex; gap: 6px; flex-wrap: wrap; }
+.pbar-legend .chip svg.i { color: var(--tc); }
+.pbar-legend .chip b { color: var(--text); font-variant-numeric: tabular-nums; }
+.power-line { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .goal-nums { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
 .goal-nums .big { font-size: 26px; font-weight: 700; letter-spacing: -.01em; }
 .goal-nums .arrow { color: var(--text-3); display: flex; }
@@ -106,12 +109,6 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .ph .nm { font-weight: 600; font-size: 14px; }
 .ph .mt { color: var(--text-3); font-size: 12px; }
 
-/* up next */
-.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.next { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 14px 14px 18px; display: flex; flex-direction: column; gap: 10px; position: relative; overflow: hidden; }
-.next::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--tc); }
-.next .n { position: absolute; right: 14px; top: 8px; font-weight: 800; font-size: 30px; color: var(--surface-2); }
-.next .ttl { font-weight: 650; }
 .dt { color: var(--text-2); font-size: 13px; margin-top: 2px; }
 .meta { display: flex; gap: 6px; flex-wrap: wrap; }
 
@@ -134,7 +131,13 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .av { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 11px; font-weight: 700; background: var(--hc); flex: none; }
 .step.done { opacity: .6; }
 .step.done .ttl { text-decoration: line-through; text-decoration-color: var(--text-3); }
-.step.done::after { content: ""; position: absolute; top: 10px; right: 10px; width: 20px; height: 20px; border-radius: 50%; background: var(--good) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 5 5 9-10'/%3E%3C/svg%3E") center/13px no-repeat; }
+.chk { position: absolute; top: 10px; right: 10px; width: 26px; height: 26px; border-radius: 7px; border: 2px solid var(--text-3); background: var(--surface); display: grid; place-items: center; cursor: pointer; padding: 0; color: #fff; }
+.chk:hover { border-color: var(--good); }
+.chk[aria-checked="true"] { background: var(--good); border-color: var(--good); }
+.chk svg.i { width: 16px; height: 16px; stroke-width: 3; }
+.step .ttl { padding-right: 30px; }
+.hint { color: var(--text-3); font-size: 12px; margin: -4px 0 12px; display: flex; align-items: center; gap: 6px; }
+.hint svg.i { width: 14px; height: 14px; }
 .legend-types { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--text-2); margin: 0 0 12px; }
 .legend-types span { display: inline-flex; align-items: center; gap: 5px; }
 .legend-types span svg.i { width: 15px; height: 15px; color: var(--tc); }
@@ -192,9 +195,7 @@ table.data th { color: var(--text-2); border-top: 0; }
 #tip { position: fixed; pointer-events: none; z-index: 30; background: var(--text); color: var(--bg); padding: 6px 9px; border-radius: 6px; font-size: 13px; opacity: 0; transition: opacity .1s; max-width: 240px; }
 footer { color: var(--text-3); font-size: 12px; padding: 0 0 32px; }
 
-@media (max-width: 720px) { .next-grid { grid-template-columns: 1fr; } }
 @media (max-width: 520px) {
-  .goal { grid-template-columns: 1fr; justify-items: start; }
   .goal-nums .big { font-size: 22px; }
   .bar-row { grid-template-columns: 104px 1fr 56px; }
   .steps { grid-template-columns: 1fr; }
@@ -230,7 +231,7 @@ footer { color: var(--text-3); font-size: 12px; padding: 0 0 32px; }
 <div id="tip" role="tooltip"></div>
 
 <script>
-const DATA = {"site":{"title":"Last War Command","commander":"HQ 30 \u00b7 VIP 12 \u00b7 Tank main","goal":{"name":"Squad 1 to 40M","rule":"Without upgrading HQ (stay at HQ 30)","set":"2026-10-13","baseline":29560000,"target":40000000,"milestones":[{"label":"Phase 1","value":31500000},{"label":"Phase 2","value":36000000},{"label":"Phase 3","value":40000000}]},"plan":[{"phase":1,"name":"Free power now","window":"1-2 weeks","estimate":"+1.5M to +2.5M","steps":[{"type":"skill","title":"Orb Lightning 19 \u2192 20","cost":"9,200 medals","status":"todo","hero":"Stetmann"},{"type":"skill","title":"Orb Lightning 20 \u2192 21","cost":"10,400 medals","status":"todo","hero":"Stetmann"},{"type":"skill","title":"Triad Harmony 20 \u2192 21","cost":"10,400 medals","status":"todo","hero":"Marshall"},{"type":"skill","title":"Blast Shell 20 \u2192 21","cost":"10,400 medals","status":"todo","hero":"Williams"},{"type":"skill","title":"Save the rest for Triad Harmony 21 \u2192 22","cost":"~11,600 medals","status":"todo","hero":"Marshall"},{"type":"gear","title":"Data chip 30 \u2192 40","cost":"Gear ore","status":"todo","hero":"Murphy"},{"type":"gear","title":"Cannon, then data chip 30 \u2192 40","cost":"Gear ore","status":"todo","hero":"Williams"},{"type":"research","title":"Let Weapon Training VIII finish","cost":"Free","status":"todo","detail":"Troop attack 7.5% \u2192 9%, done ~9:30 AM 10/14"},{"type":"research","title":"Armor Hardening II","cost":"~29h speedups","status":"todo","detail":"Tank defense +2% \u2192 +4% \u00b7 speed it up on research day"},{"type":"research","title":"Oil Output I, then Track Fortification II","cost":"Leftover speedups","status":"todo","detail":"Tank HP +2% \u2192 +4%"},{"type":"research","title":"Finish the Alliance Duel tree","cost":"Research","status":"todo","detail":"96% done \u00b7 more duel points every week"},{"type":"honor","title":"Wall of Honor: Stetmann, Marshall, Williams first","cost":"Honor medals","status":"todo"},{"type":"season","title":"Season boost checked","cost":"","status":"done","hero":"Scarlett","detail":"Scarlett only: 5% less monster damage"}]},{"phase":2,"name":"Gear stars & weapons","window":"Weeks 2-8","estimate":"+4M to +5M","steps":[{"type":"gear","title":"Gear stars: Marshall \u2192 Williams \u2192 Stetmann","cost":"Blueprints","status":"later"},{"type":"weapon","title":"Exclusive Weapon 12 \u2192 20","cost":"EW shards","status":"later","hero":"Murphy"},{"type":"research","title":"Cannon Enhancement II","cost":"4.1 days","status":"later","detail":"Tank attack +4% \u2192 +6%"},{"type":"research","title":"Tank Mastery II","cost":"7.5 days","status":"later","detail":"Tank damage 6% \u2192 8%"}]},{"phase":3,"name":"Past the benchmark","window":"Months 2-4","estimate":"+3M to +4M","steps":[{"type":"weapon","title":"Exclusive Weapon 20 \u2192 30","cost":"EW shards","status":"later","hero":"Kimberly","detail":"Then Marshall's, if he has one"},{"type":"skill","title":"Barrage Strike 35 \u2192 36","cost":"36,000 medals","status":"later","hero":"Kimberly"},{"type":"drone","title":"Skills toward max, drone levels","cost":"Medals, drone parts","status":"later"}]}],"rules":[{"icon":"squad","text":"Squad 1 grows through its heroes. Troop power is capped while HQ stays at 30."},{"icon":"skill","text":"Skill medals go to skill 1 first."},{"icon":"weapon","text":"One Exclusive Weapon to level 20 before the next. Never Tesla."},{"icon":"research","text":"Hero-tree tank research before the Tank Mastery tree."},{"icon":"troops","text":"Filling troop slots raises total power, not Squad 1."},{"icon":"spend","text":"Light spend: season pass first, then blueprint packs on sale."},{"icon":"resources","text":"Resources never set the order."}],"recaps":[{"date":"2026-10-13","title":"Baseline and the 40M plan","sources":"4 videos + skills video + Season Boost screenshot + research video","highlights":[{"icon":"hero","text":"Kimberly (4.94M) is the benchmark; Williams, Stetmann and Marshall trail by 1.3M to 1.6M."},{"icon":"shield","text":"Williams is the softest front-liner: 27% resistance vs 50% for Murphy."},{"icon":"skill","text":"Skill 4 is maxed on every tank; skill 1 is the best medal value."},{"icon":"research","text":"Fastest tank boosts are in the Hero tree: Armor Hardening II is +2% tank defense in about a day."},{"icon":"season","text":"Season 3 boost is Scarlett only. Use her for zombie and monster fights."}],"next":"Finish Phase 1, then record the Squad 1 screen and each tank's main page.","stats":[{"label":"Total power","value":"137.6M"},{"label":"Squad 1","value":"29.56M"},{"label":"Heroes","value":"31"},{"label":"Skill medals","value":"49.8K"}]}]},"updated":"2026-10-13","account":{"hq_level":30,"vip":12,"total_power":137578784,"hero_power":75935212,"unit_power":38996774,"building_power":9613751,"drone_power":6622553,"tech_power":4996000,"overlord_power":561968,"decor_power":7590567,"drone_level":135,"hero_exp_available":434900000,"skill_medals_available":49813},"squads":[{"n":1,"power":29560000,"heroes":["Murphy","Williams","Kimberly","Stetmann","Marshall"],"mix":"5 Tank"},{"n":2,"power":19600000,"heroes":["DVA","Monica","Maxwell","Schuyler","Carlie"],"mix":"4 Aircraft + 1 Tank"},{"n":3,"power":21510000,"heroes":["Tesla","Adam","McGregor","Fiona","Swift"],"mix":"5 Missile"}],"squad1":[{"name":"Murphy","power":4846353},{"name":"Williams","power":3600010},{"name":"Kimberly","power":4944473},{"name":"Stetmann","power":3505353},{"name":"Marshall","power":3384063}],"history":[{"date":"2026-10-13","total":137578784,"squad1":29560000}]};
+const DATA = {"site":{"title":"Last War Command","commander":"HQ 30 \u00b7 VIP 12 \u00b7 Tank main","goal":{"name":"Squad 1 to 40M","rule":"Without upgrading HQ (stay at HQ 30)","set":"2026-10-13","baseline":29560000,"target":40000000,"milestones":[{"label":"Phase 1","value":31500000},{"label":"Phase 2","value":36000000},{"label":"Phase 3","value":40000000}]},"plan":[{"phase":1,"name":"Free power now","window":"1-2 weeks","estimate":"+1.5M to +2.5M","steps":[{"type":"skill","title":"Orb Lightning 19 \u2192 20","cost":"9,200 medals","status":"todo","hero":"Stetmann","id":"p1-stetmann-orb-lightning-19-20"},{"type":"skill","title":"Orb Lightning 20 \u2192 21","cost":"10,400 medals","status":"todo","hero":"Stetmann","id":"p1-stetmann-orb-lightning-20-21"},{"type":"skill","title":"Triad Harmony 20 \u2192 21","cost":"10,400 medals","status":"todo","hero":"Marshall","id":"p1-marshall-triad-harmony-20-21"},{"type":"skill","title":"Blast Shell 20 \u2192 21","cost":"10,400 medals","status":"todo","hero":"Williams","id":"p1-williams-blast-shell-20-21"},{"type":"skill","title":"Save the rest for Triad Harmony 21 \u2192 22","cost":"~11,600 medals","status":"todo","hero":"Marshall","id":"p1-marshall-save-the-rest-for-triad-harmony-21-22"},{"type":"gear","title":"Data chip 30 \u2192 40","cost":"Gear ore","status":"todo","hero":"Murphy","id":"p1-murphy-data-chip-30-40"},{"type":"gear","title":"Cannon, then data chip 30 \u2192 40","cost":"Gear ore","status":"todo","hero":"Williams","id":"p1-williams-cannon-then-data-chip-30-40"},{"type":"research","title":"Let Weapon Training VIII finish","cost":"Free","status":"todo","detail":"Troop attack 7.5% \u2192 9%, done ~9:30 AM 10/14","id":"p1-let-weapon-training-viii-finish"},{"type":"research","title":"Armor Hardening II","cost":"~29h speedups","status":"todo","detail":"Tank defense +2% \u2192 +4% \u00b7 speed it up on research day","id":"p1-armor-hardening-ii"},{"type":"research","title":"Oil Output I, then Track Fortification II","cost":"Leftover speedups","status":"todo","detail":"Tank HP +2% \u2192 +4%","id":"p1-oil-output-i-then-track-fortification-ii"},{"type":"research","title":"Finish the Alliance Duel tree","cost":"Research","status":"todo","detail":"96% done \u00b7 more duel points every week","id":"p1-finish-the-alliance-duel-tree"},{"type":"honor","title":"Wall of Honor: Stetmann, Marshall, Williams first","cost":"Honor medals","status":"todo","id":"p1-wall-of-honor-stetmann-marshall-williams-first"},{"type":"season","title":"Season boost checked","cost":"","status":"done","hero":"Scarlett","detail":"Scarlett only: 5% less monster damage","id":"p1-scarlett-season-boost-checked"}]},{"phase":2,"name":"Gear stars & weapons","window":"Weeks 2-8","estimate":"+4M to +5M","steps":[{"type":"gear","title":"Gear stars: Marshall \u2192 Williams \u2192 Stetmann","cost":"Blueprints","status":"later","id":"p2-gear-stars-marshall-williams-stetmann"},{"type":"weapon","title":"Exclusive Weapon 12 \u2192 20","cost":"EW shards","status":"later","hero":"Murphy","id":"p2-murphy-exclusive-weapon-12-20"},{"type":"research","title":"Cannon Enhancement II","cost":"4.1 days","status":"later","detail":"Tank attack +4% \u2192 +6%","id":"p2-cannon-enhancement-ii"},{"type":"research","title":"Tank Mastery II","cost":"7.5 days","status":"later","detail":"Tank damage 6% \u2192 8%","id":"p2-tank-mastery-ii"}]},{"phase":3,"name":"Past the benchmark","window":"Months 2-4","estimate":"+3M to +4M","steps":[{"type":"weapon","title":"Exclusive Weapon 20 \u2192 30","cost":"EW shards","status":"later","hero":"Kimberly","detail":"Then Marshall's, if he has one","id":"p3-kimberly-exclusive-weapon-20-30"},{"type":"skill","title":"Barrage Strike 35 \u2192 36","cost":"36,000 medals","status":"later","hero":"Kimberly","id":"p3-kimberly-barrage-strike-35-36"},{"type":"drone","title":"Skills toward max, drone levels","cost":"Medals, drone parts","status":"later","id":"p3-skills-toward-max-drone-levels"}]}],"rules":[{"icon":"squad","text":"Squad 1 grows through its heroes. Troop power is capped while HQ stays at 30."},{"icon":"skill","text":"Skill medals go to skill 1 first."},{"icon":"weapon","text":"One Exclusive Weapon to level 20 before the next. Never Tesla."},{"icon":"research","text":"Hero-tree tank research before the Tank Mastery tree."},{"icon":"troops","text":"Filling troop slots raises total power, not Squad 1."},{"icon":"spend","text":"Light spend: season pass first, then blueprint packs on sale."},{"icon":"resources","text":"Resources never set the order."}],"recaps":[{"date":"2026-10-13","title":"Baseline and the 40M plan","sources":"4 videos + skills video + Season Boost screenshot + research video","highlights":[{"icon":"hero","text":"Kimberly (4.94M) is the benchmark; Williams, Stetmann and Marshall trail by 1.3M to 1.6M."},{"icon":"shield","text":"Williams is the softest front-liner: 27% resistance vs 50% for Murphy."},{"icon":"skill","text":"Skill 4 is maxed on every tank; skill 1 is the best medal value."},{"icon":"research","text":"Fastest tank boosts are in the Hero tree: Armor Hardening II is +2% tank defense in about a day."},{"icon":"season","text":"Season 3 boost is Scarlett only. Use her for zombie and monster fights."}],"next":"Finish Phase 1, then record the Squad 1 screen and each tank's main page.","stats":[{"label":"Total power","value":"137.6M"},{"label":"Squad 1","value":"29.56M"},{"label":"Heroes","value":"31"},{"label":"Skill medals","value":"49.8K"}]}]},"updated":"2026-10-13","account":{"hq_level":30,"vip":12,"total_power":137578784,"hero_power":75935212,"unit_power":38996774,"building_power":9613751,"drone_power":6622553,"tech_power":4996000,"overlord_power":561968,"decor_power":7590567,"drone_level":135,"hero_exp_available":434900000,"skill_medals_available":49813},"squads":[{"n":1,"power":29560000,"heroes":["Murphy","Williams","Kimberly","Stetmann","Marshall"],"mix":"5 Tank"},{"n":2,"power":19600000,"heroes":["DVA","Monica","Maxwell","Schuyler","Carlie"],"mix":"4 Aircraft + 1 Tank"},{"n":3,"power":21510000,"heroes":["Tesla","Adam","McGregor","Fiona","Swift"],"mix":"5 Missile"}],"squad1":[{"name":"Murphy","power":4846353},{"name":"Williams","power":3600010},{"name":"Kimberly","power":4944473},{"name":"Stetmann","power":3505353},{"name":"Marshall","power":3384063}],"history":[{"date":"2026-10-13","total":137578784,"squad1":29560000}]};
 const S = DATA.site;
 
 /* icons (24px line icons) */
@@ -302,20 +303,46 @@ const G = S.goal;
 const current = DATA.history[DATA.history.length - 1].squad1;
 const climb = Math.max(0, Math.min(1, (current - G.baseline) / (G.target - G.baseline)));
 const ofTarget = current / G.target;
-const allSteps = S.plan.flatMap(p => p.steps.map(s => ({ ...s, phase: p.phase })));
-const activePhase = (S.plan.find(p => p.steps.some(s => s.status !== 'done')) || S.plan[S.plan.length - 1]).phase;
-
-function ring(frac, label, sub) {
-  const r = 46, c = 2 * Math.PI * r;
-  return `<div class="ring" role="img" aria-label="${esc(label)} ${esc(sub)}">
-    <svg viewBox="0 0 108 108"><circle cx="54" cy="54" r="${r}" fill="none" stroke="var(--track)" stroke-width="10"/>
-    <circle cx="54" cy="54" r="${r}" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${(c * frac).toFixed(1)} ${c.toFixed(1)}"/></svg>
-    <div class="lbl"><div><b>${esc(label)}</b><small>${esc(sub)}</small></div></div></div>`;
+const allSteps = S.plan.flatMap(p => p.steps.map(s => Object.assign(s, { phase: p.phase, base: s.status })));
+/* checkmarks are saved in this browser; the published data is the starting point */
+const STORE = 'lw-done';
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(STORE) || '{}'); } catch (e) {}
+const undone = s => s.base === 'done' ? 'todo' : s.base;
+allSteps.forEach(s => { if (s.id in saved) s.status = saved[s.id] ? 'done' : undone(s); });
+function toggleStep(id) {
+  const s = allSteps.find(x => x.id === id);
+  if (!s) return;
+  s.status = s.status === 'done' ? undone(s) : 'done';
+  saved[id] = s.status === 'done';
+  try { localStorage.setItem(STORE, JSON.stringify(saved)); } catch (e) {}
+  const y = scrollY;
+  renderPlan(); renderProgress();
+  scrollTo(0, y);
+  const again = document.querySelector(`.chk[data-id="${id}"]`);
+  if (again) again.focus({ preventScroll: true });
 }
+const activePhaseNow = () => (S.plan.find(p => p.steps.some(s => s.status !== 'done')) || S.plan[S.plan.length - 1]).phase;
+
+function planBar() {
+  const order = Object.keys(TYPE).filter(t => allSteps.some(s => s.type === t));
+  const steps = order.flatMap(t => allSteps.filter(s => s.type === t));
+  const done = allSteps.filter(s => s.status === 'done').length;
+  return `<div class="pbar-head"><div class="goal-title" style="margin:0">${ico('plan')}Game plan · ${done} of ${allSteps.length} steps done</div><span class="pct">${Math.round(done / allSteps.length * 100)}%</span></div>
+    <div class="pbar" role="img" aria-label="${done} of ${allSteps.length} plan steps done">${steps.map(s =>
+      `<span class="seg${s.status === 'done' ? ' on' : ''}" style="--tc:${typeColor(s.type)}" data-tip="${esc(TYPE[s.type][0] + ': ' + s.title + (s.status === 'done' ? ' (done)' : ''))}"></span>`).join('')}</div>
+    <div class="pbar-legend">${order.map(t => {
+      const a = allSteps.filter(s => s.type === t), d = a.filter(s => s.status === 'done').length;
+      return `<span class="chip" style="--tc:${typeColor(t)}">${ico(t)}${TYPE[t][0]} <b>${d}/${a.length}</b></span>`;
+    }).join('')}</div>`;
+}
+function bindSegs(root) { root.querySelectorAll('.seg').forEach(g => { bindTip(g, esc(g.dataset.tip)); g.tabIndex = -1; }); }
 
 /* ---------- Game plan ---------- */
 function stepCard(s) {
+  const done = s.status === 'done';
   return `<div class="step ${s.status}" style="--tc:${typeColor(s.type)}">
+    <button class="chk" type="button" role="checkbox" aria-checked="${done}" data-id="${esc(s.id)}" aria-label="${esc(s.title)}: mark ${done ? 'not done' : 'done'}">${done ? ico('check') : ''}</button>
     <div class="tile" title="${esc((TYPE[s.type] || ['Other'])[0])}">${ico(s.type)}</div>
     <div><div class="ttl">${esc(s.title)}</div>${s.detail ? `<div class="dt">${esc(s.detail)}</div>` : ''}
       <div class="meta">${s.hero ? heroChip(s.hero) : ''}${costChip(s.cost)}</div></div>
@@ -323,20 +350,13 @@ function stepCard(s) {
 }
 function renderPlan() {
   const v = document.getElementById('v-plan');
-  const upNext = allSteps.filter(s => s.status === 'todo').slice(0, 3);
-  const types = [...new Set(allSteps.map(s => s.type))];
+  const activePhase = activePhaseNow();
   v.innerHTML = `
-    <div class="card goal">
-      ${ring(ofTarget, Math.round(ofTarget * 100) + '%', 'of 40M')}
-      <div>
-        <div class="goal-title">${ico('progress')}${esc(G.name)} · ${esc(G.rule)}</div>
-        <div class="goal-nums"><span class="big">${fmtM(current)}</span><span class="arrow">${ico('arrow')}</span><span class="big">${fmtM(G.target)}</span></div>
-        <div class="chips">
-          <span class="chip">${ico('trend')}+${fmtM(Math.max(0, G.target - current))} to go</span>
-          <span class="chip">${ico('flag')}${Math.round(climb * 100)}% of the climb</span>
-          <span class="chip">${ico('clock')}Set ${fmtDate(G.set)}</span>
-        </div>
-      </div>
+    <div class="card">
+      <div class="goal-title">${ico('progress')}${esc(G.name)} · ${esc(G.rule)}</div>
+      <div class="power-line goal-nums"><span class="big">${fmtM(current)}</span><span class="arrow">${ico('arrow')}</span><span class="big">${fmtM(G.target)}</span>
+        <span class="chip">${ico('trend')}+${fmtM(Math.max(0, G.target - current))} to go</span></div>
+      ${planBar()}
     </div>
 
     <div class="card"><div class="stepper">${S.plan.map(p => {
@@ -347,15 +367,8 @@ function renderPlan() {
         <div class="nm">${esc(p.name)}</div><div class="mt">${esc(p.window)} · ${esc(p.estimate)}</div></button>`;
     }).join('')}</div></div>
 
-    <h2 class="sec">${ico('arrow')}Up next</h2>
-    <div class="next-grid">${upNext.map((s, i) => `
-      <div class="next" style="--tc:${typeColor(s.type)}"><span class="n">${i + 1}</span>
-        <div class="tile">${ico(s.type)}</div>
-        <div><div class="ttl">${esc(s.title)}</div>${s.detail ? `<div class="dt">${esc(s.detail)}</div>` : ''}</div>
-        <div class="meta">${s.hero ? heroChip(s.hero) : ''}${costChip(s.cost)}</div></div>`).join('')}</div>
-
     <h2 class="sec">${ico('plan')}Phases</h2>
-    <div class="legend-types">${types.map(t => `<span style="--tc:${typeColor(t)}">${ico(t)}${TYPE[t][0]}</span>`).join('')}</div>
+    <div class="hint">${ico('check')}Tick a box when a step is done. Saved on this device.</div>
     ${S.plan.map(p => {
       const done = p.steps.filter(s => s.status === 'done').length;
       return `<div class="card" id="phase-${p.phase}">
@@ -371,6 +384,8 @@ function renderPlan() {
     <h2 class="sec">${ico('recaps')}Playbook</h2>
     <div class="rules">${S.rules.map(r => `<div class="rule"><div class="tile">${ico(r.icon)}</div><div>${esc(r.text)}</div></div>`).join('')}</div>`;
   v.querySelectorAll('[data-jump]').forEach(b => b.onclick = () => document.getElementById(b.dataset.jump).scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  v.querySelectorAll('.chk').forEach(b => b.onclick = () => toggleStep(b.dataset.id));
+  bindSegs(v);
 }
 
 /* ---------- Goal progress ---------- */
@@ -378,9 +393,8 @@ function renderProgress() {
   const v = document.getElementById('v-progress');
   const doneSteps = allSteps.filter(s => s.status === 'done').length;
   v.innerHTML = `
-    <div class="card goal">
-      ${ring(climb, Math.round(climb * 100) + '%', 'of the climb')}
-      <div style="width:100%">
+    <div class="card">
+      <div>
         <div class="goal-title">${ico('progress')}${esc(G.name)}</div>
         <div class="stats">
           <div class="stat"><div class="l">${ico('power')}Squad 1 now</div><div class="v">${fmtM(current)}</div></div>
@@ -388,6 +402,7 @@ function renderProgress() {
           <div class="stat"><div class="l">${ico('trend')}Still needed</div><div class="v">+${fmtM(Math.max(0, G.target - current))}</div></div>
           <div class="stat"><div class="l">${ico('plan')}Steps done</div><div class="v">${doneSteps}/${allSteps.length}</div></div>
         </div>
+        ${planBar()}
       </div>
     </div>
     <div class="card">
@@ -408,6 +423,7 @@ function renderProgress() {
       return `<span style="left:${pos(m.value)};${last ? 'transform:translateX(-100%);text-align:right' : ''}"><b>${fmtM(m.value)}</b>${esc(m.label)}</span>`;
     }).join('');
   bindTip(meter, `Squad 1: <b>${fmtM(current)}</b> of ${fmtM(G.target)}<br>Started at ${fmtM(G.baseline)}`);
+  bindSegs(v);
 
   const box = v.querySelector('#history');
   const pts = DATA.history.filter(h => h.squad1);

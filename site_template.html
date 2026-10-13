@@ -81,12 +81,15 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .chip svg.i { width: 14px; height: 14px; }
 
 /* goal strip */
-.goal { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; }
-.ring { position: relative; width: 108px; height: 108px; }
-.ring svg { width: 108px; height: 108px; transform: rotate(-90deg); }
-.ring .lbl { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; line-height: 1.1; }
-.ring .lbl b { font-size: 22px; display: block; }
-.ring .lbl small { color: var(--text-2); font-size: 11px; }
+.pbar-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 14px; }
+.pbar-head .pct { font-weight: 700; font-variant-numeric: tabular-nums; }
+.pbar { display: flex; gap: 3px; height: 18px; margin: 8px 0 10px; }
+.seg { flex: 1; border-radius: 4px; background: color-mix(in srgb, var(--tc) 22%, transparent); transition: background .2s; }
+.seg.on { background: var(--tc); }
+.pbar-legend { display: flex; gap: 6px; flex-wrap: wrap; }
+.pbar-legend .chip svg.i { color: var(--tc); }
+.pbar-legend .chip b { color: var(--text); font-variant-numeric: tabular-nums; }
+.power-line { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .goal-nums { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
 .goal-nums .big { font-size: 26px; font-weight: 700; letter-spacing: -.01em; }
 .goal-nums .arrow { color: var(--text-3); display: flex; }
@@ -106,12 +109,6 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .ph .nm { font-weight: 600; font-size: 14px; }
 .ph .mt { color: var(--text-3); font-size: 12px; }
 
-/* up next */
-.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.next { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 14px 14px 18px; display: flex; flex-direction: column; gap: 10px; position: relative; overflow: hidden; }
-.next::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--tc); }
-.next .n { position: absolute; right: 14px; top: 8px; font-weight: 800; font-size: 30px; color: var(--surface-2); }
-.next .ttl { font-weight: 650; }
 .dt { color: var(--text-2); font-size: 13px; margin-top: 2px; }
 .meta { display: flex; gap: 6px; flex-wrap: wrap; }
 
@@ -134,7 +131,13 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .av { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 11px; font-weight: 700; background: var(--hc); flex: none; }
 .step.done { opacity: .6; }
 .step.done .ttl { text-decoration: line-through; text-decoration-color: var(--text-3); }
-.step.done::after { content: ""; position: absolute; top: 10px; right: 10px; width: 20px; height: 20px; border-radius: 50%; background: var(--good) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 5 5 9-10'/%3E%3C/svg%3E") center/13px no-repeat; }
+.chk { position: absolute; top: 10px; right: 10px; width: 26px; height: 26px; border-radius: 7px; border: 2px solid var(--text-3); background: var(--surface); display: grid; place-items: center; cursor: pointer; padding: 0; color: #fff; }
+.chk:hover { border-color: var(--good); }
+.chk[aria-checked="true"] { background: var(--good); border-color: var(--good); }
+.chk svg.i { width: 16px; height: 16px; stroke-width: 3; }
+.step .ttl { padding-right: 30px; }
+.hint { color: var(--text-3); font-size: 12px; margin: -4px 0 12px; display: flex; align-items: center; gap: 6px; }
+.hint svg.i { width: 14px; height: 14px; }
 .legend-types { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--text-2); margin: 0 0 12px; }
 .legend-types span { display: inline-flex; align-items: center; gap: 5px; }
 .legend-types span svg.i { width: 15px; height: 15px; color: var(--tc); }
@@ -192,9 +195,7 @@ table.data th { color: var(--text-2); border-top: 0; }
 #tip { position: fixed; pointer-events: none; z-index: 30; background: var(--text); color: var(--bg); padding: 6px 9px; border-radius: 6px; font-size: 13px; opacity: 0; transition: opacity .1s; max-width: 240px; }
 footer { color: var(--text-3); font-size: 12px; padding: 0 0 32px; }
 
-@media (max-width: 720px) { .next-grid { grid-template-columns: 1fr; } }
 @media (max-width: 520px) {
-  .goal { grid-template-columns: 1fr; justify-items: start; }
   .goal-nums .big { font-size: 22px; }
   .bar-row { grid-template-columns: 104px 1fr 56px; }
   .steps { grid-template-columns: 1fr; }
@@ -302,20 +303,46 @@ const G = S.goal;
 const current = DATA.history[DATA.history.length - 1].squad1;
 const climb = Math.max(0, Math.min(1, (current - G.baseline) / (G.target - G.baseline)));
 const ofTarget = current / G.target;
-const allSteps = S.plan.flatMap(p => p.steps.map(s => ({ ...s, phase: p.phase })));
-const activePhase = (S.plan.find(p => p.steps.some(s => s.status !== 'done')) || S.plan[S.plan.length - 1]).phase;
-
-function ring(frac, label, sub) {
-  const r = 46, c = 2 * Math.PI * r;
-  return `<div class="ring" role="img" aria-label="${esc(label)} ${esc(sub)}">
-    <svg viewBox="0 0 108 108"><circle cx="54" cy="54" r="${r}" fill="none" stroke="var(--track)" stroke-width="10"/>
-    <circle cx="54" cy="54" r="${r}" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${(c * frac).toFixed(1)} ${c.toFixed(1)}"/></svg>
-    <div class="lbl"><div><b>${esc(label)}</b><small>${esc(sub)}</small></div></div></div>`;
+const allSteps = S.plan.flatMap(p => p.steps.map(s => Object.assign(s, { phase: p.phase, base: s.status })));
+/* checkmarks are saved in this browser; the published data is the starting point */
+const STORE = 'lw-done';
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(STORE) || '{}'); } catch (e) {}
+const undone = s => s.base === 'done' ? 'todo' : s.base;
+allSteps.forEach(s => { if (s.id in saved) s.status = saved[s.id] ? 'done' : undone(s); });
+function toggleStep(id) {
+  const s = allSteps.find(x => x.id === id);
+  if (!s) return;
+  s.status = s.status === 'done' ? undone(s) : 'done';
+  saved[id] = s.status === 'done';
+  try { localStorage.setItem(STORE, JSON.stringify(saved)); } catch (e) {}
+  const y = scrollY;
+  renderPlan(); renderProgress();
+  scrollTo(0, y);
+  const again = document.querySelector(`.chk[data-id="${id}"]`);
+  if (again) again.focus({ preventScroll: true });
 }
+const activePhaseNow = () => (S.plan.find(p => p.steps.some(s => s.status !== 'done')) || S.plan[S.plan.length - 1]).phase;
+
+function planBar() {
+  const order = Object.keys(TYPE).filter(t => allSteps.some(s => s.type === t));
+  const steps = order.flatMap(t => allSteps.filter(s => s.type === t));
+  const done = allSteps.filter(s => s.status === 'done').length;
+  return `<div class="pbar-head"><div class="goal-title" style="margin:0">${ico('plan')}Game plan · ${done} of ${allSteps.length} steps done</div><span class="pct">${Math.round(done / allSteps.length * 100)}%</span></div>
+    <div class="pbar" role="img" aria-label="${done} of ${allSteps.length} plan steps done">${steps.map(s =>
+      `<span class="seg${s.status === 'done' ? ' on' : ''}" style="--tc:${typeColor(s.type)}" data-tip="${esc(TYPE[s.type][0] + ': ' + s.title + (s.status === 'done' ? ' (done)' : ''))}"></span>`).join('')}</div>
+    <div class="pbar-legend">${order.map(t => {
+      const a = allSteps.filter(s => s.type === t), d = a.filter(s => s.status === 'done').length;
+      return `<span class="chip" style="--tc:${typeColor(t)}">${ico(t)}${TYPE[t][0]} <b>${d}/${a.length}</b></span>`;
+    }).join('')}</div>`;
+}
+function bindSegs(root) { root.querySelectorAll('.seg').forEach(g => { bindTip(g, esc(g.dataset.tip)); g.tabIndex = -1; }); }
 
 /* ---------- Game plan ---------- */
 function stepCard(s) {
+  const done = s.status === 'done';
   return `<div class="step ${s.status}" style="--tc:${typeColor(s.type)}">
+    <button class="chk" type="button" role="checkbox" aria-checked="${done}" data-id="${esc(s.id)}" aria-label="${esc(s.title)}: mark ${done ? 'not done' : 'done'}">${done ? ico('check') : ''}</button>
     <div class="tile" title="${esc((TYPE[s.type] || ['Other'])[0])}">${ico(s.type)}</div>
     <div><div class="ttl">${esc(s.title)}</div>${s.detail ? `<div class="dt">${esc(s.detail)}</div>` : ''}
       <div class="meta">${s.hero ? heroChip(s.hero) : ''}${costChip(s.cost)}</div></div>
@@ -323,20 +350,13 @@ function stepCard(s) {
 }
 function renderPlan() {
   const v = document.getElementById('v-plan');
-  const upNext = allSteps.filter(s => s.status === 'todo').slice(0, 3);
-  const types = [...new Set(allSteps.map(s => s.type))];
+  const activePhase = activePhaseNow();
   v.innerHTML = `
-    <div class="card goal">
-      ${ring(ofTarget, Math.round(ofTarget * 100) + '%', 'of 40M')}
-      <div>
-        <div class="goal-title">${ico('progress')}${esc(G.name)} · ${esc(G.rule)}</div>
-        <div class="goal-nums"><span class="big">${fmtM(current)}</span><span class="arrow">${ico('arrow')}</span><span class="big">${fmtM(G.target)}</span></div>
-        <div class="chips">
-          <span class="chip">${ico('trend')}+${fmtM(Math.max(0, G.target - current))} to go</span>
-          <span class="chip">${ico('flag')}${Math.round(climb * 100)}% of the climb</span>
-          <span class="chip">${ico('clock')}Set ${fmtDate(G.set)}</span>
-        </div>
-      </div>
+    <div class="card">
+      <div class="goal-title">${ico('progress')}${esc(G.name)} · ${esc(G.rule)}</div>
+      <div class="power-line goal-nums"><span class="big">${fmtM(current)}</span><span class="arrow">${ico('arrow')}</span><span class="big">${fmtM(G.target)}</span>
+        <span class="chip">${ico('trend')}+${fmtM(Math.max(0, G.target - current))} to go</span></div>
+      ${planBar()}
     </div>
 
     <div class="card"><div class="stepper">${S.plan.map(p => {
@@ -347,15 +367,8 @@ function renderPlan() {
         <div class="nm">${esc(p.name)}</div><div class="mt">${esc(p.window)} · ${esc(p.estimate)}</div></button>`;
     }).join('')}</div></div>
 
-    <h2 class="sec">${ico('arrow')}Up next</h2>
-    <div class="next-grid">${upNext.map((s, i) => `
-      <div class="next" style="--tc:${typeColor(s.type)}"><span class="n">${i + 1}</span>
-        <div class="tile">${ico(s.type)}</div>
-        <div><div class="ttl">${esc(s.title)}</div>${s.detail ? `<div class="dt">${esc(s.detail)}</div>` : ''}</div>
-        <div class="meta">${s.hero ? heroChip(s.hero) : ''}${costChip(s.cost)}</div></div>`).join('')}</div>
-
     <h2 class="sec">${ico('plan')}Phases</h2>
-    <div class="legend-types">${types.map(t => `<span style="--tc:${typeColor(t)}">${ico(t)}${TYPE[t][0]}</span>`).join('')}</div>
+    <div class="hint">${ico('check')}Tick a box when a step is done. Saved on this device.</div>
     ${S.plan.map(p => {
       const done = p.steps.filter(s => s.status === 'done').length;
       return `<div class="card" id="phase-${p.phase}">
@@ -371,6 +384,8 @@ function renderPlan() {
     <h2 class="sec">${ico('recaps')}Playbook</h2>
     <div class="rules">${S.rules.map(r => `<div class="rule"><div class="tile">${ico(r.icon)}</div><div>${esc(r.text)}</div></div>`).join('')}</div>`;
   v.querySelectorAll('[data-jump]').forEach(b => b.onclick = () => document.getElementById(b.dataset.jump).scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  v.querySelectorAll('.chk').forEach(b => b.onclick = () => toggleStep(b.dataset.id));
+  bindSegs(v);
 }
 
 /* ---------- Goal progress ---------- */
@@ -378,9 +393,8 @@ function renderProgress() {
   const v = document.getElementById('v-progress');
   const doneSteps = allSteps.filter(s => s.status === 'done').length;
   v.innerHTML = `
-    <div class="card goal">
-      ${ring(climb, Math.round(climb * 100) + '%', 'of the climb')}
-      <div style="width:100%">
+    <div class="card">
+      <div>
         <div class="goal-title">${ico('progress')}${esc(G.name)}</div>
         <div class="stats">
           <div class="stat"><div class="l">${ico('power')}Squad 1 now</div><div class="v">${fmtM(current)}</div></div>
@@ -388,6 +402,7 @@ function renderProgress() {
           <div class="stat"><div class="l">${ico('trend')}Still needed</div><div class="v">+${fmtM(Math.max(0, G.target - current))}</div></div>
           <div class="stat"><div class="l">${ico('plan')}Steps done</div><div class="v">${doneSteps}/${allSteps.length}</div></div>
         </div>
+        ${planBar()}
       </div>
     </div>
     <div class="card">
@@ -408,6 +423,7 @@ function renderProgress() {
       return `<span style="left:${pos(m.value)};${last ? 'transform:translateX(-100%);text-align:right' : ''}"><b>${fmtM(m.value)}</b>${esc(m.label)}</span>`;
     }).join('');
   bindTip(meter, `Squad 1: <b>${fmtM(current)}</b> of ${fmtM(G.target)}<br>Started at ${fmtM(G.baseline)}`);
+  bindSegs(v);
 
   const box = v.querySelector('#history');
   const pts = DATA.history.filter(h => h.squad1);
