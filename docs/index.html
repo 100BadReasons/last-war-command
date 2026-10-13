@@ -89,6 +89,12 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .pbar-legend { display: flex; gap: 6px; flex-wrap: wrap; }
 .pbar-legend .chip svg.i { color: var(--tc); }
 .pbar-legend .chip b { color: var(--text); font-variant-numeric: tabular-nums; }
+.fbtn { border: 1px solid transparent; cursor: pointer; font-size: 12px; transition: opacity .15s, background .15s; }
+.fbtn:hover { border-color: var(--tc, var(--border)); }
+.fbtn[aria-pressed="true"] { border-color: var(--tc); background: color-mix(in srgb, var(--tc) 18%, transparent); color: var(--text); }
+.filtering .fbtn[aria-pressed="false"] { opacity: .55; }
+.filtering .seg:not(.match) { opacity: .25; }
+.fclear { background: none; border: 1px dashed var(--border); }
 .power-line { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .goal-nums { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
 .goal-nums .big { font-size: 26px; font-weight: 700; letter-spacing: -.01em; }
@@ -329,13 +335,22 @@ function planBar() {
   const steps = order.flatMap(t => allSteps.filter(s => s.type === t));
   const done = allSteps.filter(s => s.status === 'done').length;
   return `<div class="pbar-head"><div class="goal-title" style="margin:0">${ico('plan')}Game plan · ${done} of ${allSteps.length} steps done</div><span class="pct">${Math.round(done / allSteps.length * 100)}%</span></div>
-    <div class="pbar" role="img" aria-label="${done} of ${allSteps.length} plan steps done">${steps.map(s =>
-      `<span class="seg${s.status === 'done' ? ' on' : ''}" style="--tc:${typeColor(s.type)}" data-tip="${esc(TYPE[s.type][0] + ': ' + s.title + (s.status === 'done' ? ' (done)' : ''))}"></span>`).join('')}</div>
-    <div class="pbar-legend">${order.map(t => {
+    <div class="pbar${filterType ? ' filtering' : ''}" role="img" aria-label="${done} of ${allSteps.length} plan steps done">${steps.map(s =>
+      `<span class="seg${s.status === 'done' ? ' on' : ''}${filterType === s.type ? ' match' : ''}" style="--tc:${typeColor(s.type)}" data-tip="${esc(TYPE[s.type][0] + ': ' + s.title + (s.status === 'done' ? ' (done)' : ''))}"></span>`).join('')}</div>
+    <div class="pbar-legend${filterType ? ' filtering' : ''}" role="group" aria-label="Filter plan steps by type">${order.map(t => {
       const a = allSteps.filter(s => s.type === t), d = a.filter(s => s.status === 'done').length;
-      return `<span class="chip" style="--tc:${typeColor(t)}">${ico(t)}${TYPE[t][0]} <b>${d}/${a.length}</b></span>`;
-    }).join('')}</div>`;
+      return `<button type="button" class="chip fbtn" data-type="${t}" aria-pressed="${filterType === t}" style="--tc:${typeColor(t)}">${ico(t)}${TYPE[t][0]} <b>${d}/${a.length}</b></button>`;
+    }).join('')}${filterType ? `<button type="button" class="chip fbtn fclear" data-type="">${ico('close')}Show all</button>` : ''}</div>`;
 }
+let filterType = null;
+function setFilter(t) {
+  filterType = t && t !== filterType ? t : null;
+  if ((location.hash || '#plan') !== '#plan') { location.hash = '#plan'; }
+  const y = scrollY;
+  renderPlan(); renderProgress();
+  scrollTo(0, y);
+}
+document.addEventListener('click', e => { const b = e.target.closest('.fbtn'); if (b) setFilter(b.dataset.type); });
 function bindSegs(root) { root.querySelectorAll('.seg').forEach(g => { bindTip(g, esc(g.dataset.tip)); g.tabIndex = -1; }); }
 
 /* ---------- Game plan ---------- */
@@ -369,7 +384,10 @@ function renderPlan() {
 
     <h2 class="sec">${ico('plan')}Phases</h2>
     <div class="hint">${ico('check')}Tick a box when a step is done. Saved on this device.</div>
+    ${filterType ? `<div class="hint">${ico(filterType)}Showing ${TYPE[filterType][0].toLowerCase()} steps only.</div>` : ''}
     ${S.plan.map(p => {
+      const shown = p.steps.filter(s => !filterType || s.type === filterType);
+      if (!shown.length) return '';
       const done = p.steps.filter(s => s.status === 'done').length;
       return `<div class="card" id="phase-${p.phase}">
         <div class="phase-head">
@@ -377,7 +395,7 @@ function renderPlan() {
           <div class="chips"><span class="chip">${ico('clock')}${esc(p.window)}</span><span class="chip">${ico('trend')}${esc(p.estimate)}</span>
             <span class="prog" title="${done} of ${p.steps.length} done"><span class="t"><i style="width:${(done / p.steps.length * 100).toFixed(0)}%"></i></span>${done}/${p.steps.length}</span></div>
         </div>
-        <div class="steps">${p.steps.map(stepCard).join('')}</div>
+        <div class="steps">${shown.map(stepCard).join('')}</div>
       </div>`;
     }).join('')}
 
