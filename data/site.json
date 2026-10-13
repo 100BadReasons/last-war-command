@@ -75,22 +75,22 @@
           "status": "todo"
         },
         {
-          "text": "Research day: finish both running researches with research speedups",
-          "cost": "Research speedups",
+          "text": "Queue 2: Weapon Training VIII (troop attack 7.5% to 9%) finishes by itself around 9:30 AM 10/14; let it run",
+          "cost": "None",
           "status": "todo"
         },
         {
-          "text": "Get gold to 10.1M (you have 4.0M): tap Obtain on the research to use gold items from your bag",
+          "text": "Before then: get gold to 10.1M (you have 4.0M) by tapping Obtain to use gold items from your bag",
           "cost": "Gold items",
           "status": "todo"
         },
         {
-          "text": "Hero tree > Armor Hardening II: tank hero defense +2% to +4%",
-          "cost": "10.1M gold, 1d 5h",
+          "text": "When queue 2 frees: start Hero tree > Armor Hardening II (tank defense +2% to +4%) and speed it up",
+          "cost": "10.1M gold, ~29h speedups",
           "status": "todo"
         },
         {
-          "text": "Hero tree > Track Fortification II: tank hero HP +2% to +4%",
+          "text": "Leftover speedups go to queue 1 (Oil Output I, 3d 17h left); when it frees, start Track Fortification II (tank HP +2% to +4%)",
           "cost": "17.7M gold, 1d 23h",
           "status": "todo"
         },
