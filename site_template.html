@@ -206,6 +206,9 @@ table.data th { color: var(--text-2); border-top: 0; }
 .btn { display: inline-flex; align-items: center; gap: 6px; border: 0; border-radius: 10px; padding: 9px 14px; font-weight: 600; cursor: pointer; background: var(--accent); color: #fff; text-decoration: none; }
 .btn[disabled] { opacity: .5; cursor: default; }
 .btn.ghost { background: var(--surface-2); color: var(--text); }
+.btn.sm { padding: 5px 10px; font-size: 13px; border-radius: 8px; }
+.btn.sm svg.i { width: 15px; height: 15px; }
+.note .btn.ghost { background: var(--surface); }
 .notes-list { display: grid; gap: 10px; }
 .note { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: start; padding: 12px; border-radius: 12px; background: var(--surface-2); }
 .note .tile { width: 34px; height: 34px; border-radius: 10px; }
@@ -534,57 +537,68 @@ function renderSquads() {
 }
 
 /* ---------- Notes ---------- */
-/* Notes are GitHub issues labeled "note" on the site's repo: open = waiting for the next analysis, closed = reviewed. */
-const REPO = '100BadReasons/last-war-command';
-const DRAFT = 'lw-note-draft';
+/* Notes live in this browser's storage, like the plan checkmarks. */
+const NOTES = 'lw-notes', DRAFT = 'lw-note-draft';
+const loadNotesData = () => { try { return JSON.parse(localStorage.getItem(NOTES) || '[]'); } catch (e) { return []; } };
+const saveNotesData = n => { try { localStorage.setItem(NOTES, JSON.stringify(n)); } catch (e) {} };
+const noteDate = t => new Date(t).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 function renderNotes() {
   const v = document.getElementById('v-notes');
   let draft = '';
   try { draft = localStorage.getItem(DRAFT) || ''; } catch (e) {}
+  const notes = loadNotesData();
+  const open = notes.filter(n => !n.reviewed), done = notes.filter(n => n.reviewed);
+  const card = n => `<div class="note${n.reviewed ? ' reviewed' : ''}">
+      <div class="tile" style="--tc:${n.reviewed ? 'var(--good)' : 'var(--accent)'}">${ico(n.reviewed ? 'check' : 'note')}</div>
+      <div><p>${esc(n.text)}</p><div class="when">${noteDate(n.at)}${n.reviewed ? ' · reviewed ' + noteDate(n.reviewed) : ''}</div>
+        <div class="note-row" style="justify-content:flex-start;margin-top:8px">
+          <button class="btn ghost sm" type="button" data-act="toggle" data-id="${n.id}">${ico(n.reviewed ? 'arrow' : 'check')}${n.reviewed ? 'Move back' : 'Mark reviewed'}</button>
+          <button class="btn ghost sm" type="button" data-act="del" data-id="${n.id}">${ico('close')}Delete</button>
+        </div></div></div>`;
   v.innerHTML = `
     <div class="card note-form">
       <div class="goal-title">${ico('note')}Add a note for the next analysis</div>
       <textarea id="note-text" placeholder="e.g. Murphy's weapon took the universal shards; check his power next recording" aria-label="Note">${esc(draft)}</textarea>
       <div class="note-row">
-        <span class="hint" style="margin:0">${ico('arrow')}Opens GitHub with the note filled in. Tap Create to save it.</span>
+        <span class="hint" style="margin:0">${ico('check')}Saved on this device.</span>
         <button class="btn" id="note-add" type="button">${ico('note')}Add note</button>
       </div>
     </div>
-    <h2 class="sec">${ico('clock')}To consider next analysis</h2>
-    <div class="notes-list" id="notes-open"><p class="empty">${ico('clock')}Loading notes…</p></div>
+    <div class="phase-head" style="margin:24px 0 10px"><h2 class="sec" style="margin:0">${ico('clock')}To consider next analysis</h2>
+      ${open.length ? `<button class="btn ghost sm" id="note-copy" type="button">${ico('recaps')}Copy all</button>` : ''}</div>
+    <div class="notes-list">${open.length ? open.map(card).join('') : `<p class="empty">${ico('check')}No notes waiting.</p>`}</div>
     <h2 class="sec">${ico('check')}Reviewed</h2>
-    <div class="notes-list" id="notes-done"></div>`;
+    <div class="notes-list">${done.length ? done.map(card).join('') : `<p class="empty">${ico('clock')}Nothing reviewed yet.</p>`}</div>`;
   const ta = v.querySelector('#note-text'), add = v.querySelector('#note-add');
   const sync = () => { add.disabled = !ta.value.trim(); try { localStorage.setItem(DRAFT, ta.value); } catch (e) {} };
   ta.oninput = sync; sync();
   add.onclick = () => {
     const text = ta.value.trim();
     if (!text) return;
-    const title = text.split('\n')[0].slice(0, 70);
-    const url = `https://github.com/${REPO}/issues/new?labels=note&title=${encodeURIComponent('Note: ' + title)}&body=${encodeURIComponent(text)}`;
-    window.open(url, '_blank', 'noopener');
-    ta.value = ''; sync();
-    setTimeout(loadNotes, 4000);
+    const all = loadNotesData();
+    all.unshift({ id: Date.now().toString(36), text, at: Date.now(), reviewed: null });
+    saveNotesData(all);
+    try { localStorage.removeItem(DRAFT); } catch (e) {}
+    renderNotes();
   };
-  loadNotes();
+  v.querySelectorAll('[data-act]').forEach(b => b.onclick = () => {
+    let all = loadNotesData();
+    if (b.dataset.act === 'del') {
+      if (!confirm('Delete this note?')) return;
+      all = all.filter(n => n.id !== b.dataset.id);
+    } else {
+      all = all.map(n => n.id === b.dataset.id ? { ...n, reviewed: n.reviewed ? null : Date.now() } : n);
+    }
+    saveNotesData(all);
+    renderNotes();
+  });
+  const copy = v.querySelector('#note-copy');
+  if (copy) copy.onclick = async () => {
+    const txt = open.map(n => `- (${noteDate(n.at)}) ${n.text}`).join('\n');
+    try { await navigator.clipboard.writeText(txt); copy.innerHTML = ico('check') + 'Copied'; }
+    catch (e) { prompt('Copy your notes:', txt); }
+  };
 }
-async function loadNotes() {
-  const open = document.getElementById('notes-open'), done = document.getElementById('notes-done');
-  const card = (n, reviewed) => `<div class="note${reviewed ? ' reviewed' : ''}"><div class="tile" style="--tc:${reviewed ? 'var(--good)' : 'var(--accent)'}">${ico(reviewed ? 'check' : 'note')}</div>
-    <div><p>${esc((n.body || n.title.replace(/^Note: /, '')).trim())}</p><div class="when">${fmtDate(n.created_at.slice(0, 10))}${reviewed && n.closed_at ? ' · reviewed ' + fmtDate(n.closed_at.slice(0, 10)) : ''}</div></div></div>`;
-  try {
-    const r = await fetch(`https://api.github.com/repos/${REPO}/issues?labels=note&state=all&per_page=50`, { headers: { Accept: 'application/vnd.github+json' } });
-    if (!r.ok) throw new Error(r.status);
-    const all = (await r.json()).filter(n => !n.pull_request);
-    const o = all.filter(n => n.state === 'open'), c = all.filter(n => n.state === 'closed').slice(0, 10);
-    open.innerHTML = o.length ? o.map(n => card(n, false)).join('') : `<p class="empty">${ico('check')}No notes waiting.</p>`;
-    done.innerHTML = c.length ? c.map(n => card(n, true)).join('') : `<p class="empty">${ico('clock')}Nothing reviewed yet.</p>`;
-  } catch (e) {
-    open.innerHTML = `<p class="empty">${ico('clock')}Couldn't load notes right now. They're saved on GitHub; try again in a minute.</p>`;
-    done.innerHTML = '';
-  }
-}
-addEventListener('hashchange', () => { if (location.hash === '#notes') loadNotes(); });
 
 /* ---------- shell: menu, routing, theme ---------- */
 const VIEWS = [
