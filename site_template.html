@@ -72,11 +72,11 @@ body.menu-open .scrim { opacity: 1; pointer-events: auto; }
 .drawer a[aria-current="page"] { background: var(--surface-2); color: var(--accent); }
 .drawer .foot { margin-top: auto; color: var(--text-3); font-size: 12px; padding: 8px 12px; }
 
-main { padding: 20px 0 32px; }
+main.wrap { padding-top: 24px; padding-bottom: 8px; }
 .view { display: none; }
 .view.on { display: block; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 14px; scroll-margin-top: 72px; }
-.card.bare { background: none; border: 0; padding: 20px 0 8px; }
+.card.bare { background: none; border: 0; padding: 0 0 8px; }
 h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-2); margin: 24px 0 10px; display: flex; align-items: center; gap: 8px; }
 .chip { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-2); background: var(--surface-2); border-radius: 999px; padding: 3px 9px; white-space: nowrap; }
 .chip svg.i { width: 14px; height: 14px; }
@@ -213,7 +213,7 @@ table.data th { color: var(--text-2); border-top: 0; }
 .note .when { color: var(--text-3); font-size: 12px; margin-top: 4px; }
 .note.reviewed { opacity: .65; }
 .note p { margin: 0; white-space: pre-wrap; }
-footer { color: var(--text-3); font-size: 12px; padding: 24px 0 32px; }
+footer.wrap { color: var(--text-3); font-size: 12px; padding-top: 16px; padding-bottom: 32px; }
 
 @media (max-width: 520px) {
   .goal-nums .big { font-size: 22px; }
