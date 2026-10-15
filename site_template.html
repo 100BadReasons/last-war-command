@@ -323,6 +323,21 @@ function bindTip(node, html) {
   node.addEventListener('blur', () => tip.style.opacity = 0);
 }
 
+/* sync: when sync_url is set, checkmarks and notes are kept in the Google Sheet via Apps Script.
+   This browser's storage is a cache so the page works offline. */
+const SYNC = S.sync_url || '';
+async function push(msg) {
+  if (!SYNC) return null;
+  try {
+    const r = await fetch(SYNC, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(msg) });
+    return r.ok ? await r.json() : null;
+  } catch (e) { return null; }
+}
+async function pull() {
+  if (!SYNC) return null;
+  try { const r = await fetch(SYNC); return r.ok ? await r.json() : null; } catch (e) { return null; }
+}
+
 /* shared numbers */
 const G = S.goal;
 const current = DATA.history[DATA.history.length - 1].squad1;
@@ -341,6 +356,7 @@ function toggleStep(id) {
   s.status = s.status === 'done' ? undone(s) : 'done';
   saved[id] = s.status === 'done';
   try { localStorage.setItem(STORE, JSON.stringify(saved)); } catch (e) {}
+  push({ action: 'check', id, done: saved[id] });
   const y = scrollY;
   renderPlan(); renderProgress();
   scrollTo(0, y);
@@ -402,7 +418,7 @@ function renderPlan() {
     }).join('')}</div></div>
 
     <h2 class="sec">${ico('plan')}Phases</h2>
-    <div class="hint">${ico('check')}Tick a box when a step is done. Saved on this device.</div>
+    <div class="hint">${ico('check')}Tick a box when a step is done.${SYNC ? '' : ' Saved on this device.'}</div>
     ${filterType ? `<div class="hint">${ico(filterType)}Showing ${TYPE[filterType][0].toLowerCase()} steps only.</div>` : ''}
     ${S.plan.map(p => {
       const shown = p.steps.filter(s => !filterType || s.type === filterType);
@@ -560,7 +576,7 @@ function renderNotes() {
       <div class="goal-title">${ico('note')}Add a note for the next analysis</div>
       <textarea id="note-text" placeholder="e.g. Murphy's weapon took the universal shards; check his power next recording" aria-label="Note">${esc(draft)}</textarea>
       <div class="note-row">
-        <span class="hint" style="margin:0">${ico('check')}Saved on this device.</span>
+        <span class="hint" style="margin:0">${ico('check')}${SYNC ? 'Saved to your analysis sheet.' : 'Saved on this device.'}</span>
         <button class="btn" id="note-add" type="button">${ico('note')}Add note</button>
       </div>
     </div>
@@ -576,8 +592,10 @@ function renderNotes() {
     const text = ta.value.trim();
     if (!text) return;
     const all = loadNotesData();
-    all.unshift({ id: Date.now().toString(36), text, at: Date.now(), reviewed: null });
+    const note = { id: Date.now().toString(36), text, at: Date.now(), reviewed: null };
+    all.unshift(note);
     saveNotesData(all);
+    push({ action: 'note-add', id: note.id, text });
     try { localStorage.removeItem(DRAFT); } catch (e) {}
     renderNotes();
   };
@@ -586,8 +604,10 @@ function renderNotes() {
     if (b.dataset.act === 'del') {
       if (!confirm('Delete this note?')) return;
       all = all.filter(n => n.id !== b.dataset.id);
+      push({ action: 'note-delete', id: b.dataset.id });
     } else {
       all = all.map(n => n.id === b.dataset.id ? { ...n, reviewed: n.reviewed ? null : Date.now() } : n);
+      push({ action: 'note-review', id: b.dataset.id, reviewed: !!all.find(n => n.id === b.dataset.id).reviewed });
     }
     saveNotesData(all);
     renderNotes();
@@ -614,6 +634,16 @@ document.getElementById('menu-btn').innerHTML = ico('menu');
 document.getElementById('close-btn').innerHTML = ico('close');
 document.getElementById('nav-links').innerHTML = VIEWS.map(v => `<a href="#${v.id}" data-v="${v.id}">${ico(v.icon)}${v.name}</a>`).join('');
 renderPlan(); renderProgress(); renderRecaps(); renderSquads(); renderNotes();
+pull().then(st => {
+  if (!st) return;
+  saved = st.checks || {};
+  try { localStorage.setItem(STORE, JSON.stringify(saved)); } catch (e) {}
+  allSteps.forEach(s => { s.status = s.id in saved ? (saved[s.id] ? 'done' : undone(s)) : s.base; });
+  saveNotesData(st.notes || []);
+  const y = scrollY;
+  renderPlan(); renderProgress(); renderNotes();
+  scrollTo(0, y);
+});
 document.getElementById('foot').textContent += ' Site version: ' + DATA.built + '.';
 
 const menuBtn = document.getElementById('menu-btn');
