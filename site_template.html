@@ -165,9 +165,11 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .meter-track { position: relative; height: 14px; background: var(--track); border-radius: 7px; }
 .meter-fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); border-radius: 7px; }
 .tick { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--surface); }
-.ticks { position: relative; height: 34px; margin-top: 6px; font-size: 12px; color: var(--text-2); }
-.ticks span { position: absolute; transform: translateX(-50%); text-align: center; white-space: nowrap; }
-.ticks span b { display: block; color: var(--text); }
+.ticks { display: grid; grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); gap: 8px; margin-top: 12px; font-size: 12px; color: var(--text-2); }
+.mchip { background: var(--surface-2); border-radius: 10px; padding: 8px 10px; white-space: nowrap; }
+.mchip b { display: flex; align-items: center; gap: 4px; color: var(--text); font-size: 14px; }
+.mchip b svg { width: 14px; height: 14px; color: var(--accent); }
+.mchip.hit { outline: 1px solid var(--accent); }
 .bars { display: grid; gap: 12px; margin-top: 12px; }
 .bar-row { display: grid; grid-template-columns: 130px 1fr 64px; align-items: center; gap: 10px; }
 .bar-row .nm { display: flex; align-items: center; gap: 8px; font-weight: 600; min-width: 0; }
@@ -472,11 +474,11 @@ function renderProgress() {
   const meter = v.querySelector('#meter'), ticks = v.querySelector('#ticks');
   const lo = G.baseline, span = G.target - lo, pos = x => ((x - lo) / span * 100).toFixed(2) + '%';
   meter.innerHTML = `<div class="meter-fill" style="width:max(14px, ${pos(current)})"></div>`;
-  ticks.innerHTML = `<span style="left:0;transform:none;text-align:left"><b>${fmtM(G.baseline)}</b>Start</span>` +
+  ticks.innerHTML = `<span class="mchip"><b>${fmtM(G.baseline)}</b>Start</span>` +
     G.milestones.map((m, i) => {
-      const last = i === G.milestones.length - 1;
-      if (!last) meter.insertAdjacentHTML('beforeend', `<div class="tick" style="left:${pos(m.value)}"></div>`);
-      return `<span style="left:${pos(m.value)};${last ? 'transform:translateX(-100%);text-align:right' : ''}"><b>${fmtM(m.value)}</b>${esc(m.label)}</span>`;
+      if (i < G.milestones.length - 1) meter.insertAdjacentHTML('beforeend', `<div class="tick" style="left:${pos(m.value)}"></div>`);
+      const hit = current >= m.value;
+      return `<span class="mchip${hit ? ' hit' : ''}"><b>${hit ? ico('check') : ''}${fmtM(m.value)}</b>${esc(m.label)}</span>`;
     }).join('');
   bindTip(meter, `Squad 1: <b>${fmtM(current)}</b> of ${fmtM(G.target)}<br>Started at ${fmtM(G.baseline)}`);
   bindSegs(v);
