@@ -1,0 +1,536 @@
+{
+ "source": "cpt-hedge.com calculators (community data), fetched 2026-10-18",
+ "hq_requirements": [
+  {
+   "hqLevel": 31,
+   "requirements": [
+    {
+     "building": "Tech Center",
+     "level": 30
+    },
+    {
+     "building": "Barracks",
+     "level": 30
+    },
+    {
+     "building": "Tank or Air or Missile Center",
+     "level": 30
+    }
+   ]
+  },
+  {
+   "hqLevel": 32,
+   "requirements": [
+    {
+     "building": "Tech Center",
+     "level": 31
+    },
+    {
+     "building": "Barracks",
+     "level": 31
+    },
+    {
+     "building": "Tank or Air or Missile Center",
+     "level": 31
+    },
+    {
+     "building": "Wall",
+     "level": 31
+    }
+   ]
+  },
+  {
+   "hqLevel": 33,
+   "requirements": [
+    {
+     "building": "Tech Center",
+     "level": 32
+    },
+    {
+     "building": "Barracks",
+     "level": 32
+    },
+    {
+     "building": "Tank or Air or Missile Center",
+     "level": 32
+    },
+    {
+     "building": "Hospital",
+     "level": 32
+    },
+    {
+     "building": "Drill Ground",
+     "level": 32
+    }
+   ]
+  },
+  {
+   "hqLevel": 34,
+   "requirements": [
+    {
+     "building": "Tech Center",
+     "level": 33
+    },
+    {
+     "building": "Barracks",
+     "level": 33
+    },
+    {
+     "building": "Tank or Air or Missile Center",
+     "level": 33
+    },
+    {
+     "building": "Alliance Center",
+     "level": 33
+    },
+    {
+     "building": "Wall",
+     "level": 33
+    }
+   ]
+  },
+  {
+   "hqLevel": 35,
+   "requirements": [
+    {
+     "building": "Tech Center",
+     "level": 34
+    },
+    {
+     "building": "Barracks",
+     "level": 34
+    },
+    {
+     "building": "Tank or Air or Missile Center",
+     "level": 34
+    },
+    {
+     "building": "Hospital",
+     "level": 34
+    },
+    {
+     "building": "Drill Ground",
+     "level": 34
+    }
+   ]
+  }
+ ],
+ "costs": {
+  "headquarters": [
+   {
+    "level": 31,
+    "rss": {
+     "food": 1600000000,
+     "iron": 1600000000,
+     "gold": 510000000,
+     "oil": 1440000
+    },
+    "time": "111d 18:21:40"
+   },
+   {
+    "level": 32,
+    "rss": {
+     "food": 1700000000,
+     "iron": 1700000000,
+     "gold": 560000000,
+     "oil": 2304000
+    },
+    "time": "122d 22:35:50"
+   },
+   {
+    "level": 33,
+    "rss": {
+     "food": 1900000000,
+     "iron": 1900000000,
+     "gold": 620000000,
+     "oil": 3916800
+    },
+    "time": "135d 05:39:25"
+   },
+   {
+    "level": 34,
+    "rss": {
+     "food": 2000000000,
+     "iron": 2000000000,
+     "gold": 650000000,
+     "oil": 7050240
+    },
+    "time": "141d 23:56:23"
+   },
+   {
+    "level": 35,
+    "rss": {
+     "food": 2100000000,
+     "iron": 2100000000,
+     "gold": 680000000,
+     "oil": 14100480
+    },
+    "time": "149d 02:20:13"
+   }
+  ],
+  "tech center": [
+   {
+    "level": 31,
+    "rss": {
+     "food": 1400000000,
+     "iron": 1400000000,
+     "gold": 440000000,
+     "oil": 810000
+    },
+    "time": "97d 19:03:58"
+   },
+   {
+    "level": 32,
+    "rss": {
+     "food": 1500000000,
+     "iron": 1500000000,
+     "gold": 490000000,
+     "oil": 1296000
+    },
+    "time": "107d 13:46:21"
+   },
+   {
+    "level": 33,
+    "rss": {
+     "food": 1700000000,
+     "iron": 1700000000,
+     "gold": 540000000,
+     "oil": 2203200
+    },
+    "time": "118d 07:57:00"
+   },
+   {
+    "level": 34,
+    "rss": {
+     "food": 1800000000,
+     "iron": 1800000000,
+     "gold": 570000000,
+     "oil": 3965760
+    },
+    "time": "124d 05:56:51"
+   },
+   {
+    "level": 35,
+    "rss": {
+     "food": 1900000000,
+     "iron": 1900000000,
+     "gold": 590000000,
+     "oil": 7931520
+    },
+    "time": "130d 11:02:41"
+   }
+  ],
+  "barracks": [
+   {
+    "level": 31,
+    "rss": {
+     "food": 790000000,
+     "iron": 790000000,
+     "gold": 320000000,
+     "oil": 360000
+    },
+    "time": "83d 19:46:15"
+   },
+   {
+    "level": 32,
+    "rss": {
+     "food": 870000000,
+     "iron": 870000000,
+     "gold": 350000000,
+     "oil": 576000
+    },
+    "time": "92d 04:56:53"
+   },
+   {
+    "level": 33,
+    "rss": {
+     "food": 960000000,
+     "iron": 960000000,
+     "gold": 380000000,
+     "oil": 979200
+    },
+    "time": "101d 10:14:34"
+   },
+   {
+    "level": 34,
+    "rss": {
+     "food": 1000000000,
+     "iron": 1000000000,
+     "gold": 400000000,
+     "oil": 1762560
+    },
+    "time": "106d 11:57:18"
+   },
+   {
+    "level": 35,
+    "rss": {
+     "food": 1100000000,
+     "iron": 1100000000,
+     "gold": 420000000,
+     "oil": 3525120
+    },
+    "time": "111d 19:45:10"
+   }
+  ],
+  "tank center": [
+   {
+    "level": 31,
+    "rss": {
+     "food": 400000000,
+     "iron": 1200000000,
+     "gold": 250000000,
+     "oil": 562500
+    },
+    "time": "83d 19:46:15"
+   },
+   {
+    "level": 32,
+    "rss": {
+     "food": 440000000,
+     "iron": 1300000000,
+     "gold": 280000000,
+     "oil": 900000
+    },
+    "time": "92d 04:56:53"
+   },
+   {
+    "level": 33,
+    "rss": {
+     "food": 480000000,
+     "iron": 1400000000,
+     "gold": 310000000,
+     "oil": 1530000
+    },
+    "time": "101d 10:14:34"
+   },
+   {
+    "level": 34,
+    "rss": {
+     "food": 500000000,
+     "iron": 1500000000,
+     "gold": 320000000,
+     "oil": 2754000
+    },
+    "time": "106d 11:57:18"
+   },
+   {
+    "level": 35,
+    "rss": {
+     "food": 530000000,
+     "iron": 1600000000,
+     "gold": 340000000,
+     "oil": 5508000
+    },
+    "time": "111d 19:45:10"
+   }
+  ],
+  "wall": [
+   {
+    "level": 31,
+    "rss": {
+     "food": 530000000,
+     "iron": 1600000000,
+     "gold": 340000000,
+     "oil": 675000
+    },
+    "time": "111d 18:21:40"
+   },
+   {
+    "level": 32,
+    "rss": {
+     "food": 580000000,
+     "iron": 1700000000,
+     "gold": 370000000,
+     "oil": 1080000
+    },
+    "time": "122d 22:35:50"
+   },
+   {
+    "level": 33,
+    "rss": {
+     "food": 640000000,
+     "iron": 1900000000,
+     "gold": 410000000,
+     "oil": 1836000
+    },
+    "time": "135d 05:39:25"
+   },
+   {
+    "level": 34,
+    "rss": {
+     "food": 670000000,
+     "iron": 2000000000,
+     "gold": 430000000,
+     "oil": 3304800
+    },
+    "time": "141d 23:56:23"
+   },
+   {
+    "level": 35,
+    "rss": {
+     "food": 710000000,
+     "iron": 2100000000,
+     "gold": 450000000,
+     "oil": 6609600
+    },
+    "time": "149d 02:20:13"
+   }
+  ],
+  "hospital": [
+   {
+    "level": 31,
+    "rss": {
+     "food": 1200000000,
+     "iron": 400000000,
+     "gold": 320000000,
+     "oil": 270000
+    },
+    "time": "83d 19:46:15"
+   },
+   {
+    "level": 32,
+    "rss": {
+     "food": 1300000000,
+     "iron": 440000000,
+     "gold": 350000000,
+     "oil": 432000
+    },
+    "time": "92d 04:56:53"
+   },
+   {
+    "level": 33,
+    "rss": {
+     "food": 1400000000,
+     "iron": 480000000,
+     "gold": 380000000,
+     "oil": 734400
+    },
+    "time": "101d 10:14:34"
+   },
+   {
+    "level": 34,
+    "rss": {
+     "food": 1500000000,
+     "iron": 500000000,
+     "gold": 400000000,
+     "oil": 1321920
+    },
+    "time": "106d 11:57:18"
+   },
+   {
+    "level": 35,
+    "rss": {
+     "food": 1600000000,
+     "iron": 530000000,
+     "gold": 420000000,
+     "oil": 2643840
+    },
+    "time": "111d 19:45:10"
+   }
+  ],
+  "drill ground": [
+   {
+    "level": 31,
+    "rss": {
+     "food": 790000000,
+     "iron": 260000000,
+     "gold": 210000000,
+     "oil": 270000
+    },
+    "time": "55d 21:10:50"
+   },
+   {
+    "level": 32,
+    "rss": {
+     "food": 870000000,
+     "iron": 290000000,
+     "gold": 230000000,
+     "oil": 432000
+    },
+    "time": "61d 11:17:55"
+   },
+   {
+    "level": 33,
+    "rss": {
+     "food": 960000000,
+     "iron": 320000000,
+     "gold": 260000000,
+     "oil": 734400
+    },
+    "time": "67d 14:49:43"
+   },
+   {
+    "level": 34,
+    "rss": {
+     "food": 1000000000,
+     "iron": 340000000,
+     "gold": 270000000,
+     "oil": 1321920
+    },
+    "time": "70d 23:58:12"
+   },
+   {
+    "level": 35,
+    "rss": {
+     "food": 1100000000,
+     "iron": 350000000,
+     "gold": 280000000,
+     "oil": 2643840
+    },
+    "time": "74d 13:10:07"
+   }
+  ],
+  "alliance center": [
+   {
+    "level": 31,
+    "rss": {
+     "food": 790000000,
+     "iron": 260000000,
+     "gold": 250000000,
+     "oil": 202500
+    },
+    "time": "55d 21:10:50"
+   },
+   {
+    "level": 32,
+    "rss": {
+     "food": 870000000,
+     "iron": 290000000,
+     "gold": 280000000,
+     "oil": 324000
+    },
+    "time": "61d 11:17:55"
+   },
+   {
+    "level": 33,
+    "rss": {
+     "food": 960000000,
+     "iron": 320000000,
+     "gold": 310000000,
+     "oil": 550800
+    },
+    "time": "67d 14:49:43"
+   },
+   {
+    "level": 34,
+    "rss": {
+     "food": 1000000000,
+     "iron": 340000000,
+     "gold": 320000000,
+     "oil": 991440
+    },
+    "time": "70d 23:58:12"
+   },
+   {
+    "level": 35,
+    "rss": {
+     "food": 1100000000,
+     "iron": 350000000,
+     "gold": 340000000,
+     "oil": 1982880
+    },
+    "time": "74d 13:10:07"
+   }
+  ]
+ }
+}

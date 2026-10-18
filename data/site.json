@@ -3,7 +3,7 @@
  "commander": "HQ 30 · VIP 12 · Tank main",
  "goal": {
   "name": "Squad 1 to 40M",
-  "rule": "Without upgrading HQ (stay at HQ 30)",
+  "rule": "HQ upgrades allowed: HQ 35 before Season 4",
   "set": "2026-10-13",
   "baseline": 29560000,
   "target": 40000000,
@@ -25,14 +25,18 @@
     "value": 40000000
    }
   ],
-  "rebaselined": "2026-10-18"
+  "rebaselined": "2026-10-18",
+  "hq_target": {
+   "level": 35,
+   "by": "End of Season 3"
+  }
  },
  "plan": [
   {
    "phase": 1,
-   "name": "Free power now",
+   "name": "Finish the free power",
    "window": "Now",
-   "estimate": "+0.1M · to ~30.3M",
+   "estimate": "+0.1M",
    "steps": [
     {
      "type": "gear",
@@ -56,9 +60,273 @@
   },
   {
    "phase": 2,
-   "name": "Gear stars & weapons",
-   "window": "Next",
-   "estimate": "+1M to +2.5M · toward 31M-33M",
+   "name": "Road to HQ 35",
+   "window": "Season 3",
+   "estimate": "Hero level cap 150 → 175",
+   "steps": [
+    {
+     "type": "research",
+     "title": "Age of Oil: Oil Output I to 10/10",
+     "cost": "Research",
+     "status": "todo",
+     "detail": "7/10, level 8 in queue 2 · unlocks the next two nodes",
+     "id": "p2-age-of-oil-oil-output-i"
+    },
+    {
+     "type": "research",
+     "title": "Fast Builder V and Research Enhancement V",
+     "cost": "2d 17h each",
+     "status": "todo",
+     "detail": "Both are required for the 3rd Tech Center · Research Enhancement also speeds every research after it",
+     "id": "p2-age-of-oil-next-tier",
+     "subs": [
+      {
+       "id": "p2-fast-builder-v-1",
+       "title": "Fast Builder V to level 1",
+       "cost": "2d 17h"
+      },
+      {
+       "id": "p2-research-enhancement-v-1",
+       "title": "Research Enhancement V to level 1",
+       "cost": "2d 17h"
+      }
+     ]
+    },
+    {
+     "type": "research",
+     "title": "Unlock the 3rd Tech Center",
+     "cost": "3d 20h",
+     "status": "todo",
+     "detail": "A third research queue: one for tank boosts, one for the Age of Oil, one free",
+     "id": "p2-age-of-oil-3rd-tech-center"
+    },
+    {
+     "type": "research",
+     "title": "Age of Oil: rest of the tree to HQ Expansion",
+     "cost": "Research",
+     "status": "todo",
+     "detail": "HQ Expansion raises the HQ cap to 35. Record the full tree so the exact path can be filled in.",
+     "id": "p2-age-of-oil-hq-expansion"
+    },
+    {
+     "type": "build",
+     "title": "Build speed for 5 HQ levels",
+     "cost": "Speedups",
+     "status": "todo",
+     "detail": "HQ 31-35 plus prerequisites is thousands of base build days, so construction speed and speedups set the pace",
+     "id": "hq-build-speed",
+     "subs": [
+      {
+       "id": "hq-speed-fast-builder",
+       "title": "Fast Builder V (Age of Oil) as high as it goes",
+       "cost": "Research"
+      },
+      {
+       "id": "hq-speed-eternal-pyramid",
+       "title": "Upgrade Eternal Pyramid decor (construction speed)",
+       "cost": "Decor components"
+      },
+      {
+       "id": "hq-speed-save-speedups",
+       "title": "Save construction speedups for HQ and Tech Center levels",
+       "cost": "Speedups"
+      },
+      {
+       "id": "hq-speed-oil-wells",
+       "title": "Build every Oil Well as it unlocks (5 total: 2 from research, 3 from HQ levels)",
+       "cost": "Buildings"
+      }
+     ]
+    },
+    {
+     "type": "build",
+     "title": "HQ 31",
+     "detail": "Needs the Age of Oil HQ unlock. Barracks = your highest barracks; Tank Center fills the Tank/Air/Missile Center slot.",
+     "cost": "1.44M oil total",
+     "status": "todo",
+     "id": "hq-31",
+     "subs": [
+      {
+       "id": "hq31-tech-center-30",
+       "title": "Tech Center to 30",
+       "cost": "No oil"
+      },
+      {
+       "id": "hq31-barracks-30",
+       "title": "Barracks to 30",
+       "cost": "No oil"
+      },
+      {
+       "id": "hq31-tank-center-30",
+       "title": "Tank Center to 30",
+       "cost": "No oil"
+      },
+      {
+       "id": "hq31-headquarters",
+       "title": "Headquarters to 31",
+       "cost": "1.44M oil"
+      }
+     ]
+    },
+    {
+     "type": "build",
+     "title": "HQ 32",
+     "cost": "4.71M oil total",
+     "status": "todo",
+     "id": "hq-32",
+     "subs": [
+      {
+       "id": "hq32-tech-center-31",
+       "title": "Tech Center to 31",
+       "cost": "0.81M oil"
+      },
+      {
+       "id": "hq32-barracks-31",
+       "title": "Barracks to 31",
+       "cost": "0.36M oil"
+      },
+      {
+       "id": "hq32-tank-center-31",
+       "title": "Tank Center to 31",
+       "cost": "0.56M oil"
+      },
+      {
+       "id": "hq32-wall-31",
+       "title": "Wall to 31",
+       "cost": "0.68M oil"
+      },
+      {
+       "id": "hq32-headquarters",
+       "title": "Headquarters to 32",
+       "cost": "2.30M oil"
+      }
+     ]
+    },
+    {
+     "type": "build",
+     "title": "HQ 33",
+     "cost": "8.10M oil total",
+     "status": "todo",
+     "id": "hq-33",
+     "subs": [
+      {
+       "id": "hq33-tech-center-32",
+       "title": "Tech Center to 32",
+       "cost": "1.30M oil"
+      },
+      {
+       "id": "hq33-barracks-32",
+       "title": "Barracks to 32",
+       "cost": "0.58M oil"
+      },
+      {
+       "id": "hq33-tank-center-32",
+       "title": "Tank Center to 32",
+       "cost": "0.90M oil"
+      },
+      {
+       "id": "hq33-hospital-32",
+       "title": "Hospital to 32",
+       "cost": "0.70M oil"
+      },
+      {
+       "id": "hq33-drill-ground-32",
+       "title": "Drill Ground to 32",
+       "cost": "0.70M oil"
+      },
+      {
+       "id": "hq33-headquarters",
+       "title": "Headquarters to 33",
+       "cost": "3.92M oil"
+      }
+     ]
+    },
+    {
+     "type": "build",
+     "title": "HQ 34",
+     "cost": "15.76M oil total",
+     "status": "todo",
+     "id": "hq-34",
+     "subs": [
+      {
+       "id": "hq34-tech-center-33",
+       "title": "Tech Center to 33",
+       "cost": "2.20M oil"
+      },
+      {
+       "id": "hq34-barracks-33",
+       "title": "Barracks to 33",
+       "cost": "0.98M oil"
+      },
+      {
+       "id": "hq34-tank-center-33",
+       "title": "Tank Center to 33",
+       "cost": "1.53M oil"
+      },
+      {
+       "id": "hq34-alliance-center-33",
+       "title": "Alliance Center to 33",
+       "cost": "1.08M oil"
+      },
+      {
+       "id": "hq34-wall-33",
+       "title": "Wall to 33",
+       "cost": "2.92M oil"
+      },
+      {
+       "id": "hq34-headquarters",
+       "title": "Headquarters to 34",
+       "cost": "7.05M oil"
+      }
+     ]
+    },
+    {
+     "type": "build",
+     "title": "HQ 35",
+     "cost": "26.70M oil total",
+     "status": "todo",
+     "id": "hq-35",
+     "subs": [
+      {
+       "id": "hq35-tech-center-34",
+       "title": "Tech Center to 34",
+       "cost": "3.97M oil"
+      },
+      {
+       "id": "hq35-barracks-34",
+       "title": "Barracks to 34",
+       "cost": "1.76M oil"
+      },
+      {
+       "id": "hq35-tank-center-34",
+       "title": "Tank Center to 34",
+       "cost": "2.75M oil"
+      },
+      {
+       "id": "hq35-hospital-34",
+       "title": "Hospital to 34",
+       "cost": "2.06M oil"
+      },
+      {
+       "id": "hq35-drill-ground-34",
+       "title": "Drill Ground to 34",
+       "cost": "2.06M oil"
+      },
+      {
+       "id": "hq35-headquarters",
+       "title": "Headquarters to 35",
+       "cost": "14.10M oil"
+      }
+     ],
+     "detail": "Needs HQ Expansion research (end of the Age of Oil tree), which raises the HQ cap to 35."
+    }
+   ]
+  },
+  {
+   "phase": 3,
+   "name": "Squad 1 power",
+   "window": "Alongside the HQ path",
+   "estimate": "+2M to +4M",
    "steps": [
     {
      "type": "gear",
@@ -97,42 +365,6 @@
      "id": "p2-murphy-exclusive-weapon-12-20"
     },
     {
-     "type": "research",
-     "title": "Age of Oil: Oil Output I to 10/10",
-     "cost": "Research",
-     "status": "todo",
-     "detail": "7/10, level 8 in queue 2 · unlocks the next two nodes",
-     "id": "p2-age-of-oil-oil-output-i"
-    },
-    {
-     "type": "research",
-     "title": "Fast Builder V and Research Enhancement V",
-     "cost": "2d 17h each",
-     "status": "todo",
-     "detail": "Both are required for the 3rd Tech Center · Research Enhancement also speeds every research after it",
-     "id": "p2-age-of-oil-next-tier",
-     "subs": [
-      {
-       "id": "p2-fast-builder-v-1",
-       "title": "Fast Builder V to level 1",
-       "cost": "2d 17h"
-      },
-      {
-       "id": "p2-research-enhancement-v-1",
-       "title": "Research Enhancement V to level 1",
-       "cost": "2d 17h"
-      }
-     ]
-    },
-    {
-     "type": "research",
-     "title": "Unlock the 3rd Tech Center",
-     "cost": "3d 20h",
-     "status": "todo",
-     "detail": "A third research queue: one for tank boosts, one for the Age of Oil, one free",
-     "id": "p2-age-of-oil-3rd-tech-center"
-    },
-    {
      "type": "skill",
      "title": "Skills that boost the whole squad",
      "cost": "48.2K medals on hand",
@@ -164,14 +396,63 @@
        "cost": "9,000-13,000 medals each"
       }
      ]
+    },
+    {
+     "type": "decor",
+     "title": "Decorations that add hero stats",
+     "cost": "Decor components",
+     "status": "todo",
+     "detail": "Decor stats apply to every hero, so all five tanks gain at once",
+     "id": "p3-decor-hero-stats",
+     "subs": [
+      {
+       "id": "p3-decor-record-gallery",
+       "title": "Record the Decorations gallery (owned, levels, components on hand)"
+      },
+      {
+       "id": "p3-decor-flat-stats",
+       "title": "Upgrade gold decor with flat Hero HP/Attack/Defense first (these count toward power)",
+       "cost": "Universal Decor Components"
+      },
+      {
+       "id": "p3-decor-level-3",
+       "title": "Take one decor to level 3 at a time before starting the next",
+       "cost": "Universal Decor Components"
+      }
+     ]
+    },
+    {
+     "type": "research",
+     "title": "March size: more troops in every Squad 1 march",
+     "cost": "Research",
+     "status": "todo",
+     "detail": "About 4,000 power per extra troop slot on each tank",
+     "id": "p3-march-size",
+     "subs": [
+      {
+       "id": "p3-march-tank-synergy-damage",
+       "title": "Tank Synergy – Damage I to level 2 (unlocks March Size I)",
+       "cost": "Research"
+      },
+      {
+       "id": "p3-march-tank-march-size-i",
+       "title": "Tank – March Size I, 1/5 → 5/5 (+2 per level)",
+       "cost": "Research"
+      },
+      {
+       "id": "p3-march-tank-center",
+       "title": "Tank Center 31-34 on the HQ path (march size per level)",
+       "cost": "Buildings"
+      }
+     ]
     }
    ]
   },
   {
-   "phase": 3,
+   "phase": 4,
    "name": "Past the benchmark",
-   "window": "After that",
-   "estimate": "+2M to +3M · toward 35M",
+   "window": "Season 4+",
+   "estimate": "Williams EW S4 · Stetmann EW S5",
    "steps": [
     {
      "type": "weapon",
@@ -205,38 +486,26 @@
     },
     {
      "type": "drone",
-     "title": "Skills toward max, drone levels",
-     "cost": "Medals, drone parts",
+     "title": "Remaining tank skills toward max",
+     "cost": "Skill medals",
      "status": "later",
-     "id": "p3-skills-toward-max-drone-levels",
-     "subs": [
-      {
-       "id": "p3-skills-toward-max",
-       "title": "Remaining tank skills toward max",
-       "cost": "Skill medals"
-      },
-      {
-       "id": "p3-drone-levels",
-       "title": "Drone levels (boosts every hero)",
-       "cost": "Drone parts"
-      }
-     ]
+     "id": "p3-skills-toward-max-drone-levels"
     }
    ]
   }
  ],
  "rules": [
   {
+   "icon": "build",
+   "text": "HQ 35 before Season 4. Each HQ level raises the hero level cap by 5."
+  },
+  {
+   "icon": "power",
+   "text": "Squad 1 power = the five tanks' hero power + troops. Drone and research % help fights, not this number."
+  },
+  {
    "icon": "weapon",
    "text": "Exclusive Weapons and gear move Squad 1 power most. Skill medals go to squad-wide skills, for fight value."
-  },
-  {
-   "icon": "flag",
-   "text": "Milestones are 31M, 33M and 35M. 40M is the long-term goal, with no deadline."
-  },
-  {
-   "icon": "squad",
-   "text": "Squad 1 grows through its heroes. Troop power is capped while HQ stays at 30."
   },
   {
    "icon": "weapon",
@@ -300,6 +569,10 @@
     {
      "icon": "trend",
      "text": "Re-baselined: Phase 1 added 0.58M, about a third of the estimate. New milestones are 31M, 33M and 35M; 40M stays the long-term goal."
+    },
+    {
+     "icon": "build",
+     "text": "New direction: HQ 35 before Season 4. HQ 31-35 needs about 56.7M oil across HQ, Tech Center, Barracks, Tank Center, Wall, Hospital, Drill Ground and Alliance Center."
     }
    ],
    "next": "Finish Phase 1. Record the Squad 1 screen before and after Marshall's weapon upgrade to measure it.",

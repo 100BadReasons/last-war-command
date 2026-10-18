@@ -12,7 +12,7 @@
   --text: #0b0b0b; --text-2: #52514e; --text-3: #75746f;
   --accent: #2a78d6; --track: #e6e5df; --good: #0ca30c; --good-text: #006300;
   --c-skill: #2a78d6; --c-gear: #eb6834; --c-research: #1baf7a; --c-honor: #eda100;
-  --c-season: #e87ba4; --c-drone: #008300; --c-weapon: #4a3aa7;
+  --c-season: #e87ba4; --c-drone: #008300; --c-weapon: #4a3aa7; --c-build: #0e7c9e; --c-decor: #a23ea8;
   --h1: #2a78d6; --h2: #eb6834; --h3: #1baf7a; --h4: #4a3aa7; --h5: #e34948; --h6: #e87ba4;
 }
 @media (prefers-color-scheme: dark) {
@@ -22,7 +22,7 @@
     --text: #ffffff; --text-2: #c3c2b7; --text-3: #9a998f;
     --accent: #3987e5; --track: #2c2c29; --good-text: #5fd35f;
     --c-skill: #3987e5; --c-gear: #d95926; --c-research: #199e70; --c-honor: #c98500;
-    --c-season: #d55181; --c-drone: #008300; --c-weapon: #9085e9;
+    --c-season: #d55181; --c-drone: #008300; --c-weapon: #9085e9; --c-build: #3aa6c9; --c-decor: #c26bc8;
     --h1: #3987e5; --h2: #d95926; --h3: #199e70; --h4: #9085e9; --h5: #e66767; --h6: #d55181;
   }
 }
@@ -32,7 +32,7 @@
   --text: #ffffff; --text-2: #c3c2b7; --text-3: #9a998f;
   --accent: #3987e5; --track: #2c2c29; --good-text: #5fd35f;
   --c-skill: #3987e5; --c-gear: #d95926; --c-research: #199e70; --c-honor: #c98500;
-  --c-season: #d55181; --c-drone: #008300; --c-weapon: #9085e9;
+  --c-season: #d55181; --c-drone: #008300; --c-weapon: #9085e9; --c-build: #3aa6c9; --c-decor: #c26bc8;
   --h1: #3987e5; --h2: #d95926; --h3: #199e70; --h4: #9085e9; --h5: #e66767; --h6: #d55181;
 }
 * { box-sizing: border-box; }
@@ -289,6 +289,8 @@ const P = {
   squad: '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.6"/>',
   troops: '<path d="M5 21V4h11l-2 4 2 4H5"/>',
   spend: '<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/>',
+  build: '<path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/>',
+  decor: '<path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/>',
   resources: '<path d="M3 7l9-4 9 4-9 4zM3 7v10l9 4 9-4V7M12 11v10"/>',
   hero: '<path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/>',
   shield: '<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/>',
@@ -306,7 +308,8 @@ const ico = n => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${P[n] |
 const TYPE = {
   skill: ['Skills', 'var(--c-skill)'], gear: ['Gear', 'var(--c-gear)'], research: ['Research', 'var(--c-research)'],
   weapon: ['Exclusive weapon', 'var(--c-weapon)'], honor: ['Wall of Honor', 'var(--c-honor)'],
-  season: ['Season', 'var(--c-season)'], drone: ['Drone', 'var(--c-drone)']
+  season: ['Season', 'var(--c-season)'], drone: ['Drone', 'var(--c-drone)'],
+  build: ['Buildings', 'var(--c-build)'], decor: ['Decor', 'var(--c-decor)']
 };
 const typeColor = t => (TYPE[t] || [, 'var(--accent)'])[1];
 const HEROES = ['Kimberly', 'Murphy', 'Williams', 'Stetmann', 'Marshall', 'Scarlett'];
