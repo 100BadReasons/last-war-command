@@ -1,0 +1,1349 @@
+{
+ "snapshot_date": "2026-10-18",
+ "source_videos": [
+  "ScreenRecording_10-18-2026 13-59-56_1.mp4 (heroes, Wall of Honor, tank details)",
+  "ScreenRecording_10-18-2026 14-06-34_1.mp4 (research trees)"
+ ],
+ "account": {
+  "hq_level": 30,
+  "vip": 12,
+  "total_power": 154883682,
+  "hero_power": null,
+  "unit_power": null,
+  "building_power": null,
+  "drone_power": null,
+  "tech_power": null,
+  "overlord_power": null,
+  "decor_power": null,
+  "drone_level": 135,
+  "hero_exp_available": 434900000,
+  "skill_medals_available": 48166
+ },
+ "hero_columns": [
+  "name",
+  "rarity",
+  "type",
+  "role",
+  "level",
+  "stars",
+  "power",
+  "attack",
+  "hp",
+  "defense",
+  "march_size",
+  "squad"
+ ],
+ "heroes": [
+  [
+   "Kimberly",
+   "UR",
+   "Tank",
+   "Attack",
+   150,
+   "5",
+   4977916,
+   "107.6K",
+   "2.7M",
+   "15.9K",
+   457,
+   1
+  ],
+  [
+   "Murphy",
+   "UR",
+   "Tank",
+   "Defense",
+   150,
+   "5",
+   4944965,
+   "65.8K",
+   "4.0M",
+   "17.0K",
+   457,
+   1
+  ],
+  [
+   "Williams",
+   "UR",
+   "Tank",
+   "Defense",
+   150,
+   "5",
+   3665783,
+   "63.0K",
+   "3.3M",
+   "14.0K",
+   457,
+   1
+  ],
+  [
+   "Stetmann",
+   "UR",
+   "Tank",
+   "Attack",
+   150,
+   "5",
+   3544485,
+   "90.4K",
+   "2.3M",
+   "13.0K",
+   457,
+   1
+  ],
+  [
+   "Marshall",
+   "UR",
+   "Tank",
+   "Support",
+   150,
+   "5",
+   3713803,
+   "77.2K",
+   "2.5M",
+   "13.1K",
+   457,
+   1
+  ],
+  [
+   "Tesla",
+   "UR",
+   "Missile",
+   "Attack",
+   150,
+   "5",
+   3003494,
+   "77.3K",
+   "2.1M",
+   "11.7K",
+   437,
+   3
+  ],
+  [
+   "DVA",
+   "UR",
+   "Aircraft",
+   "Attack",
+   150,
+   "5",
+   2772809,
+   "73.6K",
+   "2.2M",
+   "11.7K",
+   425,
+   2
+  ],
+  [
+   "Violet",
+   "UR",
+   "Tank",
+   "Defense",
+   150,
+   "4+",
+   2685242,
+   "56.7K",
+   "2.7M",
+   "11.7K",
+   457,
+   null
+  ],
+  [
+   "Mason",
+   "UR",
+   "Tank",
+   "Attack",
+   150,
+   "5",
+   2668055,
+   "71.4K",
+   "2.1M",
+   "11.3K",
+   457,
+   null
+  ],
+  [
+   "Adam",
+   "UR",
+   "Missile",
+   "Defense",
+   150,
+   "4+",
+   2635993,
+   "58.5K",
+   "2.5M",
+   "11.9K",
+   437,
+   3
+  ],
+  [
+   "Swift",
+   "UR",
+   "Missile",
+   "Attack",
+   150,
+   "4",
+   2580386,
+   "72.5K",
+   "2.0M",
+   "11.1K",
+   437,
+   3
+  ],
+  [
+   "Carlie",
+   "UR",
+   "Aircraft",
+   "Defense",
+   150,
+   "3 (Tier 1)",
+   2514268,
+   "51.5K",
+   "2.6M",
+   "11.1K",
+   425,
+   2
+  ],
+  [
+   "McGregor",
+   "UR",
+   "Missile",
+   "Defense",
+   150,
+   "3",
+   2412373,
+   "52.3K",
+   "2.5M",
+   "10.9K",
+   437,
+   3
+  ],
+  [
+   "Fiona",
+   "UR",
+   "Missile",
+   "Attack",
+   150,
+   "3",
+   2353578,
+   "66.9K",
+   "1.9M",
+   "10.3K",
+   437,
+   3
+  ],
+  [
+   "Lucius",
+   "UR",
+   "Aircraft",
+   "Defense",
+   150,
+   "1",
+   2295326,
+   "50.8K",
+   "2.4M",
+   "10.6K",
+   425,
+   null
+  ],
+  [
+   "Schuyler",
+   "UR",
+   "Aircraft",
+   "Attack",
+   150,
+   "2 (Tier 1)",
+   2218416,
+   "63.2K",
+   "1.9M",
+   "10.1K",
+   425,
+   2
+  ],
+  [
+   "Morrison",
+   "UR",
+   "Aircraft",
+   "Attack",
+   150,
+   "1",
+   2126884,
+   "59.4K",
+   "1.9M",
+   "9.9K",
+   425,
+   null
+  ],
+  [
+   "Scarlett",
+   "SSR",
+   "Tank",
+   "Defense",
+   150,
+   "5",
+   2406114,
+   "49.6K",
+   "2.3M",
+   "10.0K",
+   457,
+   null
+  ],
+  [
+   "Monica",
+   "SSR",
+   "Tank",
+   "Support",
+   149,
+   "5",
+   2280346,
+   "56.0K",
+   "1.9M",
+   "9.8K",
+   455,
+   2
+  ],
+  [
+   "Elsa",
+   "SSR",
+   "Missile",
+   "Defense",
+   134,
+   "4",
+   2134244,
+   "47.3K",
+   "2.0M",
+   "9.3K",
+   405,
+   null
+  ],
+  [
+   "Venom",
+   "SSR",
+   "Missile",
+   "Attack",
+   79,
+   "3+",
+   1748160,
+   "44.2K",
+   "1.6M",
+   "7.8K",
+   295,
+   null
+  ],
+  [
+   "Maxwell",
+   "SSR",
+   "Aircraft",
+   "Attack",
+   72,
+   "3 (Tier 3)",
+   1698248,
+   "42.3K",
+   "1.6M",
+   "7.6K",
+   269,
+   2
+  ],
+  [
+   "Farhad",
+   "SSR",
+   "Tank",
+   "Attack",
+   63,
+   "3 (Tier 3)",
+   1697883,
+   "42.1K",
+   "1.6M",
+   "7.6K",
+   283,
+   null
+  ],
+  [
+   "Cage",
+   "SSR",
+   "Aircraft",
+   "Defense",
+   65,
+   "3+",
+   1691749,
+   "39.9K",
+   "1.6M",
+   "7.6K",
+   255,
+   null
+  ],
+  [
+   "Richard",
+   "SSR",
+   "Tank",
+   "Attack",
+   55,
+   "3 (Tier 3)",
+   1684258,
+   "41.6K",
+   "1.6M",
+   "7.5K",
+   267,
+   null
+  ],
+  [
+   "Sarah",
+   "SSR",
+   "Aircraft",
+   "Support",
+   60,
+   "3+",
+   1695287,
+   "40.9K",
+   "1.6M",
+   "7.6K",
+   245,
+   null
+  ],
+  [
+   "Braz",
+   "SSR",
+   "Missile",
+   "Attack",
+   60,
+   "3 (Tier 2)",
+   1694413,
+   "41.5K",
+   "1.5M",
+   "7.5K",
+   257,
+   null
+  ],
+  [
+   "Gump",
+   "SR",
+   "Tank",
+   "Defense",
+   65,
+   "5",
+   1777905,
+   "40.7K",
+   "1.7M",
+   "7.8K",
+   287,
+   null
+  ],
+  [
+   "Loki",
+   "SR",
+   "Tank",
+   "Defense",
+   55,
+   "4",
+   1679423,
+   "41.3K",
+   "1.6M",
+   "7.5K",
+   267,
+   null
+  ],
+  [
+   "Ambolt",
+   "SR",
+   "Aircraft",
+   "Attack",
+   51,
+   "4",
+   1655521,
+   "40.7K",
+   "1.5M",
+   "7.4K",
+   227,
+   null
+  ],
+  [
+   "Kane",
+   "SR",
+   "Missile",
+   "Attack",
+   55,
+   "3 (Tier 4)",
+   1635220,
+   "40.9K",
+   "1.5M",
+   "7.4K",
+   247,
+   null
+  ]
+ ],
+ "skills_columns": [
+  "name",
+  "skill1",
+  "skill2",
+  "skill3",
+  "skill4",
+  "skill1_name",
+  "skill1_max"
+ ],
+ "skills": [
+  [
+   "Kimberly",
+   29,
+   35,
+   35,
+   "MAX",
+   "Energy Assault II",
+   36
+  ],
+  [
+   "Murphy",
+   22,
+   30,
+   27,
+   "MAX",
+   "Cannon Fire II",
+   34
+  ],
+  [
+   "Williams",
+   20,
+   28,
+   26,
+   "MAX",
+   "Blast Shell",
+   30
+  ],
+  [
+   "Stetmann",
+   19,
+   26,
+   29,
+   "MAX",
+   "Orb Lightning",
+   30
+  ],
+  [
+   "Marshall",
+   20,
+   25,
+   24,
+   "MAX",
+   "Triad Harmony",
+   30
+  ],
+  [
+   "Tesla",
+   11,
+   15,
+   13,
+   "MAX",
+   "Lightning Chain II",
+   30
+  ],
+  [
+   "DVA",
+   17,
+   17,
+   17,
+   "MAX",
+   "Vortex Missile",
+   30
+  ],
+  [
+   "Violet",
+   1,
+   10,
+   5,
+   "MAX",
+   "Frost Spray",
+   20
+  ],
+  [
+   "Mason",
+   20,
+   23,
+   26,
+   "MAX",
+   "Rampage Shot",
+   30
+  ],
+  [
+   "Adam",
+   5,
+   10,
+   10,
+   "MAX",
+   "MK43 Vehicle-Mounted MG",
+   20
+  ],
+  [
+   "Swift",
+   5,
+   10,
+   10,
+   "MAX",
+   "Targeted Strike",
+   20
+  ],
+  [
+   "Carlie",
+   5,
+   5,
+   5,
+   "Locked",
+   "Dual-string Rocket",
+   10
+  ],
+  [
+   "McGregor",
+   1,
+   1,
+   1,
+   "Locked",
+   "Forward Rush",
+   10
+  ],
+  [
+   "Fiona",
+   null,
+   null,
+   null,
+   null,
+   "NOT CAPTURED",
+   null
+  ],
+  [
+   "Lucius",
+   1,
+   1,
+   1,
+   "Locked",
+   "Lightning Triple Strike",
+   1
+  ],
+  [
+   "Schuyler",
+   1,
+   1,
+   1,
+   "Locked",
+   "Power Barrage",
+   5
+  ],
+  [
+   "Morrison",
+   1,
+   1,
+   1,
+   "Locked",
+   "Full-Auto Machine Gun",
+   1
+  ],
+  [
+   "Scarlett",
+   27,
+   21,
+   20,
+   "MAX",
+   "Flame Burst",
+   30
+  ],
+  [
+   "Monica",
+   12,
+   12,
+   15,
+   "MAX",
+   "Dual Fire Cannon",
+   30
+  ],
+  [
+   "Elsa",
+   10,
+   15,
+   11,
+   "MAX",
+   "Icicle Strike",
+   20
+  ],
+  [
+   "Venom",
+   5,
+   5,
+   5,
+   "Locked",
+   "Energy Bullet",
+   10
+  ],
+  [
+   "Maxwell",
+   1,
+   1,
+   1,
+   "Locked",
+   "Missile Strike",
+   10
+  ],
+  [
+   "Farhad",
+   1,
+   1,
+   1,
+   "Locked",
+   "Missile Strike",
+   10
+  ],
+  [
+   "Cage",
+   1,
+   1,
+   1,
+   "Locked",
+   "Energy Bullet",
+   10
+  ],
+  [
+   "Richard",
+   1,
+   1,
+   1,
+   "Locked",
+   "Howitzer",
+   10
+  ],
+  [
+   "Sarah",
+   1,
+   1,
+   1,
+   "Locked",
+   "Gunfire Negotiation",
+   10
+  ],
+  [
+   "Braz",
+   1,
+   1,
+   1,
+   "Locked",
+   "Rocket Spread",
+   10
+  ],
+  [
+   "Gump",
+   null,
+   null,
+   null,
+   null,
+   "NOT CAPTURED",
+   null
+  ],
+  [
+   "Loki",
+   1,
+   1,
+   "MAX",
+   "-",
+   "Shotgun",
+   20
+  ],
+  [
+   "Ambolt",
+   1,
+   1,
+   "MAX",
+   "-",
+   "Missile Strikes",
+   20
+  ],
+  [
+   "Kane",
+   1,
+   1,
+   "Locked",
+   "-",
+   "Blasting Grenade",
+   10
+  ]
+ ],
+ "gear_columns": [
+  "name",
+  "cannon",
+  "armor",
+  "data_chip",
+  "radar",
+  "notes"
+ ],
+ "gear": [
+  [
+   "Kimberly",
+   "40 (5*)",
+   "40",
+   "40 (5*)",
+   "40",
+   "Cannon + chip are top-rarity"
+  ],
+  [
+   "Murphy",
+   "40",
+   "40 (5*)",
+   "40",
+   "40 (4*)",
+   "All four pieces at 40"
+  ],
+  [
+   "Williams",
+   "40",
+   "40 (1*)",
+   "30",
+   "40 (1*)",
+   "Data chip still at 30"
+  ],
+  [
+   "Stetmann",
+   "40 (2*)",
+   "40",
+   "40 (1*)",
+   "40",
+   ""
+  ],
+  [
+   "Marshall",
+   "40",
+   "40",
+   "40",
+   "40",
+   "No gear stars"
+  ],
+  [
+   "Tesla",
+   "10",
+   "0",
+   "10",
+   "12 (purple)",
+   ""
+  ],
+  [
+   "DVA",
+   "10",
+   "4",
+   "10",
+   "0",
+   ""
+  ],
+  [
+   "Violet",
+   "10 (purple)",
+   "3 (purple)",
+   "3 (purple)",
+   "10 (purple)",
+   ""
+  ],
+  [
+   "Mason",
+   "0 (purple)",
+   "0 (purple)",
+   "0 (purple)",
+   "0 (purple)",
+   ""
+  ],
+  [
+   "Adam",
+   "0 (purple)",
+   "10",
+   "0 (purple)",
+   "10",
+   ""
+  ],
+  [
+   "Swift",
+   "10",
+   "1 (purple)",
+   "10",
+   "0 (purple)",
+   ""
+  ],
+  [
+   "Carlie",
+   "0 (purple)",
+   "10",
+   "0 (purple)",
+   "0",
+   ""
+  ],
+  [
+   "McGregor",
+   "0 (purple)",
+   "0",
+   "0 (purple)",
+   "0",
+   ""
+  ],
+  [
+   "Fiona",
+   "10",
+   "11 (purple)",
+   "10",
+   "0 (purple)",
+   ""
+  ],
+  [
+   "Lucius",
+   "0 (purple)",
+   "0",
+   "0 (blue)",
+   "0",
+   ""
+  ],
+  [
+   "Schuyler",
+   "0",
+   "0 (purple)",
+   "0 (purple)",
+   "0 (purple)",
+   ""
+  ],
+  [
+   "Morrison",
+   "0 (purple)",
+   "0 (blue)",
+   "0 (blue)",
+   "0 (blue)",
+   ""
+  ],
+  [
+   "Monica",
+   "13 (purple)",
+   "0 (purple)",
+   "29 (purple)",
+   "0 (purple)",
+   ""
+  ],
+  [
+   "Others (SSR/SR)",
+   "-",
+   "-",
+   "-",
+   "-",
+   "No gear equipped"
+  ]
+ ],
+ "exclusive_weapons_columns": [
+  "name",
+  "ew_level",
+  "hp_bonus",
+  "attack_bonus",
+  "defense_bonus",
+  "dmg_resist",
+  "notes"
+ ],
+ "exclusive_weapons": [
+  [
+   "Kimberly",
+   20,
+   223718,
+   6795,
+   2065,
+   "4.00%",
+   "Skill cap raised to 36; 39/150 shards toward next"
+  ],
+  [
+   "Murphy",
+   12,
+   270856,
+   1956,
+   1262,
+   "3.00%",
+   "Skill cap raised to 34; 39/60 shards"
+  ],
+  [
+   "Tesla",
+   1,
+   27959,
+   888,
+   263,
+   "2.00%",
+   "39/10 shards (can upgrade now)"
+  ],
+  [
+   "Swift",
+   "Locked",
+   null,
+   null,
+   null,
+   null,
+   "Requires Swift at 5 stars"
+  ],
+  [
+   "DVA",
+   "NOT CAPTURED",
+   null,
+   null,
+   null,
+   null,
+   "EW tab exists, not opened"
+  ],
+  [
+   "Carlie",
+   "Locked",
+   null,
+   null,
+   null,
+   null,
+   "Requires Carlie at Tier 5 stars"
+  ],
+  [
+   "Adam",
+   "NOT CAPTURED",
+   null,
+   null,
+   null,
+   null,
+   "Check if EW tab exists"
+  ],
+  [
+   "Marshall",
+   "Unlocked (level not captured)",
+   758,
+   34422,
+   274,
+   "2.00%",
+   "New since 10/13: +2% energy and physical resistance"
+  ]
+ ],
+ "squads_columns": [
+  "squad",
+  "power",
+  "hero1",
+  "hero2",
+  "hero3",
+  "hero4",
+  "hero5",
+  "type_mix"
+ ],
+ "squads": [
+  [
+   1,
+   "30.13M",
+   "Murphy",
+   "Williams",
+   "Kimberly",
+   "Stetmann",
+   "Marshall",
+   "5 Tank"
+  ],
+  [
+   2,
+   "19.60M",
+   "DVA",
+   "Monica",
+   "Maxwell",
+   "Schuyler",
+   "Carlie",
+   "4 Aircraft + 1 Tank"
+  ],
+  [
+   3,
+   "21.51M",
+   "Tesla",
+   "Adam",
+   "McGregor",
+   "Fiona",
+   "Swift",
+   "5 Missile"
+  ],
+  [
+   4,
+   "Locked",
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ]
+ ],
+ "troops_columns": [
+  "level",
+  "count_in_base",
+  "power_per_unit",
+  "unit_hp",
+  "unit_attack",
+  "unit_defense",
+  "load",
+  "morale"
+ ],
+ "troops": [
+  [
+   "Lv10",
+   "19.4K",
+   1647,
+   5253.44,
+   42.64,
+   8.46,
+   2200,
+   750
+  ],
+  [
+   "Lv9",
+   0,
+   1352,
+   4581.13,
+   37.15,
+   7.4,
+   2000,
+   625
+  ],
+  [
+   "Lv8",
+   7290,
+   1063,
+   3920.79,
+   31.82,
+   6.35,
+   1800,
+   531.25
+  ],
+  [
+   "Lv7",
+   0,
+   779,
+   3270.92,
+   26.63,
+   5.29,
+   1600,
+   462.5
+  ]
+ ],
+ "troop_summary": {
+  "unit_count": 26780,
+  "capacity": 43029,
+  "empty_capacity": 16249,
+  "drill_ground_level": 30,
+  "training_in_progress": "899 x Lv10 (1d 10h left)",
+  "hospital_wounded": "0 / 8644",
+  "emergency_center": "1744 / 2000 critically wounded Lv10 (on cooldown)",
+  "max_trainable_level": 10
+ },
+ "research": {
+  "development": "84%",
+  "economy": "48%",
+  "hero": "49%",
+  "units": "91%",
+  "squad1": "Max",
+  "squad2": "8%",
+  "squad4": "4%",
+  "alliance_duel": "Max",
+  "intercity_truck": "9%",
+  "special_forces": "87%",
+  "siege_to_seize": "40%",
+  "defense_fortifications": "1%",
+  "tank_mastery": "11%",
+  "missile_mastery": "0%",
+  "aircraft_mastery": "0%",
+  "age_of_oil": "8%",
+  "squad3": "Locked (needs Tech Center Lv20 and Squad 2 tech at 25%)",
+  "queue_1": "Cannon Enhancement II 3/5 -> 4/5, 4d 22h left",
+  "queue_2": "Oil Output I 7/10 -> 8/10, 5d 16h left"
+ },
+ "wall_of_honor": [
+  [
+   "Murphy",
+   26
+  ],
+  [
+   "Williams",
+   13
+  ],
+  [
+   "Marshall",
+   19
+  ],
+  [
+   "Kimberly",
+   31
+  ],
+  [
+   "Stetmann",
+   15
+  ],
+  [
+   "Mason",
+   84
+  ],
+  [
+   "Scarlett",
+   87
+  ],
+  [
+   "Monica",
+   19
+  ],
+  [
+   "Gump",
+   64
+  ],
+  [
+   "DVA",
+   1
+  ],
+  [
+   "Tesla",
+   5
+  ]
+ ],
+ "missing": [
+  [
+   "Squad 1 power",
+   "Squad screen not recorded; 30.13M is an estimate (hero power +567K, troop share unchanged)",
+   "High"
+  ],
+  [
+   "Age of Oil",
+   "Bottom of the tree (third research center node and its requirements) not shown",
+   "High"
+  ],
+  [
+   "Power breakdown",
+   "Profile power breakdown (hero/unit/tech/drone) not recorded",
+   "Medium"
+  ],
+  [
+   "Exclusive Weapons",
+   "Marshall EW level and shards; DVA and Adam EW tabs",
+   "Medium"
+  ],
+  [
+   "Skills",
+   "Fiona and Gump skill pages",
+   "Low"
+  ],
+  [
+   "Barracks",
+   "Other barracks levels",
+   "Low"
+  ]
+ ],
+ "tank_details_columns": [
+  "name",
+  "total_attack",
+  "total_hp",
+  "total_defense",
+  "tank_attack_boost",
+  "tank_hp_boost",
+  "tank_defense_boost",
+  "crit_rate",
+  "tank_damage_boost",
+  "physical_resist",
+  "energy_resist",
+  "reduce_crit_taken",
+  "dmg_vs_countered",
+  "gear_attack_pct",
+  "gear_hp_pct",
+  "season_bonus"
+ ],
+ "tank_details": [
+  [
+   "Kimberly",
+   108267,
+   2761848,
+   16084,
+   "78.50%",
+   "57.75%",
+   "59.75%",
+   "41.00%",
+   "20.25%",
+   "44.00%",
+   "44.00%",
+   "1.40%",
+   "10.00%",
+   "30.00%",
+   "15.00%",
+   "0%"
+  ],
+  [
+   "Murphy",
+   66901,
+   4155000,
+   17324,
+   "63.50%",
+   "71.50%",
+   "73.50%",
+   "21.00%",
+   "20.25%",
+   "53.00%",
+   "53.00%",
+   "16.40%",
+   "0.00%",
+   "n/a",
+   "30.00%",
+   "0%"
+  ],
+  [
+   "Williams",
+   64077,
+   3422497,
+   14325,
+   "62.25%",
+   "61.75%",
+   "63.75%",
+   "21.00%",
+   "20.25%",
+   "27.00%",
+   "27.00%",
+   "1.40%",
+   "0.00%",
+   "n/a",
+   "30.00%",
+   "0%"
+  ],
+  [
+   "Stetmann",
+   91052,
+   2412499,
+   13238,
+   "69.25%",
+   "57.75%",
+   "59.75%",
+   "30.00%",
+   "20.25%",
+   "32.00%",
+   "32.00%",
+   "1.40%",
+   "0.00%",
+   "n/a",
+   "30.00%",
+   "0%"
+  ],
+  [
+   "Marshall",
+   78548,
+   2639495,
+   13622,
+   "64.00%",
+   "59.75%",
+   "61.75%",
+   "21.50%",
+   "20.25%",
+   "32.20%",
+   "32.20%",
+   "1.40%",
+   "0.00%",
+   "n/a",
+   "30.00%",
+   "0%"
+  ]
+ ],
+ "squad1_estimated": true,
+ "events": [
+  [
+   "Desert Storm Battlefield",
+   "Starts in ~8h (from recording)"
+  ],
+  [
+   "Winter Storm Battlefield",
+   "Starts in 3d 8h"
+  ],
+  [
+   "Desert Protectors",
+   "4,908 / 5,000"
+  ],
+  [
+   "Season boost",
+   "Marshall now shows a Season Boost badge"
+  ]
+ ]
+}
