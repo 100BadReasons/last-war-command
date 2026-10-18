@@ -143,6 +143,15 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .chk[aria-checked="true"] { background: var(--good); border-color: var(--good); }
 .chk svg.i { width: 16px; height: 16px; stroke-width: 3; }
 .step .ttl { padding-right: 30px; }
+.subs { margin-top: 10px; border-top: 1px solid var(--border, var(--track)); padding-top: 8px; }
+.subs summary { cursor: pointer; font-size: 12px; font-weight: 600; color: var(--text-2); padding: 4px 0; }
+.sub { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; padding: 8px 0; }
+.sub + .sub { border-top: 1px dashed var(--track); }
+.sub .st { font-size: 13px; font-weight: 600; line-height: 1.3; padding-top: 3px; }
+.sub .meta { margin-top: 6px; }
+.sub.done .st { text-decoration: line-through; color: var(--text-3); }
+.chk.sm { position: static; width: 22px; height: 22px; border-radius: 6px; }
+.chk.sm svg.i { width: 14px; height: 14px; }
 .hint { color: var(--text-3); font-size: 12px; margin: -4px 0 12px; display: flex; align-items: center; gap: 6px; }
 .hint svg.i { width: 14px; height: 14px; }
 .legend-types { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--text-2); margin: 0 0 12px; }
@@ -352,14 +361,28 @@ const STORE = 'lw-done';
 let saved = {};
 try { saved = JSON.parse(localStorage.getItem(STORE) || '{}'); } catch (e) {}
 const undone = s => s.base === 'done' ? 'todo' : s.base;
-allSteps.forEach(s => { if (s.id in saved) s.status = saved[s.id] ? 'done' : undone(s); });
+/* a step with "subs" (several heroes or parts) is done when every sub-step is done */
+const allSubs = allSteps.flatMap(s => (s.subs || []).map(u => Object.assign(u, { parent: s, base: u.status || 'todo' })));
+function applySaved() {
+  allSubs.forEach(u => { u.status = u.id in saved ? (saved[u.id] ? 'done' : undone(u)) : u.base; });
+  allSteps.forEach(s => {
+    if (s.subs && s.subs.length) s.status = s.subs.every(u => u.status === 'done') ? 'done' : undone(s);
+    else s.status = s.id in saved ? (saved[s.id] ? 'done' : undone(s)) : s.base;
+  });
+}
+applySaved();
+function setCheck(id, done) {
+  saved[id] = done;
+  push({ action: 'check', id, done });
+}
 function toggleStep(id) {
-  const s = allSteps.find(x => x.id === id);
+  const s = allSteps.find(x => x.id === id) || allSubs.find(x => x.id === id);
   if (!s) return;
-  s.status = s.status === 'done' ? undone(s) : 'done';
-  saved[id] = s.status === 'done';
+  const done = s.status !== 'done';
+  if (s.subs && s.subs.length) { s.subs.forEach(u => { if ((u.status === 'done') !== done) setCheck(u.id, done); }); openSubs.add(s.id); }
+  else setCheck(id, done);
+  applySaved();
   try { localStorage.setItem(STORE, JSON.stringify(saved)); } catch (e) {}
-  push({ action: 'check', id, done: saved[id] });
   const y = scrollY;
   renderPlan(); renderProgress();
   scrollTo(0, y);
@@ -392,13 +415,23 @@ document.addEventListener('click', e => { const b = e.target.closest('.fbtn'); i
 function bindSegs(root) { root.querySelectorAll('.seg').forEach(g => { bindTip(g, esc(g.dataset.tip)); g.tabIndex = -1; }); }
 
 /* ---------- Game plan ---------- */
+const openSubs = new Set();
+function subList(s) {
+  if (!s.subs || !s.subs.length) return '';
+  const d = s.subs.filter(u => u.status === 'done').length;
+  return `<details class="subs" data-for="${esc(s.id)}"${openSubs.has(s.id) ? ' open' : ''}><summary>${d} of ${s.subs.length} done · details</summary>${s.subs.map(u => {
+    const ud = u.status === 'done';
+    return `<div class="sub ${u.status}"><button class="chk sm" type="button" role="checkbox" aria-checked="${ud}" data-id="${esc(u.id)}" aria-label="${esc(u.title)}: mark ${ud ? 'not done' : 'done'}">${ud ? ico('check') : ''}</button>
+      <div><div class="st">${esc(u.title)}</div>${u.hero || u.cost ? `<div class="meta">${u.hero ? heroChip(u.hero) : ''}${costChip(u.cost)}</div>` : ''}</div></div>`;
+  }).join('')}</details>`;
+}
 function stepCard(s) {
   const done = s.status === 'done';
   return `<div class="step ${s.status}" style="--tc:${typeColor(s.type)}">
     <button class="chk" type="button" role="checkbox" aria-checked="${done}" data-id="${esc(s.id)}" aria-label="${esc(s.title)}: mark ${done ? 'not done' : 'done'}">${done ? ico('check') : ''}</button>
     <div class="tile" title="${esc((TYPE[s.type] || ['Other'])[0])}">${ico(s.type)}</div>
     <div><div class="ttl">${esc(s.title)}</div>${s.detail ? `<div class="dt">${esc(s.detail)}</div>` : ''}
-      <div class="meta">${s.hero ? heroChip(s.hero) : ''}${costChip(s.cost)}</div></div>
+      <div class="meta">${s.hero ? heroChip(s.hero) : ''}${costChip(s.cost)}</div>${subList(s)}</div>
   </div>`;
 }
 function renderPlan() {
@@ -442,6 +475,7 @@ function renderPlan() {
     <div class="rules">${S.rules.map(r => `<div class="rule"><div class="tile">${ico(r.icon)}</div><div>${esc(r.text)}</div></div>`).join('')}</div>`;
   v.querySelectorAll('[data-jump]').forEach(b => b.onclick = () => document.getElementById(b.dataset.jump).scrollIntoView({ behavior: 'smooth', block: 'start' }));
   v.querySelectorAll('.chk').forEach(b => b.onclick = () => toggleStep(b.dataset.id));
+  v.querySelectorAll('details.subs').forEach(d => d.ontoggle = () => { if (d.open) openSubs.add(d.dataset.for); else openSubs.delete(d.dataset.for); });
   bindSegs(v);
 }
 
@@ -523,7 +557,7 @@ function renderDone() {
       <div class="steps">${a.steps.map(s => `<div class="step done" style="--tc:${typeColor(s.type)}">
         <span class="chk" aria-hidden="true">${ico('check')}</span>
         <div class="tile" title="${esc((TYPE[s.type] || ['Other'])[0])}">${ico(s.type)}</div>
-        <div><div class="ttl">${esc(s.title)}</div>${s.detail ? `<div class="dt">${esc(s.detail)}</div>` : ''}
+        <div><div class="ttl">${esc(s.title)}</div>${s.detail ? `<div class="dt">${esc(s.detail)}</div>` : ''}${s.subs ? `<div class="dt">${s.subs.map(u => esc(u.title)).join(' · ')}</div>` : ''}
           <div class="meta"><span class="chip">Phase ${s.phase}</span>${s.hero ? heroChip(s.hero) : ''}${costChip(s.cost)}</div></div>
       </div>`).join('')}</div>
     </div>`).join('');
@@ -663,7 +697,7 @@ pull().then(st => {
   if (!st) return;
   saved = st.checks || {};
   try { localStorage.setItem(STORE, JSON.stringify(saved)); } catch (e) {}
-  allSteps.forEach(s => { s.status = s.id in saved ? (saved[s.id] ? 'done' : undone(s)) : s.base; });
+  applySaved();
   saveNotesData(st.notes || []);
   const y = scrollY;
   renderPlan(); renderProgress(); renderNotes();

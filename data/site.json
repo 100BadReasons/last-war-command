@@ -65,7 +65,28 @@
      "title": "Gear stars: Marshall → Williams → Stetmann",
      "cost": "Blueprints",
      "status": "later",
-     "id": "p2-gear-stars-marshall-williams-stetmann"
+     "id": "p2-gear-stars-marshall-williams-stetmann",
+     "detail": "Kimberly and Murphy have 4-5 star gear; these three have 0-2 stars",
+     "subs": [
+      {
+       "id": "p2-gear-stars-marshall",
+       "title": "Gear stars",
+       "hero": "Marshall",
+       "cost": "Blueprints"
+      },
+      {
+       "id": "p2-gear-stars-williams",
+       "title": "Gear stars: armor and radar first (lowest resistance)",
+       "hero": "Williams",
+       "cost": "Blueprints"
+      },
+      {
+       "id": "p2-gear-stars-stetmann",
+       "title": "Gear stars",
+       "hero": "Stetmann",
+       "cost": "Blueprints"
+      }
+     ]
     },
     {
      "type": "weapon",
@@ -85,11 +106,23 @@
     },
     {
      "type": "research",
-     "title": "Fast Builder V and Research Enhancement V, level 1 each",
+     "title": "Fast Builder V and Research Enhancement V",
      "cost": "2d 17h each",
      "status": "todo",
      "detail": "Both are required for the 3rd Tech Center · Research Enhancement also speeds every research after it",
-     "id": "p2-age-of-oil-next-tier"
+     "id": "p2-age-of-oil-next-tier",
+     "subs": [
+      {
+       "id": "p2-fast-builder-v-1",
+       "title": "Fast Builder V to level 1",
+       "cost": "2d 17h"
+      },
+      {
+       "id": "p2-research-enhancement-v-1",
+       "title": "Research Enhancement V to level 1",
+       "cost": "2d 17h"
+      }
+     ]
     },
     {
      "type": "research",
@@ -101,11 +134,36 @@
     },
     {
      "type": "skill",
-     "title": "Skill 1: Marshall, Stetmann, Williams",
+     "title": "Skills that boost the whole squad",
      "cost": "48.2K medals on hand",
      "status": "todo",
-     "detail": "Keep skill 1 on Marshall, Stetmann, Williams level with each other",
-     "id": "p2-skill-1-marshall-stetmann-williams"
+     "detail": "A skill level is only a few thousand power, so spend medals on fight value: squad-wide skills first",
+     "id": "p2-skill-1-marshall-stetmann-williams",
+     "subs": [
+      {
+       "id": "p2-skill-williams-iron-will",
+       "title": "Iron Will to 30 (squad defense, 2 levels left)",
+       "hero": "Williams",
+       "cost": "22,000+ medals each"
+      },
+      {
+       "id": "p2-skill-murphy-ironclad-barrier",
+       "title": "Ironclad Barrier II 30 → 34 (squad damage taken)",
+       "hero": "Murphy",
+       "cost": "26,000+ medals each"
+      },
+      {
+       "id": "p2-skill-marshall-command-strategy",
+       "title": "Command Strategy toward 30 (squad attack)",
+       "hero": "Marshall",
+       "cost": "16,400+ medals each"
+      },
+      {
+       "id": "p2-skill-1-catch-up",
+       "title": "Then skill 1 on Stetmann, Marshall and Williams, cheapest first",
+       "cost": "9,000-13,000 medals each"
+      }
+     ]
     }
    ]
   },
@@ -117,12 +175,25 @@
    "steps": [
     {
      "type": "weapon",
-     "title": "Exclusive Weapon 20 → 30",
+     "title": "Exclusive Weapons past the first ones",
      "cost": "EW shards",
      "status": "later",
-     "hero": "Kimberly",
-     "detail": "Then Marshall's (unlocked since 10/13)",
-     "id": "p3-kimberly-exclusive-weapon-20-30"
+     "detail": "One weapon at a time",
+     "id": "p3-kimberly-exclusive-weapon-20-30",
+     "subs": [
+      {
+       "id": "p3-kimberly-ew-20-30",
+       "title": "Exclusive Weapon 20 → 30",
+       "hero": "Kimberly",
+       "cost": "EW shards"
+      },
+      {
+       "id": "p3-marshall-ew-to-20",
+       "title": "Exclusive Weapon toward 20",
+       "hero": "Marshall",
+       "cost": "Marshall shards"
+      }
+     ]
     },
     {
      "type": "skill",
@@ -137,7 +208,19 @@
      "title": "Skills toward max, drone levels",
      "cost": "Medals, drone parts",
      "status": "later",
-     "id": "p3-skills-toward-max-drone-levels"
+     "id": "p3-skills-toward-max-drone-levels",
+     "subs": [
+      {
+       "id": "p3-skills-toward-max",
+       "title": "Remaining tank skills toward max",
+       "cost": "Skill medals"
+      },
+      {
+       "id": "p3-drone-levels",
+       "title": "Drone levels (boosts every hero)",
+       "cost": "Drone parts"
+      }
+     ]
     }
    ]
   }
@@ -145,7 +228,7 @@
  "rules": [
   {
    "icon": "weapon",
-   "text": "Exclusive Weapons and gear move Squad 1 most. A skill level is only about 5K power."
+   "text": "Exclusive Weapons and gear move Squad 1 power most. Skill medals go to squad-wide skills, for fight value."
   },
   {
    "icon": "flag",
