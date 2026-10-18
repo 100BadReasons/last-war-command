@@ -249,6 +249,7 @@ footer.wrap { color: var(--text-3); font-size: 12px; padding-top: 16px; padding-
   <div class="view" id="v-progress"></div>
   <div class="view" id="v-recaps"></div>
   <div class="view" id="v-squads"></div>
+  <div class="view" id="v-done"></div>
   <div class="view" id="v-notes"></div>
 </main>
 <footer class="wrap" id="foot">Built from screen recordings. Detailed numbers live in the analysis sheet.</footer>
@@ -414,7 +415,7 @@ function renderPlan() {
       const cls = done ? 'done' : p.phase === activePhase ? 'active' : '';
       return `<button class="ph ${cls}" type="button" data-jump="phase-${p.phase}">
         <div class="dot">${done ? ico('check') : p.phase}</div>
-        <div class="nm">${esc(p.name)}</div><div class="mt">${esc(p.window)} · ${esc(p.estimate)}</div></button>`;
+        <div class="nm">${esc(p.name)}</div><div class="mt">${p.steps.length ? esc(p.window) + ' · ' + esc(p.estimate) : 'Completed'}</div></button>`;
     }).join('')}</div></div>
 
     <h2 class="sec">${ico('plan')}Phases</h2>
@@ -422,6 +423,7 @@ function renderPlan() {
     ${filterType ? `<div class="hint">${ico(filterType)}Showing ${TYPE[filterType][0].toLowerCase()} steps only.</div>` : ''}
     ${S.plan.map(p => {
       const shown = p.steps.filter(s => !filterType || s.type === filterType);
+      if (!p.steps.length) return '';
       if (!shown.length) return '';
       const done = p.steps.filter(s => s.status === 'done').length;
       return `<div class="card" id="phase-${p.phase}">
@@ -454,6 +456,7 @@ function renderProgress() {
           <div class="stat"><div class="l">${ico('flag')}Target</div><div class="v">${fmtM(G.target)}</div></div>
           <div class="stat"><div class="l">${ico('trend')}Still needed</div><div class="v">+${fmtM(Math.max(0, G.target - current))}</div></div>
           <div class="stat"><div class="l">${ico('plan')}Steps done</div><div class="v">${doneSteps}/${allSteps.length}</div></div>
+          <div class="stat"><div class="l">${ico('check')}Completed earlier</div><div class="v">${ARCHIVE.reduce((n, a) => n + a.steps.length, 0)}</div></div>
         </div>
         ${planBar()}
       </div>
@@ -503,6 +506,25 @@ function renderProgress() {
   });
   box.innerHTML = svg + '</svg>' + `<details><summary>Show as table</summary><table class="data"><tr><th>Date</th><th>Squad 1</th><th>Total power</th></tr>${pts.map(p => `<tr><td>${fmtDate(p.date)}</td><td>${fmtM(p.squad1)}</td><td>${p.total.toLocaleString()}</td></tr>`).join('')}</table></details>`;
   box.querySelectorAll('.pt').forEach(c => { const p = pts.find(q => q.date === c.dataset.d); bindTip(c, `${fmtDate(p.date)}<br>Squad 1: <b>${fmtM(p.squad1)}</b>`); });
+}
+
+/* ---------- Completed (archived at each analysis) ---------- */
+const ARCHIVE = S.archive || [];
+function renderDone() {
+  const v = document.getElementById('v-done');
+  const total = ARCHIVE.reduce((n, a) => n + a.steps.length, 0);
+  if (!total) { v.innerHTML = `<div class="card"><p class="empty">${ico('check')}Ticked steps move here at the next analysis.</p></div>`; return; }
+  v.innerHTML = `<div class="card bare"><div class="goal-title">${ico('check')}${total} steps completed · archived at each analysis</div></div>` +
+    ARCHIVE.slice().sort((a, b) => b.date.localeCompare(a.date)).map(a => `
+    <div class="card">
+      <div class="phase-head"><h3>${ico('check')}Archived ${fmtDate(a.date)}</h3><div class="chips"><span class="chip">${a.steps.length} steps</span></div></div>
+      <div class="steps">${a.steps.map(s => `<div class="step done" style="--tc:${typeColor(s.type)}">
+        <span class="chk" aria-hidden="true">${ico('check')}</span>
+        <div class="tile" title="${esc((TYPE[s.type] || ['Other'])[0])}">${ico(s.type)}</div>
+        <div><div class="ttl">${esc(s.title)}</div>${s.detail ? `<div class="dt">${esc(s.detail)}</div>` : ''}
+          <div class="meta"><span class="chip">Phase ${s.phase}</span>${s.hero ? heroChip(s.hero) : ''}${costChip(s.cost)}</div></div>
+      </div>`).join('')}</div>
+    </div>`).join('');
 }
 
 /* ---------- Recaps ---------- */
@@ -626,6 +648,7 @@ const VIEWS = [
   { id: 'progress', name: 'Goal progress', icon: 'progress' },
   { id: 'recaps', name: 'Recaps', icon: 'recaps' },
   { id: 'squads', name: 'Squads', icon: 'squads' },
+  { id: 'done', name: 'Completed', icon: 'check' },
   { id: 'notes', name: 'Notes', icon: 'note' }
 ];
 document.getElementById('title').textContent = S.title;
@@ -633,7 +656,7 @@ document.getElementById('updated').textContent = S.commander + ' · Updated ' + 
 document.getElementById('menu-btn').innerHTML = ico('menu');
 document.getElementById('close-btn').innerHTML = ico('close');
 document.getElementById('nav-links').innerHTML = VIEWS.map(v => `<a href="#${v.id}" data-v="${v.id}">${ico(v.icon)}${v.name}</a>`).join('');
-renderPlan(); renderProgress(); renderRecaps(); renderSquads(); renderNotes();
+renderPlan(); renderProgress(); renderRecaps(); renderSquads(); renderDone(); renderNotes();
 pull().then(st => {
   if (!st) return;
   saved = st.checks || {};

@@ -30,62 +30,6 @@
    "estimate": "+1.5M to +2.5M",
    "steps": [
     {
-     "type": "skill",
-     "title": "Orb Lightning 19 → 20",
-     "cost": "9,200 medals",
-     "status": "done",
-     "hero": "Stetmann",
-     "id": "p1-stetmann-orb-lightning-19-20"
-    },
-    {
-     "type": "skill",
-     "title": "Orb Lightning 20 → 21",
-     "cost": "10,400 medals",
-     "status": "done",
-     "hero": "Stetmann",
-     "id": "p1-stetmann-orb-lightning-20-21"
-    },
-    {
-     "type": "skill",
-     "title": "Triad Harmony 20 → 21",
-     "cost": "10,400 medals",
-     "status": "done",
-     "hero": "Marshall",
-     "id": "p1-marshall-triad-harmony-20-21"
-    },
-    {
-     "type": "skill",
-     "title": "Blast Shell 20 → 21",
-     "cost": "10,400 medals",
-     "status": "done",
-     "hero": "Williams",
-     "id": "p1-williams-blast-shell-20-21"
-    },
-    {
-     "type": "skill",
-     "title": "Save the rest for Triad Harmony 21 → 22",
-     "cost": "~11,600 medals",
-     "status": "done",
-     "hero": "Marshall",
-     "id": "p1-marshall-save-the-rest-for-triad-harmony-21-22"
-    },
-    {
-     "type": "gear",
-     "title": "Data chip 30 → 40",
-     "cost": "Gear ore",
-     "status": "done",
-     "hero": "Murphy",
-     "id": "p1-murphy-data-chip-30-40"
-    },
-    {
-     "type": "gear",
-     "title": "Cannon 30 → 40",
-     "cost": "Gear ore",
-     "status": "done",
-     "hero": "Williams",
-     "id": "p1-williams-cannon-then-data-chip-30-40"
-    },
-    {
      "type": "gear",
      "title": "Data chip 30 → 40",
      "cost": "Gear ore",
@@ -95,45 +39,6 @@
      "id": "p1-williams-data-chip-30-40"
     },
     {
-     "type": "research",
-     "title": "Let Weapon Training VIII finish",
-     "cost": "Free",
-     "status": "done",
-     "detail": "Troop attack 7.5% → 9%, done ~9:30 AM 10/14",
-     "id": "p1-let-weapon-training-viii-finish"
-    },
-    {
-     "type": "research",
-     "title": "Armor Hardening II",
-     "cost": "~29h speedups",
-     "status": "done",
-     "detail": "Tank defense +2% → +4% · speed it up on research day",
-     "id": "p1-armor-hardening-ii"
-    },
-    {
-     "type": "research",
-     "title": "Oil Output I, then Track Fortification II",
-     "cost": "Leftover speedups",
-     "status": "done",
-     "detail": "Tank HP +2% → +4%",
-     "id": "p1-oil-output-i-then-track-fortification-ii"
-    },
-    {
-     "type": "research",
-     "title": "Finish the Alliance Duel tree",
-     "cost": "Research",
-     "status": "done",
-     "detail": "96% done · more duel points every week",
-     "id": "p1-finish-the-alliance-duel-tree"
-    },
-    {
-     "type": "honor",
-     "title": "Wall of Honor: Stetmann, Marshall, Williams first",
-     "cost": "Honor medals",
-     "status": "done",
-     "id": "p1-wall-of-honor-stetmann-marshall-williams-first"
-    },
-    {
      "type": "weapon",
      "title": "Exclusive Weapon 1 → 2",
      "cost": "20/20 shards (on hand)",
@@ -141,15 +46,6 @@
      "hero": "Marshall",
      "detail": "Ready now: +41K HP, +909 attack, +328 defense",
      "id": "p1-marshall-exclusive-weapon-1-2"
-    },
-    {
-     "type": "season",
-     "title": "Season boost checked",
-     "cost": "",
-     "status": "done",
-     "hero": "Scarlett",
-     "detail": "Scarlett only: 5% less monster damage",
-     "id": "p1-scarlett-season-boost-checked"
     }
    ]
   },
@@ -199,27 +95,10 @@
      "id": "p2-age-of-oil-3rd-tech-center"
     },
     {
-     "type": "research",
-     "title": "Cannon Enhancement II",
-     "cost": "4.1 days",
-     "status": "done",
-     "detail": "Tank attack +6% → +8% · in queue 1, 4d 22h left",
-     "id": "p2-cannon-enhancement-ii"
-    },
-    {
-     "type": "research",
-     "title": "Tank Mastery II",
-     "cost": "7.5 days",
-     "status": "done",
-     "detail": "Tank damage 6% → 8%",
-     "id": "p2-tank-mastery-ii"
-    },
-    {
      "type": "skill",
-     "title": "Triad Harmony and Orb Lightning next",
+     "title": "Skill 1: Marshall, Stetmann, Williams",
      "cost": "48.2K medals on hand",
      "status": "todo",
-     "hero": "Marshall",
      "detail": "Keep skill 1 on Marshall, Stetmann, Williams level with each other",
      "id": "p2-skill-1-marshall-stetmann-williams"
     }
@@ -394,5 +273,162 @@
    ]
   }
  ],
- "sync_url": "https://script.google.com/macros/s/AKfycbzrvFoEtvCS2hRavL6MjntacrMdNjW6YYp__8qPOZCyVsQj1UzOyfqhYp_tD0t4P3dL/exec"
+ "sync_url": "https://script.google.com/macros/s/AKfycbzrvFoEtvCS2hRavL6MjntacrMdNjW6YYp__8qPOZCyVsQj1UzOyfqhYp_tD0t4P3dL/exec",
+ "archive": [
+  {
+   "date": "2026-10-18",
+   "steps": [
+    {
+     "type": "skill",
+     "title": "Orb Lightning 19 → 20",
+     "cost": "9,200 medals",
+     "status": "done",
+     "hero": "Stetmann",
+     "id": "p1-stetmann-orb-lightning-19-20",
+     "phase": 1,
+     "phase_name": "Free power now"
+    },
+    {
+     "type": "skill",
+     "title": "Orb Lightning 20 → 21",
+     "cost": "10,400 medals",
+     "status": "done",
+     "hero": "Stetmann",
+     "id": "p1-stetmann-orb-lightning-20-21",
+     "phase": 1,
+     "phase_name": "Free power now"
+    },
+    {
+     "type": "skill",
+     "title": "Triad Harmony 20 → 21",
+     "cost": "10,400 medals",
+     "status": "done",
+     "hero": "Marshall",
+     "id": "p1-marshall-triad-harmony-20-21",
+     "phase": 1,
+     "phase_name": "Free power now"
+    },
+    {
+     "type": "skill",
+     "title": "Blast Shell 20 → 21",
+     "cost": "10,400 medals",
+     "status": "done",
+     "hero": "Williams",
+     "id": "p1-williams-blast-shell-20-21",
+     "phase": 1,
+     "phase_name": "Free power now"
+    },
+    {
+     "type": "skill",
+     "title": "Save the rest for Triad Harmony 21 → 22",
+     "cost": "~11,600 medals",
+     "status": "done",
+     "hero": "Marshall",
+     "id": "p1-marshall-save-the-rest-for-triad-harmony-21-22",
+     "phase": 1,
+     "phase_name": "Free power now"
+    },
+    {
+     "type": "gear",
+     "title": "Data chip 30 → 40",
+     "cost": "Gear ore",
+     "status": "done",
+     "hero": "Murphy",
+     "id": "p1-murphy-data-chip-30-40",
+     "phase": 1,
+     "phase_name": "Free power now"
+    },
+    {
+     "type": "gear",
+     "title": "Cannon 30 → 40",
+     "cost": "Gear ore",
+     "status": "done",
+     "hero": "Williams",
+     "id": "p1-williams-cannon-then-data-chip-30-40",
+     "phase": 1,
+     "phase_name": "Free power now"
+    },
+    {
+     "type": "research",
+     "title": "Let Weapon Training VIII finish",
+     "cost": "Free",
+     "status": "done",
+     "detail": "Troop attack 7.5% → 9%, done ~9:30 AM 10/14",
+     "id": "p1-let-weapon-training-viii-finish",
+     "phase": 1,
+     "phase_name": "Free power now"
+    },
+    {
+     "type": "research",
+     "title": "Armor Hardening II",
+     "cost": "~29h speedups",
+     "status": "done",
+     "detail": "Tank defense +2% → +4% · speed it up on research day",
+     "id": "p1-armor-hardening-ii",
+     "phase": 1,
+     "phase_name": "Free power now"
+    },
+    {
+     "type": "research",
+     "title": "Oil Output I, then Track Fortification II",
+     "cost": "Leftover speedups",
+     "status": "done",
+     "detail": "Tank HP +2% → +4%",
+     "id": "p1-oil-output-i-then-track-fortification-ii",
+     "phase": 1,
+     "phase_name": "Free power now"
+    },
+    {
+     "type": "research",
+     "title": "Finish the Alliance Duel tree",
+     "cost": "Research",
+     "status": "done",
+     "detail": "96% done · more duel points every week",
+     "id": "p1-finish-the-alliance-duel-tree",
+     "phase": 1,
+     "phase_name": "Free power now"
+    },
+    {
+     "type": "honor",
+     "title": "Wall of Honor: Stetmann, Marshall, Williams first",
+     "cost": "Honor medals",
+     "status": "done",
+     "id": "p1-wall-of-honor-stetmann-marshall-williams-first",
+     "phase": 1,
+     "phase_name": "Free power now"
+    },
+    {
+     "type": "season",
+     "title": "Season boost checked",
+     "cost": "",
+     "status": "done",
+     "hero": "Scarlett",
+     "detail": "Scarlett only: 5% less monster damage",
+     "id": "p1-scarlett-season-boost-checked",
+     "phase": 1,
+     "phase_name": "Free power now"
+    },
+    {
+     "type": "research",
+     "title": "Cannon Enhancement II",
+     "cost": "4.1 days",
+     "status": "done",
+     "detail": "Tank attack +6% → +8% · in queue 1, 4d 22h left",
+     "id": "p2-cannon-enhancement-ii",
+     "phase": 2,
+     "phase_name": "Gear stars & weapons"
+    },
+    {
+     "type": "research",
+     "title": "Tank Mastery II",
+     "cost": "7.5 days",
+     "status": "done",
+     "detail": "Tank damage 6% → 8%",
+     "id": "p2-tank-mastery-ii",
+     "phase": 2,
+     "phase_name": "Gear stars & weapons"
+    }
+   ]
+  }
+ ]
 }
