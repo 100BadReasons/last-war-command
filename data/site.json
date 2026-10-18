@@ -134,6 +134,15 @@
      "id": "p1-wall-of-honor-stetmann-marshall-williams-first"
     },
     {
+     "type": "weapon",
+     "title": "Exclusive Weapon 1 → 2",
+     "cost": "20/20 shards (on hand)",
+     "status": "todo",
+     "hero": "Marshall",
+     "detail": "Ready now: +41K HP, +909 attack, +328 defense",
+     "id": "p1-marshall-exclusive-weapon-1-2"
+    },
+    {
      "type": "season",
      "title": "Season boost checked",
      "cost": "",
@@ -170,16 +179,24 @@
      "title": "Age of Oil: Oil Output I to 10/10",
      "cost": "Research",
      "status": "todo",
-     "detail": "7/10, level 8 in queue 2 · first step toward the third research center",
+     "detail": "7/10, level 8 in queue 2 · unlocks the next two nodes",
      "id": "p2-age-of-oil-oil-output-i"
     },
     {
      "type": "research",
-     "title": "Age of Oil: the next tier down",
-     "cost": "Research",
+     "title": "Fast Builder V and Research Enhancement V, level 1 each",
+     "cost": "2d 17h each",
      "status": "todo",
-     "detail": "Work down the tree to the third research center; Food/Iron/Coin Output V only if they gate it",
+     "detail": "Both are required for the 3rd Tech Center · Research Enhancement also speeds every research after it",
      "id": "p2-age-of-oil-next-tier"
+    },
+    {
+     "type": "research",
+     "title": "Unlock the 3rd Tech Center",
+     "cost": "3d 20h",
+     "status": "todo",
+     "detail": "A third research queue: one for tank boosts, one for the Age of Oil, one free",
+     "id": "p2-age-of-oil-3rd-tech-center"
     },
     {
      "type": "research",
@@ -279,15 +296,19 @@
   {
    "date": "2026-10-18",
    "title": "Phase 1 almost done",
-   "sources": "Hero + Wall of Honor + tank details video, research video, site checklist and notes",
+   "sources": "Hero + Wall of Honor + tank details video, research video, site checklist and notes + Squad 1 / Age of Oil / power details video",
    "highlights": [
     {
      "icon": "hero",
      "text": "Tank heroes up 567K: Marshall +330K leads, now with an Exclusive Weapon."
     },
     {
-     "icon": "gear",
-     "text": "Murphy's gear is all Lv 40. Williams' data chip is the last piece at 30."
+     "icon": "troops",
+     "text": "Unit power jumped 39.0M → 55.6M, but Squad 1 only rose 0.58M. Troops raise total power, not Squad 1."
+    },
+    {
+     "icon": "weapon",
+     "text": "Marshall's Exclusive Weapon is Lv 1 with 20/20 shards. Upgrade it now."
     },
     {
      "icon": "shield",
@@ -298,19 +319,23 @@
      "text": "Alliance Duel maxed. Cannon Enhancement II and Oil Output I are both in queue."
     },
     {
+     "icon": "research",
+     "text": "3rd Tech Center path: Oil Output I to 10, then Fast Builder V and Research Enhancement V, then the Tech Center (about 9 days)."
+    },
+    {
      "icon": "season",
      "text": "Desert Storm Battlefield starts tonight; Winter Storm in 3 days. Marshall now carries a Season Boost."
     }
    ],
-   "next": "Record the Squad 1 screen and the bottom of the Age of Oil tree.",
+   "next": "Finish Phase 1 (Williams' data chip, Marshall's weapon). Record the Squad 1 screen again next time.",
    "stats": [
     {
      "label": "Total power",
      "value": "154.9M"
     },
     {
-     "label": "Squad 1 (est.)",
-     "value": "30.1M"
+     "label": "Squad 1",
+     "value": "30.14M"
     },
     {
      "label": "Tank heroes",

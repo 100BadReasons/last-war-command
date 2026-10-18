@@ -2,22 +2,42 @@
  "snapshot_date": "2026-10-18",
  "source_videos": [
   "ScreenRecording_10-18-2026 13-59-56_1.mp4 (heroes, Wall of Honor, tank details)",
-  "ScreenRecording_10-18-2026 14-06-34_1.mp4 (research trees)"
+  "ScreenRecording_10-18-2026 14-06-34_1.mp4 (research trees)",
+  "ScreenRecording_10-18-2026 14-42-26_1.mp4 (Squad 1, Age of Oil, power details, Marshall EW, SSR/SR heroes)"
  ],
  "account": {
   "hq_level": 30,
   "vip": 12,
   "total_power": 154883682,
-  "hero_power": null,
-  "unit_power": null,
-  "building_power": null,
-  "drone_power": null,
-  "tech_power": null,
-  "overlord_power": null,
+  "hero_power": 77180051,
+  "unit_power": 55630505,
+  "building_power": 9731601,
+  "drone_power": 6652613,
+  "tech_power": 5108477,
+  "overlord_power": 580435,
   "decor_power": null,
   "drone_level": 135,
   "hero_exp_available": 434900000,
-  "skill_medals_available": 48166
+  "skill_medals_available": 48166,
+  "hero_power_detail": {
+   "hero_level": 47093024,
+   "decor_building_stats": 14050673,
+   "gear": 5138731,
+   "skill": 4053650,
+   "tier": 3715008,
+   "exclusive_weapon": 2313665,
+   "wall_of_honor": 815300
+  },
+  "drone_detail": {
+   "level": 3764831,
+   "component": 2246582,
+   "skill_chip": 641200
+  },
+  "building_detail": {
+   "buildings": 6389700,
+   "survivor": 3341901
+  },
+  "research_speedups": "1h x1, 5m x139, 1m (count not shown)"
  },
  "hero_columns": [
   "name",
@@ -598,12 +618,12 @@
   ],
   [
    "Fiona",
-   null,
-   null,
-   null,
-   null,
-   "NOT CAPTURED",
-   null
+   1,
+   1,
+   1,
+   "Locked",
+   "Double Trajectory",
+   10
   ],
   [
    "Lucius",
@@ -724,12 +744,12 @@
   ],
   [
    "Gump",
-   null,
-   null,
-   null,
-   null,
-   "NOT CAPTURED",
-   null
+   5,
+   "MAX",
+   5,
+   "-",
+   "Flame Burst",
+   30
   ],
   [
    "Loki",
@@ -996,12 +1016,12 @@
   ],
   [
    "Marshall",
-   "Unlocked (level not captured)",
+   1,
    758,
    34422,
    274,
    "2.00%",
-   "New since 10/13: +2% energy and physical resistance"
+   "20/20 shards: upgrade to Lv 2 available now (+41,306 HP, +909 atk, +328 def)"
   ]
  ],
  "squads_columns": [
@@ -1017,7 +1037,7 @@
  "squads": [
   [
    1,
-   "30.13M",
+   "30.14M",
    "Murphy",
    "Williams",
    "Kimberly",
@@ -1137,7 +1157,8 @@
   "age_of_oil": "8%",
   "squad3": "Locked (needs Tech Center Lv20 and Squad 2 tech at 25%)",
   "queue_1": "Cannon Enhancement II 3/5 -> 4/5, 4d 22h left",
-  "queue_2": "Oil Output I 7/10 -> 8/10, 5d 16h left"
+  "queue_2": "Oil Output I 7/10 -> 8/10, 5d 16h left",
+  "age_of_oil_path": "Oil Output I 10/10 -> Fast Builder V Lv1 (2d 17h) + Research Enhancement V Lv1 (2d 17h) -> 3rd Tech Center (3d 20h)"
  },
  "wall_of_honor": [
   [
@@ -1187,28 +1208,8 @@
  ],
  "missing": [
   [
-   "Squad 1 power",
-   "Squad screen not recorded; 30.13M is an estimate (hero power +567K, troop share unchanged)",
-   "High"
-  ],
-  [
-   "Age of Oil",
-   "Bottom of the tree (third research center node and its requirements) not shown",
-   "High"
-  ],
-  [
-   "Power breakdown",
-   "Profile power breakdown (hero/unit/tech/drone) not recorded",
-   "Medium"
-  ],
-  [
    "Exclusive Weapons",
-   "Marshall EW level and shards; DVA and Adam EW tabs",
-   "Medium"
-  ],
-  [
-   "Skills",
-   "Fiona and Gump skill pages",
+   "DVA and Adam EW tabs",
    "Low"
   ],
   [
@@ -1327,7 +1328,6 @@
    "0%"
   ]
  ],
- "squad1_estimated": true,
  "events": [
   [
    "Desert Storm Battlefield",
