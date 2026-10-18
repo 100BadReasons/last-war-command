@@ -9,25 +9,30 @@
   "target": 40000000,
   "milestones": [
    {
-    "label": "Phase 1",
-    "value": 31500000
+    "label": "Milestone 1",
+    "value": 31000000
    },
    {
-    "label": "Phase 2",
-    "value": 36000000
+    "label": "Milestone 2",
+    "value": 33000000
    },
    {
-    "label": "Phase 3",
+    "label": "Milestone 3",
+    "value": 35000000
+   },
+   {
+    "label": "Goal",
     "value": 40000000
    }
-  ]
+  ],
+  "rebaselined": "2026-10-18"
  },
  "plan": [
   {
    "phase": 1,
    "name": "Free power now",
-   "window": "1-2 weeks",
-   "estimate": "+1.5M to +2.5M",
+   "window": "Now",
+   "estimate": "+0.1M · to ~30.3M",
    "steps": [
     {
      "type": "gear",
@@ -52,8 +57,8 @@
   {
    "phase": 2,
    "name": "Gear stars & weapons",
-   "window": "Weeks 2-8",
-   "estimate": "+4M to +5M",
+   "window": "Next",
+   "estimate": "+1M to +2.5M · toward 31M-33M",
    "steps": [
     {
      "type": "gear",
@@ -107,8 +112,8 @@
   {
    "phase": 3,
    "name": "Past the benchmark",
-   "window": "Months 2-4",
-   "estimate": "+3M to +4M",
+   "window": "After that",
+   "estimate": "+2M to +3M · toward 35M",
    "steps": [
     {
      "type": "weapon",
@@ -139,12 +144,16 @@
  ],
  "rules": [
   {
-   "icon": "squad",
-   "text": "Squad 1 grows through its heroes. Troop power is capped while HQ stays at 30."
+   "icon": "weapon",
+   "text": "Exclusive Weapons and gear move Squad 1 most. A skill level is only about 5K power."
   },
   {
-   "icon": "skill",
-   "text": "Skill medals go to skill 1 first."
+   "icon": "flag",
+   "text": "Milestones are 31M, 33M and 35M. 40M is the long-term goal, with no deadline."
+  },
+  {
+   "icon": "squad",
+   "text": "Squad 1 grows through its heroes. Troop power is capped while HQ stays at 30."
   },
   {
    "icon": "weapon",
@@ -204,9 +213,13 @@
     {
      "icon": "season",
      "text": "Desert Storm Battlefield starts tonight; Winter Storm in 3 days. Marshall now carries a Season Boost."
+    },
+    {
+     "icon": "trend",
+     "text": "Re-baselined: Phase 1 added 0.58M, about a third of the estimate. New milestones are 31M, 33M and 35M; 40M stays the long-term goal."
     }
    ],
-   "next": "Finish Phase 1 (Williams' data chip, Marshall's weapon). Record the Squad 1 screen again next time.",
+   "next": "Finish Phase 1. Record the Squad 1 screen before and after Marshall's weapon upgrade to measure it.",
    "stats": [
     {
      "label": "Total power",
