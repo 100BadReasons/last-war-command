@@ -15,7 +15,7 @@
   "drone_power": 6652613,
   "tech_power": 5108477,
   "overlord_power": 580435,
-  "decor_power": null,
+  "decor_power": 7577460,
   "drone_level": 135,
   "hero_exp_available": 434900000,
   "skill_medals_available": 48166,
@@ -37,7 +37,8 @@
    "buildings": 6389700,
    "survivor": 3341901
   },
-  "research_speedups": "1h x1, 5m x139, 1m (count not shown)"
+  "research_speedups": "1h x1, 5m x139, 1m (count not shown)",
+  "troops": 34145
  },
  "hero_columns": [
   "name",
