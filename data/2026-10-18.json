@@ -3,7 +3,8 @@
  "source_videos": [
   "ScreenRecording_10-18-2026 13-59-56_1.mp4 (heroes, Wall of Honor, tank details)",
   "ScreenRecording_10-18-2026 14-06-34_1.mp4 (research trees)",
-  "ScreenRecording_10-18-2026 14-42-26_1.mp4 (Squad 1, Age of Oil, power details, Marshall EW, SSR/SR heroes)"
+  "ScreenRecording_10-18-2026 14-42-26_1.mp4 (Squad 1, Age of Oil, power details, Marshall EW, SSR/SR heroes)",
+  "ScreenRecording_10-18-2026 18-35-24_1.MP4 (buildings, HQ 31 requirements, Age of Oil tree, decoration gallery)"
  ],
  "account": {
   "hq_level": 30,
@@ -1209,13 +1210,18 @@
  ],
  "missing": [
   [
-   "Exclusive Weapons",
-   "DVA and Adam EW tabs",
-   "Low"
+   "Buildings",
+   "Alliance Center level",
+   "Medium"
   ],
   [
-   "Barracks",
-   "Other barracks levels",
+   "Age of Oil",
+   "Times for Oil Output II/III levels 2-10 and the Parts Workshop node",
+   "Medium"
+  ],
+  [
+   "Exclusive Weapons",
+   "DVA and Adam EW tabs",
    "Low"
   ]
  ],
@@ -1346,5 +1352,116 @@
    "Season boost",
    "Marshall now shows a Season Boost badge"
   ]
- ]
+ ],
+ "buildings": {
+  "headquarters": 30,
+  "tech_center_1": 30,
+  "tech_center_2": "21 (22 costs 3d 6h)",
+  "tank_center": 30,
+  "drill_ground": 30,
+  "barracks": [
+   30,
+   27,
+   26,
+   24
+  ],
+  "hospitals": [
+   28,
+   "23 (upgrading to 24)"
+  ],
+  "wall": "22 (upgrading to 23, 7d 3h left)",
+  "oil_well": "30 (1 well, 1,800 oil/hr)",
+  "alliance_center": "not recorded",
+  "builders": "3 (2 busy)",
+  "construction_speedups": "1h x1, 15m x10",
+  "research_speedups": "1h x2, 5m x326",
+  "oil": "1.9M available + 2.6M in inventory = 4.5M",
+  "food": "124.8M + 1.0G inventory",
+  "iron": "203.5M + 2.3G inventory",
+  "gold": "83.1M + 405.7M inventory"
+ },
+ "hq31_in_game": {
+  "requires": [
+   "Lv.1 Base Expansion (Age of Oil research)",
+   "Lv.30 any Tech Center",
+   "Lv.30 Barracks",
+   "Lv.30 Tank/Missile/Aircraft Center"
+  ],
+  "cost": {
+   "iron": "1.4G",
+   "food": "1.4G",
+   "gold": "459.8M",
+   "oil": "1.2M"
+  },
+  "time": "111d 18h base, 48d 14h with current buffs",
+  "gives": "Hero level cap 150 -> 155, hero HP +15,000 -> +16,000, power 388,300 -> 452,000"
+ },
+ "age_of_oil_path": [
+  "Oil Output I 7/10",
+  "Fast Builder V + Research Enhancement V (Lv1)",
+  "3rd Tech Center",
+  "Focused Training V + Rapid Field Dressing V",
+  "Oil Output II to 10",
+  "Emergency Capacity I + Infirmary Expansion V",
+  "More Oil Wells",
+  "Training Cost I + Healing Cost II",
+  "Parts Workshop",
+  "Oil Output III to 10 (Lv1: 7d 18h buffed)",
+  "Base Expansion: cap 35 (19d 8h buffed)"
+ ],
+ "decor": {
+  "total_power": 7677615,
+  "components": 87,
+  "ur_collected": "25/39",
+  "bonus": {
+   "atk": 8479,
+   "def": 1068,
+   "hp": 196797,
+   "march_size": 4,
+   "construction_speed": "5%"
+  },
+  "owned_ur": {
+   "Fabulous Phonograph": 1,
+   "Gold Tank": 3,
+   "Golden Missile Vehicle": 3,
+   "Gold Bomber": 3,
+   "Bell Tower": 3,
+   "Eiffelle Tower": 3,
+   "Ferris Wheel": 3,
+   "Neon Sign": 3,
+   "Pumpkin Panic": 1,
+   "Colorful Christmas Tree": 1,
+   "Win in 2024": 2,
+   "Torch Relay": 2,
+   "Joyful Bunny": 2,
+   "Warrior's Monument": 3,
+   "Cheese Manor": 2,
+   "Rock the End": 2,
+   "Turkey Swashbuckler": 2,
+   "Rosy Cabriolet": 1,
+   "Golden Mobile Squad": 4,
+   "Military Monument": 4,
+   "Eternal Pyramid": 1,
+   "Golden Marshal Statue": 1,
+   "Tower of Victory": 2,
+   "God of Judgment": 2,
+   "Throne of Blood": 2
+  },
+  "not_owned_ur": [
+   "Libertas (Acquire available)",
+   "Happy Turkey",
+   "Year of the Dragon",
+   "Cornucopia",
+   "Win in 2026",
+   "Easter Egg-sassin",
+   "Lovely Bears",
+   "Jack-o-Carriage",
+   "Melody of Love",
+   "Jack-o-Zombie",
+   "Easter Egg Sentry",
+   "Win in 2025",
+   "Super Satellite",
+   "Super Skyscraper"
+  ]
+ }
 }

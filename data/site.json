@@ -69,7 +69,7 @@
      "title": "Age of Oil: Oil Output I to 10/10",
      "cost": "Research",
      "status": "todo",
-     "detail": "7/10, level 8 in queue 2 · unlocks the next two nodes",
+     "detail": "7/10, level 8 in queue 2 (5d 11h left)",
      "id": "p2-age-of-oil-oil-output-i"
     },
     {
@@ -102,11 +102,53 @@
     },
     {
      "type": "research",
-     "title": "Age of Oil: rest of the tree to HQ Expansion",
-     "cost": "Research",
+     "title": "Age of Oil: down to Base Expansion",
+     "cost": "Months of research",
      "status": "todo",
-     "detail": "HQ Expansion raises the HQ cap to 35. Record the full tree so the exact path can be filled in.",
-     "id": "p2-age-of-oil-hq-expansion"
+     "detail": "Base Expansion is required for HQ 31, not just HQ 35. Side pairs are assumed required, like the pair before the 3rd Tech Center.",
+     "id": "p2-age-of-oil-hq-expansion",
+     "subs": [
+      {
+       "id": "aoo-focused-rapid",
+       "title": "Focused Training V + Rapid Field Dressing V, Lv1",
+       "cost": "3d 20h each"
+      },
+      {
+       "id": "aoo-oil-output-ii",
+       "title": "Oil Output II to 10/10",
+       "cost": "~5d per level"
+      },
+      {
+       "id": "aoo-emergency-infirmary",
+       "title": "Emergency Capacity I + Infirmary Expansion V, Lv1",
+       "cost": "4d 23h each"
+      },
+      {
+       "id": "aoo-more-oil-wells",
+       "title": "More Oil Wells",
+       "cost": "Research"
+      },
+      {
+       "id": "aoo-training-healing-cost",
+       "title": "Training Cost I + Healing Cost II, Lv1",
+       "cost": "6d 11h each"
+      },
+      {
+       "id": "aoo-parts-workshop",
+       "title": "Parts Workshop, Lv1",
+       "cost": "Research"
+      },
+      {
+       "id": "aoo-oil-output-iii",
+       "title": "Oil Output III to 10/10",
+       "cost": "7d 18h for level 1"
+      },
+      {
+       "id": "aoo-base-expansion",
+       "title": "Base Expansion: HQ cap raised to 35",
+       "cost": "19d 8h · 183.7M gold"
+      }
+     ]
     },
     {
      "type": "build",
@@ -117,54 +159,67 @@
      "id": "hq-build-speed",
      "subs": [
       {
+       "id": "hq-speed-eternal-pyramid",
+       "title": "Eternal Pyramid 1 → 2: construction speed 5% → 10% (needs 2 copies; it carries a Season Boost)",
+       "cost": "2 copies or components"
+      },
+      {
        "id": "hq-speed-fast-builder",
-       "title": "Fast Builder V (Age of Oil) as high as it goes",
+       "title": "Fast Builder V as high as it goes",
        "cost": "Research"
       },
       {
-       "id": "hq-speed-eternal-pyramid",
-       "title": "Upgrade Eternal Pyramid decor (construction speed)",
-       "cost": "Decor components"
+       "id": "hq-speed-wall",
+       "title": "Start Wall 23 → 31 now: it's 9 levels behind and HQ 32 needs it",
+       "cost": "Wall upgrades"
       },
       {
        "id": "hq-speed-save-speedups",
-       "title": "Save construction speedups for HQ and Tech Center levels",
+       "title": "Save construction speedups for HQ levels (on hand: 1h x1, 15m x10)",
        "cost": "Speedups"
       },
       {
-       "id": "hq-speed-oil-wells",
-       "title": "Build every Oil Well as it unlocks (5 total: 2 from research, 3 from HQ levels)",
-       "cost": "Buildings"
+       "id": "hq-speed-oil",
+       "title": "Build oil: 4.5M on hand, one well at 1,800/hr; more wells come from More Oil Wells and HQ levels",
+       "cost": "Oil"
       }
      ]
     },
     {
      "type": "build",
      "title": "HQ 31",
-     "detail": "Needs the Age of Oil HQ unlock. Barracks = your highest barracks; Tank Center fills the Tank/Air/Missile Center slot.",
+     "detail": "Needs Base Expansion research (end of the Age of Oil tree), plus 1.4G iron, 1.4G food, 459.8M gold. Gives hero level cap 155.",
      "cost": "1.44M oil total",
      "status": "todo",
      "id": "hq-31",
      "subs": [
       {
+       "id": "hq31-base-expansion",
+       "title": "Base Expansion research done",
+       "cost": "See Age of Oil step"
+      },
+      {
        "id": "hq31-tech-center-30",
-       "title": "Tech Center to 30",
-       "cost": "No oil"
+       "title": "Tech Center to 30 (now 30)",
+       "cost": "No oil",
+       "status": "done"
       },
       {
        "id": "hq31-barracks-30",
-       "title": "Barracks to 30",
-       "cost": "No oil"
+       "title": "Barracks to 30 (now 30)",
+       "cost": "No oil",
+       "status": "done"
       },
       {
        "id": "hq31-tank-center-30",
-       "title": "Tank Center to 30",
-       "cost": "No oil"
+       "title": "Tank Center to 30 (now 30)",
+       "cost": "No oil",
+       "status": "done"
       },
       {
        "id": "hq31-headquarters",
        "title": "Headquarters to 31",
-       "cost": "1.44M oil"
+       "cost": "1.2M oil · 48d 14h build"
       }
      ]
     },
@@ -177,22 +232,22 @@
      "subs": [
       {
        "id": "hq32-tech-center-31",
-       "title": "Tech Center to 31",
+       "title": "Tech Center to 31 (now 30)",
        "cost": "0.81M oil"
       },
       {
        "id": "hq32-barracks-31",
-       "title": "Barracks to 31",
+       "title": "Barracks to 31 (now 30)",
        "cost": "0.36M oil"
       },
       {
        "id": "hq32-tank-center-31",
-       "title": "Tank Center to 31",
+       "title": "Tank Center to 31 (now 30)",
        "cost": "0.56M oil"
       },
       {
        "id": "hq32-wall-31",
-       "title": "Wall to 31",
+       "title": "Wall to 31 (now 22)",
        "cost": "0.68M oil"
       },
       {
@@ -211,27 +266,27 @@
      "subs": [
       {
        "id": "hq33-tech-center-32",
-       "title": "Tech Center to 32",
+       "title": "Tech Center to 32 (now 30)",
        "cost": "1.30M oil"
       },
       {
        "id": "hq33-barracks-32",
-       "title": "Barracks to 32",
+       "title": "Barracks to 32 (now 30)",
        "cost": "0.58M oil"
       },
       {
        "id": "hq33-tank-center-32",
-       "title": "Tank Center to 32",
+       "title": "Tank Center to 32 (now 30)",
        "cost": "0.90M oil"
       },
       {
        "id": "hq33-hospital-32",
-       "title": "Hospital to 32",
+       "title": "Hospital to 32 (now 28)",
        "cost": "0.70M oil"
       },
       {
        "id": "hq33-drill-ground-32",
-       "title": "Drill Ground to 32",
+       "title": "Drill Ground to 32 (now 30)",
        "cost": "0.70M oil"
       },
       {
@@ -250,27 +305,27 @@
      "subs": [
       {
        "id": "hq34-tech-center-33",
-       "title": "Tech Center to 33",
+       "title": "Tech Center to 33 (now 30)",
        "cost": "2.20M oil"
       },
       {
        "id": "hq34-barracks-33",
-       "title": "Barracks to 33",
+       "title": "Barracks to 33 (now 30)",
        "cost": "0.98M oil"
       },
       {
        "id": "hq34-tank-center-33",
-       "title": "Tank Center to 33",
+       "title": "Tank Center to 33 (now 30)",
        "cost": "1.53M oil"
       },
       {
        "id": "hq34-alliance-center-33",
-       "title": "Alliance Center to 33",
+       "title": "Alliance Center to 33 (level not recorded)",
        "cost": "1.08M oil"
       },
       {
        "id": "hq34-wall-33",
-       "title": "Wall to 33",
+       "title": "Wall to 33 (now 22)",
        "cost": "2.92M oil"
       },
       {
@@ -289,27 +344,27 @@
      "subs": [
       {
        "id": "hq35-tech-center-34",
-       "title": "Tech Center to 34",
+       "title": "Tech Center to 34 (now 30)",
        "cost": "3.97M oil"
       },
       {
        "id": "hq35-barracks-34",
-       "title": "Barracks to 34",
+       "title": "Barracks to 34 (now 30)",
        "cost": "1.76M oil"
       },
       {
        "id": "hq35-tank-center-34",
-       "title": "Tank Center to 34",
+       "title": "Tank Center to 34 (now 30)",
        "cost": "2.75M oil"
       },
       {
        "id": "hq35-hospital-34",
-       "title": "Hospital to 34",
+       "title": "Hospital to 34 (now 28)",
        "cost": "2.06M oil"
       },
       {
        "id": "hq35-drill-ground-34",
-       "title": "Drill Ground to 34",
+       "title": "Drill Ground to 34 (now 30)",
        "cost": "2.06M oil"
       },
       {
@@ -318,7 +373,7 @@
        "cost": "14.10M oil"
       }
      ],
-     "detail": "Needs HQ Expansion research (end of the Age of Oil tree), which raises the HQ cap to 35."
+     "detail": "Game oil costs run about 10% under these estimates."
     }
    ]
   },
@@ -402,22 +457,37 @@
      "title": "Decorations that add hero stats",
      "cost": "Decor components",
      "status": "todo",
-     "detail": "Decor stats apply to every hero, so all five tanks gain at once",
+     "detail": "87 Universal Decor Components on hand · decor gives every hero +196,797 HP and +8,479 attack today",
      "id": "p3-decor-hero-stats",
      "subs": [
       {
-       "id": "p3-decor-record-gallery",
-       "title": "Record the Decorations gallery (owned, levels, components on hand)"
+       "id": "decor-god-of-judgment",
+       "title": "God of Judgment 2 → 3: HP +10,000, ATK +238, march size 4 → 6",
+       "cost": "5 more copies"
       },
       {
-       "id": "p3-decor-flat-stats",
-       "title": "Upgrade gold decor with flat Hero HP/Attack/Defense first (these count toward power)",
-       "cost": "Universal Decor Components"
+       "id": "decor-cheese-manor",
+       "title": "Cheese Manor 2 → 3: HP +13,000, crit damage +1.5%",
+       "cost": "6 copies"
       },
       {
-       "id": "p3-decor-level-3",
-       "title": "Take one decor to level 3 at a time before starting the next",
-       "cost": "Universal Decor Components"
+       "id": "decor-gold-tank",
+       "title": "Gold Tank toward level 4 (16/18): your biggest HP decor at +46,950",
+       "cost": "Copies"
+      },
+      {
+       "id": "decor-throne-rosy",
+       "title": "Throne of Blood 2 → 3 and Rosy Cabriolet 1 → 2: HP +10,000 each",
+       "cost": "6 and 2 copies"
+      },
+      {
+       "id": "decor-libertas",
+       "title": "Libertas: not owned, but its Acquire button is live; check the price",
+       "cost": "Event/shop"
+      },
+      {
+       "id": "decor-skip",
+       "title": "Leave Warrior's and Military Monument alone: components can't upgrade them"
       }
      ]
     },
@@ -426,7 +496,7 @@
      "title": "March size: more troops in every Squad 1 march",
      "cost": "Research",
      "status": "todo",
-     "detail": "About 4,000 power per extra troop slot on each tank",
+     "detail": "Smaller than hoped: about 4,000 power per extra slot per tank",
      "id": "p3-march-size",
      "subs": [
       {
@@ -441,8 +511,13 @@
       },
       {
        "id": "p3-march-tank-center",
-       "title": "Tank Center 31-34 on the HQ path (march size per level)",
-       "cost": "Buildings"
+       "title": "Tank Center 31: tank march size +100 → +103",
+       "cost": "On the HQ path"
+      },
+      {
+       "id": "p3-march-god-of-judgment",
+       "title": "God of Judgment level 3: march size +4 → +6",
+       "cost": "Decor step"
       }
      ]
     }
@@ -573,6 +648,10 @@
     {
      "icon": "build",
      "text": "New direction: HQ 35 before Season 4. HQ 31-35 needs about 56.7M oil across HQ, Tech Center, Barracks, Tank Center, Wall, Hospital, Drill Ground and Alliance Center."
+    },
+    {
+     "icon": "research",
+     "text": "HQ 31 is locked behind Base Expansion, the last node of the Age of Oil tree. Oil Output II and III both need 10 levels first."
     }
    ],
    "next": "Finish Phase 1. Record the Squad 1 screen before and after Marshall's weapon upgrade to measure it.",
