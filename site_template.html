@@ -251,6 +251,9 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .chart-wrap .hit { fill: transparent; cursor: crosshair; }
 table.data td.num, table.data th.num { text-align: right; }
 .tscroll { overflow-x: auto; }
+.th-sub { display: block; font-weight: 400; font-size: 11px; color: var(--text-3); }
+table.data td.old, table.data th.old { color: var(--text-3); }
+table.data .delta { font-size: 14px; }
 .tscroll table.data { min-width: 420px; }
 
 /* recaps */
@@ -771,13 +774,23 @@ function renderHeroes() {
   });
 
   /* category tables: every recording side by side, change since the one before */
+  /* newest recording first, then % change vs last week and vs a month ago, then older recordings */
   const catTable = (rows, cats) => {
-    const ds = rows.map(r => r.date);
-    return `<div class="tscroll"><table class="data"><tr><th>Category</th>${ds.map(d => `<th class="num">${shortDate(d)}</th>`).join('')}<th class="num">Last week</th></tr>${cats.map(([k, label]) => {
-      const a = rows[rows.length - 2], b = rows[rows.length - 1];
-      const ch = a && a[k] != null && b[k] != null ? b[k] - a[k] : null;
-      return `<tr><td>${label}</td>${rows.map(r => `<td class="num">${r[k] != null ? fmtM(r[k]) : '–'}</td>`).join('')}<td class="num">${delta(ch)}</td></tr>`;
-    }).join('')}</table></div>`;
+    const now = rows[rows.length - 1], lw = rows[rows.length - 2];
+    const target = +new Date(now.date) - 30 * 864e5;
+    /* the recording closest to 30 days back; until there's a month of history that's the first one */
+    const mo = rows.length > 1 ? rows.slice(0, -1).reduce((best, r) => Math.abs(+new Date(r.date) - target) < Math.abs(+new Date(best.date) - target) ? r : best) : null;
+    const pct = (k, base) => {
+      if (!base || base[k] == null || now[k] == null || !base[k]) return '<span class="delta">–</span>';
+      const p = (now[k] - base[k]) / base[k] * 100, cls = p > 0.05 ? 'up' : p < -0.05 ? 'down' : '';
+      return `<span class="delta ${cls}">${cls ? ico('trend') : ''}${p > 0 ? '+' : p < 0 ? '−' : ''}${Math.abs(p).toFixed(1)}%</span>`;
+    };
+    const older = rows.slice(0, -1).reverse();
+    const sub = r => r ? `<small class="th-sub">vs ${shortDate(r.date)}</small>` : '';
+    return `<div class="tscroll"><table class="data"><tr><th>Category</th><th class="num">${shortDate(now.date)}</th>
+      <th class="num">Last week${sub(lw)}</th><th class="num">Month${sub(mo)}</th>${older.map(r => `<th class="num old">${shortDate(r.date)}</th>`).join('')}</tr>${cats.map(([k, label]) =>
+      `<tr><td>${label}</td><td class="num"><b>${now[k] != null ? fmtM(now[k]) : '–'}</b></td><td class="num">${pct(k, lw)}</td><td class="num">${pct(k, mo)}</td>${older.map(r => `<td class="num old">${r[k] != null ? fmtM(r[k]) : '–'}</td>`).join('')}</tr>`
+    ).join('')}</table></div>`;
   };
   v.querySelector('#power-split').innerHTML = catTable(DATA.power_split, [['hero_power', 'Hero'], ['unit_power', 'Unit (troops)'], ['building_power', 'Building'], ['drone_power', 'Drone'], ['tech_power', 'Tech'], ['overlord_power', 'Overlord']]);
   const hs = v.querySelector('#hero-split');
