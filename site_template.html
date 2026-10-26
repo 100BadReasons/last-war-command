@@ -211,8 +211,8 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .mtg .cost { display: flex; gap: .14em; flex: none; }
 .mtg .pip { width: 1em; height: 1em; border-radius: 50%; display: grid; place-items: center; font-size: .78em; line-height: 1; color: #2b2410;
   background: radial-gradient(circle at 35% 35%, #fff6cf, #d9b64a); box-shadow: 0 .06em .1em rgba(0, 0, 0, .6); }
-.mtg .art { flex: none; margin: 0 .25em; aspect-ratio: 16 / 11; overflow: hidden; border: .14em solid #1b1815; background: #1b1815; }
-.mtg .art img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.mtg .art { flex: none; margin: 0 .25em; aspect-ratio: 4 / 3; overflow: hidden; border: .14em solid #1b1815; background: #1b1815; }
+.mtg .art img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; display: block; }
 .mtg .type { font-weight: 600; font-size: .86em; }
 .mtg .set { width: .95em; height: .95em; border-radius: 50%; background: var(--hc); box-shadow: 0 0 0 .12em #111; flex: none; }
 .mtg .text { flex: 1; min-height: 0; margin: 0 .3em; padding: .45em .6em 1.6em; background: var(--tx); border: .1em solid rgba(0, 0, 0, .4);
@@ -224,7 +224,7 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .mtg .pt { position: absolute; right: .55em; bottom: .25em; padding: .12em .5em; font-weight: 700; font-size: .98em; border-radius: .3em;
   background: linear-gradient(180deg, var(--b1), var(--b2)); box-shadow: inset 0 0 0 .1em rgba(0, 0, 0, .35), 0 .12em .2em rgba(0, 0, 0, .5); }
 .mtg .foot { display: flex; justify-content: space-between; color: #e8e4dc; font-size: .58em; padding: .35em .3em 0; letter-spacing: .02em; }
-.hand { --hw: min(190px, calc((100vw - 80px) / 3.7)); display: flex; justify-content: center; align-items: flex-end; padding: calc(var(--hw) * .18) 0 8px;
+.hand { --hw: min(180px, calc((100vw - 96px) / 4.1)); display: flex; justify-content: center; align-items: flex-end; padding: calc(var(--hw) * .18) 0 8px;
   min-height: calc(var(--hw) * 1.62); }
 .hand .slot { all: unset; box-sizing: border-box; cursor: pointer; font-size: calc(var(--hw) / 22); margin-left: calc(var(--hw) * -.36);
   transform-origin: 50% 130%; transform: translateY(var(--y)) rotate(var(--r)); transition: transform .18s ease, filter .18s ease; position: relative; }
@@ -684,6 +684,7 @@ function renderSquads() {
 
 /* ---------- Tank heroes ---------- */
 const pic = n => `heroes/${n.toLowerCase()}.jpg`;
+const cardArt = n => `heroes/${n.toLowerCase()}-card.jpg`;
 const hc = n => `var(--h${(HEROES.indexOf(n) + 1) || 6})`;
 const fmtK = v => Math.abs(v) >= 1e6 ? (v / 1e6).toFixed(2) + 'M' : Math.round(v / 1e3).toLocaleString() + 'K';
 const shortDate = d => fmtDate(d).replace(/, \d{4}/, '');
@@ -797,7 +798,7 @@ function heroCard(t) {
   return `<div class="mtg" data-c="${CARD_COLOR[t.name] || 'W'}" style="--hc:${hc(t.name)}">
     <div class="frame">
       <div class="bar"><span class="name">${esc(t.name)}</span><span class="cost" aria-label="5 stars">${'<span class="pip">★</span>'.repeat(5)}</span></div>
-      <div class="art"><img src="${pic(t.name)}" alt="" loading="lazy"></div>
+      <div class="art"><img src="${cardArt(t.name)}" alt="" loading="lazy"></div>
       <div class="bar"><span class="type">Legendary Hero — ${esc(t.role)} Tank</span><span class="set" title="Chart colour"></span></div>
       <div class="text">
         <div><b>Exclusive Weapon</b> — ${ew || 'Not unlocked yet.'}</div>

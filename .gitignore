@@ -16,3 +16,5 @@ __pycache__/
 
 # Hero portraits shown on the site
 !docs/heroes/*.jpg
+*.jpeg
+*.JPEG
