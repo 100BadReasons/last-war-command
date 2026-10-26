@@ -43,8 +43,31 @@ def payload(site, snaps):
         "total": s["account"]["total_power"],
         "squad1": power(s["squads"][0][1]),
     } for s in snaps]
+    tanks = []
+    for name in squads[0]["heroes"]:
+        rows = []
+        for s in snaps:
+            hero = next((h for h in s["heroes"] if h[0] == name), None)
+            ew = next((e[1] for e in s["exclusive_weapons"] if e[0] == name), None)
+            skills = next((k[1:4] for k in s["skills"] if k[0] == name), None)
+            rows.append({
+                "date": s["snapshot_date"],
+                "power": hero[6] if hero else None,
+                "ew": ew if isinstance(ew, int) else None,
+                "honor": dict(s.get("wall_of_honor") or []).get(name),
+                "skills": skills,
+            })
+        hero = next(h for h in latest["heroes"] if h[0] == name)
+        tanks.append({"name": name, "role": hero[3], "attack": hero[7], "hp": hero[8], "defense": hero[9], "history": rows})
+    keys = ["hero_power", "unit_power", "building_power", "drone_power", "tech_power", "overlord_power"]
+    power_split = [{"date": s["snapshot_date"], **{k: s["account"].get(k) for k in keys}} for s in snaps]
+    hero_split = [{"date": s["snapshot_date"], **s["account"]["hero_power_detail"]}
+                  for s in snaps if isinstance(s["account"].get("hero_power_detail"), dict)]
     return {
         "site": site,
+        "tanks": tanks,
+        "power_split": power_split,
+        "hero_split": hero_split,
         "updated": latest["snapshot_date"],
         "account": latest["account"],
         "squads": squads,

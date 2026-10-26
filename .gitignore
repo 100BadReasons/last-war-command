@@ -13,3 +13,6 @@ Video Upload/
 *.xlsx
 .DS_Store
 __pycache__/
+
+# Hero portraits shown on the site
+!docs/heroes/*.jpg
