@@ -190,27 +190,59 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .bench { position: absolute; top: -3px; bottom: -3px; border-left: 2px dashed var(--text-3); }
 
 /* tank heroes */
-.hero-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 12px; }
-.hcard { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; border-top: 4px solid var(--hc); }
-.hcard .top { display: flex; gap: 12px; align-items: center; }
-.hcard img { width: 76px; height: 76px; border-radius: 12px; object-fit: cover; flex: none; background: var(--surface-2); }
-.hcard h3 { margin: 0; font-size: 17px; }
-.hcard .role { color: var(--text-3); font-size: 12px; }
-.hcard .pw { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
 .delta { display: inline-flex; align-items: center; gap: 3px; font-size: 12px; color: var(--text-2); font-variant-numeric: tabular-nums; }
 .delta svg.i { width: 13px; height: 13px; }
 .delta.up svg.i { color: var(--good-text); }
 .delta.down svg.i { color: var(--c-season); transform: scaleY(-1); }
-.hstats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 12px 0 10px; }
-.hstats div { background: var(--surface-2); border-radius: 8px; padding: 6px 8px; font-size: 12px; color: var(--text-2); }
-.hstats b { display: block; color: var(--text); font-size: 15px; font-variant-numeric: tabular-nums; }
-.grow { display: grid; gap: 6px; font-size: 13px; }
-.grow > div { display: grid; grid-template-columns: 112px 1fr; gap: 8px; align-items: center; }
-.grow .k { color: var(--text-2); display: flex; align-items: center; gap: 6px; }
-.grow .k svg.i { width: 15px; height: 15px; color: var(--tc); }
-.grow .v { font-variant-numeric: tabular-nums; }
-.grow .v .now { font-weight: 700; }
-.grow .v .sep { color: var(--text-3); margin: 0 3px; }
+/* hero cards, styled like trading cards held in a hand */
+.mtg { --f1: #e9e4cf; --f2: #d3caa8; --b1: #fdfaee; --b2: #e2d9b8; --tx: #f8f5ea;
+  width: 22em; aspect-ratio: 63 / 88; background: #121110; border-radius: 1.05em; padding: .85em .85em .25em;
+  display: flex; flex-direction: column; color: #141210; font-family: 'EB Garamond', Georgia, serif; text-align: left;
+  box-shadow: 0 .4em 1.2em rgba(0, 0, 0, .45); }
+.mtg[data-c="U"] { --f1: #2a78bf; --f2: #0d4f8b; --b1: #e3eef8; --b2: #a9c9e6; --tx: #e8f0f7; }
+.mtg[data-c="B"] { --f1: #4a423e; --f2: #1f1a18; --b1: #dcd5d1; --b2: #a89f99; --tx: #ebe6e3; }
+.mtg[data-c="R"] { --f1: #d8513a; --f2: #a2261b; --b1: #fbe0d3; --b2: #eaa58b; --tx: #f8e9e1; }
+.mtg[data-c="G"] { --f1: #2a8a52; --f2: #0e5730; --b1: #dcefdc; --b2: #a3d1aa; --tx: #e8f2e5; }
+.mtg .frame { flex: 1; min-height: 0; position: relative; display: flex; flex-direction: column; gap: .32em; padding: .45em;
+  border-radius: .45em .45em .7em .7em; background: radial-gradient(120% 70% at 30% 20%, rgba(255,255,255,.18), transparent 60%), linear-gradient(160deg, var(--f1), var(--f2)); }
+.mtg .bar { flex: none; height: auto; display: flex; align-items: center; justify-content: space-between; gap: .4em; padding: .2em .55em; border-radius: .45em / 1em;
+  background: linear-gradient(180deg, var(--b1), var(--b2)); box-shadow: inset 0 0 0 .1em rgba(0, 0, 0, .35), 0 .12em .2em rgba(0, 0, 0, .45); }
+.mtg .name { font-weight: 700; font-size: 1.12em; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mtg .cost { display: flex; gap: .14em; flex: none; }
+.mtg .pip { width: 1em; height: 1em; border-radius: 50%; display: grid; place-items: center; font-size: .78em; line-height: 1; color: #2b2410;
+  background: radial-gradient(circle at 35% 35%, #fff6cf, #d9b64a); box-shadow: 0 .06em .1em rgba(0, 0, 0, .6); }
+.mtg .art { flex: none; margin: 0 .25em; aspect-ratio: 16 / 11; overflow: hidden; border: .14em solid #1b1815; background: #1b1815; }
+.mtg .art img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.mtg .type { font-weight: 600; font-size: .86em; }
+.mtg .set { width: .95em; height: .95em; border-radius: 50%; background: var(--hc); box-shadow: 0 0 0 .12em #111; flex: none; }
+.mtg .text { flex: 1; min-height: 0; margin: 0 .3em; padding: .45em .6em 1.6em; background: var(--tx); border: .1em solid rgba(0, 0, 0, .4);
+  font-size: .76em; line-height: 1.28; overflow: hidden; display: flex; flex-direction: column; gap: .32em; }
+.mtg .text b { font-weight: 700; }
+.mtg .text .arrow { color: #6a6358; margin: 0 .15em; }
+.mtg .text hr { border: 0; border-top: .08em solid rgba(0, 0, 0, .25); margin: .15em 0; width: 100%; }
+.mtg .flavor { font-style: italic; }
+.mtg .pt { position: absolute; right: .55em; bottom: .25em; padding: .12em .5em; font-weight: 700; font-size: .98em; border-radius: .3em;
+  background: linear-gradient(180deg, var(--b1), var(--b2)); box-shadow: inset 0 0 0 .1em rgba(0, 0, 0, .35), 0 .12em .2em rgba(0, 0, 0, .5); }
+.mtg .foot { display: flex; justify-content: space-between; color: #e8e4dc; font-size: .58em; padding: .35em .3em 0; letter-spacing: .02em; }
+.hand { --hw: min(190px, calc((100vw - 80px) / 3.7)); display: flex; justify-content: center; align-items: flex-end; padding: calc(var(--hw) * .18) 0 8px;
+  min-height: calc(var(--hw) * 1.62); }
+.hand .slot { all: unset; box-sizing: border-box; cursor: pointer; font-size: calc(var(--hw) / 22); margin-left: calc(var(--hw) * -.36);
+  transform-origin: 50% 130%; transform: translateY(var(--y)) rotate(var(--r)); transition: transform .18s ease, filter .18s ease; position: relative; }
+.hand .slot:first-child { margin-left: 0; }
+.hand .slot:hover, .hand .slot:focus-visible { transform: translateY(calc(var(--y) - var(--hw) * .16)) rotate(var(--r)) scale(1.06); z-index: 6; }
+.hand .slot:focus-visible .mtg { outline: 3px solid var(--accent); outline-offset: 3px; }
+.hand-hint { text-align: center; color: var(--text-3); font-size: 13px; margin: 0; }
+.pop { position: fixed; inset: 0; z-index: 40; display: none; place-items: center; background: rgba(0, 0, 0, .62); padding: 16px; }
+.pop.on { display: grid; }
+.pop .inner { display: grid; justify-items: center; gap: 12px; }
+.pop .mtg { font-size: min(16px, calc((100vw - 32px) / 22), calc((100vh - 120px) / 31)); animation: pop-in .18s ease-out; }
+@keyframes pop-in { from { transform: translateY(24px) scale(.85); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .pop .mtg { animation: none; } .hand .slot { transition: none; } }
+.pop .ctl { display: flex; gap: 10px; }
+.pop .ctl button { display: inline-flex; align-items: center; gap: 6px; border: 0; border-radius: 999px; padding: 8px 14px; font: 600 14px system-ui, sans-serif;
+  background: #fcfcfb; color: #0b0b0b; cursor: pointer; }
+.pop .ctl button svg.i { width: 16px; height: 16px; }
+.pop .ctl .prev svg.i { transform: scaleX(-1); }
 .hlegend { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 4px; }
 .hlegend span { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-2); }
 .hlegend img { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px var(--hc); }
@@ -218,6 +250,8 @@ h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; colo
 .chart-wrap .xh { stroke: var(--text-3); stroke-width: 1; opacity: 0; }
 .chart-wrap .hit { fill: transparent; cursor: crosshair; }
 table.data td.num, table.data th.num { text-align: right; }
+.tscroll { overflow-x: auto; }
+.tscroll table.data { min-width: 420px; }
 
 /* recaps */
 .tl { position: relative; padding-left: 28px; }
@@ -269,6 +303,9 @@ footer.wrap { color: var(--text-3); font-size: 12px; padding-top: 16px; padding-
   .ph .nm { font-size: 12px; }
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="topbar">
@@ -680,7 +717,13 @@ function renderHeroes() {
       <div class="hlegend">${ordered.map(t => `<span style="--hc:${hc(t.name)}"><img src="${pic(t.name)}" alt="">${esc(t.name)}</span>`).join('')}</div>
       <div class="chart-wrap" id="hero-line"></div>
     </div>
-    <div class="hero-grid">${ordered.map(heroCard).join('')}</div>
+    <div class="card">
+      <div class="goal-title">${ico('hero')}Your hand · tap a card to read it</div>
+      <div class="hand" role="list">${ordered.map((tk, i, arr) => {
+        const mid = (arr.length - 1) / 2, off = i - mid;
+        return `<button class="slot" type="button" role="listitem" data-hero="${esc(tk.name)}" style="--r:${(off * 6).toFixed(1)}deg;--y:calc(var(--hw) * ${(off * off * 0.035).toFixed(3)})" aria-label="${esc(tk.name)}, ${fmtM(tk.history[tk.history.length - 1].power)} power. Open card">${heroCard(tk)}</button>`;
+      }).join('')}</div>
+    </div>
     <div class="card" style="margin-top:14px">
       <div class="goal-title">${ico('power')}Account power by category</div>
       <div id="power-split"></div>
@@ -729,38 +772,78 @@ function renderHeroes() {
   /* category tables: every recording side by side, change since the one before */
   const catTable = (rows, cats) => {
     const ds = rows.map(r => r.date);
-    return `<table class="data"><tr><th>Category</th>${ds.map(d => `<th class="num">${shortDate(d)}</th>`).join('')}<th class="num">Last week</th></tr>${cats.map(([k, label]) => {
+    return `<div class="tscroll"><table class="data"><tr><th>Category</th>${ds.map(d => `<th class="num">${shortDate(d)}</th>`).join('')}<th class="num">Last week</th></tr>${cats.map(([k, label]) => {
       const a = rows[rows.length - 2], b = rows[rows.length - 1];
       const ch = a && a[k] != null && b[k] != null ? b[k] - a[k] : null;
       return `<tr><td>${label}</td>${rows.map(r => `<td class="num">${r[k] != null ? fmtM(r[k]) : '–'}</td>`).join('')}<td class="num">${delta(ch)}</td></tr>`;
-    }).join('')}</table>`;
+    }).join('')}</table></div>`;
   };
   v.querySelector('#power-split').innerHTML = catTable(DATA.power_split, [['hero_power', 'Hero'], ['unit_power', 'Unit (troops)'], ['building_power', 'Building'], ['drone_power', 'Drone'], ['tech_power', 'Tech'], ['overlord_power', 'Overlord']]);
   const hs = v.querySelector('#hero-split');
   if (hs) hs.innerHTML = catTable(DATA.hero_split, [['hero_level', 'Hero level'], ['decor_building_stats', 'Decor & building stats'], ['gear', 'Gear'], ['skill', 'Skills'], ['tier', 'Tier'], ['exclusive_weapon', 'Exclusive Weapon'], ['wall_of_honor', 'Wall of Honor']]);
 }
+/* Each Squad 1 tank gets one card colour; the dot in the set-symbol spot is its chart colour. */
+const CARD_COLOR = { Murphy: 'W', Williams: 'G', Kimberly: 'R', Stetmann: 'U', Marshall: 'B' };
 function heroCard(t) {
   const h = t.history, now = h[h.length - 1], prev = h[h.length - 2] || now, start = h[0];
-  const trail = (f, fmt = String, none = '–') => {
+  const trail = (f, fmt = String) => {
     const seen = [];
     h.forEach(r => { const val = f(r); if (val != null && seen[seen.length - 1] !== val) seen.push(val); });
-    if (!seen.length) return `<span class="role">${none}</span>`;
-    return seen.map((s, i) => i === seen.length - 1 ? `<span class="now">${fmt(s)}</span>` : fmt(s)).join('<span class="sep">→</span>');
+    return seen.length ? seen.map(fmt).join('<span class="arrow">→</span>') : null;
   };
-  const skillNames = ['Skill 1', 'Skill 2', 'Skill 3'];
-  return `<div class="hcard" style="--hc:${hc(t.name)}">
-    <div class="top"><img src="${pic(t.name)}" alt="${esc(t.name)} portrait" loading="lazy">
-      <div><h3>${esc(t.name)}</h3><div class="role">${esc(t.role)} tank</div>
-        <div class="pw">${fmtM(now.power)}</div>
-        <div>${delta(now.power - prev.power)} <span class="role">last week</span> · ${delta(now.power - start.power)} <span class="role">since ${shortDate(start.date)}</span></div></div></div>
-    <div class="hstats"><div>Attack<b>${esc(t.attack)}</b></div><div>HP<b>${esc(t.hp)}</b></div><div>Defense<b>${esc(t.defense)}</b></div></div>
-    <div class="grow">
-      <div style="--tc:var(--c-weapon)"><span class="k">${ico('weapon')}Excl. Weapon</span><span class="v">${trail(r => r.ew, s => 'Lv ' + s, 'Not unlocked yet')}</span></div>
-      <div style="--tc:var(--c-honor)"><span class="k">${ico('honor')}Wall of Honor</span><span class="v">${trail(r => r.honor)}</span></div>
-      ${skillNames.map((nm, i) => `<div style="--tc:var(--c-skill)"><span class="k">${ico('skill')}${nm}</span><span class="v">${trail(r => r.skills ? r.skills[i] : null)}</span></div>`).join('')}
+  const ew = trail(r => r.ew, s => 'Lv ' + s), honor = trail(r => r.honor);
+  const skills = [0, 1, 2].map(i => trail(r => r.skills ? r.skills[i] : null)).join(' · ');
+  const sign = v => (v >= 0 ? '+' : '−') + fmtK(Math.abs(v));
+  return `<div class="mtg" data-c="${CARD_COLOR[t.name] || 'W'}" style="--hc:${hc(t.name)}">
+    <div class="frame">
+      <div class="bar"><span class="name">${esc(t.name)}</span><span class="cost" aria-label="5 stars">${'<span class="pip">★</span>'.repeat(5)}</span></div>
+      <div class="art"><img src="${pic(t.name)}" alt="" loading="lazy"></div>
+      <div class="bar"><span class="type">Legendary Hero — ${esc(t.role)} Tank</span><span class="set" title="Chart colour"></span></div>
+      <div class="text">
+        <div><b>Exclusive Weapon</b> — ${ew || 'Not unlocked yet.'}</div>
+        <div><b>Wall of Honor</b> — ${honor || '–'}</div>
+        <div><b>Skills</b> — ${skills}</div>
+        <div><b>Defense</b> ${esc(t.defense)}</div>
+        <hr>
+        <div class="flavor">${sign(now.power - prev.power)} last week, ${sign(now.power - start.power)} since ${shortDate(start.date)}.</div>
+      </div>
+      <div class="pt" title="Attack / HP">${esc(t.attack)}/${esc(t.hp)}</div>
     </div>
+    <div class="foot"><span>★ ${fmtM(now.power)} power</span><span>Squad 1 · ${shortDate(now.date)}</span></div>
   </div>`;
 }
+function openCard(name) {
+  const T = (DATA.tanks || []).slice().sort((a, b) => b.history[b.history.length - 1].power - a.history[a.history.length - 1].power);
+  let i = Math.max(0, T.findIndex(t => t.name === name));
+  let pop = document.getElementById('card-pop');
+  if (!pop) {
+    pop = document.createElement('div');
+    pop.id = 'card-pop'; pop.className = 'pop';
+    pop.setAttribute('role', 'dialog'); pop.setAttribute('aria-modal', 'true');
+    document.body.append(pop);
+  }
+  const back = document.activeElement;
+  const close = () => { pop.classList.remove('on'); removeEventListener('keydown', key); if (back) back.focus({ preventScroll: true }); };
+  const show = () => {
+    pop.setAttribute('aria-label', T[i].name + ' card');
+    pop.innerHTML = `<div class="inner">${heroCard(T[i])}<div class="ctl">
+      <button class="prev" type="button">${ico('arrow')}Previous</button><button class="x" type="button">${ico('close')}Close</button><button class="next" type="button">Next${ico('arrow')}</button></div></div>`;
+    pop.querySelector('.prev').onclick = () => { i = (i + T.length - 1) % T.length; show(); };
+    pop.querySelector('.next').onclick = () => { i = (i + 1) % T.length; show(); };
+    pop.querySelector('.x').onclick = close;
+    pop.querySelector('.x').focus({ preventScroll: true });
+  };
+  const key = e => {
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') { i = (i + 1) % T.length; show(); }
+    else if (e.key === 'ArrowLeft') { i = (i + T.length - 1) % T.length; show(); }
+  };
+  pop.onclick = e => { if (e.target === pop) close(); };
+  addEventListener('keydown', key);
+  pop.classList.add('on');
+  show();
+}
+document.addEventListener('click', e => { const s = e.target.closest('.hand .slot'); if (s) openCard(s.dataset.hero); });
 
 /* ---------- Notes ---------- */
 /* Notes live in this browser's storage, like the plan checkmarks. */
