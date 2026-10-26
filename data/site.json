@@ -620,11 +620,11 @@
   {
    "date": "2026-10-25",
    "title": "3rd Tech Center open",
-   "sources": "Heroes + gear video, tiers / Exclusive Weapons / Wall of Honor video, base video, research + HQ + inventory video, site checklist and notes",
+   "sources": "Heroes + gear video, tiers / Exclusive Weapons / Wall of Honor video, base video, research + HQ + inventory video, site checklist and notes + power details video and Squad 1 screenshot",
    "highlights": [
     {
      "icon": "hero",
-     "text": "Tank heroes up 311K to 21.16M. Murphy and Kimberly are both past 5.0M."
+     "text": "Squad 1 30.14M → 30.49M (+0.35M). Tank heroes up 311K to 21.16M; Murphy and Kimberly are both past 5.0M."
     },
     {
      "icon": "weapon",
@@ -651,27 +651,27 @@
      "text": "HQ 31 now lacks only Base Expansion. Build time with buffs is 47d 1h."
     },
     {
-     "icon": "trend",
-     "text": "Total power fell 154.9M → 147.9M. Not explained by these videos; record the power details screen next time."
+     "icon": "troops",
+     "text": "Total power 154.9M → 147.5M is all troops: unit power fell 55.6M → 46.8M. Hero power rose 975K. Squad 1 doesn't count those troops, so it kept climbing."
     }
    ],
-   "next": "Spend the 101 universal shards on Murphy's weapon, push Kimberly's Wall of Honor to 50, and record the Squad 1 and power details screens.",
+   "next": "Spend the 101 universal shards on Murphy's weapon, push Kimberly's Wall of Honor to 50, and rebuild troops to win back total power.",
    "stats": [
     {
      "label": "Total power",
-     "value": "147.9M"
+     "value": "147.5M"
     },
     {
-     "label": "Squad 1 (est.)",
-     "value": "~30.45M"
+     "label": "Squad 1",
+     "value": "30.49M"
     },
     {
      "label": "Tank heroes",
      "value": "21.16M"
     },
     {
-     "label": "EW shards",
-     "value": "101"
+     "label": "Unit power",
+     "value": "46.8M"
     }
    ]
   },

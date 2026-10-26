@@ -4,27 +4,48 @@
   "ScreenRecording_10-25-2026 14-39-23_1.MP4 (heroes + gear)",
   "ScreenRecording_10-25-2026 17-02-06_1.MP4 (Exclusive Weapons, tiers, skills, Wall of Honor)",
   "ScreenRecording_10-25-2026 17-03-20_1.MP4 (base, troops)",
-  "ScreenRecording_10-25-2026 17-07-47_1.MP4 (research trees, HQ 31, inventory)"
+  "ScreenRecording_10-25-2026 17-07-47_1.MP4 (research trees, HQ 31, inventory)",
+  "ScreenRecording_10-25-2026 21-46-16_1.MP4 (power details) + IMG_3297.PNG (Squad 1)"
  ],
  "account": {
   "hq_level": 30,
   "vip": 12,
-  "total_power": 147919375,
-  "hero_power": null,
-  "unit_power": null,
-  "building_power": null,
-  "drone_power": null,
-  "tech_power": null,
-  "overlord_power": null,
+  "total_power": 147530890,
+  "hero_power": 78155404,
+  "unit_power": 46814559,
+  "building_power": 10019861,
+  "drone_power": 6716853,
+  "tech_power": 5231977,
+  "overlord_power": 592236,
   "decor_power": null,
   "drone_level": 135,
   "hero_exp_available": null,
   "skill_medals_available": null,
-  "hero_power_detail": "not recorded",
-  "drone_detail": "not recorded",
-  "building_detail": "not recorded",
+  "hero_power_detail": {
+   "hero_level": 47482820,
+   "decor_building_stats": 14344648,
+   "gear": 5192664,
+   "skill": 4088150,
+   "tier": 3744761,
+   "exclusive_weapon": 2360736,
+   "wall_of_honor": 941625
+  },
+  "drone_detail": {
+   "level": 3782306,
+   "component": 2255948,
+   "skill_chip": 678600
+  },
+  "building_detail": {
+   "buildings": 6626000,
+   "survivor": 3393861
+  },
   "research_speedups": "Universal 12d 0h 40m, construction 8d 23h 13m, research 1d 18h 10m, training 6h 31m (inventory totals)",
-  "troops": 32384
+  "troops": 32384,
+  "overlord_detail": {
+   "training_level": 564450,
+   "bond_rating": 22026,
+   "skill": 5760
+  }
  },
  "hero_columns": [
   "name",
@@ -1024,7 +1045,7 @@
  "squads": [
   [
    1,
-   "30.45M (est.)",
+   "30.49M",
    "Murphy",
    "Williams",
    "Kimberly",
@@ -1199,16 +1220,6 @@
  ],
  "missing": [
   [
-   "Account",
-   "Power details screen (hero/unit/building/decor split) and the Squad 1 screen",
-   "High"
-  ],
-  [
-   "Account",
-   "Why total power fell 154.9M -> 147.9M since 10/18",
-   "High"
-  ],
-  [
    "Heroes",
    "Skill medal and hero EXP counts",
    "Medium"
@@ -1216,6 +1227,11 @@
   [
    "Buildings",
    "Alliance Center level",
+   "Medium"
+  ],
+  [
+   "Troops",
+   "Where the troops went: hospital, Emergency Center or losses in Desert Storm",
    "Medium"
   ]
  ],
@@ -1316,5 +1332,5 @@
   "shards": "Universal tank shards 59 on hand; ~10 per level (Murphy/Kimberly), 9 Marshall, 6 Stetmann. Own shards: Scarlett 90, Monica 33, Stetmann 4, Mason 7, Marshall 1"
  },
  "decor": "not recorded this week (see 2026-10-18)",
- "squad1_note": "Squad 1 screen not recorded. Estimate = tank heroes 21.16M + troop share 9.29M (HQ-capped, unchanged since 10/13)."
+ "power_change_note": "Total power 154.9M -> 147.5M is all unit power (55.6M -> 46.8M). Hero +975K, building +288K, tech +124K, drone +64K. Squad 1 is HQ-capped on troops, so it still rose 30.14M -> 30.49M."
 }
