@@ -34,27 +34,36 @@
  "plan": [
   {
    "phase": 1,
-   "name": "Finish the free power",
+   "name": "Ready now",
    "window": "Now",
-   "estimate": "+0.1M",
+   "estimate": "+0.3M to +0.5M",
    "steps": [
     {
-     "type": "gear",
-     "title": "Data chip 30 → 40",
-     "cost": "Gear ore",
+     "type": "weapon",
+     "title": "Exclusive Weapon 15 → 20",
+     "hero": "Murphy",
+     "cost": "Universal EW shards (101 on hand)",
      "status": "todo",
-     "hero": "Williams",
-     "detail": "Still Lv 30 in the 10/18 video",
-     "id": "p1-williams-data-chip-30-40"
+     "detail": "Murphy went 12 → 15 this week. Keep going: one weapon to 20 before the next. Record the shard cost per level.",
+     "id": "p1-murphy-ew-15-20"
     },
     {
      "type": "weapon",
-     "title": "Exclusive Weapon 1 → 2",
-     "cost": "20/20 shards (on hand)",
-     "status": "todo",
+     "title": "Exclusive Weapon 2 → 3",
      "hero": "Marshall",
-     "detail": "Ready now: +41K HP, +909 attack, +328 defense",
-     "id": "p1-marshall-exclusive-weapon-1-2"
+     "cost": "20 shards",
+     "status": "todo",
+     "detail": "Cheap: +48K HP, +1,061 attack, +383 defense. Do it if Murphy's next level costs more than you have.",
+     "id": "p1-marshall-ew-2-3"
+    },
+    {
+     "type": "honor",
+     "title": "Wall of Honor 45 → 50",
+     "hero": "Kimberly",
+     "cost": "About 50 universal tank shards (59 on hand)",
+     "status": "todo",
+     "detail": "Level 50 unlocks +0.5% attack for every tank hero. The closest milestone on the wall.",
+     "id": "p1-kimberly-woh-45-50"
     }
    ]
   },
@@ -66,56 +75,21 @@
    "steps": [
     {
      "type": "research",
-     "title": "Age of Oil: Oil Output I to 10/10",
-     "cost": "Research",
-     "status": "todo",
-     "detail": "7/10, level 8 in queue 2 (5d 11h left)",
-     "id": "p2-age-of-oil-oil-output-i"
-    },
-    {
-     "type": "research",
-     "title": "Fast Builder V and Research Enhancement V",
-     "cost": "2d 17h each",
-     "status": "todo",
-     "detail": "Both are required for the 3rd Tech Center · Research Enhancement also speeds every research after it",
-     "id": "p2-age-of-oil-next-tier",
-     "subs": [
-      {
-       "id": "p2-fast-builder-v-1",
-       "title": "Fast Builder V to level 1",
-       "cost": "2d 17h"
-      },
-      {
-       "id": "p2-research-enhancement-v-1",
-       "title": "Research Enhancement V to level 1",
-       "cost": "2d 17h"
-      }
-     ]
-    },
-    {
-     "type": "research",
-     "title": "Unlock the 3rd Tech Center",
-     "cost": "3d 20h",
-     "status": "todo",
-     "detail": "A third research queue: one for tank boosts, one for the Age of Oil, one free",
-     "id": "p2-age-of-oil-3rd-tech-center"
-    },
-    {
-     "type": "research",
      "title": "Age of Oil: down to Base Expansion",
      "cost": "Months of research",
      "status": "todo",
-     "detail": "Base Expansion is required for HQ 31, not just HQ 35. Side pairs are assumed required, like the pair before the 3rd Tech Center.",
+     "detail": "Oil Output I and the 3rd Tech Center are done. Three queues now: Oil Output II in queue 2, Focused Training V in queue 3.",
      "id": "p2-age-of-oil-hq-expansion",
      "subs": [
       {
        "id": "aoo-focused-rapid",
        "title": "Focused Training V + Rapid Field Dressing V, Lv1",
-       "cost": "3d 20h each"
+       "cost": "3d 20h each",
+       "status": "done"
       },
       {
        "id": "aoo-oil-output-ii",
-       "title": "Oil Output II to 10/10",
+       "title": "Oil Output II to 10/10 (2/10, level 3 in queue)",
        "cost": "~5d per level"
       },
       {
@@ -141,12 +115,12 @@
       {
        "id": "aoo-oil-output-iii",
        "title": "Oil Output III to 10/10",
-       "cost": "7d 18h for level 1"
+       "cost": "7d 12h for level 1"
       },
       {
        "id": "aoo-base-expansion",
        "title": "Base Expansion: HQ cap raised to 35",
-       "cost": "19d 8h · 183.7M gold"
+       "cost": "18d 16h · 174.1M gold"
       }
      ]
     },
@@ -159,28 +133,23 @@
      "id": "hq-build-speed",
      "subs": [
       {
-       "id": "hq-speed-eternal-pyramid",
-       "title": "Eternal Pyramid 1 → 2: construction speed 5% → 10% (needs 2 copies; it carries a Season Boost)",
-       "cost": "2 copies or components"
-      },
-      {
        "id": "hq-speed-fast-builder",
        "title": "Fast Builder V as high as it goes",
        "cost": "Research"
       },
       {
        "id": "hq-speed-wall",
-       "title": "Start Wall 23 → 31 now: it's 9 levels behind and HQ 32 needs it",
+       "title": "Wall 22 → 23 is building (8d 15h left); keep going to 31, HQ 32 needs it",
        "cost": "Wall upgrades"
       },
       {
        "id": "hq-speed-save-speedups",
-       "title": "Save construction speedups for HQ levels (on hand: 1h x1, 15m x10)",
+       "title": "Save construction speedups for HQ levels (8d 23h on hand, plus 12d universal)",
        "cost": "Speedups"
       },
       {
        "id": "hq-speed-oil",
-       "title": "Build oil: 4.5M on hand, one well at 1,800/hr; more wells come from More Oil Wells and HQ levels",
+       "title": "Build oil: 1.5M on hand, one well at 1,800/hr; more wells come from More Oil Wells and HQ levels",
        "cost": "Oil"
       }
      ]
@@ -188,7 +157,7 @@
     {
      "type": "build",
      "title": "HQ 31",
-     "detail": "Needs Base Expansion research (end of the Age of Oil tree), plus 1.4G iron, 1.4G food, 459.8M gold. Gives hero level cap 155.",
+     "detail": "Base Expansion is the only missing requirement. Also 1.3G iron and 1.3G food. Gives hero level cap 155 and 210M hero EXP.",
      "cost": "1.44M oil total",
      "status": "todo",
      "id": "hq-31",
@@ -219,7 +188,7 @@
       {
        "id": "hq31-headquarters",
        "title": "Headquarters to 31",
-       "cost": "1.2M oil · 48d 14h build"
+       "cost": "1.2M oil · 47d 1h build"
       }
      ]
     },
@@ -412,30 +381,61 @@
      ]
     },
     {
-     "type": "weapon",
-     "title": "Exclusive Weapon 12 → 20",
-     "cost": "EW shards",
-     "status": "later",
-     "hero": "Murphy",
-     "id": "p2-murphy-exclusive-weapon-12-20"
+     "type": "honor",
+     "title": "Wall of Honor: aim shards at the 50-level milestones",
+     "cost": "Universal tank shards + hero shards",
+     "status": "todo",
+     "detail": "Each level adds a little hero HP; the real value is the tank-wide boost every 50 levels. Spend universal shards on whoever is closest to the next 50.",
+     "id": "p3-woh-milestones",
+     "subs": [
+      {
+       "id": "woh-kimberly-50",
+       "title": "Kimberly 45 → 50: +0.5% tank attack",
+       "hero": "Kimberly",
+       "cost": "~50 universal shards"
+      },
+      {
+       "id": "woh-murphy-50",
+       "title": "Murphy 28 → 50: +0.5% tank HP",
+       "hero": "Murphy",
+       "cost": "~10 universal shards per level"
+      },
+      {
+       "id": "woh-marshall-50",
+       "title": "Marshall 23 → 50: +0.5% tank defense",
+       "hero": "Marshall",
+       "cost": "~9 per level"
+      },
+      {
+       "id": "woh-mason-100",
+       "title": "Mason 84 → 100: +0.5% tank attack, with Mason's own purple shards",
+       "cost": "13 per level"
+      },
+      {
+       "id": "woh-scarlett-150",
+       "title": "Scarlett 111 → 150 with her own shards (90 on hand): +0.25% tank HP",
+       "cost": "Scarlett shards"
+      }
+     ]
     },
     {
      "type": "skill",
      "title": "Skills that boost the whole squad",
-     "cost": "48.2K medals on hand",
+     "cost": "Skill medals",
      "status": "todo",
-     "detail": "A skill level is only a few thousand power, so spend medals on fight value: squad-wide skills first",
+     "detail": "This week: Williams Iron Will maxed, Murphy skill 2 30 → 33, Marshall skill 1 20 → 25, Williams skill 1 20 → 21.",
      "id": "p2-skill-1-marshall-stetmann-williams",
      "subs": [
       {
        "id": "p2-skill-williams-iron-will",
        "title": "Iron Will to 30 (squad defense, 2 levels left)",
        "hero": "Williams",
-       "cost": "22,000+ medals each"
+       "cost": "22,000+ medals each",
+       "status": "done"
       },
       {
        "id": "p2-skill-murphy-ironclad-barrier",
-       "title": "Ironclad Barrier II 30 → 34 (squad damage taken)",
+       "title": "Ironclad Barrier II 33 → 34 (squad damage taken, 1 level left)",
        "hero": "Murphy",
        "cost": "26,000+ medals each"
       },
@@ -447,7 +447,7 @@
       },
       {
        "id": "p2-skill-1-catch-up",
-       "title": "Then skill 1 on Stetmann, Marshall and Williams, cheapest first",
+       "title": "Then skill 1 on Stetmann (19) and Williams (21); Marshall is at 25",
        "cost": "9,000-13,000 medals each"
       }
      ]
@@ -460,6 +460,11 @@
      "detail": "87 Universal Decor Components on hand · decor gives every hero +196,797 HP and +8,479 attack today",
      "id": "p3-decor-hero-stats",
      "subs": [
+      {
+       "id": "hq-speed-eternal-pyramid",
+       "title": "Eternal Pyramid 1 → 2: construction speed 5% → 10% for the HQ path (needs 2 copies; carries a Season Boost)",
+       "cost": "2 copies or components"
+      },
       {
        "id": "decor-god-of-judgment",
        "title": "God of Judgment 2 → 3: HP +10,000, ATK +238, march size 4 → 6",
@@ -541,11 +546,11 @@
        "id": "p3-kimberly-ew-20-30",
        "title": "Exclusive Weapon 20 → 30",
        "hero": "Kimberly",
-       "cost": "EW shards"
+       "cost": "150 shards per level (101 on hand)"
       },
       {
        "id": "p3-marshall-ew-to-20",
-       "title": "Exclusive Weapon toward 20",
+       "title": "Exclusive Weapon 3 → 20 after Murphy reaches 20",
        "hero": "Marshall",
        "cost": "Marshall shards"
       }
@@ -587,6 +592,10 @@
    "text": "One Exclusive Weapon to level 20 before the next. Never Tesla."
   },
   {
+   "icon": "honor",
+   "text": "Wall of Honor shards go to the hero closest to the next 50-level milestone."
+  },
+  {
    "icon": "research",
    "text": "Hero-tree tank research before the Tank Mastery tree."
   },
@@ -608,6 +617,64 @@
   }
  ],
  "recaps": [
+  {
+   "date": "2026-10-25",
+   "title": "3rd Tech Center open",
+   "sources": "Heroes + gear video, tiers / Exclusive Weapons / Wall of Honor video, base video, research + HQ + inventory video, site checklist and notes",
+   "highlights": [
+    {
+     "icon": "hero",
+     "text": "Tank heroes up 311K to 21.16M. Murphy and Kimberly are both past 5.0M."
+    },
+    {
+     "icon": "weapon",
+     "text": "Murphy's Exclusive Weapon 12 → 15 and Marshall's 1 → 2. 101 universal shards are on hand."
+    },
+    {
+     "icon": "gear",
+     "text": "Williams' data chip is at 40. All five tanks now wear Lv 40 gear."
+    },
+    {
+     "icon": "skill",
+     "text": "Iron Will maxed. Murphy skill 2 30 → 33, Marshall skill 1 20 → 25."
+    },
+    {
+     "icon": "honor",
+     "text": "Wall of Honor: Kimberly 31 → 45, Scarlett 87 → 111, Marshall 19 → 23. Kimberly is 5 levels from a +0.5% tank attack boost."
+    },
+    {
+     "icon": "research",
+     "text": "3rd Tech Center unlocked and Oil Output I maxed. Oil Output II is 2/10."
+    },
+    {
+     "icon": "build",
+     "text": "HQ 31 now lacks only Base Expansion. Build time with buffs is 47d 1h."
+    },
+    {
+     "icon": "trend",
+     "text": "Total power fell 154.9M → 147.9M. Not explained by these videos; record the power details screen next time."
+    }
+   ],
+   "next": "Spend the 101 universal shards on Murphy's weapon, push Kimberly's Wall of Honor to 50, and record the Squad 1 and power details screens.",
+   "stats": [
+    {
+     "label": "Total power",
+     "value": "147.9M"
+    },
+    {
+     "label": "Squad 1 (est.)",
+     "value": "~30.45M"
+    },
+    {
+     "label": "Tank heroes",
+     "value": "21.16M"
+    },
+    {
+     "label": "EW shards",
+     "value": "101"
+    }
+   ]
+  },
   {
    "date": "2026-10-18",
    "title": "Phase 1 almost done",
@@ -723,6 +790,77 @@
  ],
  "sync_url": "https://script.google.com/macros/s/AKfycbzrvFoEtvCS2hRavL6MjntacrMdNjW6YYp__8qPOZCyVsQj1UzOyfqhYp_tD0t4P3dL/exec",
  "archive": [
+  {
+   "date": "2026-10-25",
+   "steps": [
+    {
+     "type": "gear",
+     "title": "Data chip 30 → 40",
+     "cost": "Gear ore",
+     "status": "done",
+     "hero": "Williams",
+     "detail": "Still Lv 30 in the 10/18 video",
+     "id": "p1-williams-data-chip-30-40",
+     "phase": 1,
+     "phase_name": "Finish the free power"
+    },
+    {
+     "type": "weapon",
+     "title": "Exclusive Weapon 1 → 2",
+     "cost": "20/20 shards (on hand)",
+     "status": "done",
+     "hero": "Marshall",
+     "detail": "Ready now: +41K HP, +909 attack, +328 defense",
+     "id": "p1-marshall-exclusive-weapon-1-2",
+     "phase": 1,
+     "phase_name": "Finish the free power"
+    },
+    {
+     "type": "research",
+     "title": "Age of Oil: Oil Output I to 10/10",
+     "cost": "Research",
+     "status": "done",
+     "detail": "7/10, level 8 in queue 2 (5d 11h left)",
+     "id": "p2-age-of-oil-oil-output-i",
+     "phase": 2,
+     "phase_name": "Road to HQ 35"
+    },
+    {
+     "type": "research",
+     "title": "Fast Builder V and Research Enhancement V",
+     "cost": "2d 17h each",
+     "status": "done",
+     "detail": "Both are required for the 3rd Tech Center · Research Enhancement also speeds every research after it",
+     "id": "p2-age-of-oil-next-tier",
+     "subs": [
+      {
+       "id": "p2-fast-builder-v-1",
+       "title": "Fast Builder V to level 1",
+       "cost": "2d 17h",
+       "status": "done"
+      },
+      {
+       "id": "p2-research-enhancement-v-1",
+       "title": "Research Enhancement V to level 1",
+       "cost": "2d 17h",
+       "status": "done"
+      }
+     ],
+     "phase": 2,
+     "phase_name": "Road to HQ 35"
+    },
+    {
+     "type": "research",
+     "title": "Unlock the 3rd Tech Center",
+     "cost": "3d 20h",
+     "status": "done",
+     "detail": "A third research queue: one for tank boosts, one for the Age of Oil, one free",
+     "id": "p2-age-of-oil-3rd-tech-center",
+     "phase": 2,
+     "phase_name": "Road to HQ 35"
+    }
+   ]
+  },
   {
    "date": "2026-10-18",
    "steps": [
