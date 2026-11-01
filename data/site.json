@@ -3,7 +3,7 @@
  "commander": "HQ 30 · VIP 12 · Tank main",
  "goal": {
   "name": "Squad 1 to 40M",
-  "rule": "HQ upgrades allowed: HQ 35 before Season 4",
+  "rule": "HQ upgrades allowed: HQ 31 before Season 4",
   "set": "2026-10-13",
   "baseline": 29560000,
   "target": 40000000,
@@ -27,8 +27,8 @@
   ],
   "rebaselined": "2026-10-18",
   "hq_target": {
-   "level": 35,
-   "by": "End of Season 3"
+   "level": 31,
+   "by": "Season 4 (about Dec 31)"
   }
  },
  "plan": [
@@ -89,9 +89,9 @@
   },
   {
    "phase": 2,
-   "name": "Road to HQ 35",
-   "window": "Season 3",
-   "estimate": "Hero level cap 150 → 175",
+   "name": "Road to HQ 31",
+   "window": "Before Season 4 (about Dec 31)",
+   "estimate": "Hero level cap 150 → 155",
    "steps": [
     {
      "type": "research",
@@ -146,26 +146,36 @@
     },
     {
      "type": "build",
-     "title": "Build speed for 5 HQ levels",
-     "cost": "Speedups",
+     "title": "Speedups: all in on HQ 31",
+     "cost": "About 22 speedup days a week",
      "status": "todo",
-     "detail": "HQ 31-35 plus prerequisites is thousands of base build days, so construction speed and speedups set the pace",
+     "detail": "About 192 speedup days by Dec 31 if you clear every store. HQ 31 needs about 125-140, so there's room for about 3 weeks of universals elsewhere.",
      "id": "hq-build-speed",
      "subs": [
+      {
+       "id": "hq-speed-research-first",
+       "title": "Research speedups and universals go on required Age of Oil nodes, on Alliance Duel research day when you can",
+       "cost": "Until Base Expansion is done"
+      },
+      {
+       "id": "hq-speed-bank-construction",
+       "title": "Bank construction speedups for the HQ 31 build (47d 1h with buffs)",
+       "cost": "4d 14h on hand, 2d 2h a week"
+      },
+      {
+       "id": "hq-speed-wall",
+       "title": "Wall and Hospital finish on their own: no speedups, HQ 31 doesn't need them",
+       "cost": "Wall 30d 3h left, Hospital 25d 3h left"
+      },
+      {
+       "id": "hq-speed-troops",
+       "title": "Universals on troops only after a big loss",
+       "cost": "Troops 42,919 of 43,118"
+      },
       {
        "id": "hq-speed-fast-builder",
        "title": "Fast Builder V as high as it goes (5/10, +12.5%)",
        "cost": "Research"
-      },
-      {
-       "id": "hq-speed-wall",
-       "title": "Wall 29 → 30 is building (30d 3h left); one more to 31, HQ 32 needs it",
-       "cost": "Wall upgrades"
-      },
-      {
-       "id": "hq-speed-save-speedups",
-       "title": "Save construction speedups for HQ levels (4d 14h on hand, plus 1d 12h universal; last week 8d 23h and 12d)",
-       "cost": "Speedups"
       },
       {
        "id": "hq-speed-oil",
@@ -212,158 +222,6 @@
        "cost": "1.2M oil · 47d 1h build"
       }
      ]
-    },
-    {
-     "type": "build",
-     "title": "HQ 32",
-     "cost": "4.71M oil total",
-     "status": "todo",
-     "id": "hq-32",
-     "subs": [
-      {
-       "id": "hq32-tech-center-31",
-       "title": "Tech Center to 31 (now 30)",
-       "cost": "0.81M oil"
-      },
-      {
-       "id": "hq32-barracks-31",
-       "title": "Barracks to 31 (now 30)",
-       "cost": "0.36M oil"
-      },
-      {
-       "id": "hq32-tank-center-31",
-       "title": "Tank Center to 31 (now 30)",
-       "cost": "0.56M oil"
-      },
-      {
-       "id": "hq32-wall-31",
-       "title": "Wall to 31 (now 29)",
-       "cost": "0.68M oil"
-      },
-      {
-       "id": "hq32-headquarters",
-       "title": "Headquarters to 32",
-       "cost": "2.30M oil"
-      }
-     ]
-    },
-    {
-     "type": "build",
-     "title": "HQ 33",
-     "cost": "8.10M oil total",
-     "status": "todo",
-     "id": "hq-33",
-     "subs": [
-      {
-       "id": "hq33-tech-center-32",
-       "title": "Tech Center to 32 (now 30)",
-       "cost": "1.30M oil"
-      },
-      {
-       "id": "hq33-barracks-32",
-       "title": "Barracks to 32 (now 30)",
-       "cost": "0.58M oil"
-      },
-      {
-       "id": "hq33-tank-center-32",
-       "title": "Tank Center to 32 (now 30)",
-       "cost": "0.90M oil"
-      },
-      {
-       "id": "hq33-hospital-32",
-       "title": "Hospital to 32 (now 29)",
-       "cost": "0.70M oil"
-      },
-      {
-       "id": "hq33-drill-ground-32",
-       "title": "Drill Ground to 32 (now 30)",
-       "cost": "0.70M oil"
-      },
-      {
-       "id": "hq33-headquarters",
-       "title": "Headquarters to 33",
-       "cost": "3.92M oil"
-      }
-     ]
-    },
-    {
-     "type": "build",
-     "title": "HQ 34",
-     "cost": "15.76M oil total",
-     "status": "todo",
-     "id": "hq-34",
-     "subs": [
-      {
-       "id": "hq34-tech-center-33",
-       "title": "Tech Center to 33 (now 30)",
-       "cost": "2.20M oil"
-      },
-      {
-       "id": "hq34-barracks-33",
-       "title": "Barracks to 33 (now 30)",
-       "cost": "0.98M oil"
-      },
-      {
-       "id": "hq34-tank-center-33",
-       "title": "Tank Center to 33 (now 30)",
-       "cost": "1.53M oil"
-      },
-      {
-       "id": "hq34-alliance-center-33",
-       "title": "Alliance Center to 33 (not in the building list; Alliance Support Hub is 23)",
-       "cost": "1.08M oil"
-      },
-      {
-       "id": "hq34-wall-33",
-       "title": "Wall to 33 (now 29)",
-       "cost": "2.92M oil"
-      },
-      {
-       "id": "hq34-headquarters",
-       "title": "Headquarters to 34",
-       "cost": "7.05M oil"
-      }
-     ]
-    },
-    {
-     "type": "build",
-     "title": "HQ 35",
-     "cost": "26.70M oil total",
-     "status": "todo",
-     "id": "hq-35",
-     "subs": [
-      {
-       "id": "hq35-tech-center-34",
-       "title": "Tech Center to 34 (now 30)",
-       "cost": "3.97M oil"
-      },
-      {
-       "id": "hq35-barracks-34",
-       "title": "Barracks to 34 (now 30)",
-       "cost": "1.76M oil"
-      },
-      {
-       "id": "hq35-tank-center-34",
-       "title": "Tank Center to 34 (now 30)",
-       "cost": "2.75M oil"
-      },
-      {
-       "id": "hq35-hospital-34",
-       "title": "Hospital to 34 (now 29)",
-       "cost": "2.06M oil"
-      },
-      {
-       "id": "hq35-drill-ground-34",
-       "title": "Drill Ground to 34 (now 30)",
-       "cost": "2.06M oil"
-      },
-      {
-       "id": "hq35-headquarters",
-       "title": "Headquarters to 35",
-       "cost": "14.10M oil"
-      }
-     ],
-     "detail": "Game oil costs run about 10% under these estimates."
     }
    ]
   },
@@ -618,12 +476,176 @@
      "id": "p3-skills-toward-max-drone-levels"
     }
    ]
+  },
+  {
+   "phase": 5,
+   "name": "HQ 32 to 35",
+   "window": "After Season 4 starts",
+   "estimate": "Hero level cap 155 → 175",
+   "steps": [
+    {
+     "type": "build",
+     "title": "HQ 32",
+     "cost": "4.71M oil total",
+     "status": "todo",
+     "id": "hq-32",
+     "subs": [
+      {
+       "id": "hq32-tech-center-31",
+       "title": "Tech Center to 31 (now 30)",
+       "cost": "0.81M oil"
+      },
+      {
+       "id": "hq32-barracks-31",
+       "title": "Barracks to 31 (now 30)",
+       "cost": "0.36M oil"
+      },
+      {
+       "id": "hq32-tank-center-31",
+       "title": "Tank Center to 31 (now 30)",
+       "cost": "0.56M oil"
+      },
+      {
+       "id": "hq32-wall-31",
+       "title": "Wall to 31 (now 29)",
+       "cost": "0.68M oil"
+      },
+      {
+       "id": "hq32-headquarters",
+       "title": "Headquarters to 32",
+       "cost": "2.30M oil"
+      }
+     ]
+    },
+    {
+     "type": "build",
+     "title": "HQ 33",
+     "cost": "8.10M oil total",
+     "status": "todo",
+     "id": "hq-33",
+     "subs": [
+      {
+       "id": "hq33-tech-center-32",
+       "title": "Tech Center to 32 (now 30)",
+       "cost": "1.30M oil"
+      },
+      {
+       "id": "hq33-barracks-32",
+       "title": "Barracks to 32 (now 30)",
+       "cost": "0.58M oil"
+      },
+      {
+       "id": "hq33-tank-center-32",
+       "title": "Tank Center to 32 (now 30)",
+       "cost": "0.90M oil"
+      },
+      {
+       "id": "hq33-hospital-32",
+       "title": "Hospital to 32 (now 29)",
+       "cost": "0.70M oil"
+      },
+      {
+       "id": "hq33-drill-ground-32",
+       "title": "Drill Ground to 32 (now 30)",
+       "cost": "0.70M oil"
+      },
+      {
+       "id": "hq33-headquarters",
+       "title": "Headquarters to 33",
+       "cost": "3.92M oil"
+      }
+     ]
+    },
+    {
+     "type": "build",
+     "title": "HQ 34",
+     "cost": "15.76M oil total",
+     "status": "todo",
+     "id": "hq-34",
+     "subs": [
+      {
+       "id": "hq34-tech-center-33",
+       "title": "Tech Center to 33 (now 30)",
+       "cost": "2.20M oil"
+      },
+      {
+       "id": "hq34-barracks-33",
+       "title": "Barracks to 33 (now 30)",
+       "cost": "0.98M oil"
+      },
+      {
+       "id": "hq34-tank-center-33",
+       "title": "Tank Center to 33 (now 30)",
+       "cost": "1.53M oil"
+      },
+      {
+       "id": "hq34-alliance-center-33",
+       "title": "Alliance Center to 33 (not in the building list; Alliance Support Hub is 23)",
+       "cost": "1.08M oil"
+      },
+      {
+       "id": "hq34-wall-33",
+       "title": "Wall to 33 (now 29)",
+       "cost": "2.92M oil"
+      },
+      {
+       "id": "hq34-headquarters",
+       "title": "Headquarters to 34",
+       "cost": "7.05M oil"
+      }
+     ]
+    },
+    {
+     "type": "build",
+     "title": "HQ 35",
+     "cost": "26.70M oil total",
+     "status": "todo",
+     "id": "hq-35",
+     "subs": [
+      {
+       "id": "hq35-tech-center-34",
+       "title": "Tech Center to 34 (now 30)",
+       "cost": "3.97M oil"
+      },
+      {
+       "id": "hq35-barracks-34",
+       "title": "Barracks to 34 (now 30)",
+       "cost": "1.76M oil"
+      },
+      {
+       "id": "hq35-tank-center-34",
+       "title": "Tank Center to 34 (now 30)",
+       "cost": "2.75M oil"
+      },
+      {
+       "id": "hq35-hospital-34",
+       "title": "Hospital to 34 (now 29)",
+       "cost": "2.06M oil"
+      },
+      {
+       "id": "hq35-drill-ground-34",
+       "title": "Drill Ground to 34 (now 30)",
+       "cost": "2.06M oil"
+      },
+      {
+       "id": "hq35-headquarters",
+       "title": "Headquarters to 35",
+       "cost": "14.10M oil"
+      }
+     ],
+     "detail": "Game oil costs run about 10% under these estimates."
+    }
+   ]
   }
  ],
  "rules": [
   {
    "icon": "build",
-   "text": "HQ 35 before Season 4. Each HQ level raises the hero level cap by 5."
+   "text": "HQ 31 before Season 4 (about Dec 31). Each HQ level raises the hero level cap by 5."
+  },
+  {
+   "icon": "build",
+   "text": "Speedups go to HQ 31 first: Age of Oil research, then the HQ build. Universals on troops only after a big loss."
   },
   {
    "icon": "power",
