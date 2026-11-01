@@ -1234,6 +1234,11 @@
    "Buildings",
    "Alliance Center level (list shows Alliance Support Hub 23)",
    "Low"
+  ],
+  [
+   "Research",
+   "Hero, Tank Mastery and Siege To Seize tree levels were not recorded on 11/1",
+   "Medium"
   ]
  ],
  "tank_details_columns": [
@@ -1257,8 +1262,8 @@
  "tank_details": [
   [
    "Kimberly",
-   null,
-   null,
+   109852,
+   2833643,
    null,
    "81.00%",
    "57.50%",
@@ -1275,8 +1280,8 @@
   ],
   [
    "Murphy",
-   null,
-   null,
+   68836,
+   4311394,
    null,
    "66.00%",
    "71.25%",
@@ -1293,8 +1298,8 @@
   ],
   [
    "Williams",
-   null,
-   null,
+   67399,
+   3538929,
    null,
    "68.00%",
    "62.50%",
@@ -1311,9 +1316,9 @@
   ],
   [
    "Stetmann",
-   null,
-   null,
-   null,
+   92669,
+   2484360,
+   13485,
    "71.75%",
    "57.50%",
    "59.75%",
@@ -1329,8 +1334,8 @@
   ],
   [
    "Marshall",
-   null,
-   null,
+   81486,
+   2740993,
    null,
    "68.00%",
    "60.25%",
