@@ -655,7 +655,7 @@
   },
   {
    "icon": "troops",
-   "text": "Filling troop slots raises total power, not Squad 1."
+   "text": "Troop slots raise total power, not Squad 1: its troop share held at 9.33M while unit power rose 23M."
   },
   {
    "icon": "spend",
@@ -670,15 +670,15 @@
   {
    "date": "2026-11-01",
    "title": "Wall 29, Stetmann maxed, troops back",
-   "sources": "Heroes and gear video, tiers / Exclusive Weapons / Wall of Honor video, power details and tank details video, research, inventory and buildings video, decoration gallery video, site checklist and notes",
+   "sources": "Heroes and gear video, tiers / Exclusive Weapons / Wall of Honor video, power details and tank details video, research, inventory and buildings video, decoration gallery video, site checklist and notes, squads video and Drill Ground screenshot",
    "highlights": [
     {
      "icon": "troops",
-     "text": "Total power 147.5M → 172.7M. Nearly all troops: unit power 46.8M → 70.3M. Hero power rose 1.38M."
+     "text": "Total power 147.5M → 172.7M. Nearly all troops: 42,919 of 43,118 slots are full, 42.1K of them Lv 10. Unit power 46.8M → 70.3M; hero power rose 1.38M."
     },
     {
      "icon": "hero",
-     "text": "Tank heroes up 275K to 21.43M. Squad 1 is about 30.77M; that's an estimate because the Squad 1 screen wasn't recorded."
+     "text": "Squad 1 30.49M → 30.76M (+0.27M). Tank heroes up 275K to 21.43M; the troop share stayed at 9.33M even with those extra troops. Squad 2 is 20.04M, Squad 3 21.92M, and the new Squad 4 20.56M."
     },
     {
      "icon": "honor",
@@ -713,15 +713,15 @@
      "text": "Desert Protectors 10,682 / 10,800. Season Boost now on Marshall, Scarlett and Schuyler."
     }
    ],
-   "next": "Open both decoration chests, upgrade Marshall's weapon, Quick Equip Scarlett and push Murphy's Wall of Honor to 50. Add the Squad 1 and troop screens to next week's recording.",
+   "next": "Open both decoration chests, upgrade Marshall's weapon, Quick Equip Scarlett and push Murphy's Wall of Honor to 50.",
    "stats": [
     {
      "label": "Total power",
      "value": "172.7M"
     },
     {
-     "label": "Squad 1 (est.)",
-     "value": "30.77M"
+     "label": "Squad 1",
+     "value": "30.76M"
     },
     {
      "label": "Tank heroes",

@@ -5,7 +5,8 @@
   "ScreenRecording_11-01-2026 10-11-50_1.MP4 (tiers, Exclusive Weapons, Wall of Honor)",
   "ScreenRecording_11-01-2026 10-14-00_1.MP4 (power details, tank hero details)",
   "ScreenRecording_11-01-2026 10-16-10_1.MP4 (power details, research, inventory, chests, buildings)",
-  "ScreenRecording_11-01-2026 10-18-45_1.MP4 (decoration gallery)"
+  "ScreenRecording_11-01-2026 10-18-45_1.MP4 (decoration gallery)",
+  "ScreenRecording_11-01-2026 10-29-27_1.MP4 (squads 1-4) + IMG_3379.PNG (Drill Ground)"
  ],
  "account": {
   "hq_level": 30,
@@ -18,7 +19,7 @@
   "tech_power": 5317377,
   "overlord_power": 650081,
   "decor_power": 8103896,
-  "drone_level": null,
+  "drone_level": 135,
   "hero_exp_available": "5.1G",
   "skill_medals_available": 62060,
   "hero_power_detail": {
@@ -40,7 +41,7 @@
    "survivor": 3404867
   },
   "research_speedups": "Universal 1d 12h 20m, construction 4d 14h 43m, research 16h 55m, training 20h 25m (inventory totals)",
-  "troops": null,
+  "troops": 42919,
   "overlord_detail": {
    "training_level": 620196,
    "bond_rating": 24125,
@@ -1053,7 +1054,7 @@
  "squads": [
   [
    1,
-   "30.77M (est.)",
+   "30.76M",
    "Murphy",
    "Williams",
    "Kimberly",
@@ -1063,7 +1064,7 @@
   ],
   [
    2,
-   "not recorded",
+   "20.04M",
    "DVA",
    "Monica",
    "Maxwell",
@@ -1073,7 +1074,7 @@
   ],
   [
    3,
-   "not recorded",
+   "21.92M",
    "Tesla",
    "Adam",
    "McGregor",
@@ -1083,13 +1084,13 @@
   ],
   [
    4,
-   "not recorded",
+   "20.56M",
    "Violet",
    "Mason",
    "Scarlett",
    "Morrison",
    "Venom",
-   "3 Tank + 1 Aircraft + 1 Missile (from hero list badges)"
+   "3 Tank + 1 Aircraft + 1 Missile"
   ]
  ],
  "troops_columns": [
@@ -1102,16 +1103,58 @@
   "load",
   "morale"
  ],
- "troops": [],
+ "troops": [
+  [
+   "Lv10",
+   "42.1K",
+   1647,
+   5253.44,
+   42.64,
+   8.46,
+   2200,
+   750
+  ],
+  [
+   "Lv9",
+   0,
+   1352,
+   4581.13,
+   37.15,
+   7.4,
+   2000,
+   625
+  ],
+  [
+   "Lv8",
+   747,
+   1063,
+   3920.79,
+   31.82,
+   6.35,
+   1800,
+   531.25
+  ],
+  [
+   "Lv7",
+   0,
+   779,
+   3270.92,
+   26.63,
+   5.29,
+   1600,
+   462.5
+  ]
+ ],
  "troop_summary": {
-  "unit_count": "not recorded",
-  "capacity": "not recorded",
-  "empty_capacity": "not recorded",
-  "drill_ground_level": "not recorded",
+  "unit_count": 42919,
+  "capacity": 43118,
+  "empty_capacity": 199,
+  "drill_ground_level": 30,
   "training_in_progress": "not recorded",
   "hospital_wounded": "not recorded",
   "emergency_center": "not recorded",
-  "max_trainable_level": "not recorded"
+  "max_trainable_level": 10,
+  "units_outside": 0
  },
  "research": {
   "development": "84%",
@@ -1182,16 +1225,6 @@
   ]
  ],
  "missing": [
-  [
-   "Squads",
-   "Squad 1 power screen (11/1 value is an estimate)",
-   "High"
-  ],
-  [
-   "Troops",
-   "Troop screen: counts, capacity, hospital",
-   "Medium"
-  ],
   [
    "Heroes",
    "Scarlett Wall of Honor: she left the wall after becoming UR; confirm her old levels return at 5 stars",
@@ -1428,6 +1461,6 @@
    "Tower_of_Victory": "0/6"
   }
  },
- "power_change_note": "Total power 147.5M -> 172.7M: unit power +23.4M (46.8M -> 70.3M), hero +1.38M, building +216K, tech +85K. Hero Skill and Wall of Honor power fell because Scarlett's kit reset when she became UR.",
- "squad1_note": "Squad 1 screen not recorded on 11/1. Estimate = tank heroes 21,432,878 + 10/25 troop share 9.33M."
+ "power_change_note": "Total power 147.5M -> 172.7M: unit power +23.4M (46.8M -> 70.3M), hero +1.38M, building +216K, tech +85K. Hero Skill and Wall of Honor power fell because Scarlett's kit reset when she became UR. Squad 1 still only rose 30.49M -> 30.76M: the troop share stayed 9.33M.",
+ "troop_notes": "Counts from IMG_3379 at 10:47. Per-unit stats are the 10/25 readings."
 }
