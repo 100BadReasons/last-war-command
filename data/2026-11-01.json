@@ -1,0 +1,1433 @@
+{
+ "snapshot_date": "2026-11-01",
+ "source_videos": [
+  "ScreenRecording_11-01-2026 10-06-46_1.MP4 (heroes, gear, skills)",
+  "ScreenRecording_11-01-2026 10-11-50_1.MP4 (tiers, Exclusive Weapons, Wall of Honor)",
+  "ScreenRecording_11-01-2026 10-14-00_1.MP4 (power details, tank hero details)",
+  "ScreenRecording_11-01-2026 10-16-10_1.MP4 (power details, research, inventory, chests, buildings)",
+  "ScreenRecording_11-01-2026 10-18-45_1.MP4 (decoration gallery)"
+ ],
+ "account": {
+  "hq_level": 30,
+  "vip": 12,
+  "total_power": 172727133,
+  "hero_power": 79534432,
+  "unit_power": 70251345,
+  "building_power": 10235467,
+  "drone_power": 6738431,
+  "tech_power": 5317377,
+  "overlord_power": 650081,
+  "decor_power": 8103896,
+  "drone_level": null,
+  "hero_exp_available": "5.1G",
+  "skill_medals_available": 62060,
+  "hero_power_detail": {
+   "hero_level": 48036192,
+   "decor_building_stats": 15185369,
+   "gear": 5239958,
+   "skill": 3996550,
+   "tier": 3817316,
+   "exclusive_weapon": 2385622,
+   "wall_of_honor": 873425
+  },
+  "drone_detail": {
+   "level": 3795187,
+   "component": 2264645,
+   "skill_chip": 678600
+  },
+  "building_detail": {
+   "buildings": 6830600,
+   "survivor": 3404867
+  },
+  "research_speedups": "Universal 1d 12h 20m, construction 4d 14h 43m, research 16h 55m, training 20h 25m (inventory totals)",
+  "troops": null,
+  "overlord_detail": {
+   "training_level": 620196,
+   "bond_rating": 24125,
+   "skill": 5760
+  }
+ },
+ "hero_columns": [
+  "name",
+  "rarity",
+  "type",
+  "role",
+  "level",
+  "stars",
+  "power",
+  "attack",
+  "hp",
+  "defense",
+  "march_size",
+  "squad"
+ ],
+ "heroes": [
+  [
+   "Murphy",
+   "UR",
+   "Tank",
+   "Defense",
+   150,
+   "5",
+   5077653,
+   "68.8K",
+   "4.3M",
+   "17.9K",
+   457,
+   1
+  ],
+  [
+   "Kimberly",
+   "UR",
+   "Tank",
+   "Attack",
+   150,
+   "5",
+   5042247,
+   "109.8K",
+   "2.8M",
+   "16.3K",
+   457,
+   1
+  ],
+  [
+   "Marshall",
+   "UR",
+   "Tank",
+   "Support",
+   150,
+   "5",
+   3845449,
+   "81.4K",
+   "2.7M",
+   "14.2K",
+   457,
+   1
+  ],
+  [
+   "Williams",
+   "UR",
+   "Tank",
+   "Defense",
+   150,
+   "5",
+   3842912,
+   "67.3K",
+   "3.5M",
+   "14.8K",
+   457,
+   1
+  ],
+  [
+   "Stetmann",
+   "UR",
+   "Tank",
+   "Attack",
+   150,
+   "5",
+   3624617,
+   "92.6K",
+   "2.4M",
+   "13.4K",
+   457,
+   1
+  ],
+  [
+   "Tesla",
+   "UR",
+   "Missile",
+   "Attack",
+   150,
+   "5",
+   3089218,
+   "78.4K",
+   "2.2M",
+   "12.2K",
+   437,
+   3
+  ],
+  [
+   "DVA",
+   "UR",
+   "Aircraft",
+   "Attack",
+   150,
+   "5",
+   2830157,
+   "74.7K",
+   "2.3M",
+   "12.0K",
+   425,
+   2
+  ],
+  [
+   "Violet",
+   "UR",
+   "Tank",
+   "Defense",
+   150,
+   "4 (Tier 2)",
+   2783827,
+   "58.4K",
+   "2.8M",
+   "12.2K",
+   457,
+   4
+  ],
+  [
+   "Mason",
+   "UR",
+   "Tank",
+   "Attack",
+   150,
+   "5",
+   2765556,
+   "73.6K",
+   "2.2M",
+   "11.7K",
+   457,
+   4
+  ],
+  [
+   "Scarlett",
+   "UR",
+   "Tank",
+   "Defense",
+   150,
+   "4 (Tier 3)",
+   2746686,
+   "58.1K",
+   "2.9M",
+   "12.2K",
+   457,
+   4
+  ],
+  [
+   "Adam",
+   "UR",
+   "Missile",
+   "Defense",
+   150,
+   "4 (Tier 1)",
+   2714380,
+   "59.6K",
+   "2.7M",
+   "12.3K",
+   437,
+   3
+  ],
+  [
+   "Swift",
+   "UR",
+   "Missile",
+   "Attack",
+   150,
+   "4",
+   2657684,
+   "73.6K",
+   "2.1M",
+   "11.4K",
+   437,
+   3
+  ],
+  [
+   "Carlie",
+   "UR",
+   "Aircraft",
+   "Defense",
+   150,
+   "3 (Tier 1)",
+   2571615,
+   "52.6K",
+   "2.7M",
+   "11.4K",
+   425,
+   2
+  ],
+  [
+   "McGregor",
+   "UR",
+   "Missile",
+   "Defense",
+   150,
+   "3",
+   2469720,
+   "53.5K",
+   "2.6M",
+   "11.3K",
+   437,
+   3
+  ],
+  [
+   "Fiona",
+   "UR",
+   "Missile",
+   "Attack",
+   150,
+   "3",
+   2430818,
+   "68.0K",
+   "2.0M",
+   "10.7K",
+   437,
+   3
+  ],
+  [
+   "Monica",
+   "SSR",
+   "Tank",
+   "Support",
+   150,
+   "5",
+   2377466,
+   "57.9K",
+   "2.1M",
+   "10.2K",
+   457,
+   2
+  ],
+  [
+   "Lucius",
+   "UR",
+   "Aircraft",
+   "Defense",
+   150,
+   "1 (Tier 4)",
+   2335920,
+   "52.2K",
+   "2.4M",
+   "10.7K",
+   425,
+   null
+  ],
+  [
+   "Schuyler",
+   "UR",
+   "Aircraft",
+   "Attack",
+   150,
+   "2 (Tier 2)",
+   2301397,
+   "64.6K",
+   "2.0M",
+   "10.5K",
+   425,
+   2
+  ],
+  [
+   "Elsa",
+   "SSR",
+   "Missile",
+   "Defense",
+   148,
+   "4 (Tier 1)",
+   2295786,
+   "50.2K",
+   "2.2M",
+   "10.0K",
+   433,
+   null
+  ],
+  [
+   "Morrison",
+   "UR",
+   "Aircraft",
+   "Attack",
+   150,
+   "1",
+   2205037,
+   "60.5K",
+   "2.0M",
+   "10.3K",
+   425,
+   4
+  ],
+  [
+   "Gump",
+   "SR",
+   "Tank",
+   "Defense",
+   65,
+   "5",
+   1858159,
+   "42.0K",
+   "1.8M",
+   "8.2K",
+   287,
+   null
+  ],
+  [
+   "Venom",
+   "SSR",
+   "Missile",
+   "Attack",
+   79,
+   "3 (Tier 4)",
+   1825682,
+   "45.4K",
+   "1.7M",
+   "8.1K",
+   295,
+   4
+  ],
+  [
+   "Maxwell",
+   "SSR",
+   "Aircraft",
+   "Attack",
+   72,
+   "3 (Tier 4)",
+   1779854,
+   null,
+   null,
+   null,
+   null,
+   2
+  ],
+  [
+   "Farhad",
+   "SSR",
+   "Tank",
+   "Attack",
+   63,
+   "3 (Tier 3)",
+   1777459,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   "Cage",
+   "SSR",
+   "Aircraft",
+   "Defense",
+   65,
+   "3 (Tier 2)",
+   1775248,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   "Richard",
+   "SSR",
+   "Tank",
+   "Attack",
+   55,
+   "3 (Tier 3)",
+   1763450,
+   "42.8K",
+   "1.7M",
+   "7.9K",
+   267,
+   null
+  ],
+  [
+   "Loki",
+   "SR",
+   "Tank",
+   "Defense",
+   55,
+   "4",
+   1758321,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   "Sarah",
+   "SSR",
+   "Aircraft",
+   "Support",
+   60,
+   "3 (Tier 3)",
+   1752634,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   "Braz",
+   "SSR",
+   "Missile",
+   "Attack",
+   60,
+   "3 (Tier 2)",
+   1751760,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   "Kane",
+   "SR",
+   "Missile",
+   "Attack",
+   55,
+   "4",
+   1745397,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   "Ambolt",
+   "SR",
+   "Aircraft",
+   "Attack",
+   51,
+   "4 (Tier 1)",
+   1738323,
+   null,
+   null,
+   null,
+   null,
+   null
+  ]
+ ],
+ "skills_columns": [
+  "name",
+  "skill1",
+  "skill2",
+  "skill3",
+  "skill4",
+  "skill1_name",
+  "skill1_max"
+ ],
+ "skills": [
+  [
+   "Kimberly",
+   29,
+   35,
+   35,
+   "MAX",
+   "Energy Assault II",
+   36
+  ],
+  [
+   "Murphy",
+   22,
+   34,
+   27,
+   "MAX",
+   "Cannon Fire II",
+   35
+  ],
+  [
+   "Williams",
+   26,
+   "MAX",
+   26,
+   "MAX",
+   "Blast Shell",
+   30
+  ],
+  [
+   "Stetmann",
+   "MAX",
+   26,
+   29,
+   "MAX",
+   "Orb Lightning",
+   30
+  ],
+  [
+   "Marshall",
+   25,
+   "MAX",
+   24,
+   "MAX",
+   "Command: Focus Fire",
+   30
+  ],
+  [
+   "Tesla",
+   11,
+   15,
+   13,
+   "MAX",
+   "Lightning Chain II",
+   30
+  ],
+  [
+   "DVA",
+   17,
+   17,
+   17,
+   "MAX",
+   "Vortex Missile",
+   30
+  ],
+  [
+   "Violet",
+   1,
+   10,
+   5,
+   "MAX",
+   "Frost Spray",
+   20
+  ],
+  [
+   "Mason",
+   20,
+   23,
+   26,
+   "MAX",
+   "Rampage Shot",
+   30
+  ],
+  [
+   "Adam",
+   5,
+   10,
+   10,
+   "MAX",
+   "MK43 Vehicle-Mounted MG",
+   20
+  ],
+  [
+   "Swift",
+   5,
+   10,
+   10,
+   "MAX",
+   "Targeted Strike",
+   20
+  ],
+  [
+   "Carlie",
+   5,
+   5,
+   5,
+   "Locked",
+   "Dual-string Rocket",
+   10
+  ],
+  [
+   "McGregor",
+   1,
+   1,
+   1,
+   "Locked",
+   "Forward Rush",
+   10
+  ],
+  [
+   "Fiona",
+   1,
+   1,
+   1,
+   "Locked",
+   "Double Trajectory",
+   10
+  ],
+  [
+   "Lucius",
+   1,
+   1,
+   1,
+   "Locked",
+   "Lightning Triple Strike",
+   1
+  ],
+  [
+   "Schuyler",
+   1,
+   1,
+   1,
+   "Locked",
+   "Power Barrage",
+   5
+  ],
+  [
+   "Morrison",
+   1,
+   1,
+   1,
+   "Locked",
+   "Full-Auto Machine Gun",
+   1
+  ],
+  [
+   "Scarlett",
+   1,
+   1,
+   1,
+   "MAX",
+   "not recorded (UR kit)",
+   null
+  ],
+  [
+   "Monica",
+   12,
+   12,
+   15,
+   "MAX",
+   "Dual Fire Cannon",
+   30
+  ],
+  [
+   "Elsa",
+   10,
+   15,
+   11,
+   "MAX",
+   "Icicle Strike",
+   20
+  ],
+  [
+   "Venom",
+   5,
+   5,
+   5,
+   "Locked",
+   "Energy Bullet",
+   10
+  ],
+  [
+   "Maxwell",
+   1,
+   1,
+   1,
+   "Locked",
+   "Missile Strike",
+   10
+  ],
+  [
+   "Farhad",
+   1,
+   1,
+   1,
+   "Locked",
+   "Missile Strike",
+   10
+  ],
+  [
+   "Cage",
+   1,
+   1,
+   1,
+   "Locked",
+   "Energy Bullet",
+   10
+  ],
+  [
+   "Richard",
+   1,
+   1,
+   1,
+   "Locked",
+   "Howitzer",
+   10
+  ],
+  [
+   "Sarah",
+   1,
+   1,
+   1,
+   "Locked",
+   "Gunfire Negotiation",
+   10
+  ],
+  [
+   "Braz",
+   1,
+   1,
+   1,
+   "Locked",
+   "Rocket Spread",
+   10
+  ],
+  [
+   "Gump",
+   5,
+   "MAX",
+   5,
+   "-",
+   "Flame Burst",
+   30
+  ],
+  [
+   "Loki",
+   1,
+   1,
+   "MAX",
+   "-",
+   "Shotgun",
+   20
+  ],
+  [
+   "Ambolt",
+   1,
+   1,
+   "MAX",
+   "-",
+   "Missile Strikes",
+   20
+  ],
+  [
+   "Kane",
+   1,
+   1,
+   "Locked",
+   "-",
+   "Blasting Grenade",
+   10
+  ]
+ ],
+ "gear_columns": [
+  "name",
+  "cannon",
+  "armor",
+  "data_chip",
+  "radar",
+  "notes"
+ ],
+ "gear": [
+  [
+   "Kimberly",
+   "40 (5*)",
+   "40",
+   "40 (5*)",
+   "40",
+   "Cannon + chip are top-rarity"
+  ],
+  [
+   "Murphy",
+   "40",
+   "40 (5*)",
+   "40",
+   "40 (4*)",
+   "All four pieces at 40"
+  ],
+  [
+   "Williams",
+   "40",
+   "40 (1*)",
+   "40",
+   "40 (1*)",
+   "All four pieces at 40"
+  ],
+  [
+   "Stetmann",
+   "40 (2*)",
+   "40",
+   "40",
+   "40",
+   ""
+  ],
+  [
+   "Marshall",
+   "40",
+   "40",
+   "40",
+   "40 (1*)",
+   "One radar star"
+  ],
+  [
+   "Tesla",
+   "10",
+   "0",
+   "10",
+   "0",
+   ""
+  ],
+  [
+   "DVA",
+   "10",
+   "4",
+   "10",
+   "0",
+   ""
+  ],
+  [
+   "Violet",
+   "10 (purple)",
+   "3 (purple)",
+   "3 (purple)",
+   "10 (purple)",
+   ""
+  ],
+  [
+   "Mason",
+   "0 (purple)",
+   "0 (purple)",
+   "0 (purple)",
+   "0 (purple)",
+   ""
+  ],
+  [
+   "Adam",
+   "0 (purple)",
+   "10",
+   "0 (purple)",
+   "10",
+   ""
+  ],
+  [
+   "Swift",
+   "10",
+   "1 (purple)",
+   "10",
+   "0 (purple)",
+   ""
+  ],
+  [
+   "Carlie",
+   "0 (purple)",
+   "10",
+   "0 (purple)",
+   "0",
+   ""
+  ],
+  [
+   "McGregor",
+   "0 (purple)",
+   "0",
+   "0 (purple)",
+   "0",
+   ""
+  ],
+  [
+   "Fiona",
+   "10",
+   "11 (purple)",
+   "10",
+   "0 (purple)",
+   ""
+  ],
+  [
+   "Lucius",
+   "0 (purple)",
+   "0",
+   "0 (blue)",
+   "0",
+   ""
+  ],
+  [
+   "Schuyler",
+   "0",
+   "0 (purple)",
+   "0 (purple)",
+   "0 (purple)",
+   ""
+  ],
+  [
+   "Morrison",
+   "0 (purple)",
+   "0 (blue)",
+   "0 (blue)",
+   "0 (blue)",
+   ""
+  ],
+  [
+   "Monica",
+   "13 (purple)",
+   "0 (purple)",
+   "29 (purple)",
+   "0 (purple)",
+   ""
+  ],
+  [
+   "Scarlett",
+   "0 (blue)",
+   "0 (green)",
+   "empty",
+   "empty",
+   "New UR gear slots; Quick Equip available"
+  ],
+  [
+   "Others (SSR/SR)",
+   "-",
+   "-",
+   "-",
+   "-",
+   "No gear equipped"
+  ]
+ ],
+ "exclusive_weapons_columns": [
+  "name",
+  "ew_level",
+  "hp_bonus",
+  "attack_bonus",
+  "defense_bonus",
+  "dmg_resist",
+  "notes"
+ ],
+ "exclusive_weapons": [
+  [
+   "Kimberly",
+   20,
+   223718,
+   6795,
+   2065,
+   "4.00%",
+   "Lv 20; 42/150 universal, 0/150 own toward Lv 21 (skill cap 36 -> 37)"
+  ],
+  [
+   "Murphy",
+   16,
+   383162,
+   2767,
+   1785,
+   "3.50%",
+   "Lv 16 (was 15). Next: 42/90 universal shards, or own 10/10 + 10/100. Skill cap 35"
+  ],
+  [
+   "Tesla",
+   1,
+   27959,
+   888,
+   263,
+   "2.00%",
+   "Lv 1; 42/10 universal, own 10/10, 10/20 (rule: never Tesla)"
+  ],
+  [
+   "Swift",
+   "Locked",
+   null,
+   null,
+   null,
+   null,
+   "Requires Swift at 5 stars"
+  ],
+  [
+   "DVA",
+   "Not activated",
+   null,
+   null,
+   null,
+   null,
+   "0/50 shards to activate (+31,527 HP, +810 atk, +269 def, 2%)"
+  ],
+  [
+   "Carlie",
+   "Locked",
+   null,
+   null,
+   null,
+   null,
+   "Requires Carlie at Tier 5 stars"
+  ],
+  [
+   "Adam",
+   "No EW tab",
+   null,
+   null,
+   null,
+   null,
+   "Tabs show Attributes, Skills, Tier only"
+  ],
+  [
+   "Marshall",
+   2,
+   41306,
+   909,
+   328,
+   "2.00%",
+   "Lv 2. Next level READY: 42/20 universal shards (+48,190 HP, +1,061 atk, +383 def)"
+  ]
+ ],
+ "squads_columns": [
+  "squad",
+  "power",
+  "hero1",
+  "hero2",
+  "hero3",
+  "hero4",
+  "hero5",
+  "type_mix"
+ ],
+ "squads": [
+  [
+   1,
+   "30.77M (est.)",
+   "Murphy",
+   "Williams",
+   "Kimberly",
+   "Stetmann",
+   "Marshall",
+   "5 Tank"
+  ],
+  [
+   2,
+   "not recorded",
+   "DVA",
+   "Monica",
+   "Maxwell",
+   "Schuyler",
+   "Carlie",
+   "4 Aircraft + 1 Tank"
+  ],
+  [
+   3,
+   "not recorded",
+   "Tesla",
+   "Adam",
+   "McGregor",
+   "Fiona",
+   "Swift",
+   "5 Missile"
+  ],
+  [
+   4,
+   "not recorded",
+   "Violet",
+   "Mason",
+   "Scarlett",
+   "Morrison",
+   "Venom",
+   "3 Tank + 1 Aircraft + 1 Missile (from hero list badges)"
+  ]
+ ],
+ "troops_columns": [
+  "level",
+  "count_in_base",
+  "power_per_unit",
+  "unit_hp",
+  "unit_attack",
+  "unit_defense",
+  "load",
+  "morale"
+ ],
+ "troops": [],
+ "troop_summary": {
+  "unit_count": "not recorded",
+  "capacity": "not recorded",
+  "empty_capacity": "not recorded",
+  "drill_ground_level": "not recorded",
+  "training_in_progress": "not recorded",
+  "hospital_wounded": "not recorded",
+  "emergency_center": "not recorded",
+  "max_trainable_level": "not recorded"
+ },
+ "research": {
+  "development": "84%",
+  "economy": "48%",
+  "hero": "49%",
+  "units": "91%",
+  "squad1": "Max",
+  "squad2": "8%",
+  "squad4": "4%",
+  "alliance_duel": "Max",
+  "intercity_truck": "9%",
+  "special_forces": "87%",
+  "siege_to_seize": "40%",
+  "defense_fortifications": "1%",
+  "tank_mastery": "11%",
+  "missile_mastery": "0%",
+  "aircraft_mastery": "0%",
+  "age_of_oil": "28%",
+  "squad3": "Locked (needs Tech Center Lv20 and Squad 2 tech at 25%)",
+  "queue_1": "Focused Training V 4 -> 5, 2d 16h left",
+  "queue_2": "Oil Output II 7 -> 8, 6d 18h left",
+  "age_of_oil_path": "Food Output V 2/10, Iron 1/10, Gold 1/10, Oil Output I MAX, 3rd Tech Center MAX, Fast Builder V 5/10 (+12.5%), Research Enhancement V 5/10, Focused Training V 4/10, Rapid Field Dressing V 3/10, Oil Output II 7/10 -> Emergency Capacity I + Infirmary Expansion V (4d 18h, need Oil II 10) -> More Oil Wells -> Training Cost I + Healing Cost II (6d 5h) -> Parts Workshop -> Oil Output III -> Base Expansion (18d 13h buffed, 55d 12h base)",
+  "queue_3": "Research Enhancement V 5 -> 6, 2d 9h left",
+  "hero_tree": "Tier I tank/aircraft mastery maxed; Tank Mastery II 4/5 (8%), Cannon Enhancement II 4/5 (8%), Armor Hardening II 2/5, Track Fortification II 2/5; missile/aircraft II nodes 1/5; Firepower Boost 1/5; Weapons Upgrade, Armor Enhancement, Endurance Upgrade 0/5 (10/25 reading; not re-recorded 11/1)",
+  "tank_mastery_tree": "Synergy HP I 4/10, Attack I 5/10, Defense I 3/10, Damage I 1/5, March Size I 1/5; Tank HP I 2/10, Attack I 2/10, Defense I 1/10 (10/25 reading; not re-recorded 11/1)",
+  "siege_to_seize_tree": "Power Boost I 3/10, Barracks Expansion I 7/10, Focused Training I 9/10, Final Stand II 3/10, Fierce Assault II 4/10, Vigilant Formation II 3/10 (10/25 reading; not re-recorded 11/1)"
+ },
+ "wall_of_honor": [
+  [
+   "Murphy",
+   45
+  ],
+  [
+   "Williams",
+   17
+  ],
+  [
+   "Marshall",
+   25
+  ],
+  [
+   "Kimberly",
+   50
+  ],
+  [
+   "Stetmann",
+   18
+  ],
+  [
+   "Mason",
+   88
+  ],
+  [
+   "Monica",
+   19
+  ],
+  [
+   "Gump",
+   81
+  ],
+  [
+   "DVA",
+   2
+  ],
+  [
+   "Tesla",
+   7
+  ]
+ ],
+ "missing": [
+  [
+   "Squads",
+   "Squad 1 power screen (11/1 value is an estimate)",
+   "High"
+  ],
+  [
+   "Troops",
+   "Troop screen: counts, capacity, hospital",
+   "Medium"
+  ],
+  [
+   "Heroes",
+   "Scarlett Wall of Honor: she left the wall after becoming UR; confirm her old levels return at 5 stars",
+   "Medium"
+  ],
+  [
+   "Buildings",
+   "Alliance Center level (list shows Alliance Support Hub 23)",
+   "Low"
+  ]
+ ],
+ "tank_details_columns": [
+  "name",
+  "total_attack",
+  "total_hp",
+  "total_defense",
+  "tank_attack_boost",
+  "tank_hp_boost",
+  "tank_defense_boost",
+  "crit_rate",
+  "tank_damage_boost",
+  "physical_resist",
+  "energy_resist",
+  "reduce_crit_taken",
+  "dmg_vs_countered",
+  "gear_attack_pct",
+  "gear_hp_pct",
+  "season_bonus"
+ ],
+ "tank_details": [
+  [
+   "Kimberly",
+   null,
+   null,
+   null,
+   "81.00%",
+   "57.50%",
+   "59.75%",
+   "41.00%",
+   "20.25%",
+   "44.00%",
+   "44.00%",
+   "1.40%",
+   "10.00%",
+   "30.00%",
+   "15.00%",
+   "0%"
+  ],
+  [
+   "Murphy",
+   null,
+   null,
+   null,
+   "66.00%",
+   "71.25%",
+   "73.50%",
+   "21.00%",
+   "20.25%",
+   "53.50%",
+   "53.50%",
+   "16.40%",
+   "0.00%",
+   "15.00%",
+   "28.75%",
+   "0%"
+  ],
+  [
+   "Williams",
+   null,
+   null,
+   null,
+   "68.00%",
+   "62.50%",
+   "64.75%",
+   "23.00%",
+   "20.25%",
+   "30.80%",
+   "30.80%",
+   "1.40%",
+   "0.00%",
+   "17.00%",
+   "20.00%",
+   "0%"
+  ],
+  [
+   "Stetmann",
+   null,
+   null,
+   null,
+   "71.75%",
+   "57.50%",
+   "59.75%",
+   "30.00%",
+   "20.25%",
+   "32.00%",
+   "32.00%",
+   "1.40%",
+   "0.00%",
+   "20.75%",
+   "15.00%",
+   "0%"
+  ],
+  [
+   "Marshall",
+   null,
+   null,
+   null,
+   "68.00%",
+   "60.25%",
+   "62.50%",
+   "23.00%",
+   "20.25%",
+   "32.80%",
+   "32.80%",
+   "1.40%",
+   "0.00%",
+   "17.00%",
+   "17.75%",
+   "0%"
+  ]
+ ],
+ "events": [
+  [
+   "Desert Protectors",
+   "10,682 / 10,800"
+  ],
+  [
+   "Season",
+   "Season 3; Halloween check-in running"
+  ],
+  [
+   "Season Boost",
+   "Marshall, Scarlett, Schuyler, Eternal Pyramid"
+  ]
+ ],
+ "buildings": {
+  "headquarters": 30,
+  "tech_center_1": 30,
+  "tech_center_2": "21",
+  "tank_center": 30,
+  "drill_ground": 30,
+  "barracks": [
+   30,
+   27,
+   26,
+   24
+  ],
+  "hospitals": [
+   "29 (upgrading, 25d 3h left)",
+   24,
+   23,
+   23
+  ],
+  "wall": "29 (upgrading, 30d 3h left)",
+  "oil_well": "30 (1 well, 1,800 oil/hr)",
+  "alliance_center": "not in list; Alliance Support Hub 23",
+  "builders": "3 (2 busy)",
+  "construction_speedups": "4d 14h 43m total",
+  "research_speedups": "16h 55m total",
+  "oil": "1.2M + 3.0M inventory = 4.3M",
+  "food": "63.1M + 553.2M inventory = 616.3M",
+  "iron": "61.8M + 1.6G inventory = 1.7G",
+  "gold": "28.3M + 60.5M inventory = 88.9M",
+  "tech_center_3": "19",
+  "emergency_center": 30,
+  "squad_1": 29,
+  "squad_2": 20,
+  "squad_3": 22,
+  "squad_4": 16
+ },
+ "hq31_in_game": {
+  "requires": [
+   "Lv.1 Base Expansion (Age of Oil research)",
+   "Lv.30 any Tech Center",
+   "Lv.30 Barracks",
+   "Lv.30 Tank/Missile/Aircraft Center"
+  ],
+  "cost": {
+   "iron": "1.4G",
+   "food": "1.4G",
+   "gold": "459.8M",
+   "oil": "1.2M"
+  },
+  "time": "111d 18h base, 47d 1h with current buffs",
+  "gives": "Hero EXP 210.0M; hero level cap 150 -> 155",
+  "status": "Only missing requirement: Lv1 Base Expansion (not re-recorded 11/1)."
+ },
+ "age_of_oil_path": [
+  "Oil Output I 10/10 (done)",
+  "Fast Builder V 5/10 + Research Enhancement V 5/10",
+  "3rd Tech Center (done)",
+  "Focused Training V 4/10 + Rapid Field Dressing V 3/10",
+  "Oil Output II 7/10 (queue 2)",
+  "Emergency Capacity I + Infirmary Expansion V (need Oil II 10)",
+  "More Oil Wells",
+  "Training Cost I + Healing Cost II",
+  "Parts Workshop",
+  "Oil Output III to 10",
+  "Base Expansion: cap 35 (18d 13h buffed)"
+ ],
+ "wall_of_honor_notes": {
+  "milestones": "Earned: Kimberly and Mason +0.5% tank attack, so +1.00% for all tanks. Lost: Scarlett's two +0.25% tank HP while she is off the wall.",
+  "per_hero": "Every Wall of Honor hero gives 56.3K HP to all heroes (was 60.7K)",
+  "shards": "Universal tank shards 39 on hand. Per level: Marshall 8, Stetmann 4, Mason 20 (28 purple on hand), DVA 10"
+ },
+ "decor": {
+  "total_power": 8103896,
+  "ur_collected": "26/39",
+  "ssr_collected": "9/19",
+  "sr_collected": "4/4",
+  "bonus": {
+   "atk": 8656,
+   "def": 1092,
+   "hp": 218174,
+   "march_size": 4,
+   "construction_speed": "5%",
+   "monster_damage": "1.5%"
+  },
+  "choice_chests_ur_vi": 2,
+  "chest_previews_lv1": {
+   "Melody_of_Love": "HP +10,000",
+   "Jack_o_Zombie": "HP +10,000",
+   "Year_of_the_Dragon": "ATK +300",
+   "Easter_Egg_Sentry": "ATK +300",
+   "Happy_Turkey": "ATK +267",
+   "Super_Satellite": "research speedup 20 min",
+   "Libertas": "HP +2,500, ATK +59, DEF +11"
+  },
+  "copies": {
+   "Eternal_Pyramid": "1/2: Lv2 = build speed 5% -> 10%",
+   "Jack_o_Carriage": "0/2: HP 10,000 -> 20,000",
+   "Golden_Marshal_Statue": "0/2: ATK 267 -> 535",
+   "Joyful_Bunny": "2/6",
+   "Tower_of_Victory": "0/6"
+  }
+ },
+ "power_change_note": "Total power 147.5M -> 172.7M: unit power +23.4M (46.8M -> 70.3M), hero +1.38M, building +216K, tech +85K. Hero Skill and Wall of Honor power fell because Scarlett's kit reset when she became UR.",
+ "squad1_note": "Squad 1 screen not recorded on 11/1. Estimate = tank heroes 21,432,878 + 10/25 troop share 9.33M."
+}

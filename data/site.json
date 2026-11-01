@@ -39,31 +39,51 @@
    "estimate": "+0.3M to +0.5M",
    "steps": [
     {
-     "type": "weapon",
-     "title": "Exclusive Weapon 15 → 20",
-     "hero": "Murphy",
-     "cost": "Universal EW shards (101 on hand)",
+     "type": "decor",
+     "title": "Open the 2 UR Decoration Choice Chests",
+     "cost": "2 chests on hand",
      "status": "todo",
-     "detail": "Murphy went 12 → 15 this week. Keep going: one weapon to 20 before the next. Record the shard cost per level.",
+     "id": "p1-decor-chests",
+     "detail": "Answer to your note: one upgrade, one new. The Pyramid needs only 1 more copy; everything else at level 1 needs 2 copies, so a new decoration gives twice the stats per chest.",
+     "subs": [
+      {
+       "id": "chest-eternal-pyramid",
+       "title": "Chest 1: Eternal Pyramid 1 → 2, construction speed 5% → 10% for the HQ path",
+       "cost": "1 chest"
+      },
+      {
+       "id": "chest-new-ur-atk",
+       "title": "Chest 2: a new UR with +300 attack (Year of the Dragon or Easter Egg Sentry). The +10,000 HP ones are about equal if you prefer HP",
+       "cost": "1 chest"
+      }
+     ]
+    },
+    {
+     "type": "weapon",
+     "title": "Exclusive Weapon 16 → 20",
+     "hero": "Murphy",
+     "cost": "90 universal shards per level (42 on hand)",
+     "status": "todo",
+     "detail": "Murphy went 15 → 16 this week. Keep saving for the next level.",
      "id": "p1-murphy-ew-15-20"
     },
     {
      "type": "weapon",
      "title": "Exclusive Weapon 2 → 3",
      "hero": "Marshall",
-     "cost": "20 shards",
+     "cost": "20 shards (42 on hand)",
      "status": "todo",
-     "detail": "Cheap: +48K HP, +1,061 attack, +383 defense. Do it if Murphy's next level costs more than you have.",
+     "detail": "Ready now, and Murphy's next level costs 90: +6,884 HP, +152 attack, +55 defense over today.",
      "id": "p1-marshall-ew-2-3"
     },
     {
-     "type": "honor",
-     "title": "Wall of Honor 45 → 50",
-     "hero": "Kimberly",
-     "cost": "About 50 universal tank shards (59 on hand)",
+     "type": "gear",
+     "title": "Quick Equip Scarlett's new gear",
+     "hero": "Scarlett",
+     "cost": "Free",
      "status": "todo",
-     "detail": "Level 50 unlocks +0.5% attack for every tank hero. The closest milestone on the wall.",
-     "id": "p1-kimberly-woh-45-50"
+     "id": "p1-scarlett-quick-equip",
+     "detail": "Becoming UR emptied her gear slots. The Quick Equip button is live."
     }
    ]
   },
@@ -78,7 +98,7 @@
      "title": "Age of Oil: down to Base Expansion",
      "cost": "Months of research",
      "status": "todo",
-     "detail": "Oil Output I and the 3rd Tech Center are done. Three queues now: Oil Output II in queue 2, Focused Training V in queue 3.",
+     "detail": "Oil Output II is 7/10 in queue 2. Focused Training V and Research Enhancement V hold queues 1 and 3 because the next path nodes need Oil Output II at 10.",
      "id": "p2-age-of-oil-hq-expansion",
      "subs": [
       {
@@ -89,13 +109,13 @@
       },
       {
        "id": "aoo-oil-output-ii",
-       "title": "Oil Output II to 10/10 (2/10, level 3 in queue)",
-       "cost": "~5d per level"
+       "title": "Oil Output II to 10/10 (7/10, level 8 in queue, 6d 18h left)",
+       "cost": "~7d per level"
       },
       {
        "id": "aoo-emergency-infirmary",
        "title": "Emergency Capacity I + Infirmary Expansion V, Lv1",
-       "cost": "4d 23h each"
+       "cost": "4d 18h each"
       },
       {
        "id": "aoo-more-oil-wells",
@@ -105,7 +125,7 @@
       {
        "id": "aoo-training-healing-cost",
        "title": "Training Cost I + Healing Cost II, Lv1",
-       "cost": "6d 11h each"
+       "cost": "6d 5h each"
       },
       {
        "id": "aoo-parts-workshop",
@@ -120,7 +140,7 @@
       {
        "id": "aoo-base-expansion",
        "title": "Base Expansion: HQ cap raised to 35",
-       "cost": "18d 16h · 174.1M gold"
+       "cost": "18d 13h · 174.1M gold"
       }
      ]
     },
@@ -134,23 +154,24 @@
      "subs": [
       {
        "id": "hq-speed-fast-builder",
-       "title": "Fast Builder V as high as it goes",
+       "title": "Fast Builder V as high as it goes (5/10, +12.5%)",
        "cost": "Research"
       },
       {
        "id": "hq-speed-wall",
-       "title": "Wall 22 → 23 is building (8d 15h left); keep going to 31, HQ 32 needs it",
+       "title": "Wall 29 → 30 is building (30d 3h left); one more to 31, HQ 32 needs it",
        "cost": "Wall upgrades"
       },
       {
        "id": "hq-speed-save-speedups",
-       "title": "Save construction speedups for HQ levels (8d 23h on hand, plus 12d universal)",
+       "title": "Save construction speedups for HQ levels (4d 14h on hand, plus 1d 12h universal; last week 8d 23h and 12d)",
        "cost": "Speedups"
       },
       {
        "id": "hq-speed-oil",
        "title": "Build oil: 1.5M on hand, one well at 1,800/hr; more wells come from More Oil Wells and HQ levels",
-       "cost": "Oil"
+       "cost": "Oil",
+       "status": "done"
       }
      ]
     },
@@ -216,7 +237,7 @@
       },
       {
        "id": "hq32-wall-31",
-       "title": "Wall to 31 (now 22)",
+       "title": "Wall to 31 (now 29)",
        "cost": "0.68M oil"
       },
       {
@@ -250,7 +271,7 @@
       },
       {
        "id": "hq33-hospital-32",
-       "title": "Hospital to 32 (now 28)",
+       "title": "Hospital to 32 (now 29)",
        "cost": "0.70M oil"
       },
       {
@@ -289,12 +310,12 @@
       },
       {
        "id": "hq34-alliance-center-33",
-       "title": "Alliance Center to 33 (level not recorded)",
+       "title": "Alliance Center to 33 (not in the building list; Alliance Support Hub is 23)",
        "cost": "1.08M oil"
       },
       {
        "id": "hq34-wall-33",
-       "title": "Wall to 33 (now 22)",
+       "title": "Wall to 33 (now 29)",
        "cost": "2.92M oil"
       },
       {
@@ -328,7 +349,7 @@
       },
       {
        "id": "hq35-hospital-34",
-       "title": "Hospital to 34 (now 28)",
+       "title": "Hospital to 34 (now 29)",
        "cost": "2.06M oil"
       },
       {
@@ -353,12 +374,32 @@
    "estimate": "+2M to +4M",
    "steps": [
     {
+     "type": "research",
+     "title": "Next free queue: finish the tank nodes",
+     "cost": "Research",
+     "status": "todo",
+     "id": "p3-hero-tree-tank-finish",
+     "detail": "No queue is on tank boosts right now. Levels are from 10/25; check them before you start.",
+     "subs": [
+      {
+       "id": "p3-tank-mastery-ii-5",
+       "title": "Tank Mastery II 4/5 → 5/5 (+2%)",
+       "cost": "Research"
+      },
+      {
+       "id": "p3-cannon-enhancement-ii-5",
+       "title": "Cannon Enhancement II 4/5 → 5/5 (+2%)",
+       "cost": "Research"
+      }
+     ]
+    },
+    {
      "type": "gear",
      "title": "Gear stars: Marshall → Williams → Stetmann",
      "cost": "Blueprints",
      "status": "later",
      "id": "p2-gear-stars-marshall-williams-stetmann",
-     "detail": "Kimberly and Murphy have 4-5 star gear; these three have 0-2 stars",
+     "detail": "Kimberly and Murphy have 4-5 star pieces; Marshall has 1 star, Williams 2, Stetmann 2",
      "subs": [
       {
        "id": "p2-gear-stars-marshall",
@@ -385,36 +426,38 @@
      "title": "Wall of Honor: aim shards at the 50-level milestones",
      "cost": "Universal tank shards + hero shards",
      "status": "todo",
-     "detail": "Each level adds a little hero HP; the real value is the tank-wide boost every 50 levels. Spend universal shards on whoever is closest to the next 50.",
+     "detail": "Kimberly hit 50 and Mason's 50 counts too: +1.00% attack for every tank. Spend universal shards (39 on hand) on whoever is closest to the next 50: Murphy.",
      "id": "p3-woh-milestones",
      "subs": [
       {
        "id": "woh-kimberly-50",
        "title": "Kimberly 45 → 50: +0.5% tank attack",
        "hero": "Kimberly",
-       "cost": "~50 universal shards"
+       "cost": "~50 universal shards",
+       "status": "done"
       },
       {
        "id": "woh-murphy-50",
-       "title": "Murphy 28 → 50: +0.5% tank HP",
+       "title": "Murphy 45 → 50: +0.5% tank HP",
        "hero": "Murphy",
        "cost": "~10 universal shards per level"
       },
       {
        "id": "woh-marshall-50",
-       "title": "Marshall 23 → 50: +0.5% tank defense",
+       "title": "Marshall 25 → 50: +0.5% tank defense",
        "hero": "Marshall",
-       "cost": "~9 per level"
+       "cost": "8 per level"
       },
       {
        "id": "woh-mason-100",
-       "title": "Mason 84 → 100: +0.5% tank attack, with Mason's own purple shards",
-       "cost": "13 per level"
+       "title": "Mason 88 → 100: +0.5% tank attack, using the same 28 purple shards as Scarlett",
+       "cost": "20 per level"
       },
       {
-       "id": "woh-scarlett-150",
-       "title": "Scarlett 111 → 150 with her own shards (90 on hand): +0.25% tank HP",
-       "cost": "Scarlett shards"
+       "id": "woh-scarlett-5-stars",
+       "title": "Scarlett to 5 stars to return to the wall: restores her tank HP boosts and every hero's wall HP (60.7K → 56.3K). She's Star 4 Tier 3; the next tier takes 174 purple shards or 200 of her own",
+       "hero": "Scarlett",
+       "cost": "28 purple, 26 own on hand"
       }
      ]
     },
@@ -423,7 +466,7 @@
      "title": "Skills that boost the whole squad",
      "cost": "Skill medals",
      "status": "todo",
-     "detail": "This week: Williams Iron Will maxed, Murphy skill 2 30 → 33, Marshall skill 1 20 → 25, Williams skill 1 20 → 21.",
+     "detail": "This week: Stetmann skill 1 19 → max, Marshall skill 2 maxed, Murphy Ironclad Barrier II 33 → 34, Williams skill 1 21 → 26. 62,060 medals on hand.",
      "id": "p2-skill-1-marshall-stetmann-williams",
      "subs": [
       {
@@ -437,18 +480,26 @@
        "id": "p2-skill-murphy-ironclad-barrier",
        "title": "Ironclad Barrier II 33 → 34 (squad damage taken, 1 level left)",
        "hero": "Murphy",
-       "cost": "26,000+ medals each"
+       "cost": "26,000+ medals each",
+       "status": "done"
+      },
+      {
+       "id": "p2-skill-murphy-ironclad-35",
+       "title": "Ironclad Barrier II 34 → 35: Murphy's weapon raised the cap",
+       "hero": "Murphy",
+       "cost": "34,000 medals"
       },
       {
        "id": "p2-skill-marshall-command-strategy",
        "title": "Command Strategy toward 30 (squad attack)",
        "hero": "Marshall",
-       "cost": "16,400+ medals each"
+       "cost": "16,400+ medals each",
+       "status": "done"
       },
       {
        "id": "p2-skill-1-catch-up",
-       "title": "Then skill 1 on Stetmann (19) and Williams (21); Marshall is at 25",
-       "cost": "9,000-13,000 medals each"
+       "title": "Then skill 1: Murphy (22 of 35), Marshall (25), Williams (26)",
+       "cost": "12,800-18,000 medals each"
       }
      ]
     },
@@ -457,14 +508,9 @@
      "title": "Decorations that add hero stats",
      "cost": "Decor components",
      "status": "todo",
-     "detail": "87 Universal Decor Components on hand · decor gives every hero +196,797 HP and +8,479 attack today",
+     "detail": "Decor gives every hero +218,174 HP and +8,656 attack today · UR collected 26/39",
      "id": "p3-decor-hero-stats",
      "subs": [
-      {
-       "id": "hq-speed-eternal-pyramid",
-       "title": "Eternal Pyramid 1 → 2: construction speed 5% → 10% for the HQ path (needs 2 copies; carries a Season Boost)",
-       "cost": "2 copies or components"
-      },
       {
        "id": "decor-god-of-judgment",
        "title": "God of Judgment 2 → 3: HP +10,000, ATK +238, march size 4 → 6",
@@ -487,7 +533,7 @@
       },
       {
        "id": "decor-libertas",
-       "title": "Libertas: not owned, but its Acquire button is live; check the price",
+       "title": "Libertas: level 1 is only HP +2,500, ATK +59, DEF +11; skip it for now",
        "cost": "Event/shop"
       },
       {
@@ -596,12 +642,16 @@
    "text": "Wall of Honor shards go to the hero closest to the next 50-level milestone."
   },
   {
+   "icon": "decor",
+   "text": "Decoration chests: finish a copy count that's one short, otherwise take a new decoration."
+  },
+  {
    "icon": "research",
    "text": "Hero-tree tank research before the Tank Mastery tree."
   },
   {
    "icon": "research",
-   "text": "Queue 2 stays on the Age of Oil until the third research center opens."
+   "text": "One queue stays on the Age of Oil until Base Expansion."
   },
   {
    "icon": "troops",
@@ -617,6 +667,72 @@
   }
  ],
  "recaps": [
+  {
+   "date": "2026-11-01",
+   "title": "Wall 29, Stetmann maxed, troops back",
+   "sources": "Heroes and gear video, tiers / Exclusive Weapons / Wall of Honor video, power details and tank details video, research, inventory and buildings video, decoration gallery video, site checklist and notes",
+   "highlights": [
+    {
+     "icon": "troops",
+     "text": "Total power 147.5M → 172.7M. Nearly all troops: unit power 46.8M → 70.3M. Hero power rose 1.38M."
+    },
+    {
+     "icon": "hero",
+     "text": "Tank heroes up 275K to 21.43M. Squad 1 is about 30.77M; that's an estimate because the Squad 1 screen wasn't recorded."
+    },
+    {
+     "icon": "honor",
+     "text": "Kimberly reached 50 on the Wall of Honor: every tank now has +1.00% attack. Murphy jumped 28 → 45, 5 levels from the next boost."
+    },
+    {
+     "icon": "hero",
+     "text": "Scarlett is now UR, but she's Star 4 and off the wall, with skills 1/1/1 and no gear. That's why Hero Skill and Wall of Honor power fell. Wall heroes are all 5 stars, so that's likely her way back, and it's a long way off."
+    },
+    {
+     "icon": "skill",
+     "text": "Stetmann skill 1 19 → max (+11 levels, +49K power), Marshall skill 2 maxed, Williams skill 1 21 → 26, Murphy Ironclad Barrier II to 34."
+    },
+    {
+     "icon": "weapon",
+     "text": "Murphy's Exclusive Weapon 15 → 16; the next level costs 90 shards and 42 are on hand. Marshall's 2 → 3 is ready at 20."
+    },
+    {
+     "icon": "build",
+     "text": "Wall 23 → 29 and Hospital 28 → 29, both upgrading again. Universal speedups fell 12d → 1d 12h over the same week."
+    },
+    {
+     "icon": "research",
+     "text": "Age of Oil 20% → 28%. Oil Output II is 7/10, and the next path nodes need it at 10."
+    },
+    {
+     "icon": "decor",
+     "text": "Your note: use one chest on the Eternal Pyramid (build speed 5% → 10%) and one on a new UR with +300 attack."
+    },
+    {
+     "icon": "season",
+     "text": "Desert Protectors 10,682 / 10,800. Season Boost now on Marshall, Scarlett and Schuyler."
+    }
+   ],
+   "next": "Open both decoration chests, upgrade Marshall's weapon, Quick Equip Scarlett and push Murphy's Wall of Honor to 50. Add the Squad 1 and troop screens to next week's recording.",
+   "stats": [
+    {
+     "label": "Total power",
+     "value": "172.7M"
+    },
+    {
+     "label": "Squad 1 (est.)",
+     "value": "30.77M"
+    },
+    {
+     "label": "Tank heroes",
+     "value": "21.43M"
+    },
+    {
+     "label": "Unit power",
+     "value": "70.3M"
+    }
+   ]
+  },
   {
    "date": "2026-10-25",
    "title": "3rd Tech Center open",
@@ -790,6 +906,22 @@
  ],
  "sync_url": "https://script.google.com/macros/s/AKfycbzrvFoEtvCS2hRavL6MjntacrMdNjW6YYp__8qPOZCyVsQj1UzOyfqhYp_tD0t4P3dL/exec",
  "archive": [
+  {
+   "date": "2026-11-01",
+   "steps": [
+    {
+     "type": "honor",
+     "title": "Wall of Honor 45 → 50",
+     "hero": "Kimberly",
+     "cost": "About 50 universal tank shards (59 on hand)",
+     "status": "done",
+     "detail": "Level 50 unlocks +0.5% attack for every tank hero. The closest milestone on the wall.",
+     "id": "p1-kimberly-woh-45-50",
+     "phase": 1,
+     "phase_name": "Ready now"
+    }
+   ]
+  },
   {
    "date": "2026-10-25",
    "steps": [
