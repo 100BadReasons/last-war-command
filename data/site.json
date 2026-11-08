@@ -702,7 +702,7 @@
   {
    "date": "2026-11-08",
    "title": "Milestone 1: Squad 1 31.01M",
-   "sources": "Heroes video (all 31), hero stat breakdowns / power details / Wall of Honor video, research / drone / Overlord video, squads video, site checklist and notes, decoration gallery video",
+   "sources": "Heroes video (all 31), hero stat breakdowns / power details / Wall of Honor video, research / drone / Overlord video, squads video, site checklist and notes, decoration gallery video, power details screenshot",
    "highlights": [
     {
      "icon": "hero",
@@ -710,7 +710,7 @@
     },
     {
      "icon": "power",
-     "text": "Total power 172.7M → 174.6M. Hero power +1.06M: every hero rose about 30K, mostly hero level (+545K) and decor & building stats (+304K). Drone +74K."
+     "text": "Total power 172.7M → 174.6M. Hero power +1.06M: every hero rose about 30K, mostly hero level (+545K) and decor & building stats (+304K). Unit power +332K, tech +97K, drone +74K."
     },
     {
      "icon": "decor",

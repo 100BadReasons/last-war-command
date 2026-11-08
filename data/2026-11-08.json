@@ -5,17 +5,18 @@
   "ScreenRecording_11-08-2026 15-09-56_1.MP4 (hero stat breakdowns, power details, Drill Ground, Wall of Honor)",
   "ScreenRecording_11-08-2026 15-11-53_1.MP4 (research, Age of Oil path, drone, skill chips, Overlord)",
   "ScreenRecording_11-08-2026 15-14-53_1.MP4 (squads 1, 2, 4)",
-  "ScreenRecording_11-08-2026 16-38-51_1.MP4 (decoration gallery)"
+  "ScreenRecording_11-08-2026 16-38-51_1.MP4 (decoration gallery)",
+  "Power details screenshot (unit, tech, survivor, Overlord rows; total 174,464,630)"
  ],
  "account": {
   "hq_level": 30,
   "vip": 12,
   "total_power": 174584861,
   "hero_power": 80593575,
-  "unit_power": null,
+  "unit_power": 70583219,
   "building_power": 10402347,
   "drone_power": 6811962,
-  "tech_power": null,
+  "tech_power": 5414677,
   "overlord_power": 658850,
   "decor_power": 8481104,
   "drone_level": 135,
@@ -37,7 +38,7 @@
   },
   "building_detail": {
    "buildings": 6980500,
-   "survivor": "not recorded"
+   "survivor": 3421847
   },
   "research_speedups": "not recorded",
   "troops": 43174,
@@ -62,7 +63,12 @@
     "hp": 188358
    },
    "level_cost": "1,400 training items (256,536 on hand) + 50 of a second item (27 on hand)",
-   "squad_power_effect": "None: hero details list Overlord Trng. Boost as a stat source, but Hero Power has no Overlord category and Squad 1 = 5 hero powers + 9.33M troops"
+   "squad_power_effect": "None: hero details list Overlord Trng. Boost as a stat source, but Hero Power has no Overlord category and Squad 1 = 5 hero powers + 9.33M troops",
+   "power_detail": {
+    "training_level": 628801,
+    "bond_rating": 24289,
+    "skill": 5760
+   }
   },
   "resources": {
    "food": "325.4M",
@@ -70,7 +76,8 @@
    "gold": "24.3M",
    "oil": "5.4M",
    "gems": 13096
-  }
+  },
+  "power_details_screenshot_total": 174464630
  },
  "hero_columns": [
   "name",
@@ -1263,11 +1270,6 @@
    "Overlord",
    "Name of the 50-per-level training item (27 on hand)",
    "Low"
-  ],
-  [
-   "Account",
-   "Unit and tech power rows were off-screen in power details",
-   "Low"
   ]
  ],
  "tank_details_columns": [
@@ -1518,7 +1520,7 @@
   },
   "chests_used": "Eternal Pyramid 1 -> 2 (build speed 10%); new UR Fabulous Phonograph (+300 attack)"
  },
- "power_change_note": "Total power 172.73M -> 174.58M (+1.86M). Hero power +1.06M: hero level +545K, decor & building stats +304K, Wall of Honor +68K, gear +62K. Every hero rose about 30K. Drone +73.5K, Overlord +8.8K. Squad 1 30.76M -> 31.01M (+250K): the five tanks rose +250K and the troop share held at 9.33M. Decor power 8.10M -> 8.48M (+377K): Pyramid level 2 and the new Fabulous Phonograph.",
+ "power_change_note": "Total power 172.73M -> 174.58M (+1.86M). Hero power +1.06M: hero level +545K, decor & building stats +304K, Wall of Honor +68K, gear +62K. Every hero rose about 30K. Drone +73.5K, Overlord +8.8K. Squad 1 30.76M -> 31.01M (+250K): the five tanks rose +250K and the troop share held at 9.33M. Decor power 8.10M -> 8.48M (+377K): Pyramid level 2 and the new Fabulous Phonograph. Unit power 70.25M -> 70.58M (+332K), tech 5.32M -> 5.41M (+97K).",
  "troop_notes": "Counts from the 11/8 Drill Ground screen. Per-unit stats are the 10/25 readings.",
  "drone": {
   "level": 135,
