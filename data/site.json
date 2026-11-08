@@ -36,54 +36,25 @@
    "phase": 1,
    "name": "Ready now",
    "window": "Now",
-   "estimate": "+0.3M to +0.5M",
+   "estimate": "+0.05M to +0.1M",
    "steps": [
     {
-     "type": "decor",
-     "title": "Open the 2 UR Decoration Choice Chests",
-     "cost": "2 chests on hand",
-     "status": "todo",
-     "id": "p1-decor-chests",
-     "detail": "Answer to your note: one upgrade, one new. The Pyramid needs only 1 more copy; everything else at level 1 needs 2 copies, so a new decoration gives twice the stats per chest.",
-     "subs": [
-      {
-       "id": "chest-eternal-pyramid",
-       "title": "Chest 1: Eternal Pyramid 1 → 2, construction speed 5% → 10% for the HQ path",
-       "cost": "1 chest"
-      },
-      {
-       "id": "chest-new-ur-atk",
-       "title": "Chest 2: a new UR with +300 attack (Year of the Dragon or Easter Egg Sentry). The +10,000 HP ones are about equal if you prefer HP",
-       "cost": "1 chest"
-      }
-     ]
-    },
-    {
      "type": "weapon",
-     "title": "Exclusive Weapon 16 → 20",
+     "title": "Exclusive Weapon 17 → 20",
      "hero": "Murphy",
-     "cost": "90 universal shards per level (42 on hand)",
+     "cost": "99 universal shards for the next level (43 on hand)",
      "status": "todo",
-     "detail": "Murphy went 15 → 16 this week. Keep saving for the next level.",
+     "detail": "Murphy went 16 → 17 this week (+33K HP, +238 attack). Keep saving for the next level.",
      "id": "p1-murphy-ew-15-20"
     },
     {
      "type": "weapon",
      "title": "Exclusive Weapon 2 → 3",
      "hero": "Marshall",
-     "cost": "20 shards (42 on hand)",
+     "cost": "20 shards (43 on hand)",
      "status": "todo",
-     "detail": "Ready now, and Murphy's next level costs 90: +6,884 HP, +152 attack, +55 defense over today.",
+     "detail": "Still ready and still not done: Murphy needs 99 for his next level, so 20 here costs him nothing this week. +6,884 HP, +152 attack, +55 defense.",
      "id": "p1-marshall-ew-2-3"
-    },
-    {
-     "type": "gear",
-     "title": "Quick Equip Scarlett's new gear",
-     "hero": "Scarlett",
-     "cost": "Free",
-     "status": "todo",
-     "id": "p1-scarlett-quick-equip",
-     "detail": "Becoming UR emptied her gear slots. The Quick Equip button is live."
     }
    ]
   },
@@ -96,9 +67,9 @@
     {
      "type": "research",
      "title": "Age of Oil: down to Base Expansion",
-     "cost": "Months of research",
+     "cost": "About 100-130 research days with buffs",
      "status": "todo",
-     "detail": "Oil Output II is 7/10 in queue 2. Focused Training V and Research Enhancement V hold queues 1 and 3 because the next path nodes need Oil Output II at 10.",
+     "detail": "Age of Oil 28% → 35%. Oil Output II maxed, the Oil Well and More Oil Wells are unlocked, and Emergency Capacity + Infirmary Expansion are done. Training Cost I (queue 1) and Healing Cost II (queue 2) are both researching now.",
      "id": "p2-age-of-oil-hq-expansion",
      "subs": [
       {
@@ -110,37 +81,40 @@
       {
        "id": "aoo-oil-output-ii",
        "title": "Oil Output II to 10/10 (7/10, level 8 in queue, 6d 18h left)",
-       "cost": "~7d per level"
+       "cost": "~7d per level",
+       "status": "done"
       },
       {
        "id": "aoo-emergency-infirmary",
        "title": "Emergency Capacity I + Infirmary Expansion V, Lv1",
-       "cost": "4d 18h each"
+       "cost": "4d 18h each",
+       "status": "done"
       },
       {
        "id": "aoo-more-oil-wells",
        "title": "More Oil Wells",
-       "cost": "Research"
+       "cost": "Research",
+       "status": "done"
       },
       {
        "id": "aoo-training-healing-cost",
-       "title": "Training Cost I + Healing Cost II, Lv1",
-       "cost": "6d 5h each"
+       "title": "Training Cost I + Healing Cost II, Lv1 (researching now)",
+       "cost": "2d 12h and 4d 12h left"
       },
       {
        "id": "aoo-parts-workshop",
        "title": "Parts Workshop, Lv1",
-       "cost": "Research"
+       "cost": "7d 6h · 28.7M gold"
       },
       {
        "id": "aoo-oil-output-iii",
-       "title": "Oil Output III to 10/10",
-       "cost": "7d 12h for level 1"
+       "title": "Oil Output III to 10/10: one node, so this is the long part",
+       "cost": "7d 6h for level 1 · 28.7M gold"
       },
       {
        "id": "aoo-base-expansion",
        "title": "Base Expansion: HQ cap raised to 35",
-       "cost": "18d 13h · 174.1M gold"
+       "cost": "18d 2h · 174.1M gold"
       }
      ]
     },
@@ -149,12 +123,12 @@
      "title": "Speedups: all in on HQ 31",
      "cost": "About 22 speedup days a week",
      "status": "todo",
-     "detail": "About 192 speedup days by Dec 31 if you clear every store. HQ 31 needs about 125-140, so there's room for about 3 weeks of universals elsewhere.",
+     "detail": "Left on the path: about 100-130 research days with buffs, then the 47-day HQ build. That needs about 95-125 speedup days by Dec 31; clearing every store gives about 165. It fits if most of them go here.",
      "id": "hq-build-speed",
      "subs": [
       {
        "id": "hq-speed-research-first",
-       "title": "Research speedups and universals go on required Age of Oil nodes, on Alliance Duel research day when you can",
+       "title": "Research speedups and universals go on required Age of Oil nodes, on Alliance Duel research day when you can. Queue 3 (Focused Training V) isn't on the path; that's fine while both path nodes are already in queues 1 and 2",
        "cost": "Until Base Expansion is done"
       },
       {
@@ -174,7 +148,7 @@
       },
       {
        "id": "hq-speed-fast-builder",
-       "title": "Fast Builder V as high as it goes (5/10, +12.5%)",
+       "title": "Fast Builder V as high as it goes (6/10, +15%; level 7 is 6d 1h)",
        "cost": "Research"
       },
       {
@@ -284,7 +258,7 @@
      "title": "Wall of Honor: aim shards at the 50-level milestones",
      "cost": "Universal tank shards + hero shards",
      "status": "todo",
-     "detail": "Kimberly hit 50 and Mason's 50 counts too: +1.00% attack for every tank. Spend universal shards (39 on hand) on whoever is closest to the next 50: Murphy.",
+     "detail": "Murphy reached 50: tanks now have +1.00% attack and +0.50% HP from the wall. Marshall jumped 25 → 37. Universal tank shards: 43 on hand. Purple shards jumped 28 → 91.",
      "id": "p3-woh-milestones",
      "subs": [
       {
@@ -298,24 +272,25 @@
        "id": "woh-murphy-50",
        "title": "Murphy 45 → 50: +0.5% tank HP",
        "hero": "Murphy",
-       "cost": "~10 universal shards per level"
+       "cost": "~10 universal shards per level",
+       "status": "done"
       },
       {
        "id": "woh-marshall-50",
-       "title": "Marshall 25 → 50: +0.5% tank defense",
+       "title": "Marshall 37 → 50: +0.5% tank defense (13 levels)",
        "hero": "Marshall",
-       "cost": "8 per level"
+       "cost": "8 per level, about 104"
       },
       {
        "id": "woh-mason-100",
-       "title": "Mason 88 → 100: +0.5% tank attack, using the same 28 purple shards as Scarlett",
-       "cost": "20 per level"
+       "title": "Mason 88 → 100: +0.5% tank attack. Same purple pool as Scarlett (91 on hand)",
+       "cost": "20 purple per level, 240 total"
       },
       {
        "id": "woh-scarlett-5-stars",
-       "title": "Scarlett to 5 stars to return to the wall: restores her tank HP boosts and every hero's wall HP (60.7K → 56.3K). She's Star 4 Tier 3; the next tier takes 174 purple shards or 200 of her own",
+       "title": "Scarlett's next tier: 91 of 134 purple shards. Purple goes to whichever you pick first; Scarlett's tier is closer",
        "hero": "Scarlett",
-       "cost": "28 purple, 26 own on hand"
+       "cost": "43 more purple"
       }
      ]
     },
@@ -324,7 +299,7 @@
      "title": "Skills that boost the whole squad",
      "cost": "Skill medals",
      "status": "todo",
-     "detail": "This week: Stetmann skill 1 19 → max, Marshall skill 2 maxed, Murphy Ironclad Barrier II 33 → 34, Williams skill 1 21 → 26. 62,060 medals on hand.",
+     "detail": "This week: Murphy Cannon Fire II 22 → 26, Marshall skill 1 25 → 26. 36,652 medals on hand.",
      "id": "p2-skill-1-marshall-stetmann-williams",
      "subs": [
       {
@@ -356,8 +331,8 @@
       },
       {
        "id": "p2-skill-1-catch-up",
-       "title": "Then skill 1: Murphy (22 of 35), Marshall (25), Williams (26)",
-       "cost": "12,800-18,000 medals each"
+       "title": "Then skill 1: Murphy (26 of 35), Marshall (26 of 30), Williams (26)",
+       "cost": "18,000 medals each"
       }
      ]
     },
@@ -474,6 +449,31 @@
      "cost": "Skill medals",
      "status": "later",
      "id": "p3-skills-toward-max-drone-levels"
+    },
+    {
+     "type": "drone",
+     "title": "Overlord: Bond Rating \"Rookie Partner I\"",
+     "cost": "28 training levels × 50 items (27 on hand)",
+     "status": "later",
+     "id": "p4-overlord-rookie-partner",
+     "detail": "Answer to your note: the Overlord adds 0 to Squad 1 power. It gives every hero +4,674 attack and +188,358 HP, but the game doesn't count those in Hero Power, so they help fights only. Promotion needs Attack 94, Defense 89 and HP 89 all at 100 and unlocks its skills.",
+     "subs": [
+      {
+       "id": "overlord-attack-100",
+       "title": "Joint Attack 94 → 100",
+       "cost": "6 levels"
+      },
+      {
+       "id": "overlord-defense-100",
+       "title": "Defense Support 89 → 100",
+       "cost": "11 levels"
+      },
+      {
+       "id": "overlord-hp-100",
+       "title": "Survival Training 89 → 100 (biggest: +6,379 HP to every hero per level)",
+       "cost": "11 levels"
+      }
+     ]
     }
    ]
   },
@@ -649,7 +649,7 @@
   },
   {
    "icon": "power",
-   "text": "Squad 1 power = the five tanks' hero power + troops. Drone and research % help fights, not this number."
+   "text": "Squad 1 power = the five tanks' hero power + troops. Drone and Overlord add big hero stats for fights (+1.14M and +188K HP per hero), but the game leaves both out of Hero Power, so not this number."
   },
   {
    "icon": "weapon",
@@ -689,6 +689,72 @@
   }
  ],
  "recaps": [
+  {
+   "date": "2026-11-08",
+   "title": "Milestone 1: Squad 1 31.01M",
+   "sources": "Heroes video (all 31), hero stat breakdowns / power details / Wall of Honor video, research / drone / Overlord video, squads video, site checklist and notes",
+   "highlights": [
+    {
+     "icon": "hero",
+     "text": "Squad 1 30.76M → 31.01M (+0.25M): Milestone 1 passed. The five tanks rose 250K; the troop share held at 9.33M. Squad 2 is 20.19M and Squad 4 20.73M."
+    },
+    {
+     "icon": "power",
+     "text": "Total power 172.7M → 174.6M. Hero power +1.06M: every hero rose about 30K, mostly hero level (+545K) and decor & building stats (+304K). Drone +74K."
+    },
+    {
+     "icon": "drone",
+     "text": "Your note: the Overlord adds 0 to Squad 1. Hero details show it gives every hero +4,674 attack and +188K HP, but Hero Power has no Overlord row, and the 31 heroes add up exactly without it. Same for the drone (+1.14M HP per hero)."
+    },
+    {
+     "icon": "research",
+     "text": "Age of Oil 28% → 35%: Oil Output II maxed, Oil Well and More Oil Wells unlocked, Emergency Capacity and Infirmary Expansion done. Training Cost I and Healing Cost II are researching."
+    },
+    {
+     "icon": "build",
+     "text": "HQ 31 check: about 100-130 research days left on the path plus the 47-day build. That needs about 95-125 speedup days by Dec 31, out of about 165 from stores. Still on track if they go here."
+    },
+    {
+     "icon": "honor",
+     "text": "Murphy reached 50 on the Wall: tanks now have +0.50% HP and +1.00% attack. Marshall 25 → 37, Kimberly 51, Stetmann 19."
+    },
+    {
+     "icon": "weapon",
+     "text": "Murphy's Exclusive Weapon 16 → 17; next costs 99 shards, 43 on hand. Marshall's 2 → 3 is still ready at 20."
+    },
+    {
+     "icon": "skill",
+     "text": "Murphy Cannon Fire II 22 → 26, Marshall skill 1 25 → 26. 36,652 medals left."
+    },
+    {
+     "icon": "hero",
+     "text": "Elsa 148 → 150, Lucius to 2 stars, Schuyler to Star 2 Tier 3. Purple shards 28 → 91: Scarlett's next tier needs 134."
+    },
+    {
+     "icon": "troops",
+     "text": "Troops full: 43,174 of 43,174."
+    }
+   ],
+   "next": "Upgrade Marshall's weapon, keep both research queues on the Age of Oil path, and put Parts Workshop in the first free queue.",
+   "stats": [
+    {
+     "label": "Total power",
+     "value": "174.6M"
+    },
+    {
+     "label": "Squad 1",
+     "value": "31.01M"
+    },
+    {
+     "label": "Tank heroes",
+     "value": "21.68M"
+    },
+    {
+     "label": "Hero power",
+     "value": "80.6M"
+    }
+   ]
+  },
   {
    "date": "2026-11-01",
    "title": "Wall 29, Stetmann maxed, troops back",
@@ -928,6 +994,46 @@
  ],
  "sync_url": "https://script.google.com/macros/s/AKfycbzrvFoEtvCS2hRavL6MjntacrMdNjW6YYp__8qPOZCyVsQj1UzOyfqhYp_tD0t4P3dL/exec",
  "archive": [
+  {
+   "date": "2026-11-08",
+   "steps": [
+    {
+     "type": "decor",
+     "title": "Open the 2 UR Decoration Choice Chests",
+     "cost": "2 chests on hand",
+     "status": "done",
+     "id": "p1-decor-chests",
+     "detail": "Answer to your note: one upgrade, one new. The Pyramid needs only 1 more copy; everything else at level 1 needs 2 copies, so a new decoration gives twice the stats per chest.",
+     "subs": [
+      {
+       "id": "chest-eternal-pyramid",
+       "title": "Chest 1: Eternal Pyramid 1 → 2, construction speed 5% → 10% for the HQ path",
+       "cost": "1 chest",
+       "status": "done"
+      },
+      {
+       "id": "chest-new-ur-atk",
+       "title": "Chest 2: a new UR with +300 attack (Year of the Dragon or Easter Egg Sentry). The +10,000 HP ones are about equal if you prefer HP",
+       "cost": "1 chest",
+       "status": "done"
+      }
+     ],
+     "phase": 1,
+     "phase_name": "Ready now"
+    },
+    {
+     "type": "gear",
+     "title": "Quick Equip Scarlett's new gear",
+     "hero": "Scarlett",
+     "cost": "Free",
+     "status": "done",
+     "id": "p1-scarlett-quick-equip",
+     "detail": "Becoming UR emptied her gear slots. The Quick Equip button is live.",
+     "phase": 1,
+     "phase_name": "Ready now"
+    }
+   ]
+  },
   {
    "date": "2026-11-01",
    "steps": [
