@@ -40,10 +40,10 @@
    "steps": [
     {
      "type": "decor",
-     "title": "Open the new UR Decoration Choice Chest",
-     "cost": "1 chest on hand",
-     "status": "todo",
-     "detail": "Take a new decoration: Easter Egg Sentry (+300 attack to every hero). Nothing is 1 copy short (Fabulous Phonograph needs 2 for its next +300), so a new one gives the same attack for half the chests. If Sentry isn't in the list, take a +10,000 HP one; skip Libertas.",
+     "title": "Open the new UR Decoration Choice Chest: Lovely Bears",
+     "cost": "1 chest",
+     "status": "done",
+     "detail": "Opened 11/10: a new UR, Lovely Bears (UR collected 27/39 → 28/39). A new decoration beat an upgrade because nothing was 1 copy short. Its stats go in the next recap.",
      "id": "p1-decor-chest-11-10"
     },
     {
