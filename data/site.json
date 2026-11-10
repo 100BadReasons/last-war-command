@@ -39,6 +39,14 @@
    "estimate": "+0.05M to +0.1M",
    "steps": [
     {
+     "type": "decor",
+     "title": "Open the new UR Decoration Choice Chest: Lovely Bears",
+     "cost": "1 chest",
+     "status": "done",
+     "detail": "Opened 11/10: a new UR, Lovely Bears (UR collected 27/39 → 28/39). A new decoration beat an upgrade because nothing was 1 copy short. Its stats go in the next recap.",
+     "id": "p1-decor-chest-11-10"
+    },
+    {
      "type": "weapon",
      "title": "Exclusive Weapon 17 → 20",
      "hero": "Murphy",
